@@ -20,11 +20,11 @@ author: Cynthia Mengyuan Li
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://apecynart.com"
+    About Me: "aboutme"
+    Websites:
+        - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
+        - Medium: "https://medium.com/@cynthiamengyuanli/"
+    Author's GitHub: "https://github.com/cynthialmy"
 
 ################
 # --- Logo --- #
@@ -41,7 +41,6 @@ round-avatar: true
 # then specify the following parameter
 #title-img: /path/to/image
 
-
 #####################################
 # --- Footer social media links --- #
 #####################################
@@ -49,21 +48,21 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "cynthiamengyuanli@gmail.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  github: cynthialmy
-#  twitter: daattali
-#  patreon: DeanAttali
-#  youtube: c/daattali
-  medium: cynthiamengyuanli
-#  reddit: yourname
-  linkedin: mengyuan-li-cynthia
-#  xing: yourname
-#  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-  spotify: 12142026893
-#  telephone: +14159998888
+    email: "cynthiamengyuanli@gmail.com"
+    rss: true # remove this line if you don't want to show an RSS link at the bottom
+    github: cynthialmy
+    #  twitter: daattali
+    #  patreon: DeanAttali
+    #  youtube: c/daattali
+    medium: cynthiamengyuanli
+    #  reddit: yourname
+    linkedin: mengyuan-li-cynthia
+    #  xing: yourname
+    #  stackoverflow: "3943160/daattali"
+    #  snapchat: deanat78
+    #  instagram: deanat78
+    spotify: 12142026893
+    telephone: +46705696136
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
@@ -72,7 +71,7 @@ social-network-links:
 #  mastodon: instance.url/@username
 #  ORCID: your ORCID ID
 #  google-scholar: your google scholar
-#  discord: invite/invite_code or users/userid 
+#  discord: invite/invite_code or users/userid
 #  kaggle: yourname
 #  hackerrank: yourname
 
@@ -86,10 +85,10 @@ rss-description: This website is a virtual proof that I'm good at wasting time.
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
-  vk: false
+    twitter: true
+    facebook: true
+    linkedin: true
+    vk: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
@@ -202,23 +201,23 @@ footer-hover-col: "#0085A1"
 #  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
 
 # To use Staticman comments, uncomment the following section. You may leave the reCaptcha
-# section commented if you aren't using reCaptcha for spam protection. 
-# Using Staticman requires advanced knowledge, please consult 
-# https://github.com/eduardoboucas/staticman/ and https://staticman.net/ for further 
-# instructions. For any support with staticman please direct questions to staticman and 
+# section commented if you aren't using reCaptcha for spam protection.
+# Using Staticman requires advanced knowledge, please consult
+# https://github.com/eduardoboucas/staticman/ and https://staticman.net/ for further
+# instructions. For any support with staticman please direct questions to staticman and
 # not to BeautifulJekyll.
 #staticman:
 #  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
 #  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
 #  endpoint   : # URL of your deployment, with a trailing slash eg. "https://<your-api>/v3/entry/github/"
-#  reCaptcha:   # (optional, set these parameters in `staticman.yml` as well) 
+#  reCaptcha:   # (optional, set these parameters in `staticman.yml` as well)
 #    siteKey  : # You need to apply for a site key on Google
 #    secret   : # Encrypt your password by going to https://<your-own-api>/v3/encrypt/<your-site-secret>
 
 # To use giscus comments:
-# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository, 
+# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository,
 # (2) Install the giscus app in your repository (details at https://giscus.app),
-# (3) Fill in *all* the parameters below 
+# (3) Fill in *all* the parameters below
 # See more details about giscus and each of the following parameters at https://giscus.app
 #giscus:
 #  hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
@@ -253,39 +252,36 @@ permalink: /:year-:month-:day-:title/
 paginate: 5
 
 kramdown:
-  input: GFM
+    input: GFM
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
-      path: "" # any file that's not a post will be a "page" layout by default
-    values:
-      layout: "page"
+    - scope:
+          path: ""
+          type: "posts"
+      values:
+          layout: "post"
+          comments: true # add comments to all blog posts
+          social-share: true # add social media sharing buttons to all blog posts
+    - scope:
+          path: "" # any file that's not a post will be a "page" layout by default
+      values:
+          layout: "page"
 
 # Exclude these files from production site
 exclude:
-  - CHANGELOG.md
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - screenshot.png
-  - docs/
+    - CHANGELOG.md
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - screenshot.png
+    - docs/
 
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-
+    - jekyll-paginate
+    - jekyll-sitemap
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
