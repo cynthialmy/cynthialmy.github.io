@@ -23,11 +23,11 @@ Some of the key challenges that most companies face that can be solved by data c
 5. **Poor Data Integration:** Merging data from different sources can be challenging when there's no standard format or structure. Data contracts facilitate seamless integration by stipulating the format and quality that each data source must adhere to.
 6. **Difficulty in Compliance and Auditing:** Ensuring data compliance with industry standards or regulations can be complex. Data contracts can include compliance checkpoints, making audits smoother and reducing the risk of non-compliance penalties.
 
-![data_book-summary_1](assets/img/data_book-summary_1.png){: .mx-auto.d-block :}
+![data-book-summary-1](assets/img/data-book-summary-1.png){: .mx-auto.d-block :}
 
 *The diagram shows a typical data pipeline and how at each stage the lack of defined expectations ultimately results in the consumers losing trust in business-critical data-driven products.*
 
-![data_book-summary_2](../_site/assets/img/data_book-summary_2.png){: .mx-auto.d-block :}
+![data-book-summary-2](../_site/assets/img/data-book-summary-2.png){: .mx-auto.d-block :}
 
 *Despite the improvements in the technology and architecture over three generations of data platform architectures, we still have that bottleneck of a central team (data engineering) with a long backlog of datasets to make available to the organization.*
 
@@ -114,7 +114,7 @@ In essence, data contracts provide a structured framework that not only streamli
 
 ## What are the roles related to Data Contracts?
 
-![data_book-summary_3](../_site/assets/img/data_book-summary_3.png){: .mx-auto.d-block :}
+![data-book-summary-3](../_site/assets/img/data-book-summary-3.png){: .mx-auto.d-block :}
 
 **1. Data Producers**:
 
