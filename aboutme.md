@@ -5,9 +5,7 @@ title: About me
 
 ## A Glimpse Into My Journey
 
-I am Mengyuan Li (Cynthia), a dedicated professional specializing in data engineering, analytics, and product management. My passion lies in harnessing the power of data to unravel complex problems and drive strategic enhancements in various technological domains.
-
-In the realm of data, I navigate with ease, driven by a robust academic foundation and a dynamic career spanning multiple industries and specializations. From enhancing data platforms to leading product management initiatives, my journey is about making an impact through data.
+I am Cynthia, a dedicated professional specializing in data engineering, analytics, and product management. My passion lies in harnessing the power of data to unravel complex problems and drive strategic enhancements in various technological domains.
 
 ### My Academic Roots
 - **Georgia Institute of Technology**  
