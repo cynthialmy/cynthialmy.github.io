@@ -4,37 +4,56 @@ title: My Projects
 subtitle: The Excitement of Creation
 ---
 
-## d3-scrollama
-**Project Demo:** [d3-scrollama](https://cynthialmy.github.io/d3-scrollama/)
+Welcome to the hub of my creative endeavors in the world of data and technology. Below, you'll find a curated list of projects, each showcasing different aspects of my skills and passions. From data visualization to real-world problem-solving, each project represents a piece of my journey.
 
-D3-scrollama was a foray into storytelling with data. This demo website showcases how scrollytelling can make data-driven stories more interactive and engaging, providing a narrative context to complex datasets.
+## Featured Projects
 
-## d3-Interaction
-**Project Repository:** [d3-Interaction](https://cynthialmy.github.io/d3-Interaction/)
+### Interactive Data Visualizations
+- **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**  
+  Explore the art of storytelling through data. This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
 
-In this project, I focused on enhancing user engagement by implementing various interaction techniques in charts. The goal was to transform static visualizations into dynamic information sources, allowing users to engage with data more meaningfully.
+- **[d3-Interaction: Engaging Data Charts](https://cynthialmy.github.io/d3-Interaction/)**  
+  Dive into dynamic data visualizations. This initiative enhances user interaction with data charts, transforming static visuals into interactive experiences.
 
-## simple-d3-charts
-**Live Demo:** [simple-d3-charts](https://cynthialmy.github.io/simple-d3-charts/)
+- **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**  
+  Discover the core of data visualization. This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
-Here, I went back to the basics, creating a series of straightforward D3.js charts. This project served as a foundation for understanding the core principles of data visualization and a reference point for those new to D3.js.
+### Web and UI/UX Design
+- **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**  
+  Witness the transformation of an educational website. This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
 
-## course-website-design
-**Project Repository:** [course-website-design](https://cynthialmy.github.io/course-website-design/)
+### Data-Driven Web Applications
+- **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**  
+  Navigate through a comprehensive analysis of infrastructure health. BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
 
-This repository was an exciting venture into restyling an existing website for CS 7450. It became a sandbox for experimenting with D3.js, ultimately enhancing the site's interactivity and user experience.
+## Video Showcases
 
-## bridge-dash
-**Live Application:** [bridge-dash](https://bridge-dash-90f35a395f88.herokuapp.com/)
+### Innovative Solutions for Everyday Challenges
+- **[Real-time Display for Machine Status](https://www.youtube.com/watch?v=c284vsNPz00)**  
+  [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
+  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences.
 
-BridgeDash stands as one of my more comprehensive projects. This interactive web application offers insights into various aspects of bridges, from distribution to condition ratings. It's a testament to how data visualization can transform raw data into informative, easy-to-understand visuals.
+### Advanced Infrastructure Analysis
+- **[City-Scale Infrastructure Intelligence via Dynamic Analysis](https://www.youtube.com/watch?v=xRT6hPYlndc)**  
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/cpcj_DlfkNQ/0.jpg)](https://www.youtube.com/watch?v=cpcj_DlfkNQ)
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/zTncLSXekfI/0.jpg)](https://www.youtube.com/watch?v=zTncLSXekfI)
+  Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living.
 
-## More Projects
+### Workshops and Analysis
+- **[Sentiment Analysis with Python Workshop](https://www.youtube.com/watch?v=ywkblnkrr2k)**  
+  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+  Step into the world of sentiment analysis. This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
 
-For a deeper dive into my projects and contributions, check out my [GitHub](https://github.com/cynthialmy).
+- **[Geospatial Analysis of Yelp User Behavior](https://www.youtube.com/watch?v=cZWj-torlqY)**  
+  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+  [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
+  Uncover patterns in consumer behavior. This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
 
-## Connecting for a Data-Driven Future
+## Explore More
 
-My projects reflect my commitment to transforming data into accessible, engaging, and informative insights.
+Interested in seeing more of my work? Visit my [GitHub repository](https://github.com/cynthialmy) for a full list of my projects and contributions.
 
-Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or simply to brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
+## Let's Connect!
+
+I'm always open to discussing new ideas, collaborative ventures, or opportunities. Feel free to [reach out](mailto:cynthialmy@gmail.com) for a chat or brainstorming session. Together, we can drive innovation and create a data-driven future!
