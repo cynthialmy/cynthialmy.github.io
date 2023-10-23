@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Meet Mengyuan Li (Cynthia): Data Enthusiast and Innovator"
+title: "My Resume and Project List"
 subtitle: Bridging the Gap Between Data Engineering and Interactive Visualizations
 tags: [intro, projects, career]
 comments: true
