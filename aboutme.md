@@ -8,7 +8,7 @@ Welcome! I’m Mengyuan Li, friends and colleagues call me Cynthia. I’m thrill
 
 ### Who Am I?
 
-I’m a Data Engineer by profession, a problem-solver at heart, and a continuous learner in life. I’ve always been captivated by the power of data and technology and how they intertwine to create solutions that impact societies, businesses, and individuals. My journey wasn’t a straight path; it was filled with late nights, early mornings, challenges, and victories. From diving into computer science to exploring the depths of structural engineering, I’ve indulged my curiosity and learned something valuable at every turn.
+I’m a Engineer by profession, a problem-solver at heart, and a continuous learner in life. I’ve always been captivated by the power of data and technology and how they intertwine to create solutions that impact societies, businesses, and individuals. My journey wasn’t a straight path; it was filled with late nights, early mornings, challenges, and victories. From diving into computer science to exploring the depths of structural engineering, I’ve indulged my curiosity and learned something valuable at every turn.
 
 ### My Professional Path
 

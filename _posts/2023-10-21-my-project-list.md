@@ -6,11 +6,9 @@ tags: [intro, projects, career]
 comments: true
 ---
 
-In a world where data is omnipresent, I seek opportunities that challenge me to innovate, contribute, and elevate the technological landscape. My goal is to continue being a catalyst for change and efficiency in the industry.
-
 ## Diving into My Projects: The Excitement of Creation and Innovation
 
-Embarking on projects that push the boundaries of traditional data use, I've had the exhilarating opportunity to explore, create, and innovate. Let's explore some of the projects that have marked significant milestones in my journey:
+Let's explore some of the projects that have marked significant milestones in my journey:
 
 ## d3-scrollama
 **Project Demo:** [d3-scrollama](https://cynthialmy.github.io/d3-scrollama/)
@@ -44,6 +42,6 @@ In this personal endeavor, I delved into the world of data contracts and their s
 
 ## Connecting for a Data-Driven Future
 
-My projects reflect my commitment to transforming data into accessible, engaging, and informative insights. If they spark inspiration, curiosity, or ideas for collaboration, I invite you to reach out, explore further, or exchange thoughts.
+My projects reflect my commitment to transforming data into accessible, engaging, and informative insights.
 
 Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or simply to brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
