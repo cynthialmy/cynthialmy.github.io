@@ -12,6 +12,11 @@ In a world where data is omnipresent, I seek opportunities that challenge me to 
 
 Embarking on projects that push the boundaries of traditional data use, I've had the exhilarating opportunity to explore, create, and innovate. Let's explore some of the projects that have marked significant milestones in my journey:
 
+## d3-scrollama
+**Project Demo:** [d3-scrollama](https://cynthialmy.github.io/d3-scrollama/)
+
+D3-scrollama was a foray into storytelling with data. This demo website showcases how scrollytelling can make data-driven stories more interactive and engaging, providing a narrative context to complex datasets.
+
 ## d3-Interaction
 **Project Repository:** [d3-Interaction](https://cynthialmy.github.io/d3-Interaction/)
 
@@ -36,11 +41,6 @@ BridgeDash stands as one of my more comprehensive projects. This interactive web
 **Project Insights:** [book_summaries](https://cynthialmy.github.io/book_summaries/)
 
 In this personal endeavor, I delved into the world of data contracts and their significance in maintaining data quality. I shared summaries of insightful books, highlighting universal data challenges and the role of data contracts in addressing them.
-
-## d3-scrollama
-**Project Demo:** [d3-scrollama](https://cynthialmy.github.io/d3-scrollama/)
-
-D3-scrollama was a foray into storytelling with data. This demo website showcases how scrollytelling can make data-driven stories more interactive and engaging, providing a narrative context to complex datasets.
 
 ## Connecting for a Data-Driven Future
 
