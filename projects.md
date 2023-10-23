@@ -1,9 +1,6 @@
 ---
-layout: post
+layout: page
 title: "My Projects"
-subtitle: Between Engineering and Interactive Visualizations
-tags: [intro, projects, career]
-comments: true
 ---
 
 ## Diving into My Projects: The Excitement of Creation and Innovation
@@ -34,11 +31,6 @@ This repository was an exciting venture into restyling an existing website for C
 **Live Application:** [bridge-dash](https://bridge-dash-90f35a395f88.herokuapp.com/)
 
 BridgeDash stands as one of my more comprehensive projects. This interactive web application offers insights into various aspects of bridges, from distribution to condition ratings. It's a testament to how data visualization can transform raw data into informative, easy-to-understand visuals.
-
-## book_summaries
-**Project Insights:** [book_summaries](https://cynthialmy.github.io/book_summaries/)
-
-In this personal endeavor, I delved into the world of data contracts and their significance in maintaining data quality. I shared summaries of insightful books, highlighting universal data challenges and the role of data contracts in addressing them.
 
 ## Connecting for a Data-Driven Future
 

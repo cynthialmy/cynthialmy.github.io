@@ -21,10 +21,12 @@ author: Cynthia Li
 
 navbar-links:
     About Me: "aboutme"
-    Websites:
-        - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
-        - Medium: "https://medium.com/@cynthiamengyuanli/"
-    Author's GitHub: "https://github.com/cynthialmy"
+    Contact Me: "contactme"
+    # Websites:
+    #     - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
+    #     - Medium: "https://medium.com/@cynthiamengyuanli/"
+    Projects: "projects"
+    # GitHub: "https://github.com/cynthialmy"
 
 ################
 # --- Logo --- #
@@ -50,12 +52,12 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
     email: "cynthiamengyuanli@gmail.com"
-    rss: true # remove this line if you don't want to show an RSS link at the bottom
+    #  rss: true # remove this line if you don't want to show an RSS link at the bottom
     github: cynthialmy
     #  twitter: daattali
     #  patreon: DeanAttali
     #  youtube: c/daattali
-    medium: cynthiamengyuanli
+    #  medium: cynthiamengyuanli
     #  reddit: yourname
     linkedin: mengyuan-li-cynthia
     #  xing: yourname
@@ -63,7 +65,7 @@ social-network-links:
     #  snapchat: deanat78
     #  instagram: deanat78
     spotify: 12142026893
-    telephone: +46705696136
+    # telephone: +46705696136
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
@@ -95,7 +97,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+# url-pretty: "MyWebsite.com"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -250,7 +252,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Europe/Stockholm"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
