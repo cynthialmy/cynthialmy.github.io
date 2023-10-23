@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My Resume and Project List"
-subtitle: Bridging the Gap Between Data Engineering and Interactive Visualizations
+subtitle: Bridging the Gap Between Engineering and Interactive Visualizations
 tags: [intro, projects, career]
 comments: true
 ---
