@@ -1,6 +1,7 @@
 ---
 layout: page
-title: My Resume
+title: Cynthia Li
+subtitle: Software Engineer | Product Manager | D3.js Visualizer
 ---
 
 ## A Glimpse Into My Journey

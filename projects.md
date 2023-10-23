@@ -1,11 +1,8 @@
 ---
 layout: page
-title: "My Projects"
+title: My Projects
+subtitle: The Excitement of Creation
 ---
-
-## Diving into My Projects: The Excitement of Creation and Innovation
-
-Let's explore some of the projects that have marked significant milestones in my journey:
 
 ## d3-scrollama
 **Project Demo:** [d3-scrollama](https://cynthialmy.github.io/d3-scrollama/)
