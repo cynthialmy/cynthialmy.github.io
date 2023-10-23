@@ -30,25 +30,37 @@ Welcome to the hub of my creative endeavors in the world of data and technology.
 
 ### Innovative Solutions for Everyday Challenges
 - **[Real-time Display for Machine Status](https://www.youtube.com/watch?v=c284vsNPz00)**  
-  [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
+
   Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences.
+
+  [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
 
 ### Advanced Infrastructure Analysis
 - **[City-Scale Infrastructure Intelligence via Dynamic Analysis](https://www.youtube.com/watch?v=xRT6hPYlndc)**  
-  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
-  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/cpcj_DlfkNQ/0.jpg)](https://www.youtube.com/watch?v=cpcj_DlfkNQ)
-  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/zTncLSXekfI/0.jpg)](https://www.youtube.com/watch?v=zTncLSXekfI)
+
   Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living.
+
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
+
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/cpcj_DlfkNQ/0.jpg)](https://www.youtube.com/watch?v=cpcj_DlfkNQ)
+
+  [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/zTncLSXekfI/0.jpg)](https://www.youtube.com/watch?v=zTncLSXekfI)
 
 ### Workshops and Analysis
 - **[Sentiment Analysis with Python Workshop](https://www.youtube.com/watch?v=ywkblnkrr2k)**  
-  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+
   Step into the world of sentiment analysis. This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
+  
+  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+
 
 - **[Geospatial Analysis of Yelp User Behavior](https://www.youtube.com/watch?v=cZWj-torlqY)**  
-  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
-  [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
+
   Uncover patterns in consumer behavior. This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
+  
+  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+
+  [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
 
 ## Explore More
 
