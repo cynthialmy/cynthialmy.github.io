@@ -29,6 +29,8 @@ This repository was an exciting venture into restyling an existing website for C
 
 BridgeDash stands as one of my more comprehensive projects. This interactive web application offers insights into various aspects of bridges, from distribution to condition ratings. It's a testament to how data visualization can transform raw data into informative, easy-to-understand visuals.
 
+For a deeper dive into my projects and contributions, check out my [GitHub](https://github.com/cynthialmy).
+
 ## Connecting for a Data-Driven Future
 
 My projects reflect my commitment to transforming data into accessible, engaging, and informative insights.
