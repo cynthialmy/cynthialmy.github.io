@@ -20,12 +20,12 @@ author: Cynthia Li
 ###############################################
 
 navbar-links:
+    Projects: "projects"
     About Me: "aboutme"
     Contact Me: "contactme"
     # Websites:
     #     - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
     #     - Medium: "https://medium.com/@cynthiamengyuanli/"
-    Projects: "projects"
     # GitHub: "https://github.com/cynthialmy"
 
 ################
