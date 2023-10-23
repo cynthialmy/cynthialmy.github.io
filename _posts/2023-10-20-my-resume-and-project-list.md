@@ -25,7 +25,7 @@ In the realm of data, I navigate with ease, driven by a robust academic foundati
   M.Sc. in Computer Science, GPA: 3.77/4.0  
   Feb. 2021 – Aug. 2023
 
-  - **Georgia Institute of Technology**  
+- **Georgia Institute of Technology**  
   M.Sc. in Structural Engineering, GPA: 3.8/4.0  
   Aug. 2017 – Dec. 2018
 
