@@ -1,11 +1,11 @@
 ---
 layout: page
-title: About me
+title: My Resume
 ---
 
 ## A Glimpse Into My Journey
 
-I am Cynthia, a dedicated professional specializing in data engineering, analytics, and product management. My passion lies in harnessing the power of data to unravel complex problems and drive strategic enhancements in various technological domains.
+I am dedicated in data engineering, analytics, and product management. My passion lies in harnessing the power of data to solve complex problems.
 
 ### My Academic Roots
 - **Georgia Institute of Technology**  

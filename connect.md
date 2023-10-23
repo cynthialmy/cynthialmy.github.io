@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact me
+title: Connect with me
 subtitle: Why you'd want to grab a coffee with me
 ---
 
