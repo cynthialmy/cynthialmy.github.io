@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "My Project List"
-subtitle: Bridging the Gap Between Engineering and Interactive Visualizations
+title: "My Projects"
+subtitle: Between Engineering and Interactive Visualizations
 tags: [intro, projects, career]
 comments: true
 ---
