@@ -6,7 +6,7 @@ tags: [data-contract, project]
 comments: true
 ---
 
-The landscape of data management is complex, and with the growing trend of decentralized data assets, having a straightforward system to manage data contracts is essential. Recognizing this need, we present the Data Contract Manager, a web application focused on facilitating the handling of YAML-based data contracts within your organization.
+The landscape of data management is complex, and with the growing trend of decentralized data assets, having a straightforward system to manage data contracts is essential. Recognizing this need, the Data Contract Manager, a web application focuses on facilitating the handling of YAML-based data contracts within your organization.
 
 **Why Data Contracts Matter**
 
@@ -36,6 +36,6 @@ Functionality is at the forefront of what the Data Contract Manager provides. Us
 
 **Explore Further**
 
-The Data Contract Manager stands as a valuable resource for those aiming to enhance their data management practices. For detailed instructions on setting up and utilizing this tool, our guide on GitHub is available for reference: [Data Contract Manager](https://github.com/volvo-cars/data-contract-manager).
+The Data Contract Manager stands as a valuable resource for those aiming to enhance their data management practices. For detailed instructions on setting up and utilizing this tool, refer to GitHub: [Data Contract Manager](https://github.com/volvo-cars/data-contract-manager).
 
 By employing a clear and effective system for managing data contracts, you pave the way for improved governance and quality control in your data operations.
