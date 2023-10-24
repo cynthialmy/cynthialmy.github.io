@@ -4,8 +4,6 @@ title: My Projects
 subtitle: The Excitement of Creation
 ---
 
-Welcome to the hub of my creative endeavors in the world of data and technology. Below, you'll find a curated list of projects, each showcasing different aspects of my skills and passions. From data visualization to real-world problem-solving, each project represents a piece of my journey.
-
 ## Featured Projects
 
 ### Interactive Data Visualizations
@@ -28,17 +26,12 @@ Welcome to the hub of my creative endeavors in the world of data and technology.
 
 ## Video Showcases
 
-### Innovative Solutions for Everyday Challenges
-- **[Real-time Display for Machine Status](https://www.youtube.com/watch?v=c284vsNPz00)**  
-
-  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences.
-
-  [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
-
 ### Advanced Infrastructure Analysis
 - **[City-Scale Infrastructure Intelligence via Dynamic Analysis](https://www.youtube.com/watch?v=xRT6hPYlndc)**  
 
   Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living.
+
+  [Poster](resources/2017-POSTER-FYP.pdf)
 
   [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
 
@@ -54,13 +47,22 @@ Welcome to the hub of my creative endeavors in the world of data and technology.
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
 
 
-- **[Geospatial Analysis of Yelp User Behavior](https://www.youtube.com/watch?v=cZWj-torlqY)**  
+- **[Geospatial Analysis of Yelp User Behavior](https://www.youtube.com/watch?v=0bh1kNOlYd8)**  
 
   Uncover patterns in consumer behavior. This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
   
-  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
+  [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/0bh1kNOlYd8/0.jpg)](https://www.youtube.com/watch?v=0bh1kNOlYd8)
 
   [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
+
+### Innovative Solutions for Everyday Challenges
+- **[Real-time Display for Machine Status](https://www.youtube.com/watch?v=c284vsNPz00)**  
+
+  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST President's Cup Golden Awardee.
+
+  [Poster](resources/2015-poster-president-cup.pdf)
+
+  [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
 
 ## Explore More
 
