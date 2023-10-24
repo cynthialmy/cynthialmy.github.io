@@ -6,6 +6,10 @@ subtitle: The Excitement of Creation
 
 ## Featured Projects
 
+### Data Management Solutions
+- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**  
+  Simplify the intricacies of managing data contracts with this web-based application. The Data Contract Manager, designed to interact seamlessly with Azure services, allows for the efficient handling of YAML-based data contracts. From creation to validation, and from storage to retrieval, it ensures your data agreements are up to standard and easily accessible. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
+
 ### Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**  
   Explore the art of storytelling through data. This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
