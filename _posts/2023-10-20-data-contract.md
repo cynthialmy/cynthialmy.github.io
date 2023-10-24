@@ -305,16 +305,13 @@ And finally, your feedback and thoughts are always welcome!
 ### Good resources
 
 - PayPal has recently published their data contract definition here:
-
-[GitHub - paypal/data-contract-template: Template for a data contract used in a data mesh.](https://github.com/paypal/data-contract-template/tree/main)
+  [GitHub - paypal/data-contract-template: Template for a data contract used in a data mesh.](https://github.com/paypal/data-contract-template/tree/main)
 
 - Some other helpful initiatives:
+  [Data Mesh Manager](https://www.datamesh-manager.com/)
+  [Data Contract Specification](https://datacontract.com/)
 
-[Data Mesh Manager](https://www.datamesh-manager.com/)
-
-[Data Contract Specification](https://datacontract.com/)
-
-Technical Stack to look into:
+#### Technical Stack to look into:
 
 - Real-time data ingestion
     - Schema validation:
