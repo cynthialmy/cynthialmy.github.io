@@ -4,33 +4,9 @@ title: Cynthia Li
 subtitle: Software Engineer | Product Manager | D3.js Visualizer
 ---
 
-## A Glimpse Into My Journey
+## Professional Footprints
 
-I am dedicated in data engineering, analytics, and product management. My passion lies in harnessing the power of data to solve complex problems.
-
-### My Academic Roots
-- **Georgia Institute of Technology**  
-  M.Sc. in Computer Science, GPA: 3.77/4.0  
-  Feb. 2021 – Aug. 2023
-
-- **Georgia Institute of Technology**  
-  M.Sc. in Structural Engineering, GPA: 3.8/4.0  
-  Aug. 2017 – Dec. 2018
-
-- **Hong Kong University of Science and Technology**  
-  B.Eng. in Structural Engineering & Minor in Computer Science, High Honors  
-  Sept. 2013 – June 2017
-
-- **Waseda University** (Exchange Program)  
-  Tokyo, Japan  
-  Feb. 2016 - July 2016
-
-- **University of New South Wales (UNSW)** (Exchange Program)  
-  Sydney, Australia  
-  Sept. 2014 - Feb. 2015
-
-### Professional Footprints
-My career path has been a diverse tapestry of roles and contributions, each a building block towards my expertise in data visualization, structural engineering, and beyond. Here's a snapshot of my professional journey:
+I am dedicated in data engineering, analytics, and product management. My passion lies in harnessing the power of data to solve complex problems. Here are some of my most recent experiences:
 
 ### Volvo Cars
 _Data Platform Engineer - Global Rotation Program_  
@@ -69,6 +45,27 @@ Hangzhou, China, July 2021 - Nov 2021
 - Integrated advanced analytics using Apache Spark and Tableau, bolstering data-driven decisions.
 
 ---
+
+### My Academic Roots
+- **Georgia Institute of Technology**  
+  M.Sc. in Computer Science, GPA: 3.77/4.0  
+  Feb. 2021 – Aug. 2023
+
+- **Georgia Institute of Technology**  
+  M.Sc. in Structural Engineering, GPA: 3.8/4.0  
+  Aug. 2017 – Dec. 2018
+
+- **Hong Kong University of Science and Technology**  
+  B.Eng. in Structural Engineering & Minor in Computer Science, High Honors  
+  Sept. 2013 – June 2017
+
+- **Waseda University** (Exchange Program)  
+  Tokyo, Japan  
+  Feb. 2016 - July 2016
+
+- **University of New South Wales (UNSW)** (Exchange Program)  
+  Sydney, Australia  
+  Sept. 2014 - Feb. 2015
 
 ### Skills That Power My Goals
 - **Certifications:** SAP Certified Development Associate, CITI Program Certifications in Human Research and Responsible Conduct of Research.
