@@ -21,6 +21,14 @@ I am dedicated in data engineering, analytics, and product management. My passio
   B.Eng. in Structural Engineering & Minor in Computer Science, High Honors  
   Sept. 2013 – June 2017
 
+- **Waseda University** (Exchange Program)  
+  Tokyo, Japan  
+  Feb. 2016 - July 2016
+
+- **University of New South Wales (UNSW)** (Exchange Program)  
+  Sydney, Australia  
+  Sept. 2014 - Feb. 2015
+
 ### Professional Footprints
 My career path has been a diverse tapestry of roles and contributions, each a building block towards my expertise in data visualization, structural engineering, and beyond. Here's a snapshot of my professional journey:
 
