@@ -27,11 +27,11 @@ subtitle: The Excitement of Creation
 ## Video Showcases
 
 ### Advanced Infrastructure Analysis
-- **[City-Scale Infrastructure Intelligence via Dynamic Analysis](https://www.youtube.com/watch?v=xRT6hPYlndc)**  
+- **[City-Scale Infrastructure Intelligence via Dynamic Analysis](resources/2017-POSTER-FYP.pdf)**  
 
-  Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living.
+  Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living. This project was 2017 HKUST President's Cup Final List.
 
-  [Poster](resources/2017-POSTER-FYP.pdf)
+  #### Video:
 
   [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
 
@@ -40,27 +40,31 @@ subtitle: The Excitement of Creation
   [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/zTncLSXekfI/0.jpg)](https://www.youtube.com/watch?v=zTncLSXekfI)
 
 ### Workshops and Analysis
-- **[Sentiment Analysis with Python Workshop](https://www.youtube.com/watch?v=ywkblnkrr2k)**  
+- **[Sentiment Analysis with Python Workshop](https://github.com/cynthialmy/Sentiment-Analysis-with-Scikit-learn)**  
 
   Step into the world of sentiment analysis. This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
-  
+
+  #### Video:
+
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
 
 
-- **[Geospatial Analysis of Yelp User Behavior](https://www.youtube.com/watch?v=0bh1kNOlYd8)**  
+- **[Geospatial Analysis of Yelp User Behavior](https://github.com/cynthialmy/Geospatial_Analysis_for_Yelp_User_Behaviour/blob/main/team010poster.pdf)**  
 
   Uncover patterns in consumer behavior. This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
-  
+
+  #### Video:
+
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/0bh1kNOlYd8/0.jpg)](https://www.youtube.com/watch?v=0bh1kNOlYd8)
 
   [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
 
 ### Innovative Solutions for Everyday Challenges
-- **[Real-time Display for Machine Status](https://www.youtube.com/watch?v=c284vsNPz00)**  
+- **[Real-time Display for Machine Status](resources/2015-poster-president-cup.pdf)**  
 
-  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST President's Cup Golden Awardee.
+  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST [President's Cup Golden Awardee](https://www.ce.ust.hk/news/gold-award-2014-2015-presidents-cup).
 
-  [Poster](resources/2015-poster-president-cup.pdf)
+  #### Video:  
 
   [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
 
