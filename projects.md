@@ -6,10 +6,6 @@ subtitle: The Excitement of Creation
 
 ## Featured Projects
 
-### Data Management Solutions
-- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**  
-  Managing data contracts with this web-based application. The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
-
 ### Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**  
   Explore the art of storytelling through data. This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
@@ -21,12 +17,20 @@ subtitle: The Excitement of Creation
   Discover the core of data visualization. This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
 ### Web and UI/UX Design
+
+- **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**  
+  Capture and reflect on moments of joy and dopamine release with this sleek application. Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
+
 - **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**  
   Witness the transformation of an educational website. This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
 
 ### Data-Driven Web Applications
 - **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**  
   Navigate through a comprehensive analysis of infrastructure health. BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
+
+### Data Management Solutions
+- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**  
+  Managing data contracts with this web-based application. The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
 
 ## Video Showcases
 
