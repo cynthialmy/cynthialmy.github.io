@@ -7,9 +7,7 @@ comments: true
 ---
 
 
-## Introduction
-
-In a world driven by the constant evolution of technology, developers seek innovative tools to build seamless and user-friendly applications. I recently found out one such tool that has carved a niche in web development is **Imba**. In this blog post, we will explore a project built using Imba, known as the **Dopamine Box**.
+I recently found out one such tool that has carved a niche in web development is **Imba**. In this blog post, we will explore a project built using Imba, known as the **Dopamine Box**.
 
 ## Discovering Imba
 
