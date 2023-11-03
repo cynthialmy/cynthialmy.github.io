@@ -90,4 +90,4 @@ In a world where data is omnipresent, I seek opportunities that challenge me to 
 [Reference Letters](resources/reference_letters.pdf)
 
 
-Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or simply to brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
+Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!

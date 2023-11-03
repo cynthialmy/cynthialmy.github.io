@@ -15,7 +15,7 @@ I recently found out one such tool that has carved a niche in web development is
 
 ## The Essence of Dopamine Box
 
-**Dopamine Box** is an elegant application designed to facilitate users in logging their daily activities and moods. In the chaotic routine of everyday life, it becomes crucial to acknowledge and document instances that lead to the release of dopamine - the neurotransmitter associated with pleasure and satisfaction. Dopamine Box offers a minimalist yet effective platform for users to record these joyous moments and retrospectively reflect on them.
+**Dopamine Box** is an elegant application designed to facilitate users in logging their daily activities and moods. Dopamine Box offers a minimalist yet effective platform for users to record these joyous moments and retrospectively reflect on them.
 
 ### Features:
 - **Activity Logging**: Users can quickly jot down activities that brought them joy.
@@ -44,4 +44,4 @@ npm run build
 
 ## Conclusion
 
-The **Dopamine Box** project is a testament to the power and flexibility that Imba brings to the table. By seamlessly integrating features and delivering fast performance, it serves as a learning curve for aspiring developers. Dive into the world of Imba, explore the nuances of the Dopamine Box, and embark on a journey of continuous learning and self-reflection. To learn more about Imba, visit [imba.io](https://imba.io/).
+The **Dopamine Box** project is a testament to the power and flexibility that Imba brings to the table. By seamlessly integrating features and delivering fast performance, it serves as a learning curve for aspiring developers. To learn more about Imba, visit [imba.io](https://imba.io/).
