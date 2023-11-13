@@ -9,7 +9,7 @@ subtitle: Software Engineer | Product Manager | D3.js Visualizer
 I am dedicated in data engineering, analytics, and product management. My passion lies in harnessing the power of data to solve complex problems. Here are some of my most recent experiences:
 
 ### Volvo Cars
-_Data Platform Engineer - Global Rotation Program_  
+_Data Platforms - Global Rotation Program_  
 Gothenburg, Sweden, Aug 2023 - Present  
 - Enhanced data platforms and integrated data mesh architecture, promoting decentralized data ownership.
 - Formulated and established data contracts, standardizing data access and usage across teams.
