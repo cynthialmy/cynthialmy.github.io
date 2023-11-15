@@ -32,11 +32,17 @@ The slow response time of LLMs is a significant drawback, especially in applicat
 ### 1. **Develop a Custom Toolchain**
 Instead of solely depending on pre-trained models, consider creating a bespoke toolchain. This method, which combines a fine-tuned LLM with custom compilers and models, can yield faster, more reliable, and cost-effective solutions.
 
+![architecture](../assets/img/architecture.png)
+
 ### 2. **Begin with Non-AI Solutions**
 Start by addressing the problem with standard programming techniques. This approach helps pinpoint where AI can truly add value, avoiding the pitfall of over-relying on AI for solvable issues through traditional coding.
 
+![conversation-array](../assets/img/conversation-array.png)
+
 ### 3. **Employ Specialized AI Models**
 Use AI models specifically where they fill distinct gaps. For example, object detection models can be efficiently trained for specific tasks using platforms like Google's Vertex AI or LangChain for highly customized applications.
+
+![performance-checklist](../assets/img/performance-checklist.png)
 
 ### 4. **Merge Code with AI**
 A balanced mix of hand-coded logic and specialized AI models can lead to efficient and impactful solutions. This hybrid approach fosters the creation of responsive, high-quality products.
