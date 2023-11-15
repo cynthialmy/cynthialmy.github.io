@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Building AI Apps: Insights from Builder.io"
-subtitle: Rethinking AI Product Development
+title: "Do Not Build AI Apps like Everyone Else"
+subtitle: Make GREAT AI Product, Not ANOTHER AI Product
 tags: [LLM, AI, Full-Stack]
 comments: true
 ---
