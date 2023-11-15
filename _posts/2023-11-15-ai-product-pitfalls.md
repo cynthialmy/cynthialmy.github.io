@@ -6,7 +6,9 @@ tags: [LLM, AI, Full-Stack]
 comments: true
 ---
 
-I recently delved into an enlightening piece on [Builder.io](https://www.builder.io/blog/build-ai) about the common traps in AI product development, offering a novel perspective on crafting AI applications. This piece struck a chord with me, particularly against the backdrop of the rapidly evolving AI landscape. It's common to see a trend where developers mimic existing AI products or simply overlay a language model. In this context, I want to highlight the potential of tools like LangChain and vector stores in creating truly valuable AI applications, rather than mere superficial replicas.
+I recently delved into an enlightening piece on [Builder.io](https://www.builder.io/blog/build-ai) about the common traps in AI product development, offering a novel perspective on crafting AI applications. This piece struck a chord with me, particularly against the backdrop of the rapidly evolving AI landscape. 
+
+It's common to see a trend where developers mimic existing AI products or simply overlay a language model. In this context, I want to highlight the potential of tools like LangChain and vector stores in creating truly valuable AI applications, rather than mere superficial replicas.
 
 ## The Pitfalls of AI Products - What to Avoid
 
