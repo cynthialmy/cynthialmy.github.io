@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building AI Apps: Insights from Builder.io
+title: "Building AI Apps: Insights from Builder.io"
 subtitle: Rethinking AI Product Development
 tags: [LLM, AI, Full-Stack]
 comments: true
