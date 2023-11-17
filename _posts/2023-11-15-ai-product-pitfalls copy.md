@@ -2,7 +2,7 @@
 layout: post
 title: Make GREAT AI Product, Not ANOTHER AI Product
 subtitle: "Do Not Build AI Apps like Everyone Else"
-tags: [LLM, AI, Full-Stack]
+tags: [LLM, AI, Full-Stack, OpenAI, Azure, LangChain, GPT-4]
 comments: true
 ---
 
