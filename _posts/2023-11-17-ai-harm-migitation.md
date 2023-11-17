@@ -2,7 +2,7 @@
 layout: post
 title: Mitigating Potential Harms in Generative AI Solutions
 subtitle: "AI Safety - The Four-Layered Approach"
-tags: [LLM, AI, Full-Stack]
+tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
 comments: true
 ---
 
@@ -32,4 +32,4 @@ This layer encompasses the application interface and user documentation. Designi
 
 ## Conclusion
 
-Mitigating potential harms in generative AI solutions is a multi-layered process requiring careful consideration at each step. By understanding and applying these layers effectively, we can innovate safely in the AI realm, especially in sectors like digital insurance. It’s about harnessing the power of AI responsibly, ensuring our solutions are not only innovative but also safe and reliable.
+Mitigating potential harms in generative AI solutions is a multi-layered process requiring careful consideration at each step. By understanding and applying these layers effectively, we can innovate safely in the AI realm. It’s about harnessing the power of AI responsibly, ensuring our solutions are not only innovative but also safe and reliable.
