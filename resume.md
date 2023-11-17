@@ -69,7 +69,7 @@ My experience at Alibaba, a leading multinational technology company, involved b
 
 ### Skills That Power My Goals
 - **Certifications:** SAP Certified Development Associate, CITI Program Certifications in Human Research and Responsible Conduct of Research.
-- **Programming:** Proficient in Python, R, SQL, JavaScript, Java, Scala, Kotlin, Swift, MATLAB, LaTeX, D3, Pandas, Numpy, Scipy, Tableau.
+- **Programming:** Proficient in Python, JavaScript, Swift, React, R, SQL,  Java, Scala, Kotlin, LangChain.js, OpenAI API, Imba, D3.js.
 - **Tools:** Experienced with Git, Jira, Confluence, Miro, Figma.
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner in Japanese.
 
