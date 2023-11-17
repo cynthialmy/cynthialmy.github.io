@@ -20,4 +20,4 @@ Let’s make it happen. Reach out, and let’s schedule that coffee. Virtual or 
 
 ---
 
-Feel free to reach out directly through my [email](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just an email away!
+Feel free to reach out directly through my [email: cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just an email away!
