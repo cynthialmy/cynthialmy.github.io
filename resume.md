@@ -68,7 +68,7 @@ My experience at Alibaba, a leading multinational technology company, involved b
   Sept. 2014 - Feb. 2015
 
 ### Skills That Power My Goals
-- **Certifications:** SAP Certified Development Associate, CITI Program Certifications in Human Research and Responsible Conduct of Research.
+- **Certifications:** MicroSoft Develop Generative AI solutions with Azure OpenAI Service Certificate, SAP Certified Development Associate, CITI Program Certifications in Human Research and Responsible Conduct of Research.
 - **Programming:** Proficient in Python, JavaScript, Swift, React, R, SQL,  Java, Scala, Kotlin, LangChain.js, OpenAI API, Imba, D3.js.
 - **Tools:** Experienced with Git, Jira, Confluence, Miro, Figma.
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner in Japanese.
