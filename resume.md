@@ -26,18 +26,27 @@ At Volvo Cars, I involve in developing and implementing data contracts within Da
 ### Atkins (SNC-Lavalin)
 _Analyst Engineer, LEED GA_  
 Atlanta, GA, Jan 2019 - Jun 2021, Aug 2022 - July 2023  
+
+At Atkins (SNC-Lavalin), my role as an Analyst Engineer involved spearheading data modeling projects and developing software tools. These initiatives not only improved model accuracy by 23% but also optimized the bridge rating process, enhancing efficiency by 40%. My focus on leveraging data insights significantly contributed to better decision-making and user experience enhancement.
+
 - Led data modeling projects, boosting model accuracy and utilizing advanced methods for structural analysis.
 - Developed software tools, optimizing the rating process for bridges and enhancing user experience through data insights.
 
 ### Georgia Institute of Technology
 _Graduate Student Assistant_  
 Atlanta, GA, Jan 2023 - May 2023  
+
+During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management.
+
 - Created and executed Python workshops, significantly increasing student engagement.
 - Led Python-related workshops, managed lab resources, and assisted in numerous research projects.
 
 ### SAP
 _Data Integration and Application Consultant_  
 Shanghai, China, Feb 2022 - Aug 2022  
+
+At SAP, my role as a Data Integration and Application Consultant centered around ensuring EDIFACT message compliance and managing the expansion of Market Message Transfer for MaCo. This position allowed me to contribute significantly to improving user adoption by 20% and reducing software bugs by 15%. My efforts in streamlining testing processes and facilitating effective team communication were pivotal in enhancing overall productivity and data-driven decision-making.
+
 - Ensured message compliance, providing essential validation services.
 - Managed the expansion of Market Message Transfer, improving user adoption and team productivity.
 
