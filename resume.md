@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Li
-subtitle: Software Engineer | Product Manager | D3.js Visualizer
+subtitle: Software Developer | Product Manager | AI Engineer
 ---
 
 ## Summary
