@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Do Not Build AI Apps like Everyone Else"
-subtitle: Make GREAT AI Product, Not ANOTHER AI Product
+title: Make GREAT AI Product, Not ANOTHER AI Product
+subtitle: "Do Not Build AI Apps like Everyone Else"
 tags: [LLM, AI, Full-Stack]
 comments: true
 ---
