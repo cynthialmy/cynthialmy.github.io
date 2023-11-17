@@ -4,9 +4,21 @@ title: Cynthia Li
 subtitle: Software Engineer | Product Manager | D3.js Visualizer
 ---
 
-## Professional Footprints
+## Summary
 
-I am dedicated in data engineering, analytics, and product management. My passion lies in harnessing the power of data to solve complex problems. Here are some of my most recent experiences:
+I bring a diverse background in data engineering, product management, and backend development. My journey has been marked by significant experiences across various domains, each contributing to my comprehensive skill set.
+
+At Volvo Cars, I was deeply involved in developing and implementing data contracts within Data & Analytics Platforms. This experience honed my skills in ensuring data consistency, quality, and compliance, which are crucial for robust data-driven environments.
+
+In my role as a Product Manager at Airwallex, a global transfer payment network, I was instrumental in optimizing user flows and expanding the SWIFT payment network. This role enabled me to empower over 100,000 enterprise customers worldwide, enhancing their financial operations and global reach.
+
+My experience at Alibaba, a leading multinational technology company, involved backend development in the e-commerce and retail sectors. This experience provided me with a unique perspective on large-scale system architecture and user-centric product development.
+
+I am eager to apply my expertise in product management and data-driven decision-making. My approach is centered around gathering insightful data to inform product strategies, ensuring that our solutions are not only innovative but also deeply aligned with user needs and market trends.
+
+I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
+
+## Professional Footprints
 
 ### Volvo Cars
 _Data Platforms - Global Rotation Program_  
