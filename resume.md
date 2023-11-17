@@ -17,7 +17,9 @@ I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the L
 ### Volvo Cars
 _Data Platforms - Global Rotation Program_  
 Gothenburg, Sweden, Aug 2023 - Present  
+
 At Volvo Cars, I involve in developing and implementing data contracts within Data & Analytics Platforms. This experience honed my skills in ensuring data consistency, quality, and compliance, which are crucial for robust data-driven environments.
+
 - Enhanced data platforms and integrated data mesh architecture, promoting decentralized data ownership.
 - Formulated and established data contracts, standardizing data access and usage across teams.
 
@@ -42,14 +44,18 @@ Shanghai, China, Feb 2022 - Aug 2022
 ### Airwallex, Global Transfer Payment Network
 _Payment Product Manager_  
 Shanghai, China, Nov 2021 - Feb 2022  
+
 In my role as a Product Manager at Airwallex, a global transfer payment network, I was instrumental in optimizing user flows and expanding the SWIFT payment network. This role enabled me to empower over 100,000 enterprise customers worldwide, enhancing their financial operations and global reach.
+
 - Optimized Batch Maker-Checker user flow, achieving efficiency and customer satisfaction improvements.
 - Led the expansion of the SWIFT payment network, enhancing market presence and process efficiency.
 
 ### Alibaba Group, Department of New Retail
 _Data Integration Engineer_  
 Hangzhou, China, July 2021 - Nov 2021  
+
 My experience at Alibaba, a leading multinational technology company, involved backend development in the e-commerce and retail sectors. This experience provided me with a unique perspective on large-scale system architecture and user-centric product development.
+
 - Developed a system for real-time customer complaints monitoring, significantly reducing false issues.
 - Integrated advanced analytics using Apache Spark and Tableau, bolstering data-driven decisions.
 
