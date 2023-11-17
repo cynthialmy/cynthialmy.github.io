@@ -6,9 +6,7 @@ subtitle: Software Engineer | Product Manager | D3.js Visualizer
 
 ## Summary
 
-I bring a diverse background in software engineering, product management, and backend development. 
-
-I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
+I bring a diverse background in software engineering, product management, and backend development - gathering insightful data to inform product strategies, ensuring that our solutions are not only innovative but also deeply aligned with user needs and market trends.
 
 ### Volvo Cars
 _Data Platforms - Global Rotation Program_  
@@ -82,10 +80,8 @@ My experience at Alibaba, a leading multinational technology company, involved b
 - Technology in Finance
 - Global Payment Networks
 
-### Vision That Drives Me
-In a world where data is omnipresent, I seek opportunities that challenge me to innovate, contribute, and elevate the technological landscape. My goal is to continue being a catalyst for change and efficiency in the industry.
-
-My approach is centered around gathering insightful data to inform product strategies, ensuring that our solutions are not only innovative but also deeply aligned with user needs and market trends.
+### Build-Measure-Learn
+I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
 
 ## Download My Resume
 [Download Resume](resources/Cynthia_Li_resume.pdf)
