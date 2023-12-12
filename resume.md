@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Li
-subtitle: Software Developer | Product Manager | AI Engineer
+subtitle: Software & AI Engineer | Product Manager
 ---
 
 ## Summary
