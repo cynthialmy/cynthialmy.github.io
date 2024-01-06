@@ -4,7 +4,7 @@ title: Let's Connect
 subtitle: Why you'd want to grab a coffee with me
 ---
 
-👋 Hi, I'm Cynthia Li, a passionate Software Engineer and Product Manager with a knack for transforming complex data into compelling stories and innovative products. With a rich academic background in Computer Science and Structural Engineering, I've navigated through diverse roles, each teaching me the value of data-driven decision-making and strategic thinking.
+👋 Hi, I'm Cynthia Li, a passionate Software & AI Engineer with a knack for transforming complex data into compelling stories and innovative products. With a rich academic background in Computer Science and Structural Engineering, I've navigated through diverse roles, each teaching me the value of data-driven decision-making and strategic thinking.
 
 ## My journey
 
