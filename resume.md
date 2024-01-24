@@ -20,11 +20,11 @@ Atlanta, GA, Jan 2019 - Jun 2021, Aug 2022 - July 2023
 
 At Atkins (SNC-Lavalin), my role as an Analyst Engineer involved spearheading data modeling projects and developing software tools. These initiatives not only improved model accuracy by 23% but also optimized the bridge rating process, enhancing efficiency by 40%. My focus on leveraging data insights significantly contributed to better decision-making and user experience enhancement.
 
-### Georgia Institute of Technology
+<!-- ### Georgia Institute of Technology
 _Graduate Student Assistant_  
 Atlanta, GA, Jan 2023 - May 2023  
 
-During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management.
+During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management. -->
 
 ### SAP, Cloud Application Services
 _Software Engineer_   
@@ -83,11 +83,11 @@ My experience at Alibaba, a leading multinational technology company, involved b
 ### Build-Measure-Learn
 I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
 
-## Download My Resume
+<!-- ## Download My Resume
 [Download Resume](resources/Cynthia_Li_resume.pdf)
 
 ## References
-[Reference Letters](resources/reference_letters.pdf)
+[Reference Letters](resources/reference_letters.pdf) -->
 
 
 Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
