@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Li
-subtitle: Software Engineer | Product Manager
+subtitle: Software & AI Engineer | PM
 ---
 
 ## Summary
