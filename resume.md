@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Li
-subtitle: Software & AI Engineer | PM
+subtitle: Product Manager | Software & AI Engineer
 ---
 
 ## Summary
@@ -84,10 +84,10 @@ My experience at Alibaba, a leading multinational technology company, involved b
 I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
 
 <!-- ## Download My Resume
-[Download Resume](resources/Cynthia_Li_resume.pdf)
+[Download Resume](resources/Cynthia_Li_resume.pdf) -->
 
 ## References
-[Reference Letters](resources/reference_letters.pdf) -->
+[Reference Letters](resources/reference_letters.pdf)
 
 
 Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
