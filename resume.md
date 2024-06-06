@@ -9,7 +9,7 @@ subtitle: Product Manager | Software & AI Engineer
 I bring a diverse background in product management, and software development - gathering insightful data to inform product strategies, ensuring that our solutions are not only innovative but also deeply aligned with user needs and market trends.
 
 ### Volvo Cars
-_Global Rotation PM @Digital Core Data Platform_
+_Global Rotation PM @Digital Core_
 Gothenburg, Sweden, Aug 2023 - Present
 
 At Volvo Cars, I involve in developing and implementing data contracts within Data & Analytics Platforms. This experience honed my skills in ensuring data consistency, quality, and compliance, which are crucial for robust data-driven environments.
