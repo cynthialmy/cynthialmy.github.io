@@ -13,7 +13,7 @@
 title: Cynthia Li
 
 # Your name to show in the footer
-author: Cynthia Li
+author: Cynthia Mengyuan Li
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -51,21 +51,22 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-    # email: "cynthiamengyuanli@gmail.com"
-    #  rss: true # remove this line if you don't want to show an RSS link at the bottom
-    github: cynthialmy
-    #  twitter: daattali
-    #  patreon: DeanAttali
-    #  youtube: c/daattali
-    #  medium: cynthiamengyuanli
-    #  reddit: yourname
-    linkedin: mengyuan-li-cynthia
-    #  xing: yourname
-    #  stackoverflow: "3943160/daattali"
-    #  snapchat: deanat78
-    #  instagram: deanat78
-    spotify: 12142026893
-    # telephone: +46705696136
+  email: "someone@example.com"
+  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  facebook: deanattali
+  github: daattali
+  twitter: daattali
+  patreon: DeanAttali
+  youtube: c/daattali
+#  medium: yourname
+#  reddit: yourname
+#  linkedin: daattali
+#  xing: yourname
+#  stackoverflow: "3943160/daattali"
+#  snapchat: deanat78
+#  instagram: deanat78
+#  spotify: yourname
+#  telephone: +14159998888
 #  steam: deanat78
 #  twitch: yourname
 #  yelp: yourname
@@ -79,6 +80,8 @@ social-network-links:
 #  kaggle: yourname
 #  hackerrank: yourname
 #  gitlab: yourname
+#  itchio: yourname
+#  untappd: yourname
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
@@ -97,7 +100,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-# url-pretty: "MyWebsite.com"
+url-pretty: "MyWebsite.com"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -128,13 +131,13 @@ navbar-var-length: false
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
@@ -291,4 +294,3 @@ plugins:
     - jekyll-sitemap
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
