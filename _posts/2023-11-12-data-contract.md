@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Book Summary: Driving Data Quality with Data Contracts"
+title: "Driving Data Quality with Data Contracts"
 subtitle: Delve deep into learning about Data Contracts
 tags: [data-contract, work, data-management]
 comments: true
