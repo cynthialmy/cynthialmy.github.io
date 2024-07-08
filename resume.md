@@ -48,7 +48,6 @@ Atlanta, GA, Jan 2019 - Jun 2021, Aug 2022 - July 2023
 - **Software Development and Data Visualization:** Created interactive dashboards using Python’s Bokeh and D3.js, transforming complex datasets into actionable insights. Developed advanced software tools for bridge assessment, increasing workflow efficiency by 40% and reducing dependency on technical support.
 
 
-
 <!-- ### Georgia Institute of Technology
 _Graduate Student Assistant_
 Atlanta, GA, Jan 2023 - May 2023
@@ -99,8 +98,33 @@ My experience at Alibaba, a leading multinational technology company, involved b
 - Technology in Finance
 - Global Payment Networks
 
-### Build-Measure-Learn
-I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
+---
+
+### Education:
+
+#### Georgia Institute of Technology
+*Master of Science (MS), Computer Science*
+*Aug 2021 - Aug 2023 | Atlanta, GA*
+GPA: 3.77/4.0
+
+#### Georgia Institute of Technology
+*Master of Science (MS), Structural Engineering*
+*Aug 2017 - Dec 2018 | Atlanta, GA*
+GPA: 3.8/4.0
+
+#### Hong Kong University of Science and Technology
+*Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*
+*Sept 2013 - Jun 2017 | Hong Kong*
+Honors
+
+---
+
+### Skills:
+
+- **Certifications:** MBA Essentials @ University of Glasgow, IIBA Product Manager, Azure OpenAI Service, SAP BTP Certified Developer
+- **Programming Languages:** Python, JavaScript, Swift, React, R, SQL, Java, Scala, Kotlin, LangChain.js, OpenAI API, Imba, D3.js
+- **Development & Tools:** Git, Jira, Confluence, Miro, Figma
+- **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
 
 <!-- ## Download My Resume
 [Download Resume](resources/Cynthia_Li_resume.pdf) -->
@@ -108,5 +132,7 @@ I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the L
 ## References
 [Reference Letters](resources/reference_letters.pdf)
 
+### Build-Measure-Learn
+I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
 
 Feel free to [contact me](mailto:cynthiamengyuanli@gmail.com) for deeper conversations, collaborative ventures, or brainstorm ideas. Here's to a future where our paths may cross in the pursuit of data-driven innovation!
