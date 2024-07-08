@@ -4,6 +4,7 @@ title: Metadata vs Data Contracts
 subtitle: Understanding the Differences
 tags: [data-contract, work, data-management]
 comments: true
+author: Cynthia Mengyuan Li
 ---
 
 Metadata and data contracts are both foundational concepts in the realm of data management, but they serve distinct purposes and convey different kinds of information. Here's a breakdown of their differences:

@@ -4,9 +4,10 @@ title: Make GREAT AI Product, Not ANOTHER AI Product
 subtitle: "Do Not Build AI Apps like Everyone Else"
 tags: [LLM, AI, Full-Stack, OpenAI, Azure, LangChain, GPT-4]
 comments: true
+author: Cynthia Mengyuan Li
 ---
 
-I recently came across to an insightful piece on [Builder.io](https://www.builder.io/blog/build-ai) about the common traps in AI product development, offering a novel perspective on crafting AI applications. This piece struck a chord with me, particularly against the backdrop of the rapidly evolving AI landscape. 
+I recently came across to an insightful piece on [Builder.io](https://www.builder.io/blog/build-ai) about the common traps in AI product development, offering a novel perspective on crafting AI applications. This piece struck a chord with me, particularly against the backdrop of the rapidly evolving AI landscape.
 
 It's common to see a trend where developers mimic existing AI products or simply overlay a language model. In this context, I want to highlight the potential of tools like LangChain and vector stores in creating truly valuable AI applications, rather than mere superficial replicas.
 

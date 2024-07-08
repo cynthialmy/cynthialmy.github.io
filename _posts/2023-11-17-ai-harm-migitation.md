@@ -4,6 +4,7 @@ title: Mitigating Potential Harms in Generative AI Solutions
 subtitle: "The Four-Layered Approach for AI Safety"
 tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
 comments: true
+author: Cynthia Mengyuan Li
 ---
 
 I've had the opportunity to work with various tools like LangChain and OpenAI API, developing applications, creating vector stores, and fine-tuning models. My journey led me to explore Microsoft's Azure OpenAI Service, which offered a wealth of insights, particularly in mitigating potential harms of generative AI solutions.

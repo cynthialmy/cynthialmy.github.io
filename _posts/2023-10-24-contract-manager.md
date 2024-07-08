@@ -4,6 +4,7 @@ title: Introducing the Data Contract Manager
 subtitle: Navigating Data Contracts Made Easier
 tags: [data-contract, project]
 comments: true
+author: Cynthia Mengyuan Li
 ---
 
 With the growing trend of decentralized data assets, having a straightforward system to manage data contracts is essential. Recognizing this need, the Data Contract Manager, a web application focuses on facilitating the handling of YAML-based data contracts.
