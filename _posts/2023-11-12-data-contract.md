@@ -4,7 +4,7 @@ title: "Book Summary: Driving Data Quality with Data Contracts"
 subtitle: Delve deep into learning about Data Contracts
 tags: [data-contract, work, data-management]
 comments: true
-cover-img: assets/img/data-book-summary-1.png
+# cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/data-book-summary-1.png
 share-img: assets/img/data-book-summary-1.png
 author: Cynthia Mengyuan Li
