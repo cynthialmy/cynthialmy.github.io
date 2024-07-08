@@ -18,13 +18,15 @@ Gothenburg, Sweden | Aug 2023 - Present
 
 ### SAP
 _Associate Technical PM - Cloud Applications_
+
 Shanghai, China | Feb 2022 - Aug 2022
 
 - **Cloud Application Development:** Orchestrated a strategy to refine compliance processes focusing on EDIFACT standards, achieving a 20% enhancement in process accuracy.
 - **Customer-Centric UI/UX Optimization:** Implemented a customer-first approach, integrating feedback loops into development, leading to a 20% increase in user adoption rates and a 15% decrease in software anomalies.
 
 ### Airwallex
-_Intern Product Manager - Global Transfer Payment Network_
+_Intern PM - Global Transfer & Payment Network_
+
 Shanghai, China | Nov 2021 - Feb 2022
 
 - **User Flow Enhancement:** Overhauled the Batch Maker-Checker user flow, resulting in a 20% boost in operational efficiency and a 15% increase in customer satisfaction ratings. Collaborated with UX/UI and engineering teams to enhance process streamlining, reducing transaction processing durations significantly.
@@ -32,18 +34,21 @@ Shanghai, China | Nov 2021 - Feb 2022
 
 ### Alibaba Group
 _Software Engineer - Department of New Retail_
+
 Hangzhou, China | Jul 2021 - Nov 2021
 
 - **Real-Time Monitoring System Development:** Developed a RocketMQ-based system to monitor and analyze customer feedback, reducing erroneous issue reports by 74% and significantly enhancing product dependability and consumer confidence.
 
 ### Apecyn Art
 _Founder & Lead Curator_
+
 Atlanta, GA | Mar 2019 - Dec 2022
 
 - **Business Development & Strategic Partnerships:** Built and scaled Apecyn Art Collections. Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
 
 ### Atkins Realis
 _Engineer II, LEED GA_
+
 Atlanta, GA | Jan 2019 - Jun 2021, Aug 2022 - July 2023
 
 - **Software Development and Data Visualization:** Created interactive dashboards using Python’s Bokeh and D3.js, transforming complex datasets into actionable insights. Developed advanced software tools for bridge assessment, increasing workflow efficiency by 40% and reducing dependency on technical support.
