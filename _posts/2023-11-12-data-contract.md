@@ -4,6 +4,10 @@ title: "Book Summary: Driving Data Quality with Data Contracts"
 subtitle: Delve deep into learning about Data Contracts
 tags: [data-contract, work, data-management]
 comments: true
+cover-img: assets/img/data-book-summary-1.png
+thumbnail-img: assets/img/data-book-summary-1.png
+share-img: assets/img/data-book-summary-1.png
+author: Cynthia Mengyuan Li
 ---
 
 Welcome to this summary of "Driving Data Quality with Data Contracts" by Andrew Jones. For the last two weeks, I’ve delved deep into learning about Data Contracts and I’m excited to share this with you.
@@ -105,7 +109,7 @@ A Data Contract is a formal agreement detailing the specification of data exchan
 
 ## Data Contracts: **Two Main Aspects**
 
-The solution data contracts provide consists of two aspects. 
+The solution data contracts provide consists of two aspects.
 
 First, they set up a contract-backed architecture which makes it easier to create and use good quality data through **self-served, autonomous tooling:**
 
@@ -298,7 +302,7 @@ If you’re keen for more details, you can always get in touch with me or John T
 
 The book is structured into ten chapters, divided into three distinct sections. Today, we delved into the first two sections, discussing the reasons behind "Why" Data Contracts and exploring the "What" of Data Contracts. Additionally, we touched upon the "Culture Change" associated with Data Contracts, which represents one of the core facets of the concept. The final section, "Data Architecture and Data Contract," provides insights into the practical design and incorporation of data contracts within an organization.
 
-I am also preparing for a series of technical reviews in the near future. If you're keen on deepening your understanding of data contracts, don't miss out on the upcoming series. 
+I am also preparing for a series of technical reviews in the near future. If you're keen on deepening your understanding of data contracts, don't miss out on the upcoming series.
 
 And finally, your feedback and thoughts are always welcome!
 
