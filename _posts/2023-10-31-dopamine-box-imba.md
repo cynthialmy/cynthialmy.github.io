@@ -4,6 +4,9 @@ title: Dopamine Box Project Powered by Imba
 subtitle: Unbox Happiness with this simple full-stack solution
 tags: [full-stack, project, imba]
 comments: true
+thumbnail-img: assets/img/dopamine-box.png
+share-img: assets/img/dopamine-box.png
+author: Cynthia Mengyuan Li
 ---
 
 
