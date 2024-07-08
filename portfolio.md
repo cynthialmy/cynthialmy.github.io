@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Product Portfolio
+title: My PM Portfolio
 subtitle: Coming Soon!
 ---
 <!-- ## Featured Products -->
