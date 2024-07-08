@@ -54,50 +54,6 @@ Atlanta, GA, Jan 2023 - May 2023
 
 During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management. -->
 
-
-
-### Alibaba Group, Department of New Retail
-_Software Engineer_
-Hangzhou, China, July 2021 - Nov 2021
-
-My experience at Alibaba, a leading multinational technology company, involved backend development in the e-commerce and retail sectors. This experience provided me with a unique perspective on large-scale system architecture and user-centric product development.
-
----
-
-### My Academic Roots
-- **Georgia Institute of Technology**
-  M.Sc. in Computer Science, GPA: 3.77/4.0
-  Feb. 2021 – Aug. 2023
-
-- **Georgia Institute of Technology**
-  M.Sc. in Structural Engineering, GPA: 3.8/4.0
-  Aug. 2017 – Dec. 2018
-
-- **Hong Kong University of Science and Technology**
-  B.Eng. in Structural Engineering & Minor in Computer Science, High Honors
-  Sept. 2013 – June 2017
-
-- **Waseda University** (Exchange Program)
-  Tokyo, Japan
-  Feb. 2016 - July 2016
-
-- **University of New South Wales (UNSW)** (Exchange Program)
-  Sydney, Australia
-  Sept. 2014 - Feb. 2015
-
-### Skills That Power My Goals
-- **Certifications:** MicroSoft Develop Generative AI solutions with Azure OpenAI Service Certificate, SAP Certified Development Associate, CITI Program Certifications in Human Research and Responsible Conduct of Research.
-- **Programming:** Proficient in Python, JavaScript, Swift, React, R, SQL,  Java, Scala, Kotlin, LangChain.js, OpenAI API, Imba, D3.js.
-- **Tools:** Experienced with Git, Jira, Confluence, Miro, Figma.
-- **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner in Japanese.
-
-### Personal Interests
-- Data Visualization
-- Structural Engineering
-- Educational Content Development
-- Technology in Finance
-- Global Payment Networks
-
 ---
 
 ### Education:
@@ -116,6 +72,14 @@ GPA: 3.8/4.0
 *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*
 *Sept 2013 - Jun 2017 | Hong Kong*
 Honors
+
+#### Waseda University** (Exchange Program)
+  Tokyo, Japan
+  Feb. 2016 - July 2016
+
+#### University of New South Wales (UNSW)** (Exchange Program)
+  Sydney, Australia
+  Sept. 2014 - Feb. 2015
 
 ---
 
