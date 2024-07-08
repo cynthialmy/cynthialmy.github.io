@@ -20,7 +20,8 @@ author: Cynthia Mengyuan Li
 ###############################################
 
 navbar-links:
-    Projects: "projects"
+    PM Portfolio: "portfolio"
+    Dev Projects: "projects"
     Resume: "resume"
     Connect: "connect"
     # Websites:
