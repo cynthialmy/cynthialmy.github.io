@@ -11,7 +11,7 @@ I bring a diverse background in product management and software development, gat
 ### Volvo Cars
 _Global Rotational PM @Digital Core_
 
-Gothenburg, Sweden | Aug 2023 - Present
+> Gothenburg, Sweden | Aug 2023 - Present
 
 - **Generative AI for Procurement Management:** Led the end-to-end development and deployment of a Generative AI application using Azure OpenAI API, revolutionizing procurement contract management processes. This initiative resulted in a 70% reduction in contract retrieval times, a 30% increase in analytical efficiency, and a 55% reduction in operational costs, benefiting over 600 buyers.
 - **Data & Analytics Platforms:** Crafted and executed a comprehensive data governance model leveraging YAML-based data contracts, enhancing data integrity by 20%. Engineered Python-based automation tools for data validation and privacy enhancement, integrated into CI/CD workflows via GitHub Actions, resulting in a 15% boost in regulatory compliance.
