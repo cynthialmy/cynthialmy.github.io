@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cynthia Li
+title: Cynthia Mengyuan Li
 subtitle: Product Manager | Software & AI Engineer
 ---
 
