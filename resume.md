@@ -71,11 +71,11 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 > Hong Kong \| Sept 2013 - Jun 2017
 
 
-#### Waseda University**
+#### Waseda University
 - (Exchange Program)
 > Tokyo, Japan \| Feb 2016 - Jul 2016
 
-#### University of New South Wales (UNSW)**
+#### University of New South Wales (UNSW)
 - (Exchange Program)
 > Sydney, Australia \| Sep 2014 - Feb 2015
 
