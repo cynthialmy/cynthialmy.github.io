@@ -19,7 +19,7 @@ _Global Rotational PM @Digital Core_
 ### SAP
 _Associate Technical PM - Cloud Applications_
 
-Shanghai, China | Feb 2022 - Aug 2022
+> Shanghai, China \| Feb 2022 - Aug 2022
 
 - **Cloud Application Development:** Orchestrated a strategy to refine compliance processes focusing on EDIFACT standards, achieving a 20% enhancement in process accuracy.
 - **Customer-Centric UI/UX Optimization:** Implemented a customer-first approach, integrating feedback loops into development, leading to a 20% increase in user adoption rates and a 15% decrease in software anomalies.
@@ -27,7 +27,7 @@ Shanghai, China | Feb 2022 - Aug 2022
 ### Airwallex
 _Intern PM - Global Transfer & Payment Network_
 
-Shanghai, China | Nov 2021 - Feb 2022
+Shanghai, China \| Nov 2021 - Feb 2022
 
 - **User Flow Enhancement:** Overhauled the Batch Maker-Checker user flow, resulting in a 20% boost in operational efficiency and a 15% increase in customer satisfaction ratings. Collaborated with UX/UI and engineering teams to enhance process streamlining, reducing transaction processing durations significantly.
 - **Strategic Market Expansion:** Led the expansion of Airwallex’s SWIFT payment network into 17 new countries, increasing market reach by 25% and improving feature deployment efficiency by 10%.
