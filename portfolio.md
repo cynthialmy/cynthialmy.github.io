@@ -6,7 +6,7 @@ subtitle: The Excitement of Creation
 <!-- ## Featured Products -->
 
 
-## Featured Projects
+## Development Projects
 
 ### Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**
