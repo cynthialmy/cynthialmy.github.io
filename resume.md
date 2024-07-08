@@ -59,19 +59,17 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 ### Education:
 
 #### Georgia Institute of Technology
-- *Master of Science (MS), Computer Science*
+- *Master of Science (MS), Computer Science*, GPA: 3.77/4.0
 >  Atlanta, GA \| Aug 2021 - Aug 2023
-- GPA: 3.77/4.0
 
 #### Georgia Institute of Technology
-- *Master of Science (MS), Structural Engineering*
+- *Master of Science (MS), Structural Engineering*, GPA: 3.8/4.0
 > Atlanta, GA \| Aug 2017 - Dec 2018
-- GPA: 3.8/4.0
 
 #### Hong Kong University of Science and Technology
-- *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*
+- *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*, Honors
 > Hong Kong \| Sept 2013 - Jun 2017
-- Honors
+
 
 #### Waseda University**
 - (Exchange Program)
