@@ -24,6 +24,8 @@ I recently found out one such tool that has carved a niche in web development is
 - **Activity Logging**: Users can quickly jot down activities that brought them joy.
 - **Mood Tracking**: It also allows users to keep track of their moods, thus recognizing patterns over time.
 - **Reflection**: By looking back at the recorded moments, users can reminisce and possibly find patterns that lead to happiness.
+-
+![dopamine-box](../assets/img/dopamine-box.png)
 
 ## Kickstart Your Journey with Dopamine Box
 
