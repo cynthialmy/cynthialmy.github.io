@@ -1,157 +1,113 @@
 ---
 layout: post
-title: "Product Portfolio: Streamlining Procurement with Gen AI"
-# subtitle: "The Four-Layered Approach for AI Safety"
-tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
+title: Implementing Gen AI for Procurement at Volvo Cars
+subtitle: "A Case Study in Streamlining Contract Management with Generative AI"
+tags: [LLM, AI, Procurement, OpenAI, Azure, LangChain, RAG, GPT-4]
+# cover-img: assets/img/data-book-summary-1.png
+thumbnail-img: assets/img/procurement_3.png
+share-img: assets/img/procurement_3.png
 comments: true
 author: Cynthia Mengyuan Li
 ---
 
+In our continuous effort to innovate and improve processes at Volvo Cars, we embarked on a project to integrate Generative AI (Gen AI) into our procurement process. This post will walk you through our journey, the business decisions we made, and the impact we expect from this integration.
+
 ## Project Overview
 
-This project aims to streamline the procurement process at Volvo Cars by integrating Gen AI to facilitate contract management and decision-making. The current system, involving VGS, VPC, and SI+ systems, is fragmented and manual, leading to inefficiencies and risks. Our solution proposes a cohesive AI-driven approach to enhance accuracy, compliance, and efficiency.
+The primary goal of our project was to streamline the procurement process by leveraging Gen AI to facilitate contract management and decision-making. Our existing systems—VGS (Volvo Cars Global Sourcing), VPC (Volvo Parts Change), and SI+ (System Insköp)—operate independently, leading to inefficiencies and a higher risk of errors. With over 7,000 contracts to manage, we needed a cohesive AI-driven approach to enhance accuracy, compliance, and efficiency.
 
-### Problem Deep Dive
+## Problem Deep Dive
 
-**The Problem:**
-The procurement process is hindered by a lack of integration between systems, leading to time-consuming and error-prone contract management. With over 7,000 contracts, the complexity is substantial, resulting in increased legal and financial risks.
+### The Problem
 
-**How We Chose This Problem:**
-We identified this issue through stakeholder feedback and analysis of frequent buyer inquiries, where 40% could be addressed with Gen AI. The inefficiencies in contract management highlighted the need for a streamlined solution.
+The procurement process at Volvo Cars is currently fragmented and heavily manual. Managing over 1,169 suppliers and approximately 7,000 contracts, with numerous attachments in various formats (PDF, Excel, Word, and zip files), is both time-consuming and error-prone. The lack of integration among the VGS, VPC, and SI+ systems exacerbates these inefficiencies, increasing the risk of human error, especially during rapid regulatory changes or detailed contract term monitoring.
 
-**The Solution:**
-Integrating Gen AI with the procurement systems (VGS, VPC, and SI+) to enable natural language queries and automate contract interactions, significantly reducing manual processes and errors.
+### How We Chose This Problem
 
-### Solution Validation Approach
+Through stakeholder feedback and an analysis of frequent buyer inquiries, we identified that about 40% of these inquiries could be addressed with Gen AI. This highlighted the significant potential for AI to streamline the procurement process, reduce errors, and improve decision-making.
 
-**Approach:**
-- **Technology Integration:** Unify systems to work cohesively with Gen AI, ensuring smooth interaction with Microsoft Teams.
-- **Process Simplification:** Train procurement teams on AI capabilities and adjust workflows to align with new technology.
-- **Cultural Shift:** Emphasize a technology-first approach to enhance efficiency and strategic focus.
+### The Solution
 
-**Validation:**
-- **Pilot Testing:** Conduct controlled experiments with 10 test users, benchmarking metrics without and with the tool.
-- **User Feedback:** Collect qualitative feedback through surveys to refine the chatbot’s functionality and user experience.
+Integrating Gen AI with our procurement systems (VGS, VPC, and SI+) enables natural language queries, allowing users to interact with contracts more intuitively. This integration aims to automate many of the manual processes, thereby reducing errors and speeding up decision-making.
 
-### Impact
+![Procurement Bot](../assets/img/procurement_2.png)
 
-- **Efficiency Boost:** 25% reduction in time spent on contract searches, reviews, and document preparations.
-- **Risk Avoidance:** Enhanced AI search capabilities reduce associated risks, exemplified by an estimated 50-70 million SEK in one case.
-- **Improved Data Quality:** Decrease in errors during contract management reinforces legal and financial standards.
-- **Employee Morale:** By reducing routine tasks, buyers can focus on strategic initiatives, boosting job satisfaction and productivity.
+## Solution Validation Approach
 
-### My Role vs. Team Contributions
+### Approach
 
-**My Contributions:**
-- Led the project from problem identification to solution validation.
-- Coordinated with stakeholders to secure buy-in and define project scope.
-- Oversaw the integration of Gen AI with procurement systems.
-- Developed the user onboarding script and feedback collection process.
+1. **Technology Integration:** We unified the VGS, VPC, and SI+ systems to work cohesively with Gen AI. This required creating data products and ensuring smooth interaction between Gen AI and Microsoft Teams.
+2. **Process Simplification:** The introduction of Gen AI shifted our process from manual search and review to an AI-driven approach. Training the procurement team on these new capabilities and adjusting workflows were essential steps.
+3. **Cultural Shift:** Implementing Gen AI required a shift in mindset, emphasizing a technology-first approach for routine tasks, allowing the human workforce to focus on strategic initiatives.
 
-**Team Contributions:**
-- Data Scientists: Developed AI models and integrated them with procurement systems.
-- Engineers: Ensured seamless technical integration and data handling.
-- Procurement Experts: Provided insights into existing processes and helped identify user personas.
-- Cybersecurity Team: Assisted in moving sensitive data from on-prem to cloud securely.
+### Validation
 
-## Case Studies
+- **Pilot Testing:** We conducted controlled experiments with 10 test users to benchmark metrics with and without the tool.
+- **User Feedback:** We collected qualitative feedback through surveys to refine the chatbot’s functionality and user experience.
 
-### Raising the Bar on Product Work
+## High-Level Description of Gen AI Solution
 
-**Case Study: Streamlining Contract Management**
-- **Challenge:** Fragmented systems and manual processes.
-- **Solution:** Integrated Gen AI to automate and streamline contract interactions.
-- **Impact:** Significant reduction in time spent on contract management, improved accuracy, and compliance.
+![High-Level Solution Diagram](../assets/img/procurement_1.png)
 
-### Showcasing Strengths
+**Contract Management:**
 
-**Weakness as Strength: Detail-Oriented Approach**
-- **Weakness:** Tendency to focus on details.
-- **Strength:** Ensured thorough understanding and accurate integration of AI with procurement systems, leading to a robust solution.
+- **Natural Language Queries:** Gen AI enables intuitive interaction with contracts through natural language queries. For example:
+    - How many suppliers do we have in VGS (both active and inactive)?
+    - What are the contents of Contract00627 in VGS?
+    - Can you find the contract for part number A in VPC and VGS?
+    - What are the price changes for supplier part A over time?
 
-### Demonstrating Real PM Skills
+**Change Management:**
 
-**Case Study: User-Centric Validation Approach**
-- **Real PM Aspect:** Prioritized user feedback and iterative improvements.
-- **Outcome:** High user satisfaction and successful adoption of the AI tool, showcasing my ability to deliver practical, user-focused solutions.
+- **Process Assistance:** Using SharePoint web information, PDF, Word, PPTX, and internal instructional videos, Gen AI assists buyers in creating RFQs, contracts, and implementing changes, such as:
+    - How to add amendments to existing contracts in VGS.
+    - How to handle discrepancies in price information between VPC and SI+.
 
-## Information About the Process
+## Complexity of the Use Case
 
-In this template, you'll find the questions needed to answer to decide if we should assign resources to the initial analysis. This is what we refer to as intake or Gate 0 according to our Data Use Case model.
+The use case for Gen AI in contract management at Volvo Cars is moderately complex due to several factors:
 
-## Gate 0
+1. **Technical Integration:** Ensuring seamless communication between Gen AI, Microsoft Teams, and the procurement systems (VGS, VPC, SI+).
+2. **Data Handling:** Managing diverse document formats and data types requires sophisticated data processing capabilities.
+3. **Change Management:** Training employees to adapt to new workflows and overcoming potential learning curves.
+4. **Compliance and Security:** Adhering to legal standards and maintaining robust data security within the Teams environment.
 
-### High-Level Description of the Current Business Process and Required Changes
+## Business Impact
 
-**Current Business Process:**
-Managing supplier contracts involves multiple independent systems (VGS, VPC, and SI+), leading to inefficiencies and increased risk of errors.
+The introduction of Gen AI in procurement is expected to bring significant benefits:
 
-**Required Changes:**
-1. **Technology Integration:** Unify systems to enable cohesive interaction with Gen AI.
-2. **Process Simplification:** Train teams on new AI capabilities and adjust workflows.
-3. **Cultural Shift:** Promote a technology-first approach for routine tasks.
+- **Efficiency Boost:** A 25% reduction in time spent on contract searches, reviews, and document preparations.
+- **Risk Avoidance:** Enhanced AI search capabilities significantly reduce the risk of missing or mishandling contracts, potentially saving millions in financial penalties.
+- **Improved Data Quality:** A decrease in errors during contract management reinforces our commitment to legal and financial standards.
+- **Future-Proofing:** Gen AI’s adaptability and scalability prepare the procurement department for evolving challenges and growth.
+- **Boosting Employee Morale:** By automating routine tasks, employees can focus on more strategic initiatives, improving job satisfaction and productivity.
 
-### High-Level Description of Gen AI Solution
+## Investigation Phase
 
-![High-Level Solution Diagram](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ef27a52-ac58-4320-949c-497eac996a73/bbf0865d-40cf-48a4-bfd7-bc774825d1e7/Untitled.png)
+### Pilot Execution
 
-**Gen AI Solution:**
-- **Contract Management:** Enable natural language queries for intuitive contract interaction.
-- **Change Management:** Assist buyers with creating RFQs, contracts, and implementing changes using AI.
+We focused on VGS for the Proof of Value (PoV) due to data quality challenges. The pilot involved:
 
-### Complexity of the Use Case
+1. **Data Extraction:** Extracting data from VGS for analysis.
+2. **User Testing:** Engaging 8 users from the procurement department to interact with the Gen AI tool.
+3. **Feedback Collection:** Gathering feedback through structured scenarios and open-ended interactions to refine the tool.
 
-**Complexity Factors:**
-1. **Technical Integration:** Seamless communication between systems and Gen AI.
-2. **Data Handling:** Managing diverse document formats and data types.
-3. **Change Management:** Training employees to adapt to new workflows.
-4. **Compliance and Security:** Adhering to legal standards and ensuring data security.
+### Business Case and Impact
 
-### Commitment from Decision Makers
+The PoV demonstrated significant potential value, validating the business case for further investment. Key metrics included reduced search times, improved data accuracy, and enhanced user satisfaction.
 
-**Stakeholder Buy-In:**
-Henrik (sponsor) and Emma (business process owner) are key stakeholders supporting the project.
+### Next Steps
 
-### Commitment to Run Pilots
+Based on the success of the pilot, the next steps involve scaling the solution to include all 400 procurement users and refining the integration with Microsoft Teams. We plan to:
 
-**Pilot Users:**
-Buyers within the procurement department and engineers from the R&D department, with access facilitated by Emma.
+1. **Expand Training:** Conduct comprehensive training sessions for all users.
+2. **Iterate and Improve:** Continuously refine the AI tool based on user feedback and performance metrics.
+3. **Ensure Compliance:** Work closely with the cybersecurity team to maintain robust data security and compliance standards.
 
-### Business Impact
+By integrating Gen AI into our procurement process, we are not only enhancing operational efficiency but also future-proofing our systems against evolving challenges. This project exemplifies our commitment to innovation and excellence at Volvo Cars. 🚀
 
-**Expected Benefits:**
-- Boosting Efficiency
-- Avoiding Risks
-- Improving Data Quality
-- Future-Proofing
-- Boosting Employee Morale
+Stay tuned for more updates as we continue to transform our procurement processes with cutting-edge AI technology.
 
-## Gate 1
+---
 
-### Investigation Phase
-
-**High-Level Description:**
-Focus on VGS due to data quality challenges. Deliver an analytical product for the PoV with minimal scope.
-
-**Objectives:**
-1. **Employee Productivity:** Improve efficiency through AI-driven contract management.
-2. **Risk & Quality:** Reduce manual search efforts and associated risks.
-
-**Resource Requirements:**
-2.5 Data Scientists, 0.5 Analytical Lead, 1 Senior Data Engineer
-
-### User Personas and Testing
-
-**User Personas:**
-Tested by buyers in procurement, selected based on contract volumes per department.
-
-**Testing Approach:**
-- **Controlled Experiments:** Structured scenario-based testing.
-- **Exploratory Testing:** Open-ended engagement to gather feedback and refine the tool.
-
-### Documentation of Outcomes
-
-**Definition of Done for PoV:**
-Successful integration and user adoption of the AI tool, validated through pilot testing and feedback collection.
-
-By following this structured approach, we ensure thorough validation and successful implementation of the Gen AI solution, delivering significant business value and enhancing procurement efficiency at Volvo Cars.
+Feel free to reach out if you have any questions or want to learn more about our AI initiatives at Volvo Cars. Let's drive the future together! 🚗✨
