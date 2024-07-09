@@ -28,7 +28,7 @@ Purchasing considerations were divided into Finance, Value, Space, Time, Relatio
 
 This structured approach during our user interviews proved invaluable. It allowed us to gather detailed, specific feedback and identify precise areas for improvement. Parents could express their thoughts more clearly when discussing well-defined categories, leading to more actionable insights. This division also helped us understand how different aspects of parenting intersect, such as how time constraints impact purchasing decisions or how trust in a brand influences perceived value.
 
-By using this method, we gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs.
+By using this method, we gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
 
 ## Baby Product Preferences
 
