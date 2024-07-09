@@ -7,6 +7,10 @@ comments: true
 author: Cynthia Mengyuan Li
 ---
 
+As a new parent and a product manager, I found myself inundated with information about parenting and newborn care. It felt overwhelming trying to sift through all the advice, products, and reviews. This journey made me realize how crucial it is to understand the experiences and preferences of parents like me. Our user group, composed of parents navigating the same challenges, became an invaluable resource.
+
+We reached out to these parents through surveys, focus groups, and one-on-one interviews. Their candid feedback shed light on their needs, frustrations, and preferences, providing a wealth of information to guide our product development and improvement efforts. Here's what we discovered and how we're planning to act on it.
+
 ## Baby Product Preferences
 
 ### 👶 Baby Essentials

@@ -7,15 +7,6 @@ comments: true
 author: Cynthia Mengyuan Li
 ---
 
----
-layout: post
-title: Crafting Safe and Impactful AI Solutions
-subtitle: "A Comprehensive Guide to Developing Distinctive and Secure AI Applications"
-tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
-comments: true
-author: Cynthia Mengyuan Li
----
-
 In my journey through AI development, leveraging tools like LangChain and the OpenAI API, I've had the chance to explore the vast potential of generative AI while also encountering its challenges. Particularly insightful was my experience with Microsoft's Azure OpenAI Service, which highlighted crucial strategies for mitigating the potential harms of generative AI. Simultaneously, a recent article on [Builder.io](https://www.builder.io/blog/build-ai) emphasized the importance of crafting unique AI products that stand out in an increasingly crowded field.
 
 ## Project Overview
