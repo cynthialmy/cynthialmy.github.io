@@ -3,6 +3,9 @@ layout: post
 title: Crafting Safe and Impactful AI Solutions
 subtitle: "A Comprehensive Guide to Developing Distinctive and Secure AI Applications"
 tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
+# cover-img: assets/img/data-book-summary-1.png
+thumbnail-img: assets/img/architecture.png
+share-img: assets/img/architecture.png
 comments: true
 author: Cynthia Mengyuan Li
 ---
