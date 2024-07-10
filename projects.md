@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My Dev Projects
-subtitle: The Excitement of Creation
+subtitle: As a developer, I enjoy the excitement of creation.
 ---
 
 ## Development Projects
