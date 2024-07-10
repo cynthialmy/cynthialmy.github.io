@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dopamine Box Project Powered by Imba
+title: Best full-stack language!? Dopamine Box Project Powered by Imba
 subtitle: Unbox Happiness with this simple full-stack solution
 tags: [full-stack, project, imba]
 comments: true
