@@ -10,7 +10,7 @@ comments: true
 author: Cynthia Mengyuan Li
 ---
 
-In our continuous effort to innovate and improve processes at Volvo Cars, we embarked on a project to integrate Generative AI (Gen AI) into our procurement process. This post will walk you through our journey, the business decisions we made, and the impact we expect from this integration.
+In our continuous effort to innovate and improve processes at Volvo Cars, I started on a project to integrate Generative AI (Gen AI) into our procurement process. This post will walk you through our journey, the business decisions we made, and the impact we expect from this integration.
 
 ## Project Overview
 
@@ -36,14 +36,14 @@ Integrating Gen AI with our procurement systems (VGS, VPC, and SI+) enables natu
 
 ### Approach
 
-1. **Technology Integration:** We unified the VGS, VPC, and SI+ systems to work cohesively with Gen AI. This required creating data products and ensuring smooth interaction between Gen AI and Microsoft Teams.
+1. **Technology Integration:** I unified the VGS, VPC, and SI+ systems to work cohesively with Gen AI. This required creating data products and ensuring smooth interaction between Gen AI and Microsoft Teams.
 2. **Process Simplification:** The introduction of Gen AI shifted our process from manual search and review to an AI-driven approach. Training the procurement team on these new capabilities and adjusting workflows were essential steps.
 3. **Cultural Shift:** Implementing Gen AI required a shift in mindset, emphasizing a technology-first approach for routine tasks, allowing the human workforce to focus on strategic initiatives.
 
 ### Validation
 
-- **Pilot Testing:** We conducted controlled experiments with 10 test users to benchmark metrics with and without the tool.
-- **User Feedback:** We collected qualitative feedback through surveys to refine the chatbot’s functionality and user experience.
+- **Pilot Testing:** I conducted controlled experiments with 10 test users to benchmark metrics with and without the tool.
+- **User Feedback:** I collected qualitative feedback through surveys to refine the chatbot’s functionality and user experience.
 
 ## High-Level Description of Gen AI Solution
 
@@ -86,7 +86,7 @@ The introduction of Gen AI in procurement is expected to bring significant benef
 
 ### Pilot Execution
 
-We focused on VGS for the Proof of Value (PoV) due to data quality challenges. The pilot involved:
+I focused on VGS for the Proof of Value (PoV) due to data quality challenges. The pilot involved:
 
 1. **Data Extraction:** Extracting data from VGS for analysis.
 2. **User Testing:** Engaging 8 users from the procurement department to interact with the Gen AI tool.

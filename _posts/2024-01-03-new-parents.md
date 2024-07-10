@@ -12,12 +12,12 @@ author: Cynthia Mengyuan Li
 
 As a new parent and a product manager, I found myself inundated with information about parenting and newborn care. It felt overwhelming trying to sift through all the advice, products, and reviews. This journey made me realize how crucial it is to understand the experiences and preferences of parents like me. Our user group, composed of parents navigating the same challenges, became an invaluable resource.
 
-We reached out to these parents through surveys, focus groups, and one-on-one interviews. Their candid feedback shed light on their needs, frustrations, and preferences, providing a wealth of information to guide our product development and improvement efforts. Here's what we discovered and how we're planning to act on it.
+I reached out to these parents through surveys, focus groups, and one-on-one interviews. Their candid feedback shed light on their needs, frustrations, and preferences, providing a wealth of information to guide our product development and improvement efforts. Here's what I discovered and how we're planning to act on it.
 
-To better understand the varied needs and experiences of parents, we divided our product categories and purchasing considerations during our user interviews. This segmentation allowed us to gather more targeted and relevant insights, ensuring that we addressed specific concerns within each area.
+To better understand the varied needs and experiences of parents, I divided our product categories and purchasing considerations during our user interviews. This segmentation allowed us to gather more targeted and relevant insights, ensuring that I addressed specific concerns within each area.
 
 ### Product Categories
-We categorized products into Education, Entertainment, Feeding, Hygiene, Clothing, Safety products, Transportation, and Health products. This approach enabled us to focus on the unique attributes and requirements of each product type. For example, educational and entertainment products were evaluated for their interactive and bilingual features, which are critical for developmental growth. In contrast, feeding products were scrutinized for comfort and safety, crucial for a baby's well-being. This segmentation provided a clear framework for analyzing parental feedback, ensuring that each product category received the attention it deserved.
+I categorized products into Education, Entertainment, Feeding, Hygiene, Clothing, Safety products, Transportation, and Health products. This approach enabled us to focus on the unique attributes and requirements of each product type. For example, educational and entertainment products were evaluated for their interactive and bilingual features, which are critical for developmental growth. In contrast, feeding products were scrutinized for comfort and safety, crucial for a baby's well-being. This segmentation provided a clear framework for analyzing parental feedback, ensuring that each product category received the attention it deserved.
 
 ![parent-mental-map](../assets/img/parent-mental-map_1.png)
 
@@ -28,7 +28,7 @@ Purchasing considerations were divided into Finance, Value, Space, Time, Relatio
 
 This structured approach during our user interviews proved invaluable. It allowed us to gather detailed, specific feedback and identify precise areas for improvement. Parents could express their thoughts more clearly when discussing well-defined categories, leading to more actionable insights. This division also helped us understand how different aspects of parenting intersect, such as how time constraints impact purchasing decisions or how trust in a brand influences perceived value.
 
-By using this method, we gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
+By using this method, I gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
 
 ## Baby Product Preferences
 
