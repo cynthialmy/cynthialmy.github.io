@@ -6,7 +6,7 @@ tags: [full-stack, project, imba]
 comments: true
 thumbnail-img: assets/img/dopamine-box.png
 share-img: assets/img/dopamine-box.png
-author: Cynthia Mengyuan Li
+# author: Cynthia Mengyuan Li
 ---
 
 # Best Full-Stack Language!? Dopamine Box Project Powered by Imba

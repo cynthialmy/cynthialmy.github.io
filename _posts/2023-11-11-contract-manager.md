@@ -4,7 +4,7 @@ title: "Streamlining Decentralized Data Management with the Data Contract Manage
 subtitle: "Simplify and Secure Your Data Agreements"
 tags: [Data Management, Data Mesh, Data Contracts, Metadata]
 comments: true
-author: Cynthia Mengyuan Li
+# author: Cynthia Mengyuan Li
 ---
 
 With the growing trend of decentralized data assets, having a straightforward system to manage data contracts is essential. Recognizing this need, the Data Contract Manager, a web application, focuses on facilitating the handling of YAML-based data contracts.

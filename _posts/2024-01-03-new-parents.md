@@ -7,7 +7,7 @@ tags: [parenting, baby products, product reviews, parental challenges]
 thumbnail-img: assets/img/parent-mental-map_3.png
 share-img: assets/img/parent-mental-map_3.png
 comments: true
-author: Cynthia Mengyuan Li
+# author: Cynthia Mengyuan Li
 ---
 
 As a new parent and a product manager, I found myself inundated with information about parenting and newborn care. It felt overwhelming trying to sift through all the advice, products, and reviews. This journey made me realize how crucial it is to understand the experiences and preferences of parents like me. Our user group, composed of parents navigating the same challenges, became an invaluable resource.

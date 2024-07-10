@@ -7,7 +7,7 @@ tags: [LLM, AI, Procurement, OpenAI, Azure, LangChain, RAG, GPT-4]
 thumbnail-img: assets/img/procurement_3.png
 share-img: assets/img/procurement_3.png
 comments: true
-author: Cynthia Mengyuan Li
+# author: Cynthia Mengyuan Li
 ---
 
 In our continuous effort to innovate and improve processes at Volvo Cars, I started on a project to integrate Generative AI (Gen AI) into our procurement process. This post will walk you through our journey, the business decisions we made, and the impact we expect from this integration.

@@ -7,7 +7,7 @@ comments: true
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/data-book-summary-1.png
 share-img: assets/img/data-book-summary-1.png
-author: Cynthia Mengyuan Li
+# author: Cynthia Mengyuan Li
 ---
 
 Welcome to this summary of "Driving Data Quality with Data Contracts" by Andrew Jones. For the last two weeks, I’ve delved deep into learning about Data Contracts and I’m excited to share this with you.
