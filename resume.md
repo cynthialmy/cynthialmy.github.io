@@ -88,7 +88,7 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
 
 ## Download My Resume
-[Download Resume](resources/Cynthia_Li_resume.pdf)
+[Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
 
 ### References
 [Reference Letters](resources/reference_letters.pdf)
