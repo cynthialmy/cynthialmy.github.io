@@ -27,11 +27,11 @@ Generative AI, while transformative, comes with the risk of generating harmful o
 
 ## The Four-Layered Approach to Harm Mitigation
 
-Developing safe generative AI solutions requires a structured approach. Here's how we applied this approach in our procurement AI project:
+Developing safe generative AI solutions requires a structured approach. Here's how I applied this approach in our procurement AI project:
 
 ### 1. The Model Layer
 
-Choosing the right model is crucial. While GPT-4 is powerful, a simpler model might suffice for specific tasks, reducing the risk of harmful content. We fine-tuned our model with procurement-specific data to ensure relevant and safe outputs.
+Choosing the right model is crucial. While GPT-4 is powerful, a simpler model might suffice for specific tasks, reducing the risk of harmful content. I fine-tuned our model with procurement-specific data to ensure relevant and safe outputs.
 
 **Example:**
 - **Problem Identified:** Risk of generating inaccurate procurement contract details.
@@ -39,7 +39,7 @@ Choosing the right model is crucial. While GPT-4 is powerful, a simpler model mi
 
 ### 2. The Safety System Layer
 
-Platform-level configurations help mitigate harm. We used Azure OpenAI Service’s content filters to manage content severity and implemented abuse detection algorithms and alert systems to prevent misuse and respond promptly to any harmful behavior.
+Platform-level configurations help mitigate harm. I used Azure OpenAI Service’s content filters to manage content severity and implemented abuse detection algorithms and alert systems to prevent misuse and respond promptly to any harmful behavior.
 
 **Example:**
 - **Problem Identified:** Potential for generating inappropriate responses.
@@ -47,7 +47,7 @@ Platform-level configurations help mitigate harm. We used Azure OpenAI Service�
 
 ### 3. The Metaprompt and Grounding Layer
 
-Constructing prompts is critical. We used metaprompts to define behavioral parameters and applied prompt engineering to ensure safe outputs. Retrieval augmented generation (RAG) was used to pull contextual data from trusted sources, enhancing prompt quality and safety.
+Constructing prompts is critical. I used metaprompts to define behavioral parameters and applied prompt engineering to ensure safe outputs. Retrieval augmented generation (RAG) was used to pull contextual data from trusted sources, enhancing prompt quality and safety.
 
 **Example:**
 - **Problem Identified:** Ambiguity in user queries leading to harmful responses.
@@ -55,7 +55,7 @@ Constructing prompts is critical. We used metaprompts to define behavioral param
 
 ### 4. The User Experience Layer
 
-This layer covers the application interface and user documentation. We designed user interfaces to limit inputs to specific subjects and types, validating inputs and outputs to reduce the risk of harmful responses. Transparent documentation about the system’s capabilities and limitations was also crucial.
+This layer covers the application interface and user documentation. I designed user interfaces to limit inputs to specific subjects and types, validating inputs and outputs to reduce the risk of harmful responses. Transparent documentation about the system’s capabilities and limitations was also crucial.
 
 **Example:**
 - **Problem Identified:** Users inputting vague queries leading to misleading responses.
