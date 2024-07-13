@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Coding Projects
+title: My Development Projects
 subtitle: As a developer, I enjoy the excitement of creation.
 ---
 
