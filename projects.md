@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Development Projects
+title: My Programming Projects
 subtitle: As a developer, I enjoy the excitement of creation.
 ---
 
@@ -16,7 +16,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 - **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**
   Discover the core of data visualization. This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
-### Web and UI/UX Design
+### Web and UI/UX Development
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
   Capture and reflect on moments of joy and dopamine release with this sleek application. Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
