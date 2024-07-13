@@ -23,10 +23,10 @@ navbar-links:
     Dev Projects: "projects"
     Resume: "resume"
     # Connect: "connect"
-    Websites:
+    Links:
         - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
+        - GitHub: "https://github.com/cynthialmy"
         - Medium: "https://medium.com/@cynthiamengyuanli/"
-    GitHub: "https://github.com/cynthialmy"
 
 ################
 # --- Logo --- #
