@@ -102,4 +102,4 @@ I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the L
 
 Ready to dive into a discussion that could range from the intricacies of data mesh technology to the hidden gems of our next travel destinations? Or perhaps, explore potential collaborations, business ideas, or simply exchange life stories?
 
-Feel free to reach out directly through my [email: cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just an email away!
+Feel free to reach out directly at [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just an email away!
