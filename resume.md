@@ -96,12 +96,10 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 ## Build-Measure-Learn
 I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
 
+---
+
 ## Chat?
 
 Ready to dive into a discussion that could range from the intricacies of data mesh technology to the hidden gems of our next travel destinations? Or perhaps, explore potential collaborations, business ideas, or simply exchange life stories?
-
-Let’s make it happen. Reach out, and let’s schedule that chat. Virtual or in-person, I assure you it’ll be a conversation worth your time.
-
----
 
 Feel free to reach out directly through my [email: cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just an email away!
