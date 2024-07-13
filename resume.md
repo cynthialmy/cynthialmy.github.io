@@ -90,7 +90,7 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 ## Download My Resume
 [Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
 
-## References
+## Check My References
 [Reference Letters](resources/reference_letters.pdf)
 
 <!-- ## Build-Measure-Learn
