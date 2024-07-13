@@ -22,11 +22,11 @@ author: Cynthia Mengyuan Li
 navbar-links:
     Dev Projects: "projects"
     Resume: "resume"
-    Connect: "connect"
-    # Websites:
-    #     - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
-    #     - Medium: "https://medium.com/@cynthiamengyuanli/"
-    # GitHub: "https://github.com/cynthialmy"
+    # Connect: "connect"
+    Websites:
+        - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
+        - Medium: "https://medium.com/@cynthiamengyuanli/"
+    GitHub: "https://github.com/cynthialmy"
 
 ################
 # --- Logo --- #
