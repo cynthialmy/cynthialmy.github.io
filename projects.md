@@ -78,7 +78,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
 ## Explore More
 
-Interested in seeing more of my work? Visit my [GitHub repository](https://github.com/cynthialmy) for a full list of my projects and contributions.
+Interested in seeing more of my work? Visit my [GitHub](https://github.com/cynthialmy) for a full list of my projects and contributions.
 
 <!-- ## Let's Connect!
 
