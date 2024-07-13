@@ -93,8 +93,8 @@ During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsi
 ## References
 [Reference Letters](resources/reference_letters.pdf)
 
-## Build-Measure-Learn
-I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings.
+<!-- ## Build-Measure-Learn
+I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings. -->
 
 ---
 
