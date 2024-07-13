@@ -51,7 +51,7 @@ I bring a diverse background in product management, software development and UI/
 _Graduate Student Assistant_
 Atlanta, GA, Jan 2023 - May 2023
 
-During my tenure as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management. -->
+During my time as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management. -->
 
 ---
 
