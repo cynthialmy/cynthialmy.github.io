@@ -6,7 +6,7 @@ subtitle: Product Manager | Software & AI Engineer
 
 ## Summary
 
-I bring a diverse background in product management and software development, gathering insightful data to inform product strategies. I am fluent in current industry trends and committed to delivering exceptional products and driving organizational success, ensuring that our solutions are deeply aligned with user needs.
+I bring a diverse background in product management and software development, gathering insightful data to inform product strategies. I am fluent in current industry trends and committed to delivering exceptional products and driving solutions are deeply aligned with user needs.
 
 ### Volvo Cars
 - _Global Rotational PM @Digital Core_
