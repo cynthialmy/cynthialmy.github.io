@@ -22,7 +22,7 @@ author: Cynthia Mengyuan Li
 navbar-links:
     Projects: "projects"
     Resume: "resume"
-    GitHub: "https://github.com/cynthialmy"
+    # GitHub: "https://github.com/cynthialmy"
     # Connect: "connect"
     # Links:
     #     - LinkedIn: "https://www.linkedin.com/in/mengyuan-li-cynthia/"
