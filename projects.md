@@ -80,6 +80,6 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
 Interested in seeing more of my work? Visit my [GitHub repository](https://github.com/cynthialmy) for a full list of my projects and contributions.
 
-## Let's Connect!
+<!-- ## Let's Connect!
 
-I'm always open to discussing new ideas, collaborative ventures, or opportunities. Feel free to [reach out](mailto:cynthialmy@gmail.com) for a chat or brainstorming session. Together, we can drive innovation and create a data-driven future!
+I'm always open to discussing new ideas, collaborative ventures, or opportunities. Feel free to [reach out](mailto:cynthialmy@gmail.com) for a chat or brainstorming session. Together, we can drive innovation and create a data-driven future! -->
