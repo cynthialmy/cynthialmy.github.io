@@ -87,6 +87,8 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 - **Development & Tools:** Git, Jira, Confluence, Miro, Figma
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
 
+---
+
 ## Download My Resume
 [Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
 
