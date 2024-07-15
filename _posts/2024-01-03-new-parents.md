@@ -21,6 +21,21 @@ I categorized products into Education, Entertainment, Feeding, Hygiene, Clothing
 
 ![parent-mental-map](../assets/img/parent-mental-map_1.png)
 
+Here is the information organized into a table:
+
+| **Category**                                          | **Details**                                                                                                                                                                                                                       |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **👶 Baby Essentials**                                 | - Enjoyed using "Lovevery" and "Duolingo" for interactive learning.<br>- Sought comfortability in baby bottles.<br>- Recommended the Honest brand formula by a co-worker.<br>- Preferred interactive and bilingual baby monitors. |
+| **🚗 Transportation Products Feedback**                | - Preferred seeing products in person over online shopping.<br>- Disliked the foldable stroller purchased from Amazon.<br>- Confusion over stroller terminologies like "all-in-one" and "2-in-one."                               |
+| **🍼 Feeding and Formula Choices**                     | - Made purchases without much price attention, such as an $11.99 product.<br>- Focused on comfort when selecting bottles.<br>- Tried the Honest brand formula based on recommendations.                                           |
+| **🧸 Used Toys and Strollers Opinions**                | - Noted that some people mark up used toys due to nostalgia.<br>- Valued used toys highly, finding them great.<br>- Considered used strollers acceptable.                                                                         |
+| **📚 Educational and Entertainment Products Insights** | - Preferred interactive and bilingual toys.<br>- Found some products unavailable.<br>- Preferred new mattresses over used ones.                                                                                                   |
+| **🛒 Parenting and Purchasing Insights**               | - Discussed concerns about resale value and return policies.<br>- Emphasized the importance of trustworthy reviews.<br>- Mentioned financial considerations, especially for car seats.                                            |
+| **👪 Parenting Challenges**                            | - Faced challenges managing toys and decluttering.<br>- Sought connections with like-minded parents while avoiding judgment.<br>- Expressed mental health concerns and the need for support.                                      |
+| **💬 Trust and Reviews**                               | - Stressed the importance of trustworthy reviews over paid ones.<br>- Referenced platforms like "Magic Beans" for reliable reviews.                                                                                               |
+| **🍽️ Food and Cooking**                                | - Shared concerns about the cost of baby food.<br>- Expressed a desire to cook more at home.                                                                                                                                      |
+| **🧸 Toy Management**                                  | - Discussed difficulties with children not wanting to let go of toys.<br>- Mentioned strategies for decluttering and managing toy overload.                                                                                       |
+
 ### Purchasing Considerations
 Purchasing considerations were divided into Finance, Value, Space, Time, Relationship, and Health. Financial aspects such as price, return policy, and resale value were critical in understanding the economic pressures parents face. Trust and image fell under Value, highlighting the importance of reliable reviews and brand perception. Space and time considerations addressed the logistical challenges of managing baby products, while relationship and health considerations explored the emotional and physical well-being of parents.
 
@@ -28,103 +43,7 @@ Purchasing considerations were divided into Finance, Value, Space, Time, Relatio
 
 This structured approach during our user interviews proved invaluable. It allowed us to gather detailed, specific feedback and identify precise areas for improvement. Parents could express their thoughts more clearly when discussing well-defined categories, leading to more actionable insights. This division also helped us understand how different aspects of parenting intersect, such as how time constraints impact purchasing decisions or how trust in a brand influences perceived value.
 
-By using this method, I gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
-
-## Baby Product Preferences
-
-### 👶 Baby Essentials
-- Enjoyed using "Lovevery" and "Duolingo" for interactive learning.
-- Sought comfortability in baby bottles.
-- Recommended the Honest brand formula by a co-worker.
-- Preferred interactive and bilingual baby monitors.
-
-## Transportation Products Feedback
-
-### 🚗 On-the-Go Essentials
-- Preferred seeing products in person over online shopping.
-- Disliked the foldable stroller purchased from Amazon.
-- Confusion over stroller terminologies like "all-in-one" and "2-in-one."
-
-## Feeding and Formula Choices
-
-### 🍼 Nourishment Essentials
-- Made purchases without much price attention, such as an $11.99 product.
-- Focused on comfort when selecting bottles.
-- Tried the Honest brand formula based on recommendations.
-
-## Used Toys and Strollers Opinions
-
-### 🧸 Second-Hand Views
-- Noted that some people mark up used toys due to nostalgia.
-- Valued used toys highly, finding them great.
-- Considered used strollers acceptable.
-
-## Educational and Entertainment Products Insights
-
-### 📚 Learning and Fun
-- Preferred interactive and bilingual toys.
-- Found some products unavailable.
-- Preferred new mattresses over used ones.
-
-## Parenting and Purchasing Insights
-
-### 🛒 Shopping Considerations
-- Discussed concerns about resale value and return policies.
-- Emphasized the importance of trustworthy reviews.
-- Mentioned financial considerations, especially for car seats.
-
-### 👪 Parenting Challenges
-- Faced challenges managing toys and decluttering.
-- Sought connections with like-minded parents while avoiding judgment.
-- Expressed mental health concerns and the need for support.
-
-### 💬 Trust and Reviews
-- Stressed the importance of trustworthy reviews over paid ones.
-- Referenced platforms like "Magic Beans" for reliable reviews.
-
-### 🍽️ Food and Cooking
-- Shared concerns about the cost of baby food.
-- Expressed a desire to cook more at home.
-
-### 🧸 Toy Management
-- Discussed difficulties with children not wanting to let go of toys.
-- Mentioned strategies for decluttering and managing toy overload.
-
-## Parental Challenges and Concerns
-
-### 😓 Parental Frustrations
-- Concerned about space taken up by toys and gear.
-- Frustrated with time-consuming cleaning processes.
-- Felt overwhelmed by the sheer number of items.
-- Worried about falling behind and needing to catch up.
-- Frustrated with the lack of physical product inspection.
-
-### 🤔 Confusion and Doubt
-- Confused by terminology and product selection.
-- Experienced doubts about making the right choices and buyer's remorse.
-- Uncertain about using the correct formulas and fabrics.
-- Feared not understanding parenting terminology.
-
-### 🧼 Cleaning and Space Concerns
-- Worried about the space occupied by toys and gear.
-- Frustrated with washing and cleaning processes.
-- Desired more efficient cleaning methods.
-
-### 🛍️ Product Selection Worries
-- Concerned about making the best product choices.
-- Confused over different product types and features.
-- Desired more information on product rewards and programs.
-- Worried about influencing children and making the right purchases.
-
-### 🤱 Parenting Challenges
-- Needed alone time and self-care.
-- Struggled with managing outgrown clothes and baby items.
-- Sought advice and support from other parents.
-- Feared children absorbing negative influences.
-
----
-
-### Key Themes and Insights from User Interviews
+### Quotes and Insights from User Interviews
 
 | **Theme**                              | **Quotes**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | **Business Consideration**                                                                                                                                                                 |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -137,17 +56,20 @@ By using this method, I gained a comprehensive understanding of the multifaceted
 | **Decision-Making and Anxiety**        | “Worried that I’m not going to be buying the right one.” -- Evan<br>“Confused and lost if I’m doing this right?” -- Izzy<br>“Fearful about what my kids will absorb from what I say or do.” -- Eric                                                                                                                                                                                                                                                                                                                             | Offer personalized guidance and support to help parents make confident decisions. Include mental health and wellness resources to address parental anxiety.                                |
 | **Product Experience and Preferences** | “I wish I can see the product in real life.” -- Izzy, Evan<br>“Always nice to see the product, which is not available most of the cases.” -- Evan<br>“Did not like the foldable stroller from Amazon.” -- Evan<br>“Frustrated that I can’t see the actual product in person.” -- Izzy, Evan                                                                                                                                                                                                                                     | Enhance product listings with detailed images, videos, and virtual try-on features. Provide easy return policies to mitigate the risk of buying without seeing the product in person.      |
 
-### Potential Opportunities
+By using this method, I gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
 
-| **Opportunity**                       | **Description**                                                                                                                                                                                   | **Business Consideration**                                                                                                                    |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Comprehensive Feature Integration** | By integrating meal planning, grocery lists, activity scheduling, and gentle parenting reminders, akaPrep can fill the gap left by competitors who offer more specialized but narrower solutions. | Position akaPrep as an all-in-one solution that simplifies parenting tasks, increases user retention, and differentiates it from competitors. |
-| **AI and Machine Learning**           | Leveraging AI to provide personalized and adaptive solutions can enhance user satisfaction and engagement.                                                                                        | Invest in AI technology to offer customized recommendations, improve user experience, and foster loyalty.                                     |
-| **Mental Health Support**             | Including features that support parental mental health, such as daily reflections, mindfulness exercises, and stress management tips, can add significant value.                                  | Address a critical need by incorporating mental health resources, making akaPrep indispensable for holistic parental support.                 |
-| **Community and Support Networks**    | Creating a platform for parents to connect, share experiences, and support each other can foster a sense of community and enhance user retention.                                                 | Build a strong user community to increase engagement, encourage word-of-mouth marketing, and improve user retention.                          |
-| **Partnerships with Experts**         | Collaborating with child development experts, nutritionists, and psychologists can ensure the content is credible and trustworthy, boosting the app’s reputation.                                 | Form strategic partnerships to enhance content quality, build credibility, and attract a wider user base.                                     |
 
-By incorporating features like meal planning, activity generation, and reminders for gentle parenting practices, akaPrep addresses the diverse and recurring needs of parents. Our market research highlighted the demand for an all-encompassing app that not only simplifies day-to-day tasks but also supports parents' overall well-being. This comprehensive coverage sets akaPrep apart from Breada and Huckleberry, positioning it as a versatile and indispensable tool for modern parenting.
+
+## Parental Challenges and Potential Opportunities
+
+| **Category**                      | **Details**                                                                                                                                                                                                                                                                                                | **Inspirations and Incorporations into akaPrep**                                                                                                                                                                                                                                                                                                            |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 😓 **Parental Frustrations**       | - Concerns about space being taken up by toys and gear.<br>- Frustrations with the time-consuming cleaning process.<br>- Feeling tired and overwhelmed by the amount of items.<br>- Worries about falling behind and the need to catch up.<br>- Frustrations with the lack of physical product inspection. | - **AI-Driven Decluttering Tips**: Provide personalized tips on managing and reducing space taken up by baby items.<br>- **Efficient Cleaning Methods**: Introduce AI-powered suggestions for faster and more effective cleaning processes.<br>- **Virtual Product Previews**: Use AI to offer virtual previews and detailed 3D images of products.         |
+| 🤔 **Confusion and Doubt**         | - Confusion over terminology and product selection.<br>- Doubts about making the right choices and buyer's remorse.<br>- Uncertainty about using the correct formulas and fabrics.<br>- Fear of not understanding parenting terminology.                                                                   | - **Educational Resources**: Incorporate AI to generate simple explanations and comparisons of different products and terminologies.<br>- **Personalized Recommendations**: Use AI to provide customized product suggestions based on user preferences and previous purchases.                                                                              |
+| 🧼 **Cleaning and Space Concerns** | - Worries about the space toys and gear occupy.<br>- Frustrations with the washing and cleaning process.<br>- Need for more efficient cleaning methods.<br>- Concerns about the amount of space items take up.                                                                                             | - **Space Management Tools**: Integrate AI to offer space-saving solutions and organization tips.<br>- **AI Cleaning Schedules**: Develop AI-powered cleaning schedules and tips to make cleaning more manageable and efficient.                                                                                                                            |
+| 🛍️ **Product Selection Worries**   | - Worries about making the best product choices.<br>- Confusion over different product types and features.<br>- Desire for more information on product rewards and programs.<br>- Concerns about influencing children and making the right purchases.                                                      | - **AI Product Comparisons**: Enable AI to compare product features, prices, and user reviews to help parents make informed decisions.<br>- **Reward Program Notifications**: Implement AI to notify parents about reward programs and deals related to their purchases.                                                                                    |
+| 🤱 **Parenting Challenges**        | - Need for alone time and self-care.<br>- Challenges in managing outgrown clothes and baby items.<br>- Seeking advice and support from other parents.<br>- Fear of children absorbing negative influences.                                                                                                 | - **AI Mental Health Support**: Offer AI-driven daily guided journals and mental health support features.<br>- **Community Building Tools**: Create AI-powered forums and discussion boards to connect parents with similar experiences.<br>- **Mindfulness and Self-Care Reminders**: Integrate AI reminders for self-care and mental wellness activities. |
+
 
 ### Additional Insights
 
