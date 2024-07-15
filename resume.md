@@ -12,24 +12,23 @@ I bring a diverse background in product management, software development and UI/
 - _Global Rotational PM @Digital Core_
 > Gothenburg, Sweden \| Aug 2023 - Present
 
-  - **Generative AI for Procurement Management:** Led the end-to-end development and deployment of a Generative AI application using Azure OpenAI API, revolutionizing procurement contract management processes. This initiative resulted in a 70% reduction in contract retrieval times, a 30% increase in analytical efficiency, and a 55% reduction in operational costs, benefiting over 600 buyers.
+  - **Generative AI for Procurement Management:** Collaborated with a cross-functional team to develop a Generative AI application using Azure OpenAI for procurement contract management processes. This initiative resulted in a 70% reduction in contract retrieval time, a 30% increase in analytical efficiency, and a 55% reduction in operational costs, benefiting over 600 buyers.
   - **Data & Analytics Platforms:** Crafted and executed a comprehensive data governance model leveraging YAML-based data contracts, enhancing data integrity by 20%. Engineered Python-based automation tools for data validation and privacy enhancement, integrated into CI/CD workflows via GitHub Actions, resulting in a 15% boost in regulatory compliance.
 
-### Atkins Realis
-- _Product Manager & Engineer II, LEED GA_
+### Atkins
+- _Engineer II - Data Product @Bridge & Structural Team_
 > Atlanta, GA \| Jan 2019 - Jun 2021, Aug 2022 - July 2023
 
-  - **Software Development and Data Visualization:** Created interactive dashboards using Python’s Bokeh and D3.js, transforming complex datasets into actionable insights. Developed advanced software tools for bridge assessment, increasing workflow efficiency by 40% and reducing dependency on technical support.
+  - **Data-Driven Product Development:** Led the development and implementation of software tools for bridge assessment, resulting in a 40% increase in workflow efficiency. Utilized Python’s Bokeh and D3.js to create interactive dashboards, transforming complex datasets into actionable insights for decision-making. Conducted data modeling and analysis for complex bridge structural projects, focusing on leveraging data insights to inform product strategies, automate bridge rating tools, and develop user-friendly front-end applications. This streamlined project delivery and improved efficiency for clients by 30%.
 
 ### SAP
 - _Associate Product Manager - Cloud Applications_
 > Shanghai, China \| Feb 2022 - Aug 2022
 
-  - **Cloud Application Development:** Orchestrated a strategy to refine compliance processes focusing on EDIFACT standards, achieving a 20% enhancement in process accuracy.
-  - **Customer-Centric UI/UX Optimization:** Implemented a customer-first approach, integrating feedback loops into development, leading to a 20% increase in user adoption rates and a 15% decrease in software anomalies.
+  - **Cloud Application Optimization:** Orchestrated and implemented cloud application strategies to refine compliance processes focusing on EDIFACT standards, achieving a 38% enhancement in process accuracy. Applied customer-first approaches, integrating feedback loops into development, leading to a 20% increase in user adoption rates and a decrease in software anomalies.
 
 ### Airwallex
-- _Intern Product Manager - Global Transfer & Payment Network_
+- _Product Manager Intern - Global Transfer & Payment Network_
 > Shanghai, China \| Nov 2021 - Feb 2022
 
   - **User Flow Enhancement:** Overhauled the Batch Maker-Checker user flow, resulting in a 20% boost in operational efficiency and a 15% increase in customer satisfaction ratings. Collaborated with UX/UI and engineering teams to enhance process streamlining, reducing transaction processing durations significantly.
@@ -39,13 +38,13 @@ I bring a diverse background in product management, software development and UI/
 - _Founder & Lead Curator_
 > Atlanta, GA \| Mar 2019 - Dec 2022
 
-  - **Business Development & Strategic Partnerships:** Built and scaled Apecyn Art Collections. Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
+  - **Business Development:** Built and scaled Apecyn Art Collections. Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
 
 ### Alibaba Group
-- _Software Engineer - Department of New Retail_
+- _Product Manager Intern - Last-mile Delivery_
 > Hangzhou, China \| Jul 2021 - Nov 2021
 
-  - **Real-Time Monitoring System Development:** Developed a RocketMQ-based system to monitor and analyze customer feedback, reducing erroneous issue reports by 74% and significantly enhancing product dependability and consumer confidence.
+  - **False Delivery Monitoring:** Developed a RocketMQ-based system to monitor and analyze customer feedback, reducing erroneous issue reports by 74%. This system significantly improved the accuracy of last-mile delivery, leading to a substantial increase in customer satisfaction and product dependability.
 
 <!-- ### Georgia Institute of Technology
 _Graduate Student Assistant_
