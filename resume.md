@@ -67,7 +67,6 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 - *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*, Honors
 > Hong Kong \| Sept 2013 - Jun 2017
 
-
 #### Waseda University
 - (Exchange Program)
 > Tokyo, Japan \| Feb 2016 - Jul 2016
