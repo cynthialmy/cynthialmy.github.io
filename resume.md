@@ -76,9 +76,11 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 > Sydney, Australia \| Sep 2014 - Feb 2015
 
 #### Certifications:
-
-AWIT Product Management Professional Specialization (2024), MBA Essentials @UofGlasgow (2024), IIBA Certified
-Product Manager (2023), Develop GenAI Solutions with Azure OpenAI (2023), SAP BTP Certified Developer (2022)
+- AWIT Product Management Professional Specialization (2024)
+- MBA Essentials @UofGlasgow (2024)
+- IIBA Certified Product Manager (2023)
+- Develop GenAI Solutions with Azure OpenAI (2023)
+- SAP BTP Certified Developer (2022)
 
 ---
 
