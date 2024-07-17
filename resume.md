@@ -75,17 +75,20 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 - (Exchange Program)
 > Sydney, Australia \| Sep 2014 - Feb 2015
 
+#### Certifications:
+
+AWIT Product Management Professional Specialization (2024), MBA Essentials @UofGlasgow (2024), IIBA Certified
+Product Manager (2023), Develop GenAI Solutions with Azure OpenAI (2023), SAP BTP Certified Developer (2022)
+
 ---
 
-### Skills & Certifications:
+### Skills:
 
 - **Product Management:** Agile & Scrum, Roadmap & Go-To-Market Strategy, User Stories, Competitive & Market Analysis
 - **Data Analysis:** SQL, R, Tableau, Google Analytics, A/B Testing, Data Visualization, Mixpanel, Power BI, Amplitude
 - **Programming:** Python, JavaScript, Swift, Java, Kotlin, React, RESTful API, OpenAI API, LangChain, D3, Imba, Git, JIRA
 - **UI/UX:** Wireframing & Prototyping, Usability Testing, Customer Journey Mapping, Figma, FigJam, Miro, Procreate
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
-- **Certifications:** AWIT Product Management Professional Specialization (2024), MBA Essentials @UofGlasgow (2024), IIBA Certified
-Product Manager (2023), Develop GenAI Solutions with Azure OpenAI (2023), SAP BTP Certified Developer (2022)
 
 ---
 
