@@ -5,8 +5,7 @@ subtitle: Product Manager | Software & AI Engineer
 ---
 
 ## Summary
-
-I bring a diverse background in product management, software development and UI/UX design. My experience spans across industries, including automotive, construction, and finance, where I have successfully led cross-functional teams to deliver innovative products and solutions. My passion for technology and data-driven decision-making has enabled me to drive impactful changes in organizations, resulting in enhanced operational efficiency, cost savings, and improved user experiences.
+Over half a decade of professional experience, specializing in product management, software development, and data-driven design. My experience spans across industries, including automotive, construction, and finance, where I have successfully led cross-functional teams to deliver innovative products and solutions. My passion for technology and data-driven decision-making has enabled me to drive impactful changes in organizations, resulting in enhanced operational efficiency, cost savings, and improved user experiences.
 
 ### Volvo Cars
 - _Global Rotational PM @Digital Core_
@@ -79,12 +78,15 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 
 ---
 
-### Skills:
+### Skills & Certifications:
 
-- **Certifications:** MBA Essentials @ University of Glasgow, IIBA Product Manager, Azure OpenAI Service, SAP BTP Certified Developer
-- **Programming Languages:** Python, JavaScript, Swift, React, R, SQL, Java, Scala, Kotlin, LangChain.js, OpenAI API, Imba, D3.js
-- **Development & Tools:** Git, Jira, Confluence, Miro, Figma
+- **Product Management:** Agile & Scrum, Roadmap & Go-To-Market Strategy, User Stories, Competitive & Market Analysis
+- **Data Analysis:** SQL, R, Tableau, Google Analytics, A/B Testing, Data Visualization, Mixpanel, Power BI, Amplitude
+- **Programming:** Python, JavaScript, Swift, Java, Kotlin, React, RESTful API, OpenAI API, LangChain, D3, Imba, Git, JIRA
+- **UI/UX:** Wireframing & Prototyping, Usability Testing, Customer Journey Mapping, Figma, FigJam, Miro, Procreate
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
+- **Certifications:** AWIT Product Management Professional Specialization (2024), MBA Essentials @UofGlasgow (2024), IIBA Certified
+Product Manager (2023), Develop GenAI Solutions with Azure OpenAI (2023), SAP BTP Certified Developer (2022)
 
 ---
 
