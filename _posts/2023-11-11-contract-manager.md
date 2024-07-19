@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Case Study: Developing the Data Contract Manager for Decentralized Data Management"
+title: "Product Planning: Developing the Data Contract Manager for Decentralized Data Management"
 subtitle: Delivering a Secure and Efficient System for Managing Data Agreements
 tags: [Data Management, Data Mesh, Data Contracts, Metadata, Decentralized Data]
 comments: true

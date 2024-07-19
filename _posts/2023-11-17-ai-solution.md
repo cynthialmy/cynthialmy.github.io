@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Implementing AI for Safer Procurement Processes at Volvo Cars”
+title: "Product Strategy: Implementing AI for Safer Procurement Processes at Volvo Cars"
 subtitle: Delivering AI Integration, Risk Mitigation, and Strategic Development
 tags: [AI implementation, procurement process, risk mitigation, project management]
 # cover-img: assets/img/data-book-summary-1.png

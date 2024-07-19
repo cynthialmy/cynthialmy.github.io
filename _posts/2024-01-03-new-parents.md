@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Case Study: User Research on Baby Products and Parental Challenges"
+title: "Market Research: User Research on Baby Products and Parental Challenges"
 subtitle: Insights on Baby Products, Parental Concerns, and Purchasing Decisions
 tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
 # cover-img: assets/img/data-book-summary-1.png

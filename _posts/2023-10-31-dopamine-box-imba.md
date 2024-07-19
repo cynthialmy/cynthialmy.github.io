@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Full-Stack Development with Imba: Dopamine Box Project Showcase"
+title: "Full-Stack: Development with Imba - Dopamine Box Project Showcase"
 subtitle: Unbox Happiness with this Simple Full-Stack Solution
 tags: [full-stack development, Imba, web development, project showcase]
 comments: true
