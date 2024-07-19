@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Book Summary: Driving Data Quality with Data Contracts"
+title: "Tech Deep-dive: Book Summary - Driving Data Quality with Data Contracts"
 subtitle: Solutions for Data Quality Challenges and Implementation Strategies
 tags: [data quality, data contracts, implementation, case study]
 comments: true

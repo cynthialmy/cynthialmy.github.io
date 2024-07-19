@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Technical Deep-dive: Developing the Data Contract Manager for Decentralized Data Management"
+title: "Tech Deep-dive: Developing the Data Contract Manager for Decentralized Data Management"
 subtitle: Delivering a Secure and Efficient System for Managing Data Agreements
 tags: [Data Management, Data Mesh, Data Contracts, Metadata, Decentralized Data]
 comments: true
