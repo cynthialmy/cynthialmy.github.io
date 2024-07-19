@@ -10,7 +10,7 @@ share-img: assets/img/data-book-summary-1.png
 # author: Cynthia Mengyuan Li
 ---
 
-Welcome to this summary of "Driving Data Quality with Data Contracts" by Andrew Jones. For the last two weeks, I’ve delved deep into learning about Data Contracts and I’m excited to share this with you.
+For the last two weeks, I’ve delved deep into learning about Data Contracts and I’m excited to share with you this summary of "Driving Data Quality with Data Contracts" by Andrew Jones.
 
 In this book I’ve discovered how data contracts can solve common problems many companies have with their data. Getting good quality data is a big challenge for everyone, even with a lot of money spent. Interestingly, while each company's data may be different, the challenges are universally similar!
 
