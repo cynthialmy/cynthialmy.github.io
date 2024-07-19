@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Driving Data Quality with Data Contracts"
-subtitle: Delve deep into learning about Data Contracts
-tags: [data-contract, work, data-management]
+title: "Book Summary: Driving Data Quality with Data Contracts"
+subtitle: Showcasing Solutions for Data Quality Challenges and Implementation Strategies
+tags: [data quality, data contracts, implementation, case study]
 comments: true
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/data-book-summary-1.png

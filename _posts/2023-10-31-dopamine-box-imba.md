@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Best Full-Stack Language!? Dopamine Box Project Powered by Imba
+title: "Full-Stack Development with Imba: Dopamine Box Project Showcase"
 subtitle: Unbox Happiness with this Simple Full-Stack Solution
-tags: [full-stack, project, imba]
+tags: [full-stack development, Imba, web development, project showcase]
 comments: true
 thumbnail-img: assets/img/dopamine-box.png
 share-img: assets/img/dopamine-box.png

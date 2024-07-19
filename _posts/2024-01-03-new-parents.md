@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Navigating Parenthood: Product Preferences and Parental Challenges"
+title: "Case Study: User Research on Baby Products and Parental Challenges"
 subtitle: Insights on Baby Products, Parental Concerns, and Purchasing Decisions
-tags: [parenting, baby products, product reviews, parental challenges]
+tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/parent-mental-map_3.png
 share-img: assets/img/parent-mental-map_3.png

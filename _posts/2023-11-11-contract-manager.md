@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Streamlining Decentralized Data Management with the Data Contract Manager"
-subtitle: "Simplify and Secure Your Data Agreements"
-tags: [Data Management, Data Mesh, Data Contracts, Metadata]
+title: "Case Study: Developing the Data Contract Manager for Decentralized Data Management"
+subtitle: Delivering a Secure and Efficient System for Managing Data Agreements
+tags: [Data Management, Data Mesh, Data Contracts, Metadata, Decentralized Data]
 comments: true
 # author: Cynthia Mengyuan Li
 ---

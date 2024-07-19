@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Crafting Safe and Impactful AI Solutions
-subtitle: "A Comprehensive Guide to Developing Distinctive and Secure AI Applications"
-tags: [LLM, AI, Safety, Generative, OpenAI, Azure, LangChain, RAG, GPT-4]
+title: “Implementing AI for Safer Procurement Processes at Volvo Cars”
+subtitle: Delivering AI Integration, Risk Mitigation, and Strategic Development
+tags: [AI implementation, procurement process, risk mitigation, project management]
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/architecture.png
 share-img: assets/img/architecture.png

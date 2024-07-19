@@ -1,8 +1,8 @@
 ---
 layout: post
 title: How we implemented Gen AI for Procurement at Volvo Cars
-subtitle: "A Case Study in Streamlining Contract Management with Generative AI"
-tags: [LLM, AI, Procurement, OpenAI, Azure, LangChain, RAG, GPT-4]
+subtitle: "A Case Study in AI Integration, Process Improvement, and Strategic Innovation"
+tags: [AI integration, procurement transformation, process optimization, strategic implementation, LLM, OpenAI, Azure, LangChain, RAG, GPT-4]
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/procurement_3.png
 share-img: assets/img/procurement_3.png
