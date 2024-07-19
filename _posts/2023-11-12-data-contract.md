@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Book Summary: Driving Data Quality with Data Contracts"
-subtitle: Showcasing Solutions for Data Quality Challenges and Implementation Strategies
+subtitle: Solutions for Data Quality Challenges and Implementation Strategies
 tags: [data quality, data contracts, implementation, case study]
 comments: true
 # cover-img: assets/img/data-book-summary-1.png
