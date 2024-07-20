@@ -84,6 +84,15 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 
 ---
 
+### Awards & Honors:
+- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology
+- HKSAR Government Scholarship Fund - Reaching Out Award
+- Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
+- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
+- Received the 3rd Prize in the National High School Biology Competition, 2012
+
+---
+
 ### Skills:
 
 - **Product Management:** Agile & Scrum, Roadmap & Go-To-Market Strategy, User Stories, Competitive & Market Analysis
@@ -93,13 +102,6 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
 
 ---
-
-### Awards & Honors:
-- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology
-- HKSAR Government Scholarship Fund - Reaching Out Award
-- Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
-- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
-- Received the 3rd Prize in the National High School Biology Competition, 2012
 
 ## Download My Resume
 [Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
