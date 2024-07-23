@@ -114,6 +114,6 @@ I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the L
 
 ## Chat?
 
-Ready to dive into a discussion that could range from the intricacies of data mesh technology to the hidden gems of our next travel destinations? Or perhaps, explore potential collaborations, business ideas, or simply exchange life stories?
+Ready to discuss the intricacies of data mesh technology, brainstorm potential collaborations, or simply share travel tips and life stories? Let's connect!
 
-Feel free to reach out directly at [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). I’m just a message away!
+You can reach out to me directly at [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). If you'd prefer, you can also book a chat with me through [Calendly](https://calendly.com/cynthiali/30min). I’m just a message away!
