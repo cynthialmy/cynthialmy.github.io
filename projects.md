@@ -13,10 +13,15 @@ subtitle: As a developer, I enjoy the excitement of creation.
 - **[d3-Interaction: Engaging Data Charts](https://cynthialmy.github.io/d3-Interaction/)**
   Dive into dynamic data visualizations. This initiative enhances user interaction with data charts, transforming static visuals into interactive experiences.
 
+- **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**
+  Navigate through a comprehensive analysis of infrastructure health. BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
+
 - **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**
   Discover the core of data visualization. This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
 ### Web and UI/UX Development
+- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**
+  Managing data contracts with this web-based application. The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
   Capture and reflect on moments of joy and dopamine release with this sleek application. Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
@@ -24,13 +29,6 @@ subtitle: As a developer, I enjoy the excitement of creation.
 - **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
   Witness the transformation of an educational website. This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
 
-### Data-Driven Web Applications
-- **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**
-  Navigate through a comprehensive analysis of infrastructure health. BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
-
-### Data Management Solutions
-- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**
-  Managing data contracts with this web-based application. The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
 
 ## Video Showcases
 
