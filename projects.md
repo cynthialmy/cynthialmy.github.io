@@ -8,26 +8,26 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
 ### Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**
-  Explore the art of storytelling through data. This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
+  This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
 
 - **[d3-Interaction: Engaging Data Charts](https://cynthialmy.github.io/d3-Interaction/)**
-  Dive into dynamic data visualizations. This initiative enhances user interaction with data charts, transforming static visuals into interactive experiences.
+  This initiative enhances user interaction with data charts, transforming static visuals into interactive experiences.
 
 - **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**
-  Navigate through a comprehensive analysis of infrastructure health. BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
+  BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
 
 - **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**
-  Discover the core of data visualization. This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
+  This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
 ### Web and UI/UX Development
 - **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**
-  Managing data contracts with this web-based application. The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
+  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
-  Capture and reflect on moments of joy and dopamine release with this sleek application. Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
+  Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
 
 - **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
-  Witness the transformation of an educational website. This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
+  This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
 
 
 ## Video Showcases
@@ -35,7 +35,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 ### Advanced Infrastructure Analysis
 - **[City-Scale Infrastructure Intelligence via Dynamic Analysis](resources/2017-POSTER-FYP.pdf)**
 
-  Embrace the future of infrastructure maintenance. This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living. This project was 2017 HKUST President's Cup Final List.
+  This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living. This project was 2017 HKUST President's Cup Final List.
 
   #### Video:
 
@@ -48,7 +48,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 ### Workshops and Analysis
 - **[Sentiment Analysis with Python Workshop](https://github.com/cynthialmy/Sentiment-Analysis-with-Scikit-learn)**
 
-  Step into the world of sentiment analysis. This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
+  This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
 
   #### Video:
 
@@ -57,7 +57,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
 - **[Geospatial Analysis of Yelp User Behavior](https://github.com/cynthialmy/Geospatial_Analysis_for_Yelp_User_Behaviour/blob/main/team010poster.pdf)**
 
-  Uncover patterns in consumer behavior. This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
+  This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
 
   #### Video:
 
@@ -68,7 +68,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 ### Innovative Solutions for Everyday Challenges
 - **[Real-time Display for Machine Status](resources/2015-poster-president-cup.pdf)**
 
-  Tackling everyday inconveniences with technology. This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST [President's Cup Golden Awardee](https://www.ce.ust.hk/news/gold-award-2014-2015-presidents-cup).
+  This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST [President's Cup Golden Awardee](https://www.ce.ust.hk/news/gold-award-2014-2015-presidents-cup).
 
   #### Video:
 
