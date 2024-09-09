@@ -21,7 +21,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
 ### Web and UI/UX Development
 - **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**
-  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub](https://github.com/volvo-cars/data-contract-manager).
+  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub (internal)](https://github.com/volvo-cars/data-contract-manager).
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
   Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
