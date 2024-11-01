@@ -9,33 +9,25 @@ share-img: assets/img/Travel-with-baby-Resized.webp
 # author: Cynthia Mengyuan Li
 ---
 
-Traveling across time zones is exciting, but jet lag can often steal the joy by leaving us groggy, fatigued, and struggling to adjust. That’s where our app’s jet lag preparation plan steps in, transforming travel experiences by adjusting your body’s internal clock gradually to the new time zone. Here’s a deep dive into how this plan is generated and tailored for all age groups to help you feel refreshed and ready when you arrive.
+Here’s a look under the hood at how the app calculates your custom plan to help you arrive feeling refreshed and ready.
 
-### How the Jet Lag Preparation Plan Works
+### Inputs to Customize Your Plan
+To make your plan truly effective, the app considers key factors like your departure and arrival times, number of time zones crossed, and days remaining until your trip. It also customizes based on age, with different sleep, light exposure, and meal adjustments for adults, children, toddlers, and infants.
 
-Our plan considers key factors that impact your circadian rhythm, or internal clock, which helps manage your body’s daily sleep-wake cycles. When you cross time zones, your circadian rhythm gets out of sync with the new time. By shifting your daily routine in small increments before and during your travel, our app helps reset your body’s clock, allowing you to adapt more naturally to the new time zone.
-
-### Inputs That Guide Your Personalized Plan
-
-For each journey, the app uses these inputs to shape a custom jet lag preparation strategy:
-
-1. **Departure and Arrival Times**: Knowing the specific times at the origin and destination time zones helps in setting up your schedule.
-2. **Time Zones Crossed**: Each time zone crossed adds an hour difference to adjust, helping determine the shift your schedule will need.
-3. **Days Until Departure**: The number of days you have to prepare determines the pacing of shifts.
-4. **Current Sleep Schedule**: Understanding your usual wake-up and sleep times forms the baseline.
-5. **Direction of Travel**: Whether you’re going eastward or westward affects whether you need to shift your schedule earlier or later.
-6. **Age Group**: Since adults, children, toddlers, and infants all have different sleep needs, your age group defines the shift increments and light exposure recommendations.
-
-With these inputs, the app generates three main strategies to adjust your sleep, light exposure, and meals/activities to support your circadian rhythm’s gradual transition to the new time zone.
+**Key Inputs Include:**
+1. **Departure & Arrival Times**: Departure and destination times help determine sleep and activity timing.
+2. **Time Zones Crossed**: Number of time zones you’re moving through to estimate adjustment requirements.
+3. **Days Until Departure**: More days allow for smaller, gradual shifts.
+4. **Current Sleep Schedule**: Knowing your usual wake-up and sleep times makes for smoother adjustment.
+5. **Direction of Travel**: Eastward travel requires advancing the sleep schedule, while westward requires delaying it.
+6. **Age Group**: Determines the amount of daily time shift that is comfortable and effective for each family member.
 
 ---
 
-### 1. Adjusting Sleep, Nap, and Wake Times
+### Adjusting Sleep, Nap, and Wake Times
+One of the most effective ways to prepare for a new time zone is to gradually adjust sleep and wake times in the days leading up to your trip. The app’s algorithm adjusts your schedule based on the number of time zones you’re crossing and how much time you have before departure.
 
-Your sleep adjustments depend on both the direction of travel and your age group. By shifting your sleep schedule in small increments, the app helps you transition to your new time zone smoothly.
-
-#### Logic Table for Sleep Adjustments:
-
+#### Sleep Adjustment Logic Table by Age Group
 | Age Group | Eastward Travel (Sleep Earlier) | Westward Travel (Sleep Later) |
 | --------- | ------------------------------- | ----------------------------- |
 | Adult     | Shift 30-60 min earlier daily   | Shift 30-60 min later daily   |
@@ -43,68 +35,44 @@ Your sleep adjustments depend on both the direction of travel and your age group
 | Toddler   | Shift 15-30 min earlier daily   | Shift 15-30 min later daily   |
 | Infant    | Shift 10-20 min earlier daily   | Shift 10-20 min later daily   |
 
-Based on the number of time zones crossed and your age group, the app calculates a **daily shift increment** and applies it to your sleep schedule as follows:
+For example, if you’re traveling east and need to sleep earlier, the app will gradually move your wake and sleep times up by 30-60 minutes daily for adults and older children, and by smaller increments for toddlers and infants.
 
-- **Eastward Travel**: The app gradually shifts your wake-up and sleep times earlier.
-- **Westward Travel**: The app gradually shifts your wake-up and sleep times later.
-
-#### Example for Sleep Adjustment:
-
-If you’re an adult crossing three time zones eastward, with four days until your trip, the app might suggest shifting your sleep time earlier by 45 minutes each day. This prepares your body to sleep and wake closer to your destination’s time, easing jet lag upon arrival.
+#### How It Works in the App
+The app calculates a `daily_shift` value, tailored to your age group, and gradually adjusts your wake and sleep times in the days before travel. For eastward travel, it shifts your wake-up and sleep times earlier. For westward travel, it moves them later.
 
 ---
 
-### 2. Light Exposure Recommendations
+### Light Exposure Recommendations
+Light exposure plays a crucial role in helping your body clock adjust. The timing of light exposure is tailored based on your direction of travel.
 
-Light exposure helps reset your circadian rhythm by regulating the production of melatonin, a hormone associated with sleep. For effective adaptation, the timing of light exposure is crucial and is aligned with your travel direction.
+#### Light Exposure Logic Table
+| Direction of Travel | Recommended Light Exposure Time |
+| ------------------- | ------------------------------- |
+| Eastward            | Morning                         |
+| Westward            | Evening                         |
 
-#### Logic Table for Light Exposure:
-
-| Direction of Travel | Recommended Light Exposure Time   |
-| ------------------- | --------------------------------- |
-| Eastward            | Morning (advances internal clock) |
-| Westward            | Evening (delays internal clock)   |
-
-In the app:
-
-- **Eastward Travel**: You’ll be encouraged to get **morning light exposure**, which helps advance your body clock, making it easier to fall asleep earlier.
-- **Westward Travel**: The app recommends **evening light exposure**, which helps delay your body clock, making it easier to stay awake later.
-
-This gentle exposure to natural light assists your body in adjusting smoothly to your new schedule.
+By exposing yourself to light at specific times, your body clock naturally shifts. Eastward travelers are recommended to get morning light exposure, which helps them adjust to sleeping earlier. For those traveling west, evening light helps delay the internal clock for a later bedtime.
 
 ---
 
-### 3. Meal and Activity Timing Adjustments
+### Meal and Activity Timing Adjustments
+Meal and activity schedules can also support the body’s natural rhythm adjustments. The app provides meal and exercise timing recommendations to reinforce the shift in your internal clock.
 
-Meal timing is another powerful cue that can help your body clock shift. By gradually adjusting meal times toward the destination’s schedule, your body’s digestive rhythm aligns with your new environment.
-
-#### Logic Table for Meal and Activity Timing:
-
+#### Meal & Activity Timing Logic Table
 | Direction of Travel | Meal Schedule Shift       | Activity Timing                |
 | ------------------- | ------------------------- | ------------------------------ |
 | Eastward            | Shift meals earlier daily | Morning exercise for alertness |
 | Westward            | Shift meals later daily   | Evening exercise for alertness |
 
-In the app:
-
-- **Meal Adjustments**: Meals are scheduled to shift slightly each day, allowing you to adopt the destination’s meal times gradually.
-   - For eastward travel, meals shift earlier, supporting an earlier bedtime.
-   - For westward travel, meals shift later, aligning with a later bedtime.
-
-- **Activity Timing**: The timing of activities like exercise is adjusted to help your body stay alert at the right times.
-   - **Eastward Travel**: Morning exercise is recommended to support an earlier sleep schedule.
-   - **Westward Travel**: Evening exercise helps delay sleep onset, aiding in adapting to the destination time.
+If you’re traveling east, the app will gradually move your meal times earlier, encouraging an earlier sleep schedule. Exercising in the morning promotes alertness when adjusting to an earlier day. For westward travelers, the app suggests shifting meal times later and moving exercise to the evening, which helps delay sleep onset.
 
 ---
 
-### How It All Comes Together
+### The Personalized Plan You Receive
+Using these inputs, the app calculates a structured daily adjustment plan tailored to each individual in your travel group. Here’s what it provides:
 
-Using this data, the app creates a **daily adjustment plan** that includes:
+1. **Sleep and Wake Adjustments**: Daily incremental shifts in sleep and wake times for smoother alignment with the destination.
+2. **Light Exposure Timing**: Ideal times to get natural light for optimizing body clock adjustments.
+3. **Meal and Activity Timing**: Suggested meal times and exercise slots that encourage alertness or restfulness as needed.
 
-1. **Sleep and Wake Adjustments**: Recommended sleep and wake times for each day before departure.
-2. **Light Exposure**: Suggested timing to get outside for natural light exposure.
-3. **Meal and Activity Timing**: Adjusted meal times and suggested activity periods to support your new schedule.
-
-By following this structured plan, you’ll be able to transition more naturally into your new time zone, minimizing the effects of jet lag. This way, instead of spending the first few days in a foggy daze, you can jump right into your travel plans feeling rested and ready.
-
-Whether you’re traveling east or west, adjusting to a new time zone doesn’t have to be exhausting. With this personalized plan, your body will feel right at home, no matter where you are in the world.
+By creating a gradual and personalized transition, our app helps minimize jet lag so you can enjoy your trip from the moment you arrive.
