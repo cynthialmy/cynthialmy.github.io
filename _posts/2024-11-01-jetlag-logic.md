@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Creating Your Jet Lag Preparation Plan
-subtitle: Algorithm to Personalize Your Journey to Better Sleep Across Time Zones
+title: Creating Jet Lag Preparation Plan
+subtitle: Algorithm to Personalized Journey to Better Sleep Across Time Zones
 tags: [JetLagPreparation, TravelTips, CircadianRhythm, SleepAdjustment, LightExposure, MealTiming, FamilyTravel]
 comments: true
 thumbnail-img: assets/img/Travel-with-baby-Resized.webp
