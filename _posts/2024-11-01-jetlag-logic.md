@@ -28,6 +28,7 @@ To make your plan truly effective, the app considers key factors like your depar
 One of the most effective ways to prepare for a new time zone is to gradually adjust sleep and wake times in the days leading up to your trip. The app’s algorithm adjusts your schedule based on the number of time zones you’re crossing and how much time you have before departure.
 
 #### Sleep Adjustment Logic Table by Age Group
+
 | Age Group | Eastward Travel (Sleep Earlier) | Westward Travel (Sleep Later) |
 | --------- | ------------------------------- | ----------------------------- |
 | Adult     | Shift 30-60 min earlier daily   | Shift 30-60 min later daily   |
@@ -46,6 +47,7 @@ The app calculates a `daily_shift` value, tailored to your age group, and gradua
 Light exposure plays a crucial role in helping your body clock adjust. The timing of light exposure is tailored based on your direction of travel.
 
 #### Light Exposure Logic Table
+
 | Direction of Travel | Recommended Light Exposure Time |
 | ------------------- | ------------------------------- |
 | Eastward            | Morning                         |
@@ -59,6 +61,7 @@ By exposing yourself to light at specific times, your body clock naturally shift
 Meal and activity schedules can also support the body’s natural rhythm adjustments. The app provides meal and exercise timing recommendations to reinforce the shift in your internal clock.
 
 #### Meal & Activity Timing Logic Table
+
 | Direction of Travel | Meal Schedule Shift       | Activity Timing                |
 | ------------------- | ------------------------- | ------------------------------ |
 | Eastward            | Shift meals earlier daily | Morning exercise for alertness |
