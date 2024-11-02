@@ -5,7 +5,7 @@ subtitle: Product Manager | Software & AI Engineer
 ---
 
 ## Summary
-Over half a decade of professional experience, specializing in product management, software development, and data-driven design. My experience spans across industries, including Electric Vehicles, SmartCity, FinTech and E-commerce, where I have successfully led cross-functional teams to deliver innovative products and solutions, resulting in improved user experiences, cost savings, enhanced operational efficiency and increased revenue.
+Over half a decade of professional experience, specializing in product management, software development, and data-driven design. My experience spans across industries, including Electric Vehicles, Smart City Infrastructures, FinTech and E-commerce, where I have successfully led cross-functional teams to deliver innovative products, improve user experiences, save cost, enhance operational efficiency and increase revenue.
 
 ### Volvo Cars
 - _Global Rotational PM @Digital Core_
