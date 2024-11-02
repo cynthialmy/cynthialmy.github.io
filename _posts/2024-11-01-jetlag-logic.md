@@ -4,12 +4,24 @@ title: Creating Jet Lag Preparation Plan
 subtitle: Algorithm to Personalized Journey to Better Sleep Across Time Zones
 tags: [JetLagPreparation, TravelTips, CircadianRhythm, SleepAdjustment, LightExposure, MealTiming, FamilyTravel]
 comments: true
-thumbnail-img: assets/img/Travel-with-baby-Resized.webp
-share-img: assets/img/Travel-with-baby-Resized.webp
+thumbnail-img: assets/img/t-minimum.png
+share-img: assets/img/t-minimum.png
 # author: Cynthia Mengyuan Li
 ---
 
 Here’s a look under the hood at how the app calculates your custom plan to help you arrive feeling refreshed and ready.
+
+### Temperature Minimum and Light Exposure
+
+Before we dive into the algorithm, let’s understand the science behind jet lag and how our bodies adjust to new time zones.
+
+![t-minimum](../assets/img/t-minimum.png)
+
+**Temperature Minimum (t-min):**
+Your body temperature follows a daily cycle, reaching its lowest point, known as the "temperature minimum" or t-min, around 90 minutes to two hours before you typically wake up. This t-min acts as an anchor for your circadian rhythm, helping regulate your sleep-wake cycle. To estimate your t-min, average your wake-up time over a week and subtract 90–120 minutes.
+
+**Light Sensitivity & Circadian Dead Zone:**
+Light exposure significantly influences circadian rhythms, but its effects vary throughout the day. Close to your t-min, your body is highly sensitive to light, which can shift your circadian clock. The "circadian dead zone," usually from 10 AM to 4 PM, is when light exposure has minimal impact on your rhythm. To support your circadian rhythm, aim to get bright light (ideally 100,000 lux) in the morning before the dead zone begins.
 
 ### Inputs to Customize Your Plan
 To make your plan truly effective, the app considers key factors like your departure and arrival times, number of time zones crossed, and days remaining until your trip. It also customizes based on age, with different sleep, light exposure, and meal adjustments for adults, children, toddlers, and infants.
@@ -26,6 +38,16 @@ To make your plan truly effective, the app considers key factors like your depar
 
 ### Adjusting Sleep, Nap, and Wake Times
 One of the most effective ways to prepare for a new time zone is to gradually adjust sleep and wake times in the days leading up to your trip. The app’s algorithm adjusts your schedule based on the number of time zones you’re crossing and how much time you have before departure.
+
+
+
+**Using t-min for Jet Lag Adjustment:**
+When shifting time zones, you can use light exposure relative to your t-min to adjust your internal clock:
+- **Phase Advance (Shift Earlier):** Expose yourself to bright light after your t-min to fall asleep and wake up earlier.
+- **Phase Delay (Shift Later):** View bright light before your t-min to stay up and wake up later.
+
+Physical activity also influences the circadian clock similarly to light exposure. Exercising in the four hours after your t-min advances your clock, while exercise before your t-min delays it. Preparing for jet lag by adjusting your clock two to three days before travel can reduce its severity, making adaptation smoother.
+
 
 #### Sleep Adjustment Logic Table by Age Group
 
@@ -69,6 +91,9 @@ Meal and activity schedules can also support the body’s natural rhythm adjustm
 
 If you’re traveling east, the app will gradually move your meal times earlier, encouraging an earlier sleep schedule. Exercising in the morning promotes alertness when adjusting to an earlier day. For westward travelers, the app suggests shifting meal times later and moving exercise to the evening, which helps delay sleep onset.
 
+### Arrival Tips for Jet Lag
+Once in a new time zone, align your meal times to the local schedule, as eating can help anchor your body to the new time. Avoid light exposure in the dead zone upon arrival to prevent any conflicting shifts to your circadian rhythm.
+
 ---
 
 ### The Personalized Plan You Receive
@@ -79,3 +104,10 @@ Using these inputs, the app calculates a structured daily adjustment plan tailor
 3. **Meal and Activity Timing**: Suggested meal times and exercise slots that encourage alertness or restfulness as needed.
 
 By creating a gradual and personalized transition, our app helps minimize jet lag so you can enjoy your trip from the moment you arrive.
+
+---
+
+### References
+
+- Huberman, A. (2021). Find Your Temperature Minimum to Defeat Jetlag, Shift Work, and Sleeplessness. [Podcast episode]. In Huberman Lab. Retrieved from
+https://www.hubermanlab.com/episode/find-your-temperature-minimum-to-defeat-jetlag-shift-work-and-sleeplessness
