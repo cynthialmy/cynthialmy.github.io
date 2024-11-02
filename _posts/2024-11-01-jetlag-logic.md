@@ -13,12 +13,12 @@ Here’s a look under the hood at how the app calculates your custom plan to hel
 
 ### Temperature Minimum and Light Exposure
 
-Before we dive into the algorithm, let’s understand the science behind jet lag and how our bodies adjust to new time zones.
-
-![t-minimum](../assets/img/t-minimum.png)
+Before we dive into the algorithm, let’s understand the science behind jet lag and how our bodies adjust to new time zones. Two key factors play a significant role in regulating our internal body clock: temperature minimum and light exposure.
 
 **Temperature Minimum (t-min):**
-Your body temperature follows a daily cycle, reaching its lowest point, known as the "temperature minimum" or t-min, around 90 minutes to two hours before you typically wake up. This t-min acts as an anchor for your circadian rhythm, helping regulate your sleep-wake cycle. To estimate your t-min, average your wake-up time over a week and subtract 90–120 minutes.
+Your body temperature follows a daily cycle, reaching its lowest point, known as the "temperature minimum" or t-min, around 90 minutes to two hours before you typically wake up. This t-min acts as an anchor for your circadian rhythm, helping regulate your sleep-wake cycle. To estimate your t-min, average your wake-up time over a week and subtract 90–120 minutes. Here is a graphical representation of the temperature minimum:
+
+![t-minimum](../assets/img/t-minimum.png)
 
 **Light Sensitivity & Circadian Dead Zone:**
 Light exposure significantly influences circadian rhythms, but its effects vary throughout the day. Close to your t-min, your body is highly sensitive to light, which can shift your circadian clock. The "circadian dead zone," usually from 10 AM to 4 PM, is when light exposure has minimal impact on your rhythm. To support your circadian rhythm, aim to get bright light (ideally 100,000 lux) in the morning before the dead zone begins.
