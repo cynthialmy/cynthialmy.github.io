@@ -31,13 +31,13 @@ Over half a decade of professional experience, specializing in product managemen
 > Shanghai, China \| Nov 2021 - Feb 2022
 
   - **User Flow Enhancement:** Overhauled the Batch Maker-Checker user flow, resulting in a 20% boost in operational efficiency and a 15% increase in customer satisfaction ratings. Collaborated with UX/UI and engineering teams to enhance process streamlining, reducing transaction processing durations significantly.
-  - **Strategic Market Expansion:** Led the expansion of Airwallex’s SWIFT payment network into 17 new countries, increasing market reach by 25% and improving feature deployment efficiency by 10%.
+  - **Strategic Market Expansion:** Led the expansion of [Airwallex’s SWIFT payment network](https://www.airwallex.com/blog/what-is-the-swift-payment-network) into 17 new countries, increasing market reach by 25% and improving feature deployment efficiency by 10%.
 
 ### Apecyn Art
 - _Founder & Lead Curator_
 > Atlanta, GA \| Mar 2019 - Dec 2022
 
-  - **Business Development:** Built and scaled Apecyn Art Collections. Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
+  - **Business Development:** Built and scaled [Apecyn Art Collections](https://opensea.io/collection/wakakacynthia-collection). Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
 
 ### Alibaba Group
 - _Product Manager Intern - Last-mile Delivery_
