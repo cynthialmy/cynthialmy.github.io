@@ -2,7 +2,7 @@
 layout: post
 title: "Science Deep-dive: Jet Lag Survival Guide"
 subtitle: Algorithm behind Personalized App for Better Sleep Across Time Zones
-tags: [JetLagPreparation, TravelTips, CircadianRhythm, SleepAdjustment, LightExposure, MealTiming, FamilyTravel]
+tags: [JetLagPreparation, TravelTips, CircadianRhythm, SleepAdjustment, LightExposure, MealTiming, FamilyTravel, SleepScience, ResearchInsights]
 comments: true
 thumbnail-img: assets/img/t-minimum.png
 share-img: assets/img/t-minimum.png
