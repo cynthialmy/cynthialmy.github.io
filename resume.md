@@ -40,7 +40,7 @@ Over half a decade of professional experience, specializing in product managemen
   - **Business Development:** Built and scaled [Apecyn Art Collections](https://opensea.io/collection/wakakacynthia-collection). Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
 
 ### Alibaba Group
-- _Product Manager Intern - Last-mile Delivery_
+- _Software Engineer - Last-mile Delivery_
 > Hangzhou, China \| Jul 2021 - Nov 2021
 
   - **False Delivery Monitoring:** Developed a RocketMQ-based system to monitor and analyze customer feedback, reducing erroneous issue reports by 74%. This system significantly improved the accuracy of last-mile delivery, leading to a substantial increase in customer satisfaction and product dependability.
