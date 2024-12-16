@@ -5,12 +5,13 @@ subtitle: Product Manager | Software & AI Engineer
 ---
 
 ## Summary
-Over half a decade of professional experience, specializing in product management, software development, and data-driven design. My experience spans across industries, including Electric Vehicles, Smart City Infrastructures, FinTech and E-commerce, where I have successfully led cross-functional teams to deliver innovative products, improve user experiences, save cost, enhance operational efficiency and increase revenue.
+My experience spans across industries, including Electric Vehicles, Smart City Infrastructures, FinTech and E-commerce, where I have successfully led cross-functional teams to deliver innovative products, improve user experiences, save cost, enhance operational efficiency and increase revenue.
 
 ### Volvo Cars
 - _Global Rotational PM @Digital Core_
 > Gothenburg, Sweden \| Aug 2023 - Present
 
+  - **Fleet & Business Shopping:** Drove key product initiatives within the Fleet cluster, focusing on Search Engine Optimization (SEO), Conversion Rate Optimization (CRO), and lead generation strategies. Led the development of dashboards and user segmentation tools using Power BI, improving lead quality tracking by 25%. Collaborated with marketing and sales teams to streamline the test drive and lead capture form rollout across multiple markets
   - **Generative AI for Procurement Management:** Collaborated with a cross-functional team to develop a Generative AI application using Azure OpenAI for procurement contract management processes. This initiative resulted in a 70% reduction in contract retrieval time, a 30% increase in analytical efficiency, and a 55% reduction in operational costs, benefiting over 600 buyers.
   - **Data & Analytics Platforms:** Crafted and executed a comprehensive data governance model leveraging YAML-based data contracts, enhancing data integrity by 20%. Engineered Python-based automation tools for data validation and privacy enhancement, integrated into CI/CD workflows via GitHub Actions, resulting in a 15% boost in regulatory compliance.
 
