@@ -67,6 +67,8 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 ## Chat?
 
-Ready to discuss the intricacies of data mesh technology, brainstorm potential collaborations, or simply share travel tips and life stories? Let's connect!
+Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let’s connect!
 
-You can reach out to me directly at [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/). If you'd prefer, you can also book a chat with me through [Calendly](https://calendly.com/cynthiali/30min). I’m just a message away!
+- **Email:** [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com)
+- **Calendly:** [Book a Chat](https://calendly.com/cynthiali/30min)
+- **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)
