@@ -1,56 +1,11 @@
 ---
 layout: page
 title: Cynthia Mengyuan Li
-subtitle: Product Manager | Software & AI Engineer
+subtitle: Data Platform Product Manager | Software & AI Engineer
 ---
 
 ## Summary
-My experience spans across industries, including Electric Vehicles, Smart City Infrastructures, FinTech and E-commerce, where I have successfully led cross-functional teams to deliver innovative products, improve user experiences, save cost, enhance operational efficiency and increase revenue.
-
-### Volvo Cars
-- _Global Rotational PM @Digital Core_
-> Gothenburg, Sweden \| Aug 2023 - Present
-
-  - **Fleet & Business Shopping:** Drove key product initiatives within the Fleet cluster, focusing on Search Engine Optimization (SEO), Conversion Rate Optimization (CRO), and lead generation strategies. Led the development of dashboards and user segmentation tools using Power BI, improving lead quality tracking by 25%. Collaborated with marketing and sales teams to streamline the test drive and lead capture form rollout across multiple markets
-  - **Generative AI for Procurement Management:** Collaborated with a cross-functional team to develop a Generative AI application using Azure OpenAI for procurement contract management processes. This initiative resulted in a 70% reduction in contract retrieval time, a 30% increase in analytical efficiency, and a 55% reduction in operational costs, benefiting over 600 buyers.
-  - **Data & Analytics Platforms:** Crafted and executed a comprehensive data governance model leveraging YAML-based data contracts, enhancing data integrity by 20%. Engineered Python-based automation tools for data validation and privacy enhancement, integrated into CI/CD workflows via GitHub Actions, resulting in a 15% boost in regulatory compliance.
-
-### Atkins
-- _Engineer II - Data Product @Bridge & Structural Team_
-> Atlanta, GA \| Jan 2019 - Jun 2021, Aug 2022 - July 2023
-
-  - **Data-Driven Product Development:** Led the development and implementation of software tools for bridge assessment, resulting in a 40% increase in workflow efficiency. Utilized Python’s Bokeh and D3.js to create interactive dashboards, transforming complex datasets into actionable insights for decision-making. Conducted data modeling and analysis for complex bridge structural projects, focusing on leveraging data insights to inform product strategies, automate bridge rating tools, and develop user-friendly front-end applications. This streamlined project delivery and improved efficiency for clients by 30%.
-
-### SAP
-- _Associate Product Manager - Cloud Applications_
-> Shanghai, China \| Feb 2022 - Aug 2022
-
-  - **Cloud Application Optimization:** Orchestrated and implemented cloud application strategies to refine compliance processes focusing on EDIFACT standards, achieving a 38% enhancement in process accuracy. Applied customer-first approaches, integrating feedback loops into development, leading to a 20% increase in user adoption rates and a decrease in software anomalies.
-
-### Airwallex
-- _Product Manager Intern - Global Transfer & Payment Network_
-> Shanghai, China \| Nov 2021 - Feb 2022
-
-  - **User Flow Enhancement:** Overhauled the Batch Maker-Checker user flow, resulting in a 20% boost in operational efficiency and a 15% increase in customer satisfaction ratings. Collaborated with UX/UI and engineering teams to enhance process streamlining, reducing transaction processing durations significantly.
-  - **Strategic Market Expansion:** Led the expansion of [Airwallex’s SWIFT payment network](https://www.airwallex.com/blog/what-is-the-swift-payment-network) into 17 new countries, increasing market reach by 25% and improving feature deployment efficiency by 10%.
-
-### Apecyn Art
-- _Founder & Lead Curator_
-> Atlanta, GA \| Mar 2019 - Dec 2022
-
-  - **Business Development:** Built and scaled [Apecyn Art Collections](https://opensea.io/collection/wakakacynthia-collection). Directed a collaborative team of artists and formed partnerships with five local breweries and media companies in Los Angeles, expanding sales channels and placing art in over 10 local stores, resulting in a 50% increase in revenue.
-
-### Alibaba Group
-- _Software Engineer - Last-mile Delivery_
-> Hangzhou, China \| Jul 2021 - Nov 2021
-
-  - **False Delivery Monitoring:** Developed a RocketMQ-based system to monitor and analyze customer feedback, reducing erroneous issue reports by 74%. This system significantly improved the accuracy of last-mile delivery, leading to a substantial increase in customer satisfaction and product dependability.
-
-<!-- ### Georgia Institute of Technology
-_Graduate Student Assistant_
-Atlanta, GA, Jan 2023 - May 2023
-
-During my time as a Graduate Student Assistant at Georgia Tech, I was responsible for creating and executing Python workshops, which led to a 50% increase in student engagement. My role involved not only educational content creation but also managing lab resources and assisting in research projects. This experience sharpened my skills in data visualization and analytics, crucial for data-driven product management. -->
+I specialize in delivering **scalable data platforms**, **AI-enhanced solutions**, and **developer tools** that drive operational efficiency, improve data integrity, and enable real-time insights. With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech, and E-commerce, I have successfully led cross-functional teams to develop robust platforms, streamline data pipelines, and enhance analytics capabilities.
 
 ---
 
@@ -96,10 +51,10 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 
 ### Skills:
 
-- **Product Management:** Agile & Scrum, Roadmap & Go-To-Market Strategy, User Stories, Competitive & Market Analysis
-- **Data Analysis:** SQL, R, Tableau, Google Analytics, A/B Testing, Data Visualization, Mixpanel, Power BI, Amplitude
-- **Programming:** Python, JavaScript, Swift, Java, Kotlin, React, RESTful API, OpenAI API, LangChain, D3, Imba, Git, JIRA
-- **UI/UX:** Wireframing & Prototyping, Usability Testing, Customer Journey Mapping, Figma, FigJam, Miro, Procreate
+- **Platform Tools & Frameworks:** Kubernetes, Kafka, Airflow, Snowflake, RocketMQ
+- **Programming & Automation:** Python, CI/CD, RESTful APIs, Terraform
+- **Data Engineering & Analytics:** SQL, Data Governance, Data Contracts, Data Pipelines
+- **Product Management:** Roadmaps, Stakeholder Collaboration, Agile & Scrum
 - **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
 
 ---
@@ -109,9 +64,6 @@ During my time as a Graduate Student Assistant at Georgia Tech, I was responsibl
 
 ## Check My References
 [Reference Letters](resources/reference_letters.pdf)
-
-<!-- ## Build-Measure-Learn
-I firmly believe in the Build-Measure-Learn feedback loop, as advocated in the Lean Startup methodology. This approach will guide my efforts in iterative product development, enabling us to rapidly adapt to changing requirements and continuously improve our offerings. -->
 
 ## Chat?
 
