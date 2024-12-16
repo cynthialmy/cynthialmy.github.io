@@ -54,9 +54,9 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 - **Platform Tools & Frameworks:** Kubernetes, Kafka, Airflow, Snowflake, RocketMQ
 - **Programming & Automation:** Python, CI/CD, RESTful APIs, Terraform
 - **Data Engineering & Analytics:** SQL, Data Governance, Data Contracts, Data Pipelines
-- **Product Management:** Roadmaps, Stakeholder Collaboration, Agile & Scrum
-- **Languages:** Fluent in English, Mandarin, and Cantonese. Beginner Level Japanese.
-
+- **Product Management:** Roadmaps, Stakeholder Collaboration, Agile & Scrum, OKRs
+- **User Tools Design:** Wireframing and prototyping dashboards and internal tools (Figma, Miro)
+- **Languages:** Fluent in English, Mandarin, and Cantonese
 ---
 
 ## Download My Resume
