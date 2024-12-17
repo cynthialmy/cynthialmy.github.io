@@ -94,6 +94,16 @@ Snowflake excels at batch analytics but isn’t optimized for sub-second queryin
 
 ---
 
+### **4. Real-Time Recommendations with Redis**
+
+To deliver sub-second recommendations to users, Zoner will use **Redis** as a caching layer. Redis will store pre-aggregated circadian insights, ensuring low-latency access for the app interface.
+
+**Example Flow:**
+1. New user activity → Kafka → Python processing → Snowflake updates Redis cache.
+2. The app queries Redis for personalized, real-time recommendations.
+
+---
+
 ### **5. Scalability and Resilience with Kubernetes**
 
 All backend components—Kafka brokers, Python consumers, and Redis—will run on **Kubernetes** for scalability, orchestration, and fault tolerance.
@@ -103,7 +113,7 @@ All backend components—Kafka brokers, Python consumers, and Redis—will run o
 - **Fault Recovery**: If a consumer or cache node crashes, Kubernetes ensures automatic restarts.
 - **Resource Optimization**: Containers ensure efficient CPU and memory utilization across workloads.
 
-**Real-World Use Case:**
+**Use Case:**
 During peak travel seasons, when event volume surges, Kubernetes dynamically scales Kafka consumers to prevent event lag.
 
 ---
@@ -115,8 +125,6 @@ Zoner’s backend will prioritize data security and accuracy from day one:
 1. **At-Least-Once Delivery**: Kafka guarantees no data loss. Deduplication occurs during ingestion using unique `event_id` identifiers.
 2. **Encryption**: All data is encrypted both in transit (TLS) and at rest.
 3. **Access Control**: Role-based access controls (RBAC) in Snowflake and Kubernetes safeguard sensitive user data.
-
----
 
 ## **Future Enhancements**
 
@@ -140,7 +148,6 @@ This MVP is just the start. We’re excited to explore:
 Our goal is to create a platform that **learns from user data**—helping families travel smarter and adjust faster to new time zones.
 
 ---
-
 
 ## **Closing Thoughts**
 
