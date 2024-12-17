@@ -44,6 +44,8 @@ Here’s the proposed design:
 2. **Scalable Processing**: Kafka consumer groups ensure messages are processed in parallel.
 3. **Low-Latency Analytics**: Near real-time recommendations are pre-aggregated for quick querying.
 
+![t-minimum](../assets/img/data-architecture.png)
+
 Let’s explore each component in detail.
 
 ---
