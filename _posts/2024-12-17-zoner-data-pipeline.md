@@ -13,8 +13,9 @@ In my [first post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), I sha
 
 Then, in my [second post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), we dug deeper into the **science** of circadian rhythms, light exposure, and meal timing, key strategies for overcoming jet lag.
 
-Today, I’m going to talk about the **backend design** that will power Zoner’s adaptive, data-driven recommendations. While still in the **planning phase**, this architecture sets the stage for a scalable, real-time pipeline capable of handling unpredictable changes—missed naps, flight delays, or sudden schedule shifts. 🛠️
-I’ve built the **Zoner MVP Proof of Concept (PoC)** [GitHub](https://github.com/cynthialmy/zoner-mvp). This PoC demonstrates the real-time backend architecture that will power Zoner’s adaptive sleep schedule recommendations.
+Today, I’m going to talk about the **backend design** that will power Zoner’s adaptive, data-driven recommendations. While still in the **planning phase**, this architecture sets the stage for a scalable, real-time pipeline capable of handling unpredictable changes—missed naps, flight delays, or sudden schedule shifts.
+
+I’ve built the **Zoner MVP Proof of Concept (PoC)** [GitHub](https://github.com/cynthialmy/zoner-mvp). This PoC demonstrates the real-time backend architecture that will power Zoner’s adaptive sleep schedule recommendations. 🛠️
 
 ---
 
