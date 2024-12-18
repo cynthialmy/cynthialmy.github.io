@@ -14,6 +14,7 @@ In my [first post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), I sha
 Then, in my [second post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), we dug deeper into the **science** of circadian rhythms, light exposure, and meal timing, key strategies for overcoming jet lag.
 
 Today, I’m going to talk about the **backend design** that will power Zoner’s adaptive, data-driven recommendations. While still in the **planning phase**, this architecture sets the stage for a scalable, real-time pipeline capable of handling unpredictable changes—missed naps, flight delays, or sudden schedule shifts. 🛠️
+I’ve built the **Zoner MVP Proof of Concept (PoC)** [GitHub](https://github.com/cynthialmy/zoner-mvp). This PoC demonstrates the real-time backend architecture that will power Zoner’s adaptive sleep schedule recommendations.
 
 ---
 
@@ -143,6 +144,23 @@ To scale and optimize further, we’re exploring:
 
 ---
 
+## **The Zoner PoC**
+
+The Zoner PoC implements a **real-time event-driven architecture**, tackling the complexities of jet lag adjustments:
+
+1. **Capture real-world disruptions**—like missed naps or flight delays.
+2. **Process continuous data streams** accurately and at scale.
+3. **Generate personalized recommendations** with minimal latency.
+
+Here’s a high-level view of the architecture:
+
+```
+[User Activity Events] --> [Kafka Topics (Ingestion)] --> [Python Consumers (Processing)] -->
+    [SQLite (Temporary Storage)] --> [Future Plans: Snowflake, Redis, App Interface]
+```
+
+The PoC focuses on foundational features like event ingestion and processing, while leaving room for future enhancements like Redis caching and Snowflake analytics.
+
 ## **What’s Next?**
 
 This MVP is just the start. We’re excited to explore:
@@ -152,3 +170,5 @@ This MVP is just the start. We’re excited to explore:
 - **Smart Notifications**: Remind parents about key actions like nap times, light exposure, and feeding schedules.
 
 Zoner started as a small idea—a way to help my own family navigate jet lag. By combining **sleep science** with a real-time, data-driven backend, we’re building something bigger: an app that empowers families to travel better, adapt faster, and enjoy every moment together.
+
+Check out the PoC on [GitHub](https://github.com/cynthialmy/zoner-mvp) and stay tuned for updates!
