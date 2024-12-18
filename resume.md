@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Mengyuan Li
-subtitle: Product Manager & Software Engineer
+subtitle: Product Manager & Engineer
 ---
 
 ## Summary
