@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cynthia Mengyuan Li
-subtitle: Data Platform Product Manager | Software & AI Engineer
+subtitle: Product Manager & Software Engineer
 ---
 
 ## Summary
