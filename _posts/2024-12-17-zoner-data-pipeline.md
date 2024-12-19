@@ -160,7 +160,85 @@ Here’s a high-level view of the architecture:
     [SQLite (Temporary Storage)] --> [Future Plans: Snowflake, Redis, App Interface]
 ```
 
-The PoC focuses on foundational features like event ingestion and processing, while leaving room for future enhancements like Redis caching and Snowflake analytics.
+### **Data Analysis and Visualization: Streamlit + Snowflake**
+
+As part of the Zoner MVP PoC, I integrated **Streamlit** with **Snowflake** to provide real-time visualization and analysis of user activity data. This interactive dashboard enables us to monitor, explore, and analyze trends in how users interact with the app—making it a powerful tool for validating and refining our backend architecture. 📊
+
+![streamlit-dashboard](../assets/img/streamlit1.png)
+
+---
+
+### **What is Streamlit?**
+
+[Streamlit](https://streamlit.io/) is an open-source Python framework designed for building data-driven web apps with minimal effort. With its simple syntax and integration capabilities, Streamlit allows developers to quickly create and deploy interactive dashboards.
+
+In this case, we used Streamlit to visualize and filter data stored in Snowflake, giving us real-time insights into **user activity patterns**.
+
+---
+
+### **Features of the Zoner Dashboard**
+
+The dashboard provides two key functionalities, highlighted by **screenshot 1** and **screenshot 2**:
+
+#### **1. Visualizing All User Activity**
+
+The dashboard fetches the latest 100 records of user activity from the Snowflake `user_activity` table and displays them in a **sortable, scrollable table**. You can easily view:
+- User ID
+- Activity type (e.g., `sleep`, `meal`, `light_exposure`)
+- Timestamps for each event
+
+![streamlit-dashboard](../assets/img/streamlit2.png)
+
+#### **2. Filtering User Activity**
+
+To analyze specific types of activity, the dashboard includes a **filtering feature**. Users can:
+- Select an activity type (e.g., `sleep`) from a dropdown menu.
+- View a filtered table and charts that only display relevant events.
+
+![streamlit-dashboard](../assets/img/streamlit3.png)
+
+---
+
+### **Visualizations in the Dashboard**
+
+#### **Activity Breakdown**
+
+A **bar chart** shows the distribution of user activities (e.g., how many events were recorded for `sleep`, `meal`, etc.). This visualization quickly highlights which activities dominate user behavior.
+
+#### **User Activity Over Time**
+
+A **line chart** tracks the frequency of user activities over time, helping to spot trends like:
+- Daily peaks in activity logging.
+- How disruptions (like travel days) impact engagement.
+
+---
+
+### **How It Works**
+
+The app uses the following Snowflake + Streamlit pipeline:
+
+1. **Querying Snowflake**:
+   A SQL query fetches data from the `user_activity` table, ordered by timestamp. The data is converted into a Pandas DataFrame for analysis and visualization.
+
+2. **Interactive Filters**:
+   Dropdown menus and Streamlit widgets let users slice and dice the data dynamically.
+
+3. **Dynamic Charts**:
+   The bar chart and line chart automatically update based on the data filters applied.
+
+---
+
+### **Benefits for Zoner**
+
+1. **Real-Time Insights**:
+   With data sourced directly from Snowflake, the dashboard offers up-to-date views of user activity.
+
+2. **Debugging and Validation**:
+   The table and charts allow us to ensure all event ingestion pipelines are functioning correctly.
+
+3. **Data-Driven Iteration**:
+   By analyzing user behavior patterns, we can refine recommendations and backend logic to improve the app.
+
 
 ## **What’s Next?**
 
