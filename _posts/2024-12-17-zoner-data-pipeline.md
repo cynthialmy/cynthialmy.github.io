@@ -166,7 +166,7 @@ In this case, we used Streamlit to visualize and filter data stored in Snowflake
 
 ### **Features of the Zoner Dashboard**
 
-The dashboard provides two key functionalities, highlighted by **screenshot 1** and **screenshot 2**:
+The dashboard provides two key functionalities:
 
 #### **1. Visualizing All User Activity**
 
