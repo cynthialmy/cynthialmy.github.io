@@ -53,12 +53,7 @@ To solve these challenges, we designed a **real-time event-driven architecture**
 
 Here’s the proposed design:
 
-```
-[User Activity Events] --> [Kafka Topics (Ingestion)] --> [Python Consumers (Processing)] -->
-    [Snowflake (Storage & Analytics)] --> [Redis (Real-Time Caching)] --> [App Interface]
-```
-
-![t-minimum](../assets/img/data-architecture.png)
+![data-architecture](../assets/img/data-architecture.png)
 
 Let’s explore each component in detail.
 
