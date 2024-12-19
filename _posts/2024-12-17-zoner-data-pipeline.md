@@ -47,8 +47,6 @@ Zoner must address the complexities of **real-world disruptions**:
 
 To solve these challenges, we designed a **real-time event-driven architecture** using **Kafka**, **Snowflake**, **Python**, and **Kubernetes**.
 
----
-
 ## **Zoner’s Backend Architecture**
 
 Here’s the proposed design:
@@ -71,8 +69,6 @@ At the core of Zoner is **Apache Kafka**, a distributed event-streaming platform
 **Deduplication:**
 Kafka’s idempotent producer ensures that duplicate events aren’t written at the source. Downstream consumers validate events using a combination of `event_id` and timestamp for extra reliability.
 
----
-
 #### **2. Event Processing with Python Consumers**
 
 Python consumers process Kafka events, validate their integrity, enrich data if needed, and push it to **Snowflake** for analytics.
@@ -84,8 +80,6 @@ Python consumers process Kafka events, validate their integrity, enrich data if 
 
 **Why Python?**
 Python’s flexibility and readability make it ideal for rapid prototyping. However, for high-throughput pipelines, we plan to integrate tools like **Kafka Streams** or **Apache Flink** to handle real-time transformations and aggregations.
-
----
 
 #### **3. Analytics and Storage with Snowflake**
 
@@ -101,8 +95,6 @@ Snowflake is optimized for batch analytics, not sub-second querying. To bridge t
 - **Redis** stores pre-computed recommendations.
 - Snowflake updates Redis incrementally every **60 seconds** or based on critical user events.
 
----
-
 #### **4. Real-Time Recommendations with Redis**
 
 **Redis** ensures sub-second response times by caching pre-computed insights for each user.
@@ -116,8 +108,6 @@ Redis entries are updated based on:
 - **Event Triggers**: Critical events like a new sleep log or flight delay immediately refresh the cache.
 - **Scheduled Updates**: Background jobs refresh less critical entries every **60 seconds**.
 
----
-
 #### **5. Scalability and Resilience with Kubernetes**
 
 Kubernetes orchestrates all backend components—Kafka, Python consumers, Snowflake connectors, and Redis—ensuring fault tolerance and scalability.
@@ -129,8 +119,6 @@ Kubernetes orchestrates all backend components—Kafka, Python consumers, Snowfl
 
 **Deployment Model:**
 We plan to use **managed Kafka services** (e.g., Confluent Cloud or MSK) for production reliability, with Kubernetes managing other workloads.
-
----
 
 ### **Ensuring Data Integrity and Security**
 
@@ -170,15 +158,11 @@ As part of the Zoner MVP PoC, I integrated **Streamlit** with **Snowflake** to p
 
 ![streamlit-dashboard](../assets/img/streamlit1.png)
 
----
-
 ### **What is Streamlit?**
 
 [Streamlit](https://streamlit.io/) is an open-source Python framework designed for building data-driven web apps with minimal effort. With its simple syntax and integration capabilities, Streamlit allows developers to quickly create and deploy interactive dashboards.
 
 In this case, we used Streamlit to visualize and filter data stored in Snowflake, giving us real-time insights into **user activity patterns**.
-
----
 
 ### **Features of the Zoner Dashboard**
 
@@ -200,7 +184,6 @@ To analyze specific types of activity, the dashboard includes a **filtering feat
 - View a filtered table and charts that only display relevant events.
 
 ![streamlit-dashboard](../assets/img/streamlit3.png)
-
 
 ## **What’s Next?**
 
