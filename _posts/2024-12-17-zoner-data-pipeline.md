@@ -13,9 +13,26 @@ In my [first post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), I sha
 
 Then, in my [second post](https://cynthialmy.github.io/2024-11-01-jetlag-logic/), we dug deeper into the **science** of circadian rhythms, light exposure, and meal timing, key strategies for overcoming jet lag.
 
-Today, I’m going to talk about the **backend design** that will power Zoner’s adaptive, data-driven recommendations. While still in the **planning phase**, this architecture sets the stage for a scalable, real-time pipeline capable of handling unpredictable changes—missed naps, flight delays, or sudden schedule shifts.
+Today, I’m going to talk about the **backend design** that will power Zoner’s adaptive, data-driven recommendations. I’ve built the **Zoner MVP Proof of Concept (PoC)** [GitHub](https://github.com/cynthialmy/zoner-mvp). This PoC demonstrates the real-time backend architecture that will power Zoner’s adaptive sleep schedule recommendations. 🛠️
 
-I’ve built the **Zoner MVP Proof of Concept (PoC)** [GitHub](https://github.com/cynthialmy/zoner-mvp). This PoC demonstrates the real-time backend architecture that will power Zoner’s adaptive sleep schedule recommendations. 🛠️
+## **Table of Contents**
+- [**Table of Contents**](#table-of-contents)
+- [**The Challenge: Real-Time, Personalized Adjustments**](#the-challenge-real-time-personalized-adjustments)
+- [**Zoner’s Backend Architecture**](#zoners-backend-architecture)
+    - [**1. Real-Time Data Ingestion with Kafka**](#1-real-time-data-ingestion-with-kafka)
+    - [**2. Event Processing with Python Consumers**](#2-event-processing-with-python-consumers)
+    - [**3. Analytics and Storage with Snowflake**](#3-analytics-and-storage-with-snowflake)
+    - [**4. Real-Time Recommendations with Redis**](#4-real-time-recommendations-with-redis)
+    - [**5. Scalability and Resilience with Kubernetes**](#5-scalability-and-resilience-with-kubernetes)
+  - [**Ensuring Data Integrity and Security**](#ensuring-data-integrity-and-security)
+  - [**Future Enhancements**](#future-enhancements)
+- [**The Zoner PoC**](#the-zoner-poc)
+  - [**Data Analysis and Visualization: Streamlit + Snowflake**](#data-analysis-and-visualization-streamlit--snowflake)
+  - [**What is Streamlit?**](#what-is-streamlit)
+  - [**Features of the Zoner Dashboard**](#features-of-the-zoner-dashboard)
+    - [**1. Visualizing All User Activity**](#1-visualizing-all-user-activity)
+    - [**2. Filtering User Activity**](#2-filtering-user-activity)
+- [**What’s Next?**](#whats-next)
 
 ---
 
@@ -32,7 +49,7 @@ To solve these challenges, we designed a **real-time event-driven architecture**
 
 ---
 
-## **Zoner’s Backend Architecture: The Blueprint**
+## **Zoner’s Backend Architecture**
 
 Here’s the proposed design:
 
@@ -41,18 +58,13 @@ Here’s the proposed design:
     [Snowflake (Storage & Analytics)] --> [Redis (Real-Time Caching)] --> [App Interface]
 ```
 
-### **Key Design Principles:**
-1. **Separation of Concerns**: Kafka topics separate event types (`sleep`, `meals`, `light_exposure`) for clean downstream processing.
-2. **Scalable Processing**: Kafka consumer groups handle growing event volumes by scaling horizontally.
-3. **Low-Latency Insights**: Redis serves pre-aggregated data for real-time querying.
-
 ![t-minimum](../assets/img/data-architecture.png)
 
 Let’s explore each component in detail.
 
 ---
 
-## **1. Real-Time Data Ingestion with Kafka**
+#### **1. Real-Time Data Ingestion with Kafka**
 
 At the core of Zoner is **Apache Kafka**, a distributed event-streaming platform that ingests real-time user events like sleep, meal times, and light exposure.
 
@@ -66,7 +78,7 @@ Kafka’s idempotent producer ensures that duplicate events aren’t written at 
 
 ---
 
-## **2. Event Processing with Python Consumers**
+#### **2. Event Processing with Python Consumers**
 
 Python consumers process Kafka events, validate their integrity, enrich data if needed, and push it to **Snowflake** for analytics.
 
@@ -80,7 +92,7 @@ Python’s flexibility and readability make it ideal for rapid prototyping. Howe
 
 ---
 
-## **3. Analytics and Storage with Snowflake**
+#### **3. Analytics and Storage with Snowflake**
 
 Snowflake serves as the **data warehouse**, storing raw events and enabling advanced analytics.
 
@@ -96,7 +108,7 @@ Snowflake is optimized for batch analytics, not sub-second querying. To bridge t
 
 ---
 
-## **4. Real-Time Recommendations with Redis**
+#### **4. Real-Time Recommendations with Redis**
 
 **Redis** ensures sub-second response times by caching pre-computed insights for each user.
 
@@ -111,7 +123,7 @@ Redis entries are updated based on:
 
 ---
 
-## **5. Scalability and Resilience with Kubernetes**
+#### **5. Scalability and Resilience with Kubernetes**
 
 Kubernetes orchestrates all backend components—Kafka, Python consumers, Snowflake connectors, and Redis—ensuring fault tolerance and scalability.
 
@@ -123,19 +135,16 @@ Kubernetes orchestrates all backend components—Kafka, Python consumers, Snowfl
 **Deployment Model:**
 We plan to use **managed Kafka services** (e.g., Confluent Cloud or MSK) for production reliability, with Kubernetes managing other workloads.
 
-**Use Case:**
-During peak travel seasons, when event volume surges, Kubernetes dynamically scales Kafka consumers to prevent event lag.
-
 ---
 
-## **Ensuring Data Integrity and Security**
+### **Ensuring Data Integrity and Security**
 
 Zoner prioritizes data accuracy and user trust from day one:
 1. **At-Least-Once Delivery**: Kafka guarantees no data loss. Deduplication ensures correctness.
 2. **Encryption**: Data is encrypted in transit (TLS) and at rest.
 3. **Role-Based Access Control**: RBAC policies safeguard sensitive user data in Snowflake and Kubernetes.
 
-## **Future Enhancements**
+### **Future Enhancements**
 
 To scale and optimize further, we’re exploring:
 1. **Stream Processing**: Integrating **Apache Flink** for real-time transformations and aggregations.
@@ -196,48 +205,6 @@ To analyze specific types of activity, the dashboard includes a **filtering feat
 - View a filtered table and charts that only display relevant events.
 
 ![streamlit-dashboard](../assets/img/streamlit3.png)
-
----
-
-### **Visualizations in the Dashboard**
-
-#### **Activity Breakdown**
-
-A **bar chart** shows the distribution of user activities (e.g., how many events were recorded for `sleep`, `meal`, etc.). This visualization quickly highlights which activities dominate user behavior.
-
-#### **User Activity Over Time**
-
-A **line chart** tracks the frequency of user activities over time, helping to spot trends like:
-- Daily peaks in activity logging.
-- How disruptions (like travel days) impact engagement.
-
----
-
-### **How It Works**
-
-The app uses the following Snowflake + Streamlit pipeline:
-
-1. **Querying Snowflake**:
-   A SQL query fetches data from the `user_activity` table, ordered by timestamp. The data is converted into a Pandas DataFrame for analysis and visualization.
-
-2. **Interactive Filters**:
-   Dropdown menus and Streamlit widgets let users slice and dice the data dynamically.
-
-3. **Dynamic Charts**:
-   The bar chart and line chart automatically update based on the data filters applied.
-
----
-
-### **Benefits for Zoner**
-
-1. **Real-Time Insights**:
-   With data sourced directly from Snowflake, the dashboard offers up-to-date views of user activity.
-
-2. **Debugging and Validation**:
-   The table and charts allow us to ensure all event ingestion pipelines are functioning correctly.
-
-3. **Data-Driven Iteration**:
-   By analyzing user behavior patterns, we can refine recommendations and backend logic to improve the app.
 
 
 ## **What’s Next?**
