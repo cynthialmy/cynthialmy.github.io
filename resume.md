@@ -8,10 +8,19 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 ---
 
+### Awards & Honors
+- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, 2015
+- HKSAR Government Scholarship Fund - Reaching Out Award, 2015
+- Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
+- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
+- Received the 3rd Prize in the National High School Biology Competition, 2012
+
+---
+
 ### Education
 
 #### Georgia Institute of Technology
-- *MSc. in Computer Science*, GPA: 3.77/4.0 \| *MSc. in Structural Engineering*, GPA: 3.8/4.0
+- *MSc. in Computer Science* & *MSc. in Structural Engineering*, GPA: 3.8/4.0
 >  Atlanta, GA
 
 #### Hong Kong University of Science and Technology
@@ -27,13 +36,6 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 > Sydney, Australia \| Sep 2014 - Feb 2015
 
 ---
-
-### Awards & Honors
-- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, 2015
-- HKSAR Government Scholarship Fund - Reaching Out Award, 2015
-- Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
-- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
-- Received the 3rd Prize in the National High School Biology Competition, 2012
 
 ### Certifications
 - AWIT Product Management Professional Specialization (2024)
@@ -54,6 +56,5 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let’s connect!
 
-- **Email:** [cynthiamengyuanli@gmail.com](mailto:cynthiamengyuanli@gmail.com)
 - **Calendly:** [Book a Chat](https://calendly.com/cynthiali/30min)
 - **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)
