@@ -25,15 +25,15 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 #### Hong Kong University of Science and Technology
 - *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*, Honors
-> Hong Kong \| Sept 2013 - Jun 2017
+> Hong Kong
 
 #### Waseda University
 - Exchange Student
-> Tokyo, Japan \| Feb 2016 - Jul 2016
+> Tokyo, Japan
 
 #### University of New South Wales
 - Exchange Student
-> Sydney, Australia \| Sep 2014 - Feb 2015
+> Sydney, Australia
 
 ---
 
