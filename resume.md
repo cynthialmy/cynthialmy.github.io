@@ -8,15 +8,6 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 ---
 
-### Awards & Honors
-- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, 2015
-- HKSAR Government Scholarship Fund - Reaching Out Award, 2015
-- Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
-- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
-- Received the 3rd Prize in the National High School Biology Competition, 2012
-
----
-
 ### Education
 
 #### Georgia Institute of Technology
@@ -34,6 +25,13 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 #### University of New South Wales
 - Exchange Student
 > Sydney, Australia
+
+#### Awards & Honors
+- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology
+- HKSAR Government Scholarship Fund - Reaching Out Award
+- Ranked 78th out of 250,000 students in Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
+- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO)
+- Received the 3rd Prize in the National High School Biology Competition
 
 ---
 
