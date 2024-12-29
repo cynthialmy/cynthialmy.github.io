@@ -4,12 +4,11 @@ title: Cynthia Mengyuan Li
 subtitle: Product Manager & Engineer
 ---
 
-## Summary
 I specialize in delivering **scalable data platforms**, **AI-enhanced solutions**, and **developer tools** that drive operational efficiency, improve data integrity, and enable real-time insights. With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech, and E-commerce, I have successfully led cross-functional teams to develop robust platforms, streamline data pipelines, and enhance analytics capabilities.
 
 ---
 
-### Education:
+### Education
 
 #### Georgia Institute of Technology
 - *MSc. in Computer Science*, GPA: 3.77/4.0 \| *MSc. in Structural Engineering*, GPA: 3.8/4.0
@@ -20,23 +19,23 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 > Hong Kong \| Sept 2013 - Jun 2017
 
 #### Waseda University
-- (Exchange Program)
+- Exchange Student
 > Tokyo, Japan \| Feb 2016 - Jul 2016
 
 #### University of New South Wales
-- (Exchange Program)
+- Exchange Student
 > Sydney, Australia \| Sep 2014 - Feb 2015
 
 ---
 
-### Awards & Honors:
+### Awards & Honors
 - Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, 2015
 - HKSAR Government Scholarship Fund - Reaching Out Award, 2015
 - Ranked 78th out of 250,000 students in Guizhou Province (top 0.03%) in the Gaokao (Nationwide Unified Examination for Admissions to General Universities and Colleges), 2013
 - Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO), 2013
 - Received the 3rd Prize in the National High School Biology Competition, 2012
 
-#### Certifications:
+### Certifications
 - AWIT Product Management Professional Specialization (2024)
 - MBA Essentials @UofGlasgow (2024)
 - IIBA Certified Product Manager (2023)
