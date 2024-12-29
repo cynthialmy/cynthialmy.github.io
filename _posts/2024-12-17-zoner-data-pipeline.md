@@ -4,8 +4,8 @@ title: "Designing Zoner’s Backend: Real-Time Insights for Jet Lag Adjustments"
 subtitle: "A Technical Blueprint Combining Kafka, Snowflake, and Kubernetes"
 tags: [Zoner, Data Pipeline, Kafka, Snowflake, Kubernetes, Python, Real-Time, Jet Lag, Sleep Science, Data Processing]
 comments: true
-thumbnail-img: assets/img/cat-dream.png
-share-img: assets/img/cat-dream.png
+# thumbnail-img: assets/img/cat-dream.png
+# share-img: assets/img/cat-dream.png
 # author: Cynthia Mengyuan Li
 ---
 
