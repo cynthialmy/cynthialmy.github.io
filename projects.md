@@ -55,7 +55,7 @@ subtitle: As a developer, I enjoy the excitement of creation.
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
 
 
-- **[Geospatial Analysis of Yelp User Behavior](https://github.com/cynthialmy/Geospatial_Analysis_for_Yelp_User_Behaviour/blob/main/team010poster.pdf)**
+- **[Geospatial Analysis of Yelp User Behavior (Poster)](https://github.com/cynthialmy/Geospatial_Analysis_for_Yelp_User_Behaviour/blob/main/team010poster.pdf)**
 
   This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
 
