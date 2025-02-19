@@ -13,14 +13,14 @@ subtitle: As a developer, I enjoy the excitement of creation.
 - **[d3-Interaction: Engaging Data Charts](https://cynthialmy.github.io/d3-Interaction/)**
   This initiative enhances user interaction with data charts, transforming static visuals into interactive experiences.
 
-- **[bridge-dash: Infrastructure Insights](https://bridge-dash-90f35a395f88.herokuapp.com/)**
+- **[bridge-dash: Infrastructure Insights](https://github.com/cynthialmy/bridge-dash)**
   BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
 
 - **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**
   This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
-### Web and UI/UX Development
-- **[Data Contract Manager: Streamlining Data Contracts](https://data-contract-manager.azurewebsites.net/)**
+### Web and UI/UX Design
+- **[Data Contract Summary](https://cynthialmy.github.io/book_summaries/)**
   The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
