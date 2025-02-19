@@ -33,11 +33,11 @@ subtitle: As a developer, I enjoy the excitement of creation.
 ## Video Showcases
 
 ### Advanced Infrastructure Analysis
-- **[City-Scale Infrastructure Intelligence via Dynamic Analysis](resources/2017-POSTER-FYP.pdf)**
+- **[City-Scale Infrastructure Intelligence via Dynamic Analysis (Poster)](resources/2017-POSTER-FYP.pdf)**
 
   This extensive study applies dynamic analysis for predictive maintenance, contributing to sustainable urban living. This project was 2017 HKUST President's Cup Final List.
 
-  #### Video:
+  #### Video (Click to Play):
 
   [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/xRT6hPYlndc/0.jpg)](https://www.youtube.com/watch?v=xRT6hPYlndc)
 
@@ -46,11 +46,11 @@ subtitle: As a developer, I enjoy the excitement of creation.
   [![REALIZING CITY-SCALE INFRASTRUCTURE INTELLIGENCE VIA EXTENSIVE DYNAMIC ANALYSIS](https://img.youtube.com/vi/zTncLSXekfI/0.jpg)](https://www.youtube.com/watch?v=zTncLSXekfI)
 
 ### Workshops and Analysis
-- **[Sentiment Analysis with Python Workshop](https://github.com/cynthialmy/Sentiment-Analysis-with-Scikit-learn)**
+- **[Sentiment Analysis with Python Workshop (GitHub)](https://github.com/cynthialmy/Sentiment-Analysis-with-Scikit-learn)**
 
   This workshop empowers participants with the tools to decipher customer sentiments, utilizing advanced machine learning techniques.
 
-  #### Video:
+  #### Video (Click to Play):
 
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/ywkblnkrr2k/0.jpg)](https://www.youtube.com/watch?v=ywkblnkrr2k)
 
@@ -59,18 +59,18 @@ subtitle: As a developer, I enjoy the excitement of creation.
 
   This analysis reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
 
-  #### Video:
+  #### Video (Click to Play):
 
   [![Sentiment Analysis with Python Workshop](https://img.youtube.com/vi/0bh1kNOlYd8/0.jpg)](https://www.youtube.com/watch?v=0bh1kNOlYd8)
 
   [![Yelp Demo](https://img.youtube.com/vi/cZWj-torlqY/0.jpg)](https://www.youtube.com/watch?v=cZWj-torlqY)
 
 ### Innovative Solutions for Everyday Challenges
-- **[Real-time Display for Machine Status](resources/2015-poster-president-cup.pdf)**
+- **[Real-time Display for Machine Status (Poster)](resources/2015-poster-president-cup.pdf)**
 
   This project addresses the efficient use of public facilities through IoT concepts, enhancing communal living experiences. This project was 2015 HKUST [President's Cup Golden Awardee](https://www.ce.ust.hk/news/gold-award-2014-2015-presidents-cup).
 
-  #### Video:
+  #### Video (Click to Play):
 
   [![Real-time Display for Machine Status](https://img.youtube.com/vi/c284vsNPz00/0.jpg)](https://www.youtube.com/watch?v=c284vsNPz00)
 
