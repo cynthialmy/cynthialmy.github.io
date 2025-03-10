@@ -1,12 +1,29 @@
 ---
 layout: page
-title: My Dev Projects
-subtitle: As a developer, I enjoy the excitement of creation.
+title: My Projects
+subtitle: I enjoy the excitement of creation.
 ---
 
-## Development Projects
+## Websites and UI/UX Design
+- **[Akaboo World](https://akabooworld.com/)**
+  Used Baby Gear Marketplace listing solutions.
 
-### Interactive Data Visualizations
+- **[Zoner Landing Page](https://zoner-landing-page.web.app/)**
+  Time zone shifting, jet lag prevention helper.
+
+- **[Spice IT Global](https://www.spiceitglobal.com/)**
+  Help businesses to elevate their online presence.
+
+- **[Data Contract Summary](https://cynthialmy.github.io/book_summaries/)**
+  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
+
+- **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
+  Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
+
+- **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
+  This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
+
+## Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**
   This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
 
@@ -19,18 +36,8 @@ subtitle: As a developer, I enjoy the excitement of creation.
 - **[simple-d3-charts: Back to Basics](https://cynthialmy.github.io/simple-d3-charts/)**
   This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
-### Web and UI/UX Design
-- **[Data Contract Summary](https://cynthialmy.github.io/book_summaries/)**
-  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
 
-- **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
-  Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
-
-- **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
-  This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
-
-
-## Video Showcases
+## Video Demos
 
 ### Advanced Infrastructure Analysis
 - **[City-Scale Infrastructure Intelligence via Dynamic Analysis (Poster)](resources/2017-POSTER-FYP.pdf)**
