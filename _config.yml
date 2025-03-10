@@ -20,8 +20,8 @@ author: Cynthia Mengyuan Li
 ###############################################
 
 navbar-links:
-    PM Portfolio: "/.."
-    Dev Projects: "projects"
+    Writings: "/.."
+    Portfolio: "projects"
     Resume: "resume"
     # GitHub: "https://github.com/cynthialmy"
     # Connect: "connect"

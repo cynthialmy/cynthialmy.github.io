@@ -1,10 +1,10 @@
 ---
 layout: page
-title: My Projects
+title: Portfolio
 subtitle: I enjoy the excitement of creation.
 ---
 
-## Websites and UI/UX Design
+## Websites
 - **[Akaboo World](https://akabooworld.com/)**
   Used Baby Gear Marketplace listing solutions.
 
@@ -14,14 +14,16 @@ subtitle: I enjoy the excitement of creation.
 - **[Spice IT Global](https://www.spiceitglobal.com/)**
   Help businesses to elevate their online presence.
 
+## Projects
+
 - **[Data Contract Summary](https://cynthialmy.github.io/book_summaries/)**
-  The Data Contract Manager, designed to interact with Azure services, allows for the efficient handling of YAML-based data contracts. Explore the detailed functionalities on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
+  Efficiently handle YAML-based data contracts with the Data Contract Manager. Explore on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
 
 - **[Dopamine Box: Logging Joyful Moments](https://cynthialmy.github.io/imba-habit/)**
-  Built using the powerful and innovative Imba language, it allows users to log daily activities and moods. Explore this project on [GitHub](https://github.com/cynthialmy/imba-habit/).
+  Log daily activities and moods with Imba (a language that compiles to JavaScript). Explore on [GitHub](https://github.com/cynthialmy/imba-habit/).
 
 - **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
-  This restyling project for CS 7450 enhances user experience and interactivity, serving as a playground for innovative design solutions.
+  Enhance user experience and interactivity with this restyling project for CS 7450 at Georgia Tech.
 
 ## Interactive Data Visualizations
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**
