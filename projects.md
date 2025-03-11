@@ -4,7 +4,7 @@ title: Portfolio
 subtitle: I enjoy the excitement of creation.
 ---
 
-## Websites
+## Product & Service
 - **[Akaboo World](https://akabooworld.com/)**
   Used Baby Gear Marketplace listing solutions.
 
@@ -14,7 +14,7 @@ subtitle: I enjoy the excitement of creation.
 - **[Spice IT Global](https://www.spiceitglobal.com/)**
   Help businesses to elevate their online presence.
 
-## Projects
+## Project
 
 - **[Data Contract Summary](https://cynthialmy.github.io/book_summaries/)**
   Efficiently handle YAML-based data contracts with the Data Contract Manager. Explore on [GitHub (Internal)](https://github.com/volvo-cars/data-contract-manager).
@@ -25,7 +25,7 @@ subtitle: I enjoy the excitement of creation.
 - **[course-website-design: Educational Platform Redesign](https://cynthialmy.github.io/course-website-design/)**
   Enhance user experience and interactivity with this restyling project for CS 7450 at Georgia Tech.
 
-## Interactive Data Visualizations
+## Interactive Data Visualization
 - **[d3-scrollama: Interactive Scrollytelling](https://cynthialmy.github.io/d3-scrollama/)**
   This project highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
 
@@ -39,7 +39,7 @@ subtitle: I enjoy the excitement of creation.
   This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
 
 
-## Video Demos
+## Video Demo
 
 ### Advanced Infrastructure Analysis
 - **[City-Scale Infrastructure Intelligence via Dynamic Analysis (Poster)](resources/2017-POSTER-FYP.pdf)**
