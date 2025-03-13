@@ -5,10 +5,13 @@ subtitle: I enjoy the excitement of creation.
 ---
 
 ## Product & Service
-- **[Akaboo World](https://akabooworld.com/)**
+- **[akaboo World](https://akabooworld.com/)**
   Used Baby Gear Marketplace listing solutions.
 
-- **[Zoner Landing Page](https://zoner-landing-page.web.app/)**
+- **[akaTask](https://apps.apple.com/az/app/akatask/id6566193664?platform=iphone)**
+  Task management and collaboration platform.
+
+- **[Zoner](https://zoner-landing-page.web.app/)**
   Time zone shifting, jet lag prevention helper.
 
 - **[Spice IT Global](https://www.spiceitglobal.com/)**
