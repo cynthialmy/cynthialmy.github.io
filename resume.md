@@ -4,7 +4,9 @@ title: Cynthia Mengyuan Li
 subtitle: Product Manager & more
 ---
 
-I am a Product Manager with a passion for leveraging data to drive business growth. I specialize in delivering **scalable data platforms**, **AI-enhanced solutions**, and **developer tools** that drive operational efficiency, improve data integrity, and enable real-time insights.
+I am a Product Manager with a passion for leveraging data to drive business growth.
+
+I specialize in delivering **scalable data platforms**, **AI-enhanced solutions**, and **developer tools** that drive operational efficiency, improve data integrity, and enable real-time insights.
 
 With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech, and E-commerce, I have led teams to develop robust platforms, streamline data pipelines, and enhance analytics capabilities.
 
