@@ -172,4 +172,11 @@
   {% endfor %}
   {% endif %}
 
+  <!-- EmailJS for download form -->
+  {% if page.url == "/resume" or page.url == "/resume.html" %}
+  {% include emailjs.html %}
+  <script src="{{ '/assets/js/download-form.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/download-form.css' | relative_url }}">
+  {% endif %}
+
 </head>

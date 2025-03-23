@@ -48,15 +48,32 @@ With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech,
 
 ---
 
-## Download My Resume
-[Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
+## Download Materials
 
-## Check My References
-[Reference Letters](resources/reference_letters.pdf)
+<div id="download-form">
+  <p>Please fill in your details to access my resume and reference letters:</p>
+  <form id="contact-form" class="download-form">
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder="Your Name" required class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder="Your Email" required class="form-control">
+    </div>
+    <div class="form-group">
+      <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <div id="download-links" style="display: none;">
+    <p>Thank you! You can now download the files:</p>
+    <p><a href="resources/Cynthia_Li_resume.pdf" download class="btn btn-info">Cynthia's Resume</a></p>
+    <p><a href="resources/reference_letters.pdf" download class="btn btn-info">Reference Letters</a></p>
+  </div>
+</div>
 
 ## Chat?
 
-Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let’s connect!
+Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let's connect!
 
 - **Calendly:** [Book a Chat](https://calendly.com/cynthiali/30min)
 - **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)
