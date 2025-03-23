@@ -89,8 +89,8 @@ With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech,
 <div id="download-links" style="display:none;">
   <p>Thank you for your interest! You can now download the following documents:</p>
   <ul>
-    <li><a href="resources/Cynthia_Li_resume.pdf" target="_blank">Cynthia's Resume</a></li>
-    <li><a href="resources/reference_letters.pdf" target="_blank">Reference Letters</a></li>
+    <li><a href="/resources/Cynthia_Li_resume.pdf" target="_blank">Cynthia's Resume</a></li>
+    <li><a href="/resources/reference_letters.pdf" target="_blank">Reference Letters</a></li>
   </ul>
 </div>
 
