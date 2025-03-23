@@ -50,38 +50,40 @@ With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech,
 
 ## Download My Resume & References
 
-Please fill out this quick form to download my resume and reference letters:
+<div id="form-section">
+  Please fill out this quick form to download my resume and reference letters:
 
-<div class="form-container">
-  <form id="download-form" action="https://formspree.io/f/mvgkaebd" method="POST">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required>
-    </div>
-    <div class="form-group">
-      <label for="company">Company/Organization (optional):</label>
-      <input type="text" name="company" id="company">
-    </div>
-    <div class="form-group">
-      <label for="purpose">Purpose of Download:</label>
-      <select name="purpose" id="purpose" required>
-        <option value="" disabled selected>Select a reason</option>
-        <option value="job_opportunity">Job Opportunity</option>
-        <option value="networking">Professional Networking</option>
-        <option value="collaboration">Potential Collaboration</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <input type="hidden" name="_subject" value="New Resume Download Request">
-      <input type="hidden" name="_next" value="thank-you-page-url-if-you-have-one">
-      <button type="submit" id="submit-form">Submit</button>
-    </div>
-  </form>
+  <div class="form-container">
+    <form id="download-form" action="https://formspree.io/f/mvgkaebd" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company/Organization (optional):</label>
+        <input type="text" name="company" id="company">
+      </div>
+      <div class="form-group">
+        <label for="purpose">Purpose of Download:</label>
+        <select name="purpose" id="purpose" required>
+          <option value="" disabled selected>Select a reason</option>
+          <option value="job_opportunity">Job Opportunity</option>
+          <option value="networking">Professional Networking</option>
+          <option value="collaboration">Potential Collaboration</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="_subject" value="New Resume Download Request">
+        <input type="hidden" name="_next" value="thank-you-page-url-if-you-have-one">
+        <button type="submit" id="submit-form">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div id="download-links" style="display:none;">
@@ -155,7 +157,7 @@ button:hover {
     .then(response => {
       if (response.ok) {
         // Show the download links
-        document.getElementById('download-form').style.display = 'none';
+        document.getElementById('form-section').style.display = 'none';
         document.getElementById('download-links').style.display = 'block';
         return response.json();
       }
