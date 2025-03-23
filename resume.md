@@ -49,14 +49,16 @@ With experience spanning Electric Vehicles, Smart City Infrastructures, FinTech,
 ---
 
 ## Download My Resume
-[Cynthia's Resume](resources/Cynthia_Li_resume.pdf)
+<a href="javascript:void(0);" onclick="showDownloadForm('/resources/Cynthia_Li_resume.pdf');">Cynthia's Resume</a>
 
 ## Check My References
-[Reference Letters](resources/reference_letters.pdf)
+<a href="javascript:void(0);" onclick="showDownloadForm('/resources/reference_letters.pdf');">Reference Letters</a>
 
 ## Chat?
 
-Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let’s connect!
+Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let's connect!
 
 - **Calendly:** [Book a Chat](https://calendly.com/cynthiali/30min)
 - **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)
+
+{% include download-form.html %}
