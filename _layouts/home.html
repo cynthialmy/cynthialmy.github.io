@@ -1,0 +1,167 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign posts = paginator.posts | default: site.posts %}
+{% assign project_types = site.project_types %}
+{% assign available_types = '' | split: '' %}
+{% for post in posts %}
+{% if post.project_type %}
+{% assign type_array = post.project_type | split: '|' %}
+{% assign available_types = available_types | concat: type_array | uniq %}
+{% endif %}
+{% endfor %}
+
+{% if project_types %}
+{% assign has_visible_filters = false %}
+{% for entry in project_types %}
+{% assign key = entry[0] %}
+{% if available_types contains key %}
+{% assign has_visible_filters = true %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% if has_visible_filters %}
+<div class="project-filter-bar" data-project-filter-group="home-posts">
+  <span class="filter-label">Filter by:</span>
+  <button class="filter-chip" type="button" data-filter-value="all">All</button>
+  {% for entry in project_types %}
+  {% assign key = entry[0] %}
+  {% if available_types contains key %}
+  {% assign meta = entry[1] %}
+  <button class="filter-chip" type="button" data-filter-value="{{ key }}">{{ meta.label }}</button>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endif %}
+
+<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+<ul class="posts-list list-unstyled" role="list" data-project-filter-target="home-posts">
+  {% for post in posts %}
+  <li class="post-preview" data-project-type="{{ post.project_type | default: 'other' }}">
+    <article>
+
+      {%- capture thumbnail -%}
+      {% if post.thumbnail-img %}
+      {{ post.thumbnail-img }}
+      {% elsif post.cover-img %}
+      {% if post.cover-img.first %}
+      {{ post.cover-img[0].first.first }}
+      {% else %}
+      {{ post.cover-img }}
+      {% endif %}
+      {% else %}
+      {% endif %}
+      {% endcapture %}
+      {% assign thumbnail=thumbnail | strip %}
+
+      {% if site.feed_show_excerpt == false %}
+      {% if thumbnail != "" %}
+      <div class="post-image post-image-normal">
+        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+        </a>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      <a href="{{ post.url | absolute_url }}">
+        <h2 class="post-title">{{ post.title | strip_html }}</h2>
+
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+          {{ post.subtitle | strip_html }}
+        </h3>
+        {% endif %}
+      </a>
+      {% if post.project_type %}
+      {% assign proj_key = post.project_type %}
+      {% assign proj_meta = site.project_types[proj_key] | default: site.project_types.other %}
+      {% assign proj_label = proj_meta.label | default: proj_key %}
+      {% assign proj_color = proj_meta.color | default: site.project_types.other.color | default: '#6b7280' %}
+      <span class="project-type-badge" style="--badge-color: {{ proj_color }};">
+        {{ proj_label }}
+      </span>
+      {% endif %}
+
+      {% if post.author %}
+      <span>By <strong>{{ post.author | strip_html }}</strong></span>
+      {% endif %}
+      <p class="post-meta">
+        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+        Posted on {{ post.date | date: date_format }}
+      </p>
+
+      {% if thumbnail != "" %}
+      <div class="post-image post-image-small">
+        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+        </a>
+      </div>
+      {% endif %}
+
+      {% unless site.feed_show_excerpt == false %}
+      {% if thumbnail != "" %}
+      <div class="post-image post-image-short">
+        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+        </a>
+      </div>
+      {% endif %}
+
+      <div class="post-entry">
+        {% assign excerpt_length = site.excerpt_length | default: 50 %}
+        {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+        {% assign excerpt_word_count = post.excerpt | number_of_words %}
+        {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
+        <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
+        {% endif %}
+      </div>
+      {% endunless %}
+
+      {% if site.feed_show_tags != false and post.tags.size > 0 %}
+      <div class="blog-tags">
+        <span>Tags:</span>
+        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+        <ul class="d-inline list-inline" role="list">
+          {% for tag in post.tags %}
+          <li class="list-inline-item">
+            <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pagination main-pager">
+  {% if paginator.previous_page %}
+  <li class="page-item previous">
+    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
+      <i class="fas fa-arrow-left" alt="Newer"></i>
+      <span class="d-none d-sm-inline-block">Newer</span>
+    </a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="page-item next">
+    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
+      <span class="d-none d-sm-inline-block">Older</span>
+      <i class="fas fa-arrow-right" alt="Older"></i>
+    </a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+{% if project_types %}
+<script src="{{ '/assets/js/project-filters.js' | relative_url }}"></script>
+{% endif %}
