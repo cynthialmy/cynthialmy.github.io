@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Data Quality with Data Contracts"
-subtitle: Solutions for Data Quality Challenges and Implementation Strategies
+title: "Reflection: Data Quality with Data Contracts"
+subtitle: Exploring Data Contracts to Improve Data Quality
 tags: [data quality, data contracts, implementation, case study]
 project_type: professional
 comments: true

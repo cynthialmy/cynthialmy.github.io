@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Product Principles for Building Safe, Strategic & Differentiated AI Systems"
+title: "Reflection: Building Safe, Strategic & Differentiated AI Systems"
 subtitle: Delivering AI Integration, Risk Mitigation, and Strategic Development
 tags: [AI implementation, procurement process, risk mitigation, project management]
 project_type: professional
