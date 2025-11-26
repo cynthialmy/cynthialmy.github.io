@@ -10,29 +10,6 @@ I specialize in delivering **scalable data platforms**, **AI-enhanced solutions*
 
 ---
 
-## 🌟 Education (I tried to travel as much as possible during my studies)
-
-#### Georgia Institute of Technology (Atlanta, GA)
-- *MSc. in Computer Science* & *MSc. in Structural Engineering*, GPA: 3.8/4.0
-
-#### Hong Kong University of Science and Technology (Hong Kong)
-- *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*, Honors
-
-#### Waseda University (Tokyo, Japan)
-- Exchange Student
-
-#### University of New South Wales (Sydney, Australia)
-- Exchange Student
-
-#### Awards & Honors
-- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, first winner in my major
-- HKSAR Government Scholarship Fund - Reaching Out Award
-- Ranked 78th out of 250,000 students in Province (top 0.03%) in the Gaokao (China's Nationwide Unified Exam for Universities)
-- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO)
-- Received the 3rd Prize in the National High School Biology Competition
-
----
-
 ## 🌟 What Others Say About Me
 
 I’m grateful to have worked with inspiring leaders and mentors across Product, Engineering, and Data. Here are a few excerpts from reference letters I’ve received.
@@ -68,6 +45,29 @@ I’m grateful to have worked with inspiring leaders and mentors across Product,
 > *“She has strong technical and analytical skills, excellent communication, and a natural curiosity that drives innovation.”*
 >
 > *“I wholeheartedly endorse Cynthia for any role requiring technical depth, product sense, and strategic thinking.”*
+
+---
+
+## 🌟 Education (I tried to travel as much as possible during my studies)
+
+#### Georgia Institute of Technology (Atlanta, GA)
+- *MSc. in Computer Science* & *MSc. in Structural Engineering*, GPA: 3.8/4.0
+
+#### Hong Kong University of Science and Technology (Hong Kong)
+- *Bachelor of Engineering (B.Eng.), Structural Engineering and Computer Science*, Honors
+
+#### Waseda University (Tokyo, Japan)
+- Exchange Student
+
+#### University of New South Wales (Sydney, Australia)
+- Exchange Student
+
+#### Awards & Honors
+- Gold Award of 2014-2015 President's Cup of Hong Kong University of Science and Technology, first winner in my major
+- HKSAR Government Scholarship Fund - Reaching Out Award
+- Ranked 78th out of 250,000 students in Province (top 0.03%) in the Gaokao (China's Nationwide Unified Exam for Universities)
+- Awarded the 2nd Prize in the Chinese Physics Olympiad (CPhO)
+- Received the 3rd Prize in the National High School Biology Competition
 
 ---
 
@@ -197,5 +197,4 @@ button:hover {
 
 Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let's connect!
 
-- **Calendly:** [Book a Chat](https://calendly.com/cynthiali/30min)
 - **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)

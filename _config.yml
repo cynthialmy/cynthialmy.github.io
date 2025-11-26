@@ -131,6 +131,15 @@ project_types:
         label: "Other"
         color: "#6b7280"
 
+# Portfolio taxonomy used for portfolio page filters
+portfolio_types:
+    technical-projects:
+        label: "Technical Projects"
+        color: "#008a5c"
+    research-analysis:
+        label: "Research & Analysis"
+        color: "#6b7280"
+
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
 edit_page_button: false
 
