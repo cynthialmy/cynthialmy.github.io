@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI-driven productivity app for new parents"
+title: "User Research on AI-driven productivity app for new parents"
 subtitle: Part A — Research & Insights
 tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
 project_type: independent
