@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "User Research: AI-driven productivity app for new parents"
+title: "User Research: AI-driven Productivity App for New Parents"
 subtitle: Quantifying Parental Pain Points and Identifying High-Value Automation Opportunities
 tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
 project_type: independent
