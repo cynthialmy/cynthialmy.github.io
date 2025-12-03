@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Product Requirements Document: SnapSell — Authentication, Sharing & Freemium"
+title: "PRD: SnapSell Authentication, Sharing & Freemium"
 subtitle: Planning the user authentication/login system, sharing and feedback flows, and a freemium monetization layer for SnapSell.
 tags: [Product Requirements Document, Authentication, Sharing, Freemium, Product Development, Product Design, Product Strategy, Product Launch, Product Metrics, Testing, Validation, Iteration]
 project_type: independent
