@@ -216,4 +216,4 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 * **Recommended Tech Stack:** Node/Express or Fastify on backend, PostgreSQL (or DynamoDB for serverless), Redis for rate-limiting, JWT + refresh tokens, Stripe for billing.
 * **Security Checklist:** HTTPS everywhere, rotate refresh tokens, CSP headers for PWA, XSS/CSRF protections, secure cookie flags.
 
-This PRD was created for the next version of SnapSell. For the first version, I focused on the core product flow and the MVP features. You can find the first version of the MVP building the app from scratch [here](./2025-10-24-snapsell).
+This PRD was created for the next version of SnapSell. For the first version, I focused on the core product flow and the MVP features. You can find the first version of the MVP building the app from scratch [here](../2025-10-24-snapsell).
