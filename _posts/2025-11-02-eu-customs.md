@@ -70,40 +70,21 @@ Let's consider a mid-sized EU consumer electronics company, importing €80 mill
 
 Their import model looked straightforward:
 
-**Import components from Asia** -> **Assemble in the EU** -> **Sell across EU markets**
+Import components from Asia -> Assemble in the EU -> Sell across EU markets
 
-But three customs insights dramatically shifted their economics.
+*But three customs insights dramatically shifted their economics.*
 
-**1. Misclassification: The 3% Leak**
+**1. Misclassification: The 3% Leak**: *A core input had been classified under a tariff with a **3% duty rate**, a reclassification to a more precise subheading reduced the rate to **0%**.*
 
-A core input had been classified under a tariff with a **3% duty rate**. A reclassification to a more precise subheading reduced the rate to **0%**.
+**Impact:** Duty overpayment on €20M: **€600k/year**, 3-year retroclaim: **€1.4M**, Margin uplift: **+0.75 p.p.** with no operational change
 
-**Impact:**
+**2. Preferential Origin: Engineering Arbitrage**: *Metal casings originally contained **48% non-originating value**, disqualifying them from preferential tariffs. By shifting a finishing step to a country eligible for **cumulation**, the non-originating share fell to **28%**, qualifying for **0% duty**.*
 
-* Duty overpayment on €20M: **€600k/year**
-* 3-year retroclaim: **€1.4M**
-* Margin uplift: **+0.75 p.p.** with no operational change
+**Impact:** On €25M with 4.2% duty: **€1.05M saved**, Added cost: **€120k**, Net annual gain: **€930k**, *A supply chain tweak delivered more EBITDA than a **6% price increase**.*
 
-**2. Preferential Origin: Engineering Arbitrage**
+**3. Inward Processing: Taxing Only Imported Content**: *The company had been paying duty on the **full value of finished goods** sold domestically. Inward processing shifted duty to only the **imported share**, and exempted exports entirely.*
 
-Metal casings originally contained **48% non-originating value**, disqualifying them from preferential tariffs. By shifting a finishing step to a country eligible for **cumulation**, the non-originating share fell to **28%**, qualifying for **0% duty**.
-
-**Impact:**
-
-* On €25M with 4.2% duty: **€1.05M saved**
-* Added cost: **€120k**
-* Net annual gain: **€930k**
-
-Result: A supply chain tweak delivered more EBITDA than a **6% price increase**.
-
-**3. Inward Processing: Taxing Only Imported Content**
-
-The company had been paying duty on the **full value of finished goods** sold domestically. Inward processing shifted duty to only the **imported share**, and exempted exports entirely.
-
-**Impact:**
-
-* Duty base dropped from €35M → €14M
-* Annual savings: **€630k**
+**Impact:** Duty base dropped from €35M → €14M, Annual savings: **€630k**
 
 **Annual Financial Uplift**
 
