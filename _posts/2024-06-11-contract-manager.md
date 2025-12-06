@@ -5,6 +5,8 @@ subtitle: Managing data agreements across a federated enterprise
 tags: [Data Management, Data Mesh, Data Contracts, Metadata, Decentralized Data]
 project_type: professional
 comments: true
+thumbnail-img: assets/img/data_contract_1.png
+share-img: assets/img/data_contract_1.png
 # author: Cynthia Mengyuan Li
 ---
 
@@ -50,6 +52,8 @@ For more details, please refer to the [Understanding Metadata vs. Data Contracts
 ## What We Built (and Why)
 
 The Data Contract Manager intentionally focuses on usability over complexity. Our goal: make contract creation feel straightforward and governed, not technical or intimidating.
+
+![data_contract](../assets/img/data_contract_1.png)
 
 ## Key Product Capabilities
 
