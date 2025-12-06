@@ -157,8 +157,6 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 * Implement webhooks to update user entitlements after successful payment.
 * For iOS PWA in standalone mode, consider in-app purchase only if converting to native apps later.
 
----
-
 ## 11. Admin / Moderation
 
 * Admin dashboard: user list, listing moderation, feedback queue, credits adjustment, manual refunds.
@@ -195,21 +193,6 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 3. Preferred quota numbers (10 free saves/month suggested) and pricing targets.
 4. Do we want shareable public links on MVP or wait until post-payment features?
 5. Do we require email verification before sharing or purchasing?
-
----
-
-## 16. Implementation estimate & teams (high level)
-
-* Backend (auth service, user/listing DB, billing webhook) — 2–3 sprints
-* Frontend (PWA account flows, My Listings, feedback UI) — 2 sprints
-* Payments & admin dashboard — 1–2 sprints
-* Security, testing, and compliance — ongoing
-
-## 17. Risks & mitigations
-
-* **Risk:** Introducing auth complicates UX and adds churn. **Mitigation:** Keep anonymous generation free; prompt gently.
-* **Risk:** Abuse (bots mass-generating listings) — implement rate limits and CAPTCHA for anonymous heavy usage.
-* **Risk:** Billing disputes & refunds — integrate Stripe and maintain clear logs and customer support channels.
 
 ### Appendices
 

@@ -4,7 +4,6 @@ title: "Product Perspective: Agentic AI on EU Customs"
 subtitle: "Turning Border Complexity Into Competitive Advantage"
 tags: [EU Customs, Economic Value, Agentic AI, Product Perspective, Customs Optimization, Customs Automation]
 project_type: professional
-# cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/customs_1.png
 share-img: assets/img/customs_1.png
 comments: true
@@ -17,7 +16,7 @@ This legal machinery - customs classification, origin rules, valuation, duty cal
 
 The hidden truth is that customs law provides a strategic lever for businesses for companies that understand it as such.
 
-See [How Customs Intelligence Changes Unit Economics](../2025-11-03-customs-intelligence) for a tangible guide on opportunities for customs optimization.
+Jump to [Case Study: A Mid-Sized EU Consumer Electronics Company](#case-study-a-mid-sized-eu-consumer-electronics-company) for a quantitative example of how customs can be used to improve unit economics.
 
 ---
 
