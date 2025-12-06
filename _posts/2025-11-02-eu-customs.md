@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Reflection: Agentic AI on EU Customs"
+title: "Case Study: Agentic AI on EU Customs"
 subtitle: "Turning Border Complexity Into Competitive Advantage"
-tags: [EU Customs, Economic Value, Agentic AI, Product Perspective, Customs Optimization, Customs Automation]
+tags: [EU Customs, Economic Value, Agentic AI, Case Study, Customs Optimization, Customs Automation]
 project_type: professional
 thumbnail-img: assets/img/customs_1.png
 share-img: assets/img/customs_1.png
