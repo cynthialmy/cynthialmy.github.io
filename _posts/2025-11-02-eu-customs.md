@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Product Perspective: Agentic AI on EU Customs"
+title: "Reflection: Agentic AI on EU Customs"
 subtitle: "Turning Border Complexity Into Competitive Advantage"
 tags: [EU Customs, Economic Value, Agentic AI, Product Perspective, Customs Optimization, Customs Automation]
 project_type: professional
