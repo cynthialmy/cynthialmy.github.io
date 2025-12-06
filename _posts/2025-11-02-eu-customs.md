@@ -5,8 +5,8 @@ subtitle: "Turning Border Complexity Into Competitive Advantage"
 tags: [EU Customs, Economic Value, Agentic AI, Product Perspective, Customs Optimization, Customs Automation]
 project_type: professional
 # cover-img: assets/img/data-book-summary-1.png
-thumbnail-img: assets/img/customs_1.jpg
-share-img: assets/img/customs_1.jpg
+thumbnail-img: assets/img/customs_1.png
+share-img: assets/img/customs_1.png
 comments: true
 # author: Cynthia Mengyuan Li
 ---
@@ -61,111 +61,80 @@ Collectively, these mechanisms can unlock 3–8% of landed cost optimization - e
 
 The opportunity exists. The problem is execution - customs optimization today requires deep expertise, structured data, and operational discipline. Most companies lack all three.
 
-![customs_2](../assets/img/customs_2.jpg)
+---
 
 ## **Case Study: A Mid-Sized EU Consumer Electronics Company**
+
+![customs_2](../assets/img/customs_2.png)
 
 Let's consider a mid-sized EU consumer electronics company, importing €80 million worth of components annually and assembling finished products in Central Europe. Historically, the company treated customs as a compliance cost, not as a strategic input.
 
 Their import model looked straightforward:
 
-* Import components from Asia
-* Assemble in the EU
-* Sell across EU markets
+**Import components from Asia** -> **Assemble in the EU** -> **Sell across EU markets**
 
 But three customs insights dramatically shifted their economics.
 
-### **1. Misclassification: A Hidden 3% Cost Leak**
+### **1. Misclassification: The 3% Leak**
 
-The company classified a core input under a tariff code with a **3% duty rate**, based on a broad product category. After a classification review, experts determined a more accurate subheading that carried a **0% duty rate** due to a specific CCT provision.
-
-**Impact:**
-
-* Annual import value: €20M
-* Duty overpayment at 3%: €600,000
-* Savings after correction: €600,000 per year, plus a 3-year retroclaim worth €1.4M
-
-A single classification change boosted annual gross margin by **0.75 percentage points** with no operational change.
-
-### **2. Preferential Origin: Arbitrage Through Supply Chain Design**
-
-The company sourced metal casings from Country A at a competitive price. Under EU rules, products could qualify for **preferential origin** only if less than 40% of ex-works value consisted of non-originating input.
-
-Their casings reflected **48% value from non-originating sources**, disqualifying them.
-
-But by moving a final machining step to Country B, where preferential origin rules allowed **value-added cumulation**, the company brought the effective non-originating share to **28%**, qualifying for 0% duty under an FTA.
+A core input had been classified under a tariff with a **3% duty rate**. A reclassification to a more precise subheading reduced the rate to **0%**.
 
 **Impact:**
 
-* Annual import value: €25M
-* Previous duty rate: 4.2%
-* New duty rate: 0%
-* Annual savings: ~€1.05M
+* Duty overpayment on €20M: **€600k/year**
+* 3-year retroclaim: **€1.4M**
+* Margin uplift: **+0.75 p.p.** with no operational change
 
-**Trade-off:**
+### **2. Preferential Origin: Engineering Arbitrage**
 
-* Operating cost increased by €120k for new machining
-* Net annual gain: €930k
-
-A supply chain designed for origin optimization increased EBITDA more than a 6% price increase would have.
-
-### **3. Inward Processing: Taxing Only the Imported Content**
-
-Previously, the company paid import duty on the **full value of assembled products**, then sold them domestically.
-
-By switching to **inward processing**, they paid duty only on the value of non-EU inputs when the goods were sold in the EU, and no duty at all on goods later exported.
+Metal casings originally contained **48% non-originating value**, disqualifying them from preferential tariffs. By shifting a finishing step to a country eligible for **cumulation**, the non-originating share fell to **28%**, qualifying for **0% duty**.
 
 **Impact:**
 
-* Annual domestic sales: €35M
-* Imported input share: 40%
-* Duty rate: 3%
+* On €25M with 4.2% duty: **€1.05M saved**
+* Added cost: **€120k**
+* Net annual gain: **€930k**
 
-Under old model:
+Result: A supply chain tweak delivered more EBITDA than a **6% price increase**.
 
-* Duty base = €35M → €1.05M paid annually
+### **3. Inward Processing: Taxing Only Imported Content**
 
-Under inward processing:
+The company had been paying duty on the **full value of finished goods** sold domestically. Inward processing shifted duty to only the **imported share**, and exempted exports entirely.
 
-* Duty base = €14M → €420k paid annually
+**Impact:**
 
-Annual savings: **€630k**
+* Duty base dropped from €35M → €14M
+* Annual savings: **€630k**
 
-### **Annual Savings Summary**
+### **Annual Financial Uplift**
 
-| Intervention                     | Annual Savings      |
-| -------------------------------- | ------------------- |
-| Classification optimization      | €600,000            |
-| Preferential origin optimization | €930,000            |
-| Inward processing                | €630,000            |
-| **Total**                        | **€2.16M annually** |
+| Lever                       | Annual Savings |
+| --------------------------- | -------------- |
+| Classification optimization | €600k          |
+| Origin optimization         | €930k          |
+| Inward processing           | €630k          |
+| **Total**                   | **€2.16M**     |
 
-In three years, assuming steady imports and no retroactive claims, this company created **€6.5M in margin uplift** without changing its products or pricing.
+Over three years, that’s **€6.5M in margin**—unlocked without new products, new markets, or pricing changes.
 
-### **Operational Friction: Why This Doesn’t Happen Automatically**
+### **Why This Value Is Usually Missed**
 
-These gains were only unlocked after a 9-month consulting engagement involving:
+These outcomes required a **9-month specialist effort** involving audits, origin analysis, supply chain modeling, and complex authorizations. Most firms lack the capability to even identify these opportunities, let alone execute them.
 
-* Classification audits
-* Origin rule analysis across multiple FTAs
-* Supply chain modeling
-* Customs authorization applications
-* Evidence collection and duty repayment requests
+Customs value today depends on **rare expertise + manual workflows + messy data**.
 
-The company had **no internal capability** to identify, simulate, or execute these opportunities.
-Customs optimization remained dependent on niche expertise, manual workflows, fragmented data, and slow human decision-making.
+**Each of the optimizations above can be transformed into an **agentic capability** that continuously:**
 
-*Each optimization above can be converted into an AI-driven capability*:
+* Monitors product flows
+* Simulates regulatory pathways
+* Quantifies financial upside
+* Recommends structural changes
 
-A mature agentic system could continuously monitor product flows and recommend structural changes with quantified business value.
-
-If such a system captured even **30% of potential value automatically**, large importers could unlock **€2–5M of annual EBITDA impact** with no human-led initiative.
-
-In the electronics case above, **automated capture of 30%** of value would still deliver **€650k per year** - the equivalent of a 1.5% gross margin improvement.
+If automation captured just **30% of potential value**, large importers could unlock **€2–5M in annual EBITDA** without a human-led initiative. In this electronics case, **30% automation = ~€650k/year**—equivalent to a **1.5% gross margin boost** on autopilot.
 
 ---
 
-## **The Case for Product Innovation: Autonomous Trade Infrastructure**
+## **The Need for Product Innovation: Autonomous Trade Infrastructure**
 
 Viewed through a product lens, customs is not a legal field but an optimization problem constrained by incomplete information, latency, and risk. Automation is a natural strategic response - but the next horizon is not simple automation; it is agentic autonomy.
 
