@@ -4,9 +4,14 @@ title: Cynthia Mengyuan Li
 subtitle: Product Manager & more
 ---
 
-I am a Product Manager with a passion for leveraging data to drive business growth.
+👋 Hi, I’m Cynthia! A former engineer turned product manager, building data and AI products that automate workflows and scale globally.
 
-I specialize in delivering **scalable data platforms**, **AI-enhanced solutions**, and **developer tools** that drive operational efficiency, improve data integrity, and enable real-time insights.
+I’ve shipped products across Europe, Asia, and the U.S. at Volvo Cars, SAP, Airwallex, and Alibaba, including GenAI procurement tools, cross-border commerce, and payment infra.
+
+I’m especially interested in:
+- Enterprise AI capabilities & data platforms
+- Enable adoption by driving AI Quality & Safety
+- Cross-border eCommerce and logistics
 
 ---
 
@@ -59,7 +64,7 @@ I'm grateful to have worked with inspiring leaders and mentors across Product, E
         <p class="reference-role">Andreas Ragnarsson, Sponsor & Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
-        <p>"It has been a true pleasure having you in our team for this rotation. You have been an highly appreciated team member and I'm impressed by how you delivered on all priorities we defined."</p>
+        <p>"It has been a true pleasure having you in our team. You have been a highly appreciated team member and I'm impressed by how you delivered on all priorities we defined."</p>
         <p>"Your contributions in 'demystifying' data contracts and tangibly showing how they can be implemented and used as a foundational part of our data platform architecture were great and will be very valuable for us moving forward."</p>
       </div>
     </div>
@@ -70,10 +75,9 @@ I'm grateful to have worked with inspiring leaders and mentors across Product, E
         <p class="reference-role">Coline Jumeaux, Data Scientist, Volvo Cars</p>
       </div>
       <div class="reference-quote">
-        <p>"You did a great job on this project! You demonstrated very good knowledge sharing skills, for instance your demo of the langchain framework was a big highlight for the DS team, even people not working with GenAI could follow easily thanks to how you paced and structured your presentation."</p>
+        <p>"You demonstrated very good knowledge sharing skills, for instance your demo of the langchain framework was a big highlight for the DS team, even people not working with GenAI could follow easily thanks to how you paced and structured your presentation."</p>
         <p>"The work you submitted was always well researched and well documented. The code you submitted was well written and of good quality."</p>
         <p>"You also had some great inputs into how we should conduct user interviews, and what we should include in the scope of the project."</p>
-        <p>"You had a great impact on the project, thank you for your hard work, well done!"</p>
       </div>
     </div>
 
@@ -83,9 +87,9 @@ I'm grateful to have worked with inspiring leaders and mentors across Product, E
         <p class="reference-role">Jiong Sun, Data Scientist, Volvo Cars</p>
       </div>
       <div class="reference-quote">
-        <p>"During working in the project, you have demonstrated decent skills on analytical thinking, coding, and presentation."</p>
+        <p>"During working in the project, you have demonstrated your skills on analytical thinking, coding, and presentation."</p>
         <p>"You finish tasks with good quality including comprehensive documentation, which is often ignored by many."</p>
-        <p>"Your presentation was appreciated by the whole team - showing that you're in control of pace and difficulty levels. Keep on the good work in your next rotation!"</p>
+        <p>"Your presentation on the langchain framework was appreciated by the whole team - showing that you're in control of pace and difficulty levels. Keep on the good work!"</p>
       </div>
     </div>
 
@@ -99,7 +103,7 @@ I'm grateful to have worked with inspiring leaders and mentors across Product, E
         <p>"Most obvious is her skills in understanding and working with data. She has been a great asset in helping our Data analyst in defining the dashboards we need, and setting frameworks for naming the labels for our events."</p>
         <p>"Cynthia has been responsible for the rollout of some of our features like test drive forms and lead capture forms. She has demonstrated that she can lead the execution part of product management by working with various stakeholders to make things happen."</p>
         <p>"Together with the team, Cynthia has on her own initiative, cleaned up the structure of epics, features and stories in our boards, an activity that was well needed. Thanks for that."</p>
-        <p>"To summarize: for such a short rotation, Cynthia has already delivered results, shown great initiative and positive attitude and grown in the Product manager role."</p>
+        <p>"To summarize: for such a short time, Cynthia has already delivered results, shown great initiative and positive attitude and grown in the Product manager role."</p>
       </div>
     </div>
 
