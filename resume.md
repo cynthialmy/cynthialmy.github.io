@@ -186,10 +186,10 @@ I tried to travel as much as possible during my studies.
 
 ---
 
-## Download My Resume & References
+## Download My Resume
 
 <div id="form-section">
-  <p>Please fill out this quick form to download my resume and reference letters:</p>
+  <p>Please fill out this quick form to download my resume:</p>
 
   <div class="form-container">
     <form id="download-form" action="https://formspree.io/f/mvgkaebd" method="POST">
@@ -226,10 +226,9 @@ I tried to travel as much as possible during my studies.
 
 <div id="download-links" style="display:none;">
   <div class="download-links-card">
-    <p>Thank you for your interest! You can now download the following documents:</p>
+    <p>Thank you for your interest! You can now download my resume:</p>
     <ul>
       <li><a href="/resources/Cynthia_Li_resume.pdf" target="_blank">Cynthia's Resume</a></li>
-      <li><a href="/resources/reference_letters.pdf" target="_blank">Reference Letters</a></li>
     </ul>
   </div>
 </div>
