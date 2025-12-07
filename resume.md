@@ -17,7 +17,7 @@ subtitle: Product Manager & more
 
 ## What Others Say About Me
 
-I'm grateful to have worked with inspiring leaders and mentors across Product, Engineering, and Data. Here are a few excerpts from reference letters I've received.
+>I'm grateful to have worked with inspiring leaders and mentors across Product, Engineering, and Data. Here are a few excerpts from reference letters I've received.
 
 <div class="reference-carousel-container">
   <div class="reference-carousel">
@@ -241,7 +241,7 @@ I'm grateful to have worked with inspiring leaders and mentors across Product, E
 
 ## Let's Connect
 
-Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let's connect!
+>Interested in discussing data platform strategies, scalable pipelines, or just curious about tech? Let's connect!
 
 - **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/mengyuan-li-cynthia/)
 
