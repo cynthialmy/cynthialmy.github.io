@@ -15,46 +15,38 @@ I’m especially interested in:
 
 ---
 
-## What Others Say About Me
+## What Others Say
 
->I'm grateful to have worked with inspiring leaders and mentors across Product, Engineering, and Data. Here are a few excerpts from reference letters I've received.
+>I'm grateful to have worked with inspiring leaders and mentors across Product, Engineering, and Data. Here are a few excerpts from reference testimonials I've received.
 
 <div class="reference-carousel-container">
   <div class="reference-carousel">
     <div class="reference-card active">
       <div class="reference-header">
-        <h3>SAP — Business Process Consulting (2022)</h3>
-        <p class="reference-role">Bella Zhang, Manager, SAP Greater China</p>
+        <h3>Volvo Cars — Product Management (2025)</h3>
+        <p class="reference-role">Hera Hai-Ruo Huang, Senior Product Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
-        <p>"Cynthia was an exceptional early talent who consistently delivered outstanding results. She adapts quickly, learns fast, and shows a strong global mindset."</p>
-        <p>"She demonstrated leadership potential—leading internal projects, driving innovation initiatives, and communicating effectively across teams."</p>
-        <p>"I highly recommend her for any future opportunity."</p>
+        <p>"Cynthia led the User Research for the product discovery phase of the next development stage for the Configurable Digital Twin Platform (CDTP). Her performance and the quality of the end product have impressed me on many levels."</p>
+        <p>"It is clear that Cynthia excels in project management and coordination of various work streams to ensure tasks within the scope are completed in an orderly and timely fashion."</p>
+        <p>"Coordinating interview schedules for over 20 participants across various locations and time zones is no easy task, but Cynthia managed it with great efficiency, leaving ample time for important milestone checkpoints, stakeholder feedback, and revisions."</p>
+        <p>"Cynthia demonstrated exceptional ability in organizing numerous data points and feedback from participants thematically, distilling valuable insights from a vast amount of information. Her final wrap-up deck was concise and to the point, effectively driving the argument home. The level of polish and professionalism in her output was top-notch."</p>
+        <p>"The UX Designer enjoyed working with Cynthia and referred to her as a 'real gem.'"</p>
+        <p>"Personally, I found that Cynthia thinks critically and is not afraid to raise differing perspectives while remaining respectful, a valuable trait in a team environment."</p>
       </div>
     </div>
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Georgia Tech — Data Visualization Lab (2023)</h3>
-        <p class="reference-role">Ximin Mi, Data Visualization Lab Supervisor, Georgia Tech Library</p>
+        <h3>Volvo Cars — Product Management (2025)</h3>
+        <p class="reference-role">Maja Uppenberg, Senior Product Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
-        <p>"Mengyuan demonstrated great commitment, teamwork, and the ability to learn and succeed."</p>
-        <p>"She took initiative to create new machine learning and text analytics learning materials and supported Python instruction."</p>
-        <p>"I recommend her without reservation."</p>
-      </div>
-    </div>
-
-    <div class="reference-card">
-      <div class="reference-header">
-        <h3>Airwallex — Product Management (2021–2022)</h3>
-        <p class="reference-role">Olivia Tang, Product Manager, Airwallex (and Georgia Tech alumna)</p>
-      </div>
-      <div class="reference-quote">
-        <p>"Cynthia quickly proved herself an excellent team player and a quick learner."</p>
-        <p>"She contributed to expanding Airwallex's SWIFT network to 17 new countries and conducted deep research on domestic transfers and approval workflows."</p>
-        <p>"She has strong technical and analytical skills, excellent communication, and a natural curiosity that drives innovation."</p>
-        <p>"I wholeheartedly endorse Cynthia for any role requiring technical depth, product sense, and strategic thinking."</p>
+        <p>"Cynthia has shown great promise in pursuing a career in Product management."</p>
+        <p>"Most obvious is her skills in understanding and working with data. She has been a great asset in helping our Data analyst in defining the dashboards we need, and setting frameworks for naming the labels for our events."</p>
+        <p>"Cynthia has been responsible for the rollout of some of our features like test drive forms and lead capture forms. She has demonstrated that she can lead the execution part of product management by working with various stakeholders to make things happen."</p>
+        <p>"Together with the team, Cynthia has on her own initiative, cleaned up the structure of epics, features and stories in our boards, an activity that was well needed. Thanks for that."</p>
+        <p>"To summarize: for such a short time, Cynthia has already delivered results, shown great initiative and positive attitude and grown in the Product manager role."</p>
       </div>
     </div>
 
@@ -95,30 +87,38 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Product Management (2024)</h3>
-        <p class="reference-role">Maja Uppenberg, Product Manager, Volvo Cars</p>
+        <h3>Airwallex — Product Management (2021–2022)</h3>
+        <p class="reference-role">Olivia Tang, Product Manager, Airwallex (and Georgia Tech alumna)</p>
       </div>
       <div class="reference-quote">
-        <p>"Cynthia has shown great promise in pursuing a career in Product management."</p>
-        <p>"Most obvious is her skills in understanding and working with data. She has been a great asset in helping our Data analyst in defining the dashboards we need, and setting frameworks for naming the labels for our events."</p>
-        <p>"Cynthia has been responsible for the rollout of some of our features like test drive forms and lead capture forms. She has demonstrated that she can lead the execution part of product management by working with various stakeholders to make things happen."</p>
-        <p>"Together with the team, Cynthia has on her own initiative, cleaned up the structure of epics, features and stories in our boards, an activity that was well needed. Thanks for that."</p>
-        <p>"To summarize: for such a short time, Cynthia has already delivered results, shown great initiative and positive attitude and grown in the Product manager role."</p>
+        <p>"Cynthia quickly proved herself an excellent team player and a quick learner."</p>
+        <p>"She contributed to expanding Airwallex's SWIFT network to 17 new countries and conducted deep research on domestic transfers and approval workflows."</p>
+        <p>"She has strong technical and analytical skills, excellent communication, and a natural curiosity that drives innovation."</p>
+        <p>"I wholeheartedly endorse Cynthia for any role requiring technical depth, product sense, and strategic thinking."</p>
       </div>
     </div>
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Technology (2024)</h3>
-        <p class="reference-role">Hera Hai-Ruo Huang, Senior Manager (Technology), Volvo Cars</p>
+        <h3>SAP — Business Process Consulting (2022)</h3>
+        <p class="reference-role">Bella Zhang, Manager, SAP Greater China</p>
       </div>
       <div class="reference-quote">
-        <p>"From mid-January to mid-April, Cynthia led the User Research for the product discovery phase of the next development stage for the Configurable Digital Twin Platform (CDTP). Her performance and the quality of the end product have impressed me on many levels."</p>
-        <p>"It is clear that Cynthia excels in project management and coordination of various work streams to ensure tasks within the scope are completed in an orderly and timely fashion."</p>
-        <p>"Coordinating interview schedules for over 20 participants across various locations and time zones is no easy task, but Cynthia managed it with great efficiency, leaving ample time for important milestone checkpoints, stakeholder feedback, and revisions."</p>
-        <p>"Cynthia demonstrated exceptional ability in organizing numerous data points and feedback from participants thematically, distilling valuable insights from a vast amount of information. Her final wrap-up deck was concise and to the point, effectively driving the argument home. The level of polish and professionalism in her output was top-notch."</p>
-        <p>"The UX Designer enjoyed working with Cynthia and referred to her as a 'real gem.'"</p>
-        <p>"Personally, I found that Cynthia thinks critically and is not afraid to raise differing perspectives while remaining respectful, a valuable trait in a team environment."</p>
+        <p>"Cynthia was an exceptional early talent who consistently delivered outstanding results. She adapts quickly, learns fast, and shows a strong global mindset."</p>
+        <p>"She demonstrated leadership potential—leading internal projects, driving innovation initiatives, and communicating effectively across teams."</p>
+        <p>"I highly recommend her for any future opportunity."</p>
+      </div>
+    </div>
+
+    <div class="reference-card">
+      <div class="reference-header">
+        <h3>Georgia Tech — Data Visualization Lab (2023)</h3>
+        <p class="reference-role">Ximin Mi, Data Visualization Lab Supervisor, Georgia Tech Library</p>
+      </div>
+      <div class="reference-quote">
+        <p>"Mengyuan demonstrated great commitment, teamwork, and the ability to learn and succeed."</p>
+        <p>"She took initiative to create new machine learning and text analytics learning materials and supported Python instruction."</p>
+        <p>"I recommend her without reservation."</p>
       </div>
     </div>
   </div>
