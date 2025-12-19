@@ -15,9 +15,9 @@ I led the design of a **manual process measurement framework** that enabled Glob
 
 Teams had three main ways of estimating manual work, all with trade-offs:
 
-1. **Self-reported hours** - fast, but subjective.
-2. **Stopwatch timing** - precise, but unscalable and unrealistic.
-3. **System logs** - objective, but blind to human effort.
+1. **Self-reported hours**: fast, but subjective.
+2. **Stopwatch timing**: precise, but unscalable and unrealistic.
+3. **System logs**: objective, but blind to human effort.
 
 We needed a **hybrid approach**: something objective enough for analytics and leadership reporting, yet simple and relatable enough for users to validate themselves.
 
@@ -30,8 +30,6 @@ The measurement framework had to:
 
 ![measure](../assets/img/measure.jpg)
 
----
-
 ## Insight
 
 After dozens of interviews and workshops, one pattern emerged:
@@ -40,7 +38,7 @@ After dozens of interviews and workshops, one pattern emerged:
 
 When teams could agree on what “manual” meant, even approximate numbers became actionable. The insight shifted our focus from *minutes saved* to *steps removed* - from time measurement to process simplification.
 
-## Approach
+## The Approach
 
 We built the **Manual Effort Measurement Framework (MEMF)** - a structured but human-friendly model combining **manual baselines** and **system signals**.
 
