@@ -10,7 +10,7 @@ share-img: assets/img/data_contract_1.png
 # author: Cynthia Mengyuan Li
 ---
 
-As organizations move toward decentralized data ownership and data mesh architectures, the question is no longer *whether* teams can publish data independently — but **how they do so without breaking trust across the ecosystem**.
+As organizations move toward decentralized data ownership and data mesh architectures, the question is no longer *whether* teams can publish data independently - but **how they do so without breaking trust across the ecosystem**.
 
 At Volvo Cars, increasing domain autonomy meant dozens of teams could ship data products at speed. But without shared, enforceable agreements on structure, semantics, and quality, cross-domain integrations became fragile, slow, and expensive to maintain.
 
@@ -18,14 +18,14 @@ This is where **data contracts** moved from an abstract governance concept to a 
 
 In this post, I combine two perspectives:
 
-1. **What we built** — the *Data Contract Manager*, a product that operationalizes contracts in a federated data platform.
-2. **Why it works** — drawing on frameworks from *Driving Data Quality with Data Contracts* to explain how contracts improve quality, culture, and scalability.
+1. **What we built** - the *Data Contract Manager*, a product that operationalizes contracts in a federated data platform.
+2. **Why it works** - drawing on frameworks from *Driving Data Quality with Data Contracts* to explain how contracts improve quality, culture, and scalability.
 
 ---
 
 ## The Core Problem
 
-**How do you allow autonomous teams to ship data independently — without breaking each other?**
+**How do you allow autonomous teams to ship data independently - without breaking each other?**
 
 Decentralization brings speed, but also predictable failure modes:
 
@@ -34,7 +34,7 @@ Decentralization brings speed, but also predictable failure modes:
 * Schema drift causes silent or breaking failures
 * Data quality issues surface late, downstream, and expensively
 
-Traditional metadata tools help with *discoverability*, but they don’t enforce expectations. What we needed was a product that made **agreements explicit, validated, and easy to maintain** — even for non-expert users.
+Traditional metadata tools help with *discoverability*, but they don’t enforce expectations. What we needed was a product that made **agreements explicit, validated, and easy to maintain** - even for non-expert users.
 
 ---
 
@@ -59,7 +59,7 @@ It also shaped the UX: schema visibility and contract validation live in the sam
 
 ## What We Built: The Data Contract Manager
 
-The **Data Contract Manager** is a web application that helps teams create, validate, and maintain YAML-based data contracts — without needing to be data governance experts.
+The **Data Contract Manager** is a web application that helps teams create, validate, and maintain YAML-based data contracts - without needing to be data governance experts.
 
 ![data_contract](../assets/img/data_contract_1.png)
 
@@ -96,7 +96,7 @@ From a product perspective, the Data Contract Manager acts as:
 * A **contract-driven backbone** for evolving pipelines
 * A **collaboration interface** between producers, consumers, and platform teams
 
-This aligns closely with modern data contract theory: contracts are not documents — they are **interfaces between teams**.
+This aligns closely with modern data contract theory: contracts are not documents - they are **interfaces between teams**.
 
 ---
 
@@ -179,7 +179,7 @@ Building the Data Contract Manager reinforced a few lessons:
 If users understand expectations without training, you’re winning.
 
 **Invisible value still compounds.**
-Nobody celebrates validation rules — until failures disappear.
+Nobody celebrates validation rules - until failures disappear.
 
 **Governance is a product.**
 When rules are embedded in workflows, teams feel supported, not constrained.
@@ -191,7 +191,7 @@ When rules are embedded in workflows, teams feel supported, not constrained.
 * GitHub: **Data Contract Manager**
   [https://github.com/volvo-cars/data-contract-manager](https://github.com/volvo-cars/data-contract-manager)
 
-* Book: *Driving Data Quality with Data Contracts* — Andrew Jones
+* Book: *Driving Data Quality with Data Contracts* - Andrew Jones
 
 * External references:
 
@@ -203,6 +203,6 @@ When rules are embedded in workflows, teams feel supported, not constrained.
 
   ## Closing Thought
 
-Data contracts work best when they stop being slides and start being **interfaces** — interfaces between teams, systems, and expectations.
+Data contracts work best when they stop being slides and start being **interfaces** - interfaces between teams, systems, and expectations.
 
 When done well, they don’t slow teams down. They let teams move fast **without breaking trust**.

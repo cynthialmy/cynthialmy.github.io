@@ -23,7 +23,7 @@ I’m especially interested in:
   <div class="reference-carousel">
     <div class="reference-card active">
       <div class="reference-header">
-        <h3>Volvo Cars — Product Management (2025)</h3>
+        <h3>Volvo Cars ー Product Management (2025)</h3>
         <p class="reference-role">Hera Hai-Ruo Huang, Senior Product Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
@@ -38,7 +38,7 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Product Management (2025)</h3>
+        <h3>Volvo Cars - Product Management (2025)</h3>
         <p class="reference-role">Maja Uppenberg, Senior Product Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
@@ -52,7 +52,7 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Data Platform (2024)</h3>
+        <h3>Volvo Cars - Data Platform (2024)</h3>
         <p class="reference-role">Andreas Ragnarsson, Sponsor & Manager, Volvo Cars</p>
       </div>
       <div class="reference-quote">
@@ -63,7 +63,7 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Data Science (2024)</h3>
+        <h3>Volvo Cars - Data Science (2024)</h3>
         <p class="reference-role">Coline Jumeaux, Data Scientist, Volvo Cars</p>
       </div>
       <div class="reference-quote">
@@ -75,7 +75,7 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Volvo Cars — Data Science (2024)</h3>
+        <h3>Volvo Cars - Data Science (2024)</h3>
         <p class="reference-role">Jiong Sun, Data Scientist, Volvo Cars</p>
       </div>
       <div class="reference-quote">
@@ -87,7 +87,7 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Airwallex — Product Management (2021–2022)</h3>
+        <h3>Airwallex - Product Management (2021–2022)</h3>
         <p class="reference-role">Olivia Tang, Product Manager, Airwallex (and Georgia Tech alumna)</p>
       </div>
       <div class="reference-quote">
@@ -100,19 +100,19 @@ I’m especially interested in:
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>SAP — Business Process Consulting (2022)</h3>
+        <h3>SAP - Business Process Consulting (2022)</h3>
         <p class="reference-role">Bella Zhang, Manager, SAP Greater China</p>
       </div>
       <div class="reference-quote">
         <p>"Cynthia was an exceptional early talent who consistently delivered outstanding results. She adapts quickly, learns fast, and shows a strong global mindset."</p>
-        <p>"She demonstrated leadership potential—leading internal projects, driving innovation initiatives, and communicating effectively across teams."</p>
+        <p>"She demonstrated leadership potential-leading internal projects, driving innovation initiatives, and communicating effectively across teams."</p>
         <p>"I highly recommend her for any future opportunity."</p>
       </div>
     </div>
 
     <div class="reference-card">
       <div class="reference-header">
-        <h3>Georgia Tech — Data Visualization Lab (2023)</h3>
+        <h3>Georgia Tech - Data Visualization Lab (2023)</h3>
         <p class="reference-role">Ximin Mi, Data Visualization Lab Supervisor, Georgia Tech Library</p>
       </div>
       <div class="reference-quote">

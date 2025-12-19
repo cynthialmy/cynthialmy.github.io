@@ -15,7 +15,7 @@ akaTask is an AI-first task management and productivity assistant built for new 
 
 This PRD captures the research insights that motivated akaTask (Part A) and defines the product strategy, MVP scope, metrics, feature set, roadmap, launch plan, and validation experiments (Part B).
 
-# PART A — Research & Insights (Case Study 1)
+# PART A - Research & Insights (Case Study 1)
 
 ### Research goals
 
@@ -31,12 +31,12 @@ This PRD captures the research insights that motivated akaTask (Part A) and defi
 
 ### Key data points (from primary research)
 
-* **75%** of parents preferred interactive and bilingual baby monitors — indicating high interest in intelligent device integration.
-* **60%** reported frustration with confusing stroller/product terminologies — signals need for simplified product taxonomy and educational UX.
-* **80%** emphasized comfortability in baby bottles — proxies for product quality priorities and trust thresholds.
-* **70%** rely on recommendations from friends/coworkers for formula choices — strong social influence in decisions.
-* **65%** considered used toys high value — cost sensitivity & sustainability opportunity.
-* **50%** expressed concern about baby food cost — financial pain that product features can address.
+* **75%** of parents preferred interactive and bilingual baby monitors - indicating high interest in intelligent device integration.
+* **60%** reported frustration with confusing stroller/product terminologies - signals need for simplified product taxonomy and educational UX.
+* **80%** emphasized comfortability in baby bottles - proxies for product quality priorities and trust thresholds.
+* **70%** rely on recommendations from friends/coworkers for formula choices - strong social influence in decisions.
+* **65%** considered used toys high value - cost sensitivity & sustainability opportunity.
+* **50%** expressed concern about baby food cost - financial pain that product features can address.
 
 ### Themes and implications
 
@@ -44,7 +44,7 @@ This PRD captures the research insights that motivated akaTask (Part A) and defi
 2. **Time scarcity & repetitive chores.** Tasks like meal planning and washing pump parts consume time. Implication: build automation for recurring tasks and TODO templates.
 3. **Trust and social proof matter.** Parents value authentic reviews and peer recommendations. Implication: design community/verified-review features and frictionless ways to capture in-app referrals.
 4. **In‑person product evaluation preference.** Many prefer seeing items physically. Implication: partner/retailer features (in-store demo locator) and generous return policies to lower purchase risk.
-5. **Willingness to adopt AI for narrowly scoped, high-value problems.** Parents used Duolingo/Lovevery and AI for content — good signal for AI-assisted task generation.
+5. **Willingness to adopt AI for narrowly scoped, high-value problems.** Parents used Duolingo/Lovevery and AI for content - good signal for AI-assisted task generation.
 
 ### Problem statement (user-centered)
 

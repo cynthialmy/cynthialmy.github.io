@@ -25,7 +25,7 @@ So instead of thinking about models or tools, my first question was:
 
 Sitting With Buyers, Not Assumptions
 
-I spent my first weeks shadowing buyers across commodity teams. I wasn’t looking for feature requests — I was looking for friction. I watched how they navigated VGS, VPC, and SI+, how they searched through attachments, how often they switched screens to confirm information, and how long it took them to feel confident in their answers.
+I spent my first weeks shadowing buyers across commodity teams. I wasn’t looking for feature requests - I was looking for friction. I watched how they navigated VGS, VPC, and SI+, how they searched through attachments, how often they switched screens to confirm information, and how long it took them to feel confident in their answers.
 
 By the third user interview, a pattern was unmistakable:
 
@@ -40,9 +40,9 @@ One buyer walked me through a task: checking a contract clause across systems. I
 - verifying SI+ for implementation
 - confirming with a colleague
 
-This wasn’t an isolated workflow — it was daily reality.
+This wasn’t an isolated workflow - it was daily reality.
 
-> Insight 1 — The real problem was cognitive load, not system capability.
+> Insight 1 - The real problem was cognitive load, not system capability.
 
 Buyers weren’t lacking expertise; they were drowning in scattered data.
 
@@ -52,18 +52,18 @@ Buyers weren’t lacking expertise; they were drowning in scattered data.
 
 **Mapping Where Time Really Goes**
 
-To quantify the problem, I broke down each search workflow step-by-step and timed it with multiple buyers. The times varied wildly — sometimes three minutes, sometimes 25 — depending on document formats, attachments, or system quirks.
+To quantify the problem, I broke down each search workflow step-by-step and timed it with multiple buyers. The times varied wildly - sometimes three minutes, sometimes 25 - depending on document formats, attachments, or system quirks.
 
 That variability revealed another truth:
 
-> Insight 2 — There was no single source of truth.
+> Insight 2 - There was no single source of truth.
 
 When trust in data is low, people double-check, triple-check, or check with someone else.
 This added more wasted time and risk.
 
 ---
 
-**Understanding Buyer Psychology — Their Unspoken Jobs to Be Done**
+**Understanding Buyer Psychology - Their Unspoken Jobs to Be Done**
 
 Beyond functionality, I listened for emotional triggers.
 The real JTBD that emerged were:
@@ -72,7 +72,7 @@ The real JTBD that emerged were:
 2) “Help me avoid making a mistake.”
 3) “Help me feel confident in my decision.”
 
-These weren’t system requirements — they were human requirements.
+These weren’t system requirements - they were human requirements.
 This shaped how I designed:
 - transparency
 - source citations
@@ -83,7 +83,7 @@ Trust would make or break the tool.
 
 ---
 
-**Validating the Scale — Is AI the Right Tool?**
+**Validating the Scale - Is AI the Right Tool?**
 
 I then analyzed one month of procurement support tickets and categorized each query. A Pareto distribution emerged:
 ~40% of inquiries were repetitive information retrieval.
@@ -95,7 +95,7 @@ Things like:
 
 This confirmed something important:
 
-> Insight 3 — A large portion of procurement work was repetitive and suitable for AI automation.
+> Insight 3 - A large portion of procurement work was repetitive and suitable for AI automation.
 
 GenAI seems to be a strategic match for the problem.
 
@@ -134,13 +134,13 @@ Great AI products don’t start with “everything.”
 They start with a sharp slice.
 
 I evaluated the three main systems:
-- VGS — widely used, moderately clean data
-- VPC — crucial but more complex
-- SI+ — fragmented implementation records
+- VGS - widely used, moderately clean data
+- VPC - crucial but more complex
+- SI+ - fragmented implementation records
 
 After weighing value, complexity, and risk, I made a pivotal product decision:
 
-Decision — Start with VGS as the first Proof of Value.
+Decision - Start with VGS as the first Proof of Value.
 
 It was:
 

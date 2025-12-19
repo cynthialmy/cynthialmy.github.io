@@ -69,13 +69,13 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 ### Proposed model (MVP)
 
 * **Free tier:** 10 free generated listings per rolling 30 days (or per calendar month) + ability to save 25 listings.
-* **Paying tier (Subscription):** $4.99/month — unlimited generated listings OR 200 saves + priority support.
-* **Credit packs (one-time):** e.g., 20 credits for $2.99. Credits consumed per generate or per save (decide: generate or save — see tradeoffs below).
+* **Paying tier (Subscription):** $4.99/month - unlimited generated listings OR 200 saves + priority support.
+* **Credit packs (one-time):** e.g., 20 credits for $2.99. Credits consumed per generate or per save (decide: generate or save - see tradeoffs below).
 
 ### Notes on where to charge
 
 * Charge per **generate**: discourages casual use, simpler billing, good for heavy resellers.
-* Charge per **save**: user can generate and copy freely but pays to persist across devices — keeps initial experience frictionless.
+* Charge per **save**: user can generate and copy freely but pays to persist across devices - keeps initial experience frictionless.
 
 **Recommendation (MVP):** Charge for **server-side saves and sync**. Keep generation free for everyone (even anonymous). This preserves the zero-friction copy & paste flow while enabling a clear paid benefit: persistence & multi-device sync.
 
@@ -92,9 +92,9 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 
 ### Supported login methods (MVP priority)
 
-1. **Magic link (email)** — Primary: frictionless, passwordless
-2. **Email + password** — Fallback for users who prefer
-3. **Social sign-in (Google, Apple)** — Optional for faster sign-up on mobile
+1. **Magic link (email)** - Primary: frictionless, passwordless
+2. **Email + password** - Fallback for users who prefer
+3. **Social sign-in (Google, Apple)** - Optional for faster sign-up on mobile
 
 ### Tokens & sessions
 
@@ -118,22 +118,22 @@ I would like to share a Product Requirements Document (PRD) that I created for S
 
 ## 8. APIs & Endpoints (examples)
 
-* `POST /auth/magic-link` — request magic link
-* `POST /auth/magic-link/verify` — verify token and issue session
-* `POST /auth/login` — email/password
-* `POST /auth/refresh` — refresh tokens
-* `POST /listings` — save generated listing (consumes save credit if applicable)
-* `GET /listings` — get user listings
-* `POST /listings/:id/share` — create public share link
-* `POST /feedback` — submit feedback
-* `GET /me` — user profile & quotas
-* `GET /admin/feedback` — admin list (auth: admin)
+* `POST /auth/magic-link` - request magic link
+* `POST /auth/magic-link/verify` - verify token and issue session
+* `POST /auth/login` - email/password
+* `POST /auth/refresh` - refresh tokens
+* `POST /listings` - save generated listing (consumes save credit if applicable)
+* `GET /listings` - get user listings
+* `POST /listings/:id/share` - create public share link
+* `POST /feedback` - submit feedback
+* `GET /me` - user profile & quotas
+* `GET /admin/feedback` - admin list (auth: admin)
 
 ## 9. UI/UX specifics
 
 ### Sign-up prompts
 
-* Minimal: "Save your listings across devices — get 10 free saves/month. Create an account →" with choices (Magic link, Continue as guest)
+* Minimal: "Save your listings across devices - get 10 free saves/month. Create an account →" with choices (Magic link, Continue as guest)
 * Avoid interrupting first 1–3 generations; use subtle nudges.
 
 ### Account screen
