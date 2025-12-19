@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automating EU Customs with Agentic AI
+title: Automating EU Customs Operations with Agentic AI
 subtitle: Turning border complexity into operational advantage
 tags: [EU Customs, Economic Value, Agentic AI, Case Study, Customs Optimization, Customs Automation]
 project_type: professional
