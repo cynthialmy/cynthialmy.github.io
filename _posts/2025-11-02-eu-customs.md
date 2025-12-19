@@ -16,7 +16,7 @@ This legal machinery - customs classification, origin rules, valuation, duty cal
 
 The hidden truth is that customs law provides a strategic lever for businesses for companies that understand it as such.
 
-Jump to [Case Study: A Mid-Sized EU Consumer Electronics Company](#case-study-a-mid-sized-eu-consumer-electronics-company) for a quantitative example of how customs can be used to improve unit economics.
+>Jump to [Case Study: A Mid-Sized EU Consumer Electronics Company](#case-study-a-mid-sized-eu-consumer-electronics-company) for a quantitative example of how customs can be used to improve unit economics.
 
 ---
 
