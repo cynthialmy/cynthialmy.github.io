@@ -4,7 +4,7 @@ title: Portfolio
 subtitle: I enjoy the excitement of creation.
 ---
 
-For detailed case studies showcasing product thinking, strategy, and execution, visit [Product Docs](/).
+For detailed case studies showcasing product thinking, strategy, and execution, visit [Case Studies](/).
 
 <div class="portfolio-tabs">
   <button class="portfolio-tab active" data-tab="technical-projects">Technical Projects</button>
@@ -183,7 +183,7 @@ For detailed case studies showcasing product thinking, strategy, and execution, 
 
 ## Explore More
 
-Interested in seeing more of my work? Visit my [GitHub](https://github.com/cynthialmy) for a full list of my projects and contributions, or check out [Product Docs](/) for detailed case studies.
+Interested in seeing more of my work? Visit my [GitHub](https://github.com/cynthialmy) for a full list of my projects and contributions, or check out [Case Studies](/) for detailed case studies.
 
 <!-- ## Let's Connect!
 

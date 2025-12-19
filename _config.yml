@@ -20,9 +20,9 @@ author: Cynthia Mengyuan Li
 ###############################################
 
 navbar-links:
-    Product Docs: "/.."
-    Projects: "projects"
-    More About Me: "resume"
+    Case Studies: "/.."
+    Builds: "projects"
+    About: "resume"
     # GitHub: "https://github.com/cynthialmy"
     # Connect: "connect"
     # Links:

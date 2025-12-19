@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "User Research: AI-driven Productivity App for New Parents"
-subtitle: Quantifying Parental Pain Points and Identifying High-Value Automation Opportunities
+title: Turning Parental Pain Points into Product Insights
+subtitle: Mapping unmet needs into actionable automation opportunities for new parents
 tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
 project_type: independent
 # cover-img: assets/img/data-book-summary-1.png

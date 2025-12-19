@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Case Study: Bringing Generative AI into Procurement at Volvo Cars"
-subtitle: "Journey Across Discovery, Architecture, Validation & Impact"
+title: Operationalizing Generative AI in Procurement
+subtitle: From discovery to enterprise adoption
 tags: [AI integration, procurement transformation, process optimization, strategic implementation, LLM, OpenAI, Azure, LangChain, RAG, GPT-4]
 project_type: professional
 # cover-img: assets/img/data-book-summary-1.png

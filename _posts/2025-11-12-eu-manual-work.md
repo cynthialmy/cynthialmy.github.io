@@ -1,20 +1,13 @@
 ---
 layout: post
-title: "Case Study: Making Manual Work Measurable"
-subtitle: "Designing a Scalable Framework for Automation Readiness in Global Operations"
-tags: [Manual Work, Automation Readiness, Global Operations, Case Study, Automation Framework, Measurement Framework]
+title: Standardizing Manual Work Measurement
+subtitle: A scalable framework for automation readiness across global operations
+tags: [Product Metrics, Manual Work, Automation Readiness, Global Operations, Case Study, Automation Framework, Measurement Framework]
 project_type: professional
 thumbnail-img: assets/img/measure.jpg
 share-img: assets/img/measure.jpg
 comments: true
-# author: Cynthia Mengyuan Li
 ---
-
-In global trade operations, much of the real work happens outside the systems — in Excel sheets, emails, and shared folders. Everyone knew that automation could unlock massive efficiency gains, but the first challenge was surprisingly fundamental:
-
-> We couldn’t measure manual work consistently across regions, teams, or tools.
-
-Without that baseline, automation ROI was impossible to prove — and process prioritization often relied on anecdotes instead of data.
 
 I led the design of a **manual process measurement framework** that enabled Global Process Excellence and Automation teams to establish a common, defensible view of manual effort — one that could scale across 40+ regions.
 

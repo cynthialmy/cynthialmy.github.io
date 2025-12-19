@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Reflection: Data Quality with Data Contracts"
-subtitle: Exploring Data Contracts to Improve Data Quality
+title: Driving Data Quality Through Contracts
+subtitle: Exploring frameworks for sustainable data governance
 tags: [data quality, data contracts, implementation, case study]
 project_type: professional
 comments: true

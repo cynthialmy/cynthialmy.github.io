@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Case Study: Data Contract Manager for Decentralized Data Products"
-subtitle: Managing data agreements across a federated enterprise
+title: Defining the Data Contract Manager
+subtitle: Aligning decentralized teams through shared data agreements
 tags: [Data Management, Data Mesh, Data Contracts, Metadata, Decentralized Data]
 project_type: professional
 comments: true

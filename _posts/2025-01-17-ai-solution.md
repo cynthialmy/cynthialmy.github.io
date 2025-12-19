@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Reflection: Building Safe, Strategic & Differentiated AI Systems"
-subtitle: Delivering AI Integration, Risk Mitigation, and Strategic Development
+title: Designing Responsible AI Systems
+subtitle: Balancing innovation, governance, and differentiation
 tags: [AI implementation, procurement process, risk mitigation, project management]
 project_type: professional
 # cover-img: assets/img/data-book-summary-1.png

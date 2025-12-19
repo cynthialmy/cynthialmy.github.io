@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Expanding Global Payout Coverage at Airwallex
-subtitle: A product deep dive from my internship on making SWIFT reliable at scale
+title: Scaling Global Payout Infrastructure
+subtitle: Making SWIFT reliable at scale
 tags: [Product Management, Global Payments, SWIFT, Product Development, Product Design, Product Strategy, Product Launch, Product Metrics, Testing, Validation, Iteration]
 project_type: professional
 # cover-img: assets/img/data-book-summary-1.png
