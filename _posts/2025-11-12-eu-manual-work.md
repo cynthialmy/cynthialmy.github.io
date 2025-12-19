@@ -11,8 +11,6 @@ comments: true
 
 I led the design of a **manual process measurement framework** that enabled Global Process Excellence and Automation teams to establish a common, defensible view of manual effort - one that could scale across 40+ regions.
 
----
-
 ## The Problem
 
 Teams had three main ways of estimating manual work, all with trade-offs:
@@ -42,8 +40,6 @@ After dozens of interviews and workshops, one pattern emerged:
 
 When teams could agree on what “manual” meant, even approximate numbers became actionable. The insight shifted our focus from *minutes saved* to *steps removed* - from time measurement to process simplification.
 
----
-
 ## Approach
 
 We built the **Manual Effort Measurement Framework (MEMF)** - a structured but human-friendly model combining **manual baselines** and **system signals**.
@@ -61,8 +57,6 @@ Each process was mapped through workshops:
 
 This created a shared, explainable baseline - “human truth” - that was frozen pre-automation.
 
----
-
 ### 2. Layer in System Signals
 
 We then linked automation data - the “system truth”:
@@ -73,14 +67,10 @@ We then linked automation data - the “system truth”:
 
 The combination allowed us to quantify both **how much manual work existed** and **how automation was reducing it**.
 
----
-
 ### 3. Track Progress via Manual Step Reduction
 
 Automation success was tracked by **manual steps removed or reduced**, rather than time saved.
 This made comparisons across regions fair and avoided subjective productivity debates.
-
----
 
 ## Implementation
 
@@ -102,8 +92,6 @@ This made comparisons across regions fair and avoided subjective productivity de
 
 Beyond metrics, the real win was cultural:
 Teams finally had a **shared language** for what “manual” meant - and automation conversations shifted from guesswork to grounded prioritization.
-
----
 
 ## Reflection
 
