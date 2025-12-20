@@ -13,7 +13,7 @@ I’m especially interested in:
 - Enable adoption by driving AI Quality & Safety
 - Cross-border eCommerce and logistics
 
-Also, check out all my [links](https://portrait.so/cynthiali) if you want to know more about me.
+Also, check out all my other links on my [portrait](https://portrait.so/cynthiali) if you want to know more about me.
 
 ---
 
