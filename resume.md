@@ -4,7 +4,7 @@ title: Cynthia Mengyuan Li
 subtitle: Product Manager & more
 ---
 
-👋 Hi, I’m Cynthia! A former engineer turned product manager, building data and AI products that automate workflows and scale globally.
+👋 Hi there! I’m Cynthia, a former engineer turned product manager, building data and AI products that automate workflows and scale globally.
 
 I’ve shipped products across Europe, Asia, and the U.S. at Volvo Cars, SAP, Airwallex, and Alibaba, including GenAI procurement tools, cross-border commerce, and payment infra.
 
