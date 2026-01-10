@@ -22,11 +22,8 @@ A prompt is not an instruction to a model.
 It’s a contract between:
 
 - the model,
-
 - the product,
-
 - downstream systems,
-
 - the humans who will trust the output.
 
 If a prompt is underspecified, the product is underspecified.
@@ -97,8 +94,7 @@ Confidence: < 0.6
 Reason: Insufficient signal
 ```
 
-I don’t trust the model to “be careful.”
-I **force caution structurally**.
+**Force caution structurally**.
 
 ---
 
@@ -217,9 +213,9 @@ Most failures are **prompt design failures**, not model failures.
 
 ---
 
-## 9. What I don’t do anymore
+## 9. What I don’t do
 
-These are lessons learned the hard way.
+These are lessons learned.
 
 I don’t:
 
@@ -244,5 +240,4 @@ I go back to the prompt.
 
 ---
 
-Good prompts are not clever.
-They are **boring, explicit, and slightly paranoid**.
+Most of the time, good prompts are **boring, explicit, and slightly paranoid**.
