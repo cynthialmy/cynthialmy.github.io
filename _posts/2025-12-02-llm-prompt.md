@@ -563,3 +563,9 @@ Suggest:
 
 * Shows system ownership
 * Encourages continuous improvement
+
+Some other resources:
+
+- [Zentropi hate speech detection prompt](https://zentropi.ai/labelers/8d4ec599-f124-4ed5-abbf-cd0f9a77a25a)
+- [OpenAI prompt library](https://platform.openai.com/docs/guides/prompt-engineering)
+- [OpenAI GPT-5 prompting guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
