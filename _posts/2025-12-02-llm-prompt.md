@@ -10,7 +10,7 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-LLM Prompting Is a Product Skill. A year ago, I thought prompt engineering was mostly about phrasing. After working on LLM-powered systems that sit inside real products with real users, real ops teams, and real consequences. I’ve come to see prompting as a core product management skill.
+__LLM Prompting Is a Product Skill.__ A year ago, I thought prompt engineering was mostly about phrasing. After working on LLM-powered systems that sit inside real products with real users, real ops teams, and real consequences. I’ve come to see prompting as a core product management skill.
 
 Because they force clarity where product teams often stay vague.
 
@@ -102,7 +102,7 @@ I **force caution structurally**.
 
 ---
 
-## 4. How I handle confidence (this is non-negotiable)
+## 4. How I handle confidence
 
 If a prompt produces decisions, it must also produce **confidence**.
 
@@ -173,6 +173,8 @@ Reason: bullet points, max 3
 If it takes more than 10 seconds to scan, it’s too slow.
 
 ---
+
+![prompting](../assets/img/prompting.jpg)
 
 ## 7. I never ship prompts without an evaluation plan
 
