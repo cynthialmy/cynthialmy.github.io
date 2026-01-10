@@ -14,7 +14,7 @@ __LLM Prompting Is a Product Skill.__ A year ago, I thought prompt engineering w
 
 Because they force clarity where product teams often stay vague.
 
-This is how I approach LLM prompting as a product manager.
+>Jump to [Canonical Prompt Library](#bonus-canonical-prompt-library) for a library of prompts.
 
 ## 1. How I think about prompts
 
