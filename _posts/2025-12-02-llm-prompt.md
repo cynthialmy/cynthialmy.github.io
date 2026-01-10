@@ -10,24 +10,28 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-__LLM Prompting Is a Product Skill.__ A year ago, I thought prompt engineering was mostly about phrasing. After working on LLM-powered systems that sit inside real products with real users, real ops teams, and real consequences. I’ve come to see prompting as a core product management skill.
+__LLM Prompting Is a Product Skill.__ A year ago, I thought working with LLMs was mostly about phrasing good prompts. After shipping LLM-powered systems inside real products with real users, real ops teams, and real consequences. I no longer think that’s true.
 
-Because they force clarity where product teams often stay vague.
+The hard part isn’t wording.
 
->Jump to [Canonical Prompt Library](#bonus-canonical-prompt-library) for a library of prompts.
+The hard part is deciding what context the model is allowed to see, when, and why.
 
-## 1. How I think about prompts
+That’s why I now see context engineering as a core product management skill, not a technical trick. It’s a way of forcing product clarity where teams often stay vague.
+
+>Jump to [Canonical Prompt Library](#bonus-canonical-prompt-library) for a collection of prompt templates.
+
+## 1. How I think about context
 
 A prompt is not an instruction to a model.
-It’s a contract between:
+It’s the **final expression of a context contract** between:
 
-- the model,
-- the product,
-- downstream systems,
-- the humans who will trust the output.
+* the model,
+* the product,
+* downstream systems,
+* and the humans who will trust the output.
 
-If a prompt is underspecified, the product is underspecified.
-If a prompt can’t be evaluated, the product can’t scale.
+If the context is underspecified, the product is underspecified.
+If the context can’t be evaluated, the product can’t scale.
 
 Before I write a single word, I answer three questions:
 
@@ -35,13 +39,15 @@ Before I write a single word, I answer three questions:
 2. **Who or what consumes it next?**
 3. **What is the cost of being wrong?**
 
-If I can’t answer those, I’m not ready to prompt.
+These questions don’t shape phrasing, they shape **what information is injected and what is deliberately excluded**.
+
+If I can’t answer them, I’m not ready to write the prompt.
 
 ---
 
-## 2. My default structure for production prompts
+## 2. My default structure for context-engineered prompts
 
-Almost every production prompt I ship follows the same skeleton.
+Almost every production LLM interaction I ship follows the same **context layering**.
 
 ```text
 Role:
@@ -52,7 +58,7 @@ This output will be used by [DOWNSTREAM SYSTEM / PERSON].
 The goal is to optimize for [PRIMARY OBJECTIVE].
 
 Constraints:
-- What the model must not do
+- What the system must not assume
 - What tradeoff to prefer (precision vs recall, speed vs accuracy)
 - When to defer or express uncertainty
 
@@ -62,10 +68,11 @@ Exact structure, explicit fields, no prose outside them
 
 This does two things:
 
-* It **reduces variance**
+* It **bounds the model’s world**
 * It **makes failures legible**
 
-A prompt that fails silently is worse than one that fails loudly.
+A system that fails loudly can be fixed.
+A system that fails silently will scale mistakes.
 
 ---
 
@@ -76,16 +83,16 @@ I design prompts for **how they fail at scale**.
 
 I ask:
 
-* What will the model hallucinate here?
-* What ambiguous cases will show up 10,000 times a day?
-* What will humans over-trust?
+* What information will anchor the model incorrectly?
+* What ambiguity will show up 10,000 times a day?
+* What context will humans over-trust?
 
-Then I encode those risks *into the prompt itself*.
+Then I encode those risks *into the context itself*, not as instructions, but as **structural defaults**.
 
 ### Example: uncertainty-aware decision prompt
 
 ```text
-If the input does not provide sufficient evidence,
+If the available context does not provide sufficient evidence,
 explicitly respond with:
 Decision: NEEDS REVIEW
 Confidence: < 0.6
@@ -98,24 +105,25 @@ Reason: Insufficient signal
 
 ## 4. How I handle confidence
 
-If a prompt produces decisions, it must also produce **confidence**.
+If an LLM output drives decisions, confidence is part of the context contract.
 
-Not vibes. Not hedging language.
+Not vibes.
+Not hedging language.
 A number.
 
 ```text
 Confidence score:
 0.0 = pure guess
-0.5 = ambiguous / mixed signals
+0.5 = mixed or ambiguous signals
 1.0 = near certainty
 ```
 
-Why I do this:
+Why I insist on this:
 
 * It enables thresholding
 * It enables A/B testing
 * It enables human-in-the-loop routing
-* It makes errors debuggable
+* It makes errors diagnosable
 
 Any system without confidence is impossible to tune.
 
@@ -123,10 +131,10 @@ Any system without confidence is impossible to tune.
 
 ## 5. I separate “thinking” from “output”
 
-I never let reasoning leak into production outputs unless a human needs it.
+I won't let reasoning leak into production outputs unless a human explicitly needs it.
 
-Internally, I allow reasoning.
-Externally, I require **structured conclusions**.
+Internally, the model can reason freely.
+Externally, I require **compressed, structured conclusions**.
 
 ```text
 Output:
@@ -138,17 +146,17 @@ Output:
 
 This keeps:
 
-* UX clean
+* UX predictable
 * Ops fast
 * Metrics stable
 
-Verbose AI feels smart in demos and breaks systems in reality.
+Verbose AI feels impressive in demos and becomes a liability at scale.
 
 ---
 
 ## 6. How I design prompts for human-in-the-loop systems
 
-If a human touches the output, I design the prompt for **human time, not model intelligence**.
+When a human touches the output, I design context for **human time, not model intelligence**.
 
 I assume:
 
@@ -156,7 +164,7 @@ I assume:
 * Context-switching is expensive
 * Over-explanation hurts accuracy
 
-So I bias prompts toward **cognitive compression**.
+So I bias context toward **cognitive compression**, not completeness.
 
 ```text
 Summary: 1 neutral sentence
@@ -164,7 +172,7 @@ Action: NONE / REVIEW / ESCALATE
 Reason: bullet points, max 3
 ```
 
-If it takes more than 10 seconds to scan, it’s too slow.
+If it takes more than 10 seconds to scan, it’s too verbose.
 
 ---
 
@@ -196,6 +204,7 @@ If I can’t measure improvement, I should not iterate.
 I version prompts like code:
 
 * Prompt v1.3
+* Context v1.0
 * Changelog
 * Known limitations
 
@@ -206,8 +215,9 @@ When something breaks, instead of asking:
 I should ask:
 
 > “What did my prompt allow?”
+> “What context did I allow this system to see?”
 
-Most failures are **prompt design failures**, not model failures.
+Most failures are **prompt/context design failures**, not model failures.
 
 ---
 
