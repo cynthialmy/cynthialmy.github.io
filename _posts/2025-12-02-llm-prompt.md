@@ -71,6 +71,8 @@ This does two things:
 * It **bounds the model’s world**
 * It **makes failures legible**
 
+Note that the ROLE and TASK are not to limit the model's capabilities, but for context separation.
+
 A system that fails loudly can be fixed.
 A system that fails silently will scale mistakes.
 
@@ -574,7 +576,384 @@ Suggest:
 * Shows system ownership
 * Encourages continuous improvement
 
-Some other resources:
+---
+Got it. Below is an **updated Canonical Library**, explicitly reframed from **prompt templates** to **context engineering primitives**.
+
+Think of this not as “what to say to the model”, but as **what context a PM deliberately constructs and exposes** so the system behaves predictably at scale.
+
+You can drop this directly into the blog as a replacement section.
+
+---
+
+# Bonus: Canonical Context Engineering Library
+
+*(for PMs building LLM-powered systems)*
+
+This is not a list of clever prompts.
+It’s a library of **context patterns** that show up again and again in real products.
+
+Each pattern answers:
+
+* **What context exists**
+* **Why it exists**
+* **How it constrains behavior**
+* **What failure mode it controls**
+
+---
+
+## 0. System Context (Governance Layer)
+
+**What it is**
+Stable, long-lived context that defines the *role and boundaries* of the system.
+
+**When to use**
+Always. This is non-optional.
+
+```text
+System role:
+You are an AI system assisting with [DOMAIN].
+
+Boundaries:
+- You do not make final decisions.
+- You do not speculate beyond evidence.
+- When uncertain, you defer to human review.
+
+Priority:
+Consistency and safety > completeness.
+```
+
+**Controls**
+
+* Overreach
+* Hallucination
+* “Helpful but dangerous” behavior
+
+**PM insight**
+This is product governance encoded as context.
+
+---
+
+## 1. Decision Context (Outcome-Bound Systems)
+
+**What it is**
+Context that explicitly ties output to a downstream decision.
+
+**When to use**
+
+* Moderation
+* Risk assessment
+* Routing
+* Automation triggers
+
+```text
+Decision context:
+This output will be used to determine: [DECISION].
+
+Error costs:
+- False positive cost: [X]
+- False negative cost: [Y]
+
+Default behavior:
+If confidence < 0.7 → NEEDS REVIEW
+```
+
+**Controls**
+
+* Overconfidence
+* Misaligned optimization
+* Silent failure
+
+**PM insight**
+Models don’t understand stakes unless you encode them.
+
+---
+
+## 2. Task Context (Single-Intent Enforcement)
+
+**What it is**
+A narrow definition of *what this interaction is doing* — and nothing else.
+
+**When to use**
+Any time a model is asked to “analyze”, “summarize”, or “decide”.
+
+```text
+Task:
+Perform exactly ONE of the following:
+- Classify
+- Summarize
+- Extract signals
+
+Do not perform additional analysis beyond this task.
+```
+
+**Controls**
+
+* Scope creep
+* Inconsistent outputs
+* Prompt drift
+
+**PM insight**
+Multi-task prompts are a product smell.
+
+---
+
+## 3. Instance Context (What This Item Is)
+
+**What it is**
+Structured, relevant facts about the specific item being processed.
+
+**When to use**
+
+* Content review
+* Transaction analysis
+* User requests
+
+```json
+{
+  "content_type": "video",
+  "language": "en",
+  "region": "US",
+  "report_reason": "misinformation",
+  "content_age_hours": 12
+}
+```
+
+**Rules**
+
+* Observable only
+* No inferred intent
+* No raw dumps
+
+**Controls**
+
+* Noise
+* Anchoring bias
+* Token waste
+
+**PM insight**
+Relevance beats completeness every time.
+
+---
+
+## 4. Policy / Knowledge Context (Rules, Not Docs)
+
+**What it is**
+A scoped, task-relevant abstraction of rules.
+
+**When to use**
+
+* Compliance
+* Trust & Safety
+* Regulated domains
+
+```text
+Relevant policy summary:
+- Health misinformation includes false claims about treatment efficacy
+- Discouraging medical care is considered high risk
+```
+
+**Rules**
+
+* Summarize, don’t paste
+* Scope to task
+* Version explicitly
+
+**Controls**
+
+* Misapplication of rules
+* Inconsistent enforcement
+
+**PM insight**
+If policy isn’t compressible, it’s not ready for automation.
+
+---
+
+## 5. Temporal / Risk Context (Surrounding Signals)
+
+**What it is**
+Aggregated historical or environmental context.
+
+**When to use**
+
+* Repeat behavior detection
+* Escalation logic
+* Risk scoring
+
+```text
+Historical context:
+- 2 prior flags in last 30 days
+- No enforcement actions
+```
+
+**Rules**
+
+* Aggregated, not raw
+* Explicit time window
+* Clearly labeled as historical
+
+**Controls**
+
+* Bias amplification
+* Over-penalization
+
+**PM insight**
+History should inform decisions, not dominate them.
+
+---
+
+## 6. Confidence Context (Calibration Layer)
+
+**What it is**
+A shared definition of certainty that the system must follow.
+
+**When to use**
+Any decision-producing system.
+
+```text
+Confidence scale:
+0.0 = guess
+0.5 = mixed or ambiguous signals
+1.0 = near certainty
+```
+
+**Required output**
+
+* Confidence score
+* Confidence-aware fallback behavior
+
+**Controls**
+
+* Over-trust
+* Threshold tuning blindness
+
+**PM insight**
+Confidence is not metadata — it’s control surface.
+
+---
+
+## 7. Human-in-the-Loop Context (Cognitive Budget)
+
+**What it is**
+Context designed explicitly for human reviewers.
+
+**When to use**
+
+* Ops queues
+* Annotation
+* Appeals
+
+```text
+Reviewer constraints:
+- Time per item: ~60 seconds
+- Goal: reduce cognitive load
+
+Output requirements:
+- One-sentence neutral summary
+- Clear recommended action
+- Max 3 reasons
+```
+
+**Controls**
+
+* Reviewer fatigue
+* Decision variance
+* Throughput collapse
+
+**PM insight**
+Design for human limits, not model capability.
+
+---
+
+## 8. Output Contract Context (Machine-Readable Guarantees)
+
+**What it is**
+Strict structure that downstream systems depend on.
+
+**When to use**
+
+* Any automated pipeline
+* Evaluation
+* Analytics
+
+```json
+{
+  "decision": "",
+  "confidence": 0.0,
+  "signals": [],
+  "uncertainty": ""
+}
+```
+
+**Rules**
+
+* No free-form prose
+* Schema enforced
+* Backward compatible changes only
+
+**Controls**
+
+* Pipeline breakage
+* Metric instability
+
+**PM insight**
+Unstructured output is technical debt.
+
+---
+
+## 9. Failure & Escalation Context (Safety Valve)
+
+**What it is**
+Explicit definition of when *not* to automate.
+
+**When to use**
+Always, but especially in high-risk domains.
+
+```text
+If any of the following are true:
+- Missing critical information
+- Conflicting signals
+- Novel edge case
+
+Then:
+Automation suitability: NO
+```
+
+**Controls**
+
+* Silent errors
+* Edge-case disasters
+
+**PM insight**
+Knowing when to stop is a feature.
+
+---
+
+## 10. Context Evaluation Context (Meta-Layer)
+
+**What it is**
+Context used to evaluate whether your context is working.
+
+**When to use**
+During iteration, rollout, and incidents.
+
+```text
+Evaluate:
+- Where context led to overconfidence
+- Where context was insufficient
+- Which fields were unused or misleading
+```
+
+**Controls**
+
+* Cargo-cult context
+* Unnecessary complexity
+
+**PM insight**
+Context that isn’t evaluated will rot.
+
+---
+
+##Some other resources:
 
 - [Zentropi hate speech detection prompt](https://zentropi.ai/labelers/8d4ec599-f124-4ed5-abbf-cd0f9a77a25a)
 - [OpenAI prompt library](https://platform.openai.com/docs/guides/prompt-engineering)
