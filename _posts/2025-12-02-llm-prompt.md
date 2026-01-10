@@ -239,3 +239,327 @@ I go back to the prompt.
 ---
 
 Most of the time, good prompts are **boring, explicit, and slightly paranoid**.
+
+---
+
+# Bonus: Canonical Prompt Library
+
+**for AI Product & Product Operations Managers**
+
+## How to read this library
+
+Each prompt includes:
+
+* **When to use it**
+* **What problem it solves**
+* **The canonical prompt template**
+* **Why this template exists** (PM-level reasoning)
+
+You can drop these directly into:
+
+* internal tooling
+* LLM orchestration layers
+* interviews (by describing the structure, not pasting text)
+
+---
+
+## 0. Base System Prompt (Non-Negotiable)
+
+Every production LLM system should inherit from this.
+
+```text
+You are an AI system operating as part of a larger product workflow.
+
+Your outputs will be consumed by downstream systems and/or humans.
+Accuracy, consistency, and clarity are more important than verbosity.
+
+If information is insufficient:
+- Do not guess
+- State uncertainty explicitly
+
+Follow the output format exactly.
+```
+
+**Why this matters**
+This prevents “helpful but useless” behavior.
+Senior PMs insist on this layer.
+
+---
+
+## 1. Classification & Decision Prompt
+
+*(Trust & Safety, Risk, Policy, Routing)*
+
+### Use when
+
+* The system must make or support a decision
+* False positives / negatives have different costs
+
+```text
+Task:
+Classify the input into ONE of the following outcomes:
+[APPROVE, REJECT, NEEDS_REVIEW]
+
+Decision criteria:
+- APPROVE: clear compliance with guidelines
+- REJECT: clear violation
+- NEEDS_REVIEW: ambiguity or missing context
+
+Constraints:
+- Do not infer intent beyond evidence
+- If confidence < 0.7, default to NEEDS_REVIEW
+
+Output:
+- Decision:
+- Confidence (0–1):
+- Top signals (max 3):
+- Uncertainty or edge cases:
+```
+
+**Intent**
+
+* Forces conservative behavior
+* Creates a clean human escalation path
+* Enables calibration over time
+
+---
+
+## 2. Human-in-the-Loop Triage Prompt
+
+*(Product Ops / Annotation / Review Queues)*
+
+### Use when
+
+* Humans are the final decision-makers
+* Time per item is limited
+
+```text
+You are assisting a human reviewer.
+
+Context:
+- Review time budget: ~60 seconds
+- Goal: reduce cognitive load, not replace judgment
+
+Instructions:
+- Summarize only non-obvious information
+- Highlight why this item matters
+- Do not restate the raw input
+
+Output:
+1. One-sentence summary
+2. Recommended action: [NONE / REVIEW / ESCALATE]
+3. Why this matters (bullets, max 3)
+```
+
+**Intent**
+
+* Protects reviewer attention
+* Improves throughput without hurting quality
+* Shows operational maturity
+
+---
+
+## 3. Confidence-Scored Signal Extraction
+
+*(Ranking, Recommendation, Risk Scoring)*
+
+### Use when
+
+* Output feeds into another model or rule engine
+* You need probabilistic signals, not answers
+
+```text
+Task:
+Extract relevant signals from the input.
+
+Rules:
+- List only observable signals
+- Do not interpret intent
+- Assign confidence per signal
+
+Output (JSON):
+{
+  "signals": [
+    {
+      "name": "",
+      "evidence": "",
+      "confidence": 0.0–1.0
+    }
+  ],
+  "overall_confidence": 0.0–1.0
+}
+```
+
+**Intent**
+
+* Makes LLMs composable
+* Enables weighting, thresholds, experimentation
+
+---
+
+## 4. Structured Data Generation Prompt
+
+*(Training data, synthetic labels, evaluation)*
+
+### Use when
+
+* Creating datasets
+* Running offline evaluation
+* Comparing models
+
+```text
+You are generating structured data for model evaluation.
+
+Task:
+Assign one label from:
+[A, B, C, D]
+
+Definitions:
+(A clear, mutually exclusive definitions here)
+
+Rules:
+- Choose exactly one label
+- If ambiguous, choose best fit and note ambiguity
+- Do not add explanation beyond the schema
+
+Output (JSON only):
+{
+  "label": "",
+  "confidence": 0.0–1.0,
+  "ambiguity_note": ""
+}
+```
+
+**Intent**
+
+* Enables regression testing
+* Avoids prompt drift
+* Supports analytics pipelines
+
+---
+
+## 5. User-Facing Explanation Prompt
+
+*(Labels, Warnings, Appeals, Education)*
+
+### Use when
+
+* The model communicates directly with users
+* Trust and tone matter
+
+```text
+You are communicating with an end user.
+
+Audience:
+- Non-technical
+- Potentially confused or frustrated
+
+Tone:
+- Calm
+- Respectful
+- Neutral
+
+Rules:
+- No mention of internal systems or policies
+- No definitive claims without certainty
+- Offer a clear next step
+
+Structure:
+1. Acknowledge the situation
+2. Explain what happened in plain language
+3. Suggest what the user can do next
+```
+
+**PM intent**
+
+* Reduces complaints
+* Builds long-term trust
+* Aligns AI voice with product brand
+
+---
+
+## 6. Ambiguity & Failure Mode Detection Prompt
+
+*(Safety net prompt)*
+
+### Use when
+
+* Inputs are messy
+* Edge cases matter
+* You want to detect when NOT to automate
+
+```text
+Task:
+Identify whether this input is suitable for automated handling.
+
+Check for:
+- Missing critical information
+- Conflicting signals
+- Edge cases not covered by guidelines
+
+Output:
+- Automation suitability: [YES / NO]
+- Reason (1–2 bullets)
+- What information is missing (if any)
+```
+
+**Intent**
+
+* Prevents silent failures
+* Creates guardrails for scale
+* Signals strong risk awareness
+
+---
+
+## 7. Insight & Pattern Discovery Prompt
+
+*(Discovery, Strategy, Early Signals)*
+
+### Use when
+
+* Exploring new problem spaces
+* Summarizing large qualitative datasets
+
+```text
+You are assisting with product discovery.
+
+Given the data:
+Identify:
+1. Recurring patterns (top 3)
+2. Open questions or unknowns
+3. One testable product hypothesis
+
+Rules:
+- Separate observation from interpretation
+- State assumptions explicitly
+```
+
+**Intent**
+
+* Speeds up sense-making
+* Keeps thinking hypothesis-driven
+* Useful in early-stage or ambiguous domains
+
+---
+
+## 8. Meta-Prompt: Prompt Evaluation & Iteration
+
+```text
+You are reviewing an LLM prompt used in production.
+
+Evaluate:
+- Clarity of task definition
+- Failure modes
+- Risk of overconfidence
+- Ease of evaluation
+
+Suggest:
+- One improvement for accuracy
+- One improvement for safety
+- One improvement for maintainability
+```
+
+**Intent**
+
+* Shows system ownership
+* Encourages continuous improvement
