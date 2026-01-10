@@ -187,7 +187,7 @@ Common ones:
 * Escalation rate
 * False positive clusters
 
-If I can’t measure improvement, I don’t iterate—I churn.
+If I can’t measure improvement, I should not iterate.
 
 ---
 
@@ -199,11 +199,11 @@ I version prompts like code:
 * Changelog
 * Known limitations
 
-When something breaks, I don’t ask:
+When something breaks, instead of asking:
 
 > “Why did the model do this?”
 
-I ask:
+I should ask:
 
 > “What did my prompt allow?”
 
