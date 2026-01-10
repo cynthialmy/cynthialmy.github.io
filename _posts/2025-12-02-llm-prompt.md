@@ -43,8 +43,6 @@ If I can’t answer those, I’m not ready to prompt.
 
 Almost every production prompt I ship follows the same skeleton.
 
-I rarely deviate from this.
-
 ```text
 Role:
 You are [ROLE] assisting with [TASK].
