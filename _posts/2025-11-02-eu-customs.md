@@ -34,6 +34,8 @@ These rules are not abstract legal mechanics - they are levers that materially s
 
 ---
 
+![customs_1](../assets/img/customs_1.png)
+
 ## **Customs as Friction: Latency, Risk, and Lost Margin**
 
 Even when businesses understand the underlying rules, they face operational friction. Customs processes are still dominated by manual data gathering, paper evidence, transactional intermediaries, and heterogeneous national IT systems. The result is latency: delays at ports, unexpected inspections, missing documentation, and fragmented accountability.
