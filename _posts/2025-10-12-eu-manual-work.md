@@ -86,6 +86,41 @@ This approach made automation outcomes clear and defensible, even when regional 
 
 It also created a fair comparison between countries with different scales and roles - one of the key challenges in global measurement.
 
+## Using AI to Externalize Operational Knowledge
+
+One challenge with measuring manual work is that a lot of it lives only in people’s heads.
+
+Workshops and interviews work, but they don’t scale well — and they often miss the small decisions, exceptions, and workarounds that make up real day-to-day effort.
+
+We started exploring how AI could help here, not by automating decisions, but by making it easier for business users to **externalize how their work is actually done**.
+
+Instead of asking people to write process documentation, we let them **talk**.
+
+When someone runs a repetitive task, they can describe the steps out loud, in their own words. AI turns that voice input into simple, structured markdown:
+
+* the steps they take,
+* where decisions happen,
+* where things often go wrong,
+* and roughly how much effort is involved.
+
+Lowering the friction changed everything.
+What used to be tacit knowledge became visible almost by default.
+
+### From notes to measurement inputs
+
+These AI-generated documents weren’t treated as notes or drafts.
+They became direct inputs into the measurement framework.
+
+The documented steps map naturally to manual touchpoints.
+Language patterns help infer effort bands and variability.
+Repeated descriptions across users surface process variants we would otherwise miss.
+
+Instead of reconstructing reality in workshops, we started capturing it as people worked.
+
+Another important choice was to treat these documents as long-lived artifacts.
+
+Because they’re stored in clean markdown with a consistent structure, the same content can be reused for many purposes.
+
 ## Implementation
 
 Rolling out this model required a balance of facilitation and product thinking.
