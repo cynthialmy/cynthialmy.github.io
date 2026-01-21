@@ -11,15 +11,15 @@ comments: true
 ---
 
 
-**LLM Prompting Is a Product Skill** A year ago, I thought working with LLMs was mostly about writing good prompts.
+**LLM Prompting Is a Product Skill.** A year ago, I thought working with LLMs was mostly about writing good prompts.
 
-After shipping LLM-powered systems into real products—with real users, real ops teams, and real consequences—I don’t believe that anymore.
+After shipping LLM-powered systems into real products with real users, real ops teams, and real consequences. I don’t believe that anymore.
 
 The hard part isn’t wording.
 
 The hard part is deciding **what context the model is allowed to see, when it sees it, and why**.
 
-That’s why I now think of *context engineering* as a core product management skill—not a technical trick. It’s a way to force clarity in places where teams often stay vague.
+That’s why I now think of *context engineering* as a core product management skill not a technical trick. It’s a way to force clarity in places where teams often stay vague.
 
 >Jump to [Prompt Library](#bonus-prompt-library) for a collection of prompt templates.
 
@@ -44,7 +44,7 @@ Before I write a single word, I answer three questions:
 2. **Who or what consumes it next?**
 3. **What is the cost of being wrong?**
 
-These questions don’t shape phrasing. They shape **what information is injected—and what is deliberately excluded**.
+These questions don’t shape phrasing. They shape **what information is injected and what is deliberately excluded**.
 
 If I can’t answer them, I’m not ready to write the prompt.
 
@@ -76,7 +76,7 @@ This does two things:
 * It **bounds the model’s world**
 * It **makes failures legible**
 
-The ROLE and TASK aren’t there to limit the model’s capabilities—they exist to create **context separation**.
+The ROLE and TASK exist to create **context separation**.
 
 A system that fails loudly can be fixed.
 A system that fails silently will scale mistakes.
@@ -94,7 +94,7 @@ I ask:
 * What ambiguity will show up 10,000 times a day?
 * What context will humans over-trust?
 
-Then I encode those risks **into the context itself**—not as warnings, but as structural defaults.
+Then I encode those risks **into the context itself** as structural defaults.
 
 ### Example: uncertainty-aware decision prompt
 
