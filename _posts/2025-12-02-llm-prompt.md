@@ -82,7 +82,7 @@ Design them for **how they fail at scale**.
 Ask:
 
 * What information might anchor the model incorrectly?
-* What ambiguity will show up 10,000 times a day?
+* What ambiguity will show up in high-volume scenarios?
 * What context will humans over-trust?
 
 Then encode those risks **into the context itself** as structural defaults.
