@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LLM Prompting Playbook for Product Managers
-subtitle: How I design prompts for real-world systems and failure modes.
+subtitle: How to design prompts for real-world systems and failure modes.
 tags: [LLM Prompting, Product Management, Prompt Engineering, Prompt Design, Prompt Optimization]
 project_type: professional
 thumbnail-img: assets/img/prompting.jpg
@@ -10,22 +10,15 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
+**LLM Prompting Is a Product Skill.** A year ago, I thought working with LLMs was mostly about writing good prompts. After shipping LLM-powered systems into real products with real users, real ops teams, and real consequences. I don’t believe that anymore. The hard part isn’t wording. The hard part is deciding **what context the model is allowed to see, when it sees it, and why**.
 
-**LLM Prompting Is a Product Skill.** A year ago, I thought working with LLMs was mostly about writing good prompts.
-
-After shipping LLM-powered systems into real products with real users, real ops teams, and real consequences. I don’t believe that anymore.
-
-The hard part isn’t wording.
-
-The hard part is deciding **what context the model is allowed to see, when it sees it, and why**.
-
-That’s why I now think of *context engineering* as a core product management skill not a technical trick. It’s a way to force clarity in places where teams often stay vague.
+That's why *context engineering* should be treated as a core product management skill, not a technical trick. It's a way to force clarity in places where teams often stay vague.
 
 >Jump to [Prompt Library](#bonus-prompt-library) for a collection of prompt templates.
 
 ---
 
-## 1. How I think about context
+## 1. How to think about context
 
 A prompt isn’t an instruction to a model.
 It’s the **final expression of a context contract** between:
@@ -38,21 +31,19 @@ It’s the **final expression of a context contract** between:
 If the context is underspecified, the product is underspecified.
 If the context can’t be evaluated, the product can’t scale.
 
-Before I write a single word, I answer three questions:
+Before writing a single word, answer three questions:
 
 1. **What decision will this output be used for?**
 2. **Who or what consumes it next?**
 3. **What is the cost of being wrong?**
 
-These questions don’t shape phrasing. They shape **what information is injected and what is deliberately excluded**.
-
-If I can’t answer them, I’m not ready to write the prompt.
+These questions shape **what information is injected and what is deliberately excluded**. If the team can’t answer them, then th team is not ready to write the prompt.
 
 ---
 
-## 2. My default structure for context-engineered prompts
+## 2. Default structure for context-engineered prompts
 
-Almost every production LLM interaction I ship follows the same **context layering**:
+Almost every production LLM interaction should follow the same **context layering**:
 
 ```text
 Role:
@@ -83,18 +74,18 @@ A system that fails silently will scale mistakes.
 
 ---
 
-## 3. I design prompts backward from failure
+## 3. Design prompts backward from failure
 
 Most people design prompts for the happy path.
-I design them for **how they fail at scale**.
+Design them for **how they fail at scale**.
 
-I ask:
+Ask:
 
 * What information might anchor the model incorrectly?
 * What ambiguity will show up 10,000 times a day?
 * What context will humans over-trust?
 
-Then I encode those risks **into the context itself** as structural defaults.
+Then encode those risks **into the context itself** as structural defaults.
 
 ### Example: uncertainty-aware decision prompt
 
@@ -110,7 +101,7 @@ Caution should be structural, not optional.
 
 ---
 
-## 4. How I handle confidence
+## 4. How to handle confidence
 
 If an LLM output drives decisions, confidence is part of the context contract.
 
@@ -125,7 +116,7 @@ Confidence score:
 1.0 = near certainty
 ```
 
-I insist on this because it enables:
+Insist on this because it enables:
 
 * thresholding
 * A/B testing
@@ -136,12 +127,12 @@ Any system without confidence is almost impossible to tune.
 
 ---
 
-## 5. I separate “thinking” from “output”
+## 5. Separate "thinking" from "output"
 
-I don’t let reasoning leak into production outputs unless a human explicitly needs it.
+Don't let reasoning leak into production outputs unless a human explicitly needs it.
 
 Internally, the model can reason freely.
-Externally, I require **compressed, structured conclusions**.
+Externally, require **compressed, structured conclusions**.
 
 ```text
 Output:
@@ -161,17 +152,17 @@ Verbose AI looks impressive in demos and becomes a liability at scale.
 
 ---
 
-## 6. How I design prompts for human-in-the-loop systems
+## 6. How to design prompts for human-in-the-loop systems
 
-When a human touches the output, I design for **human time**, not model intelligence.
+When a human touches the output, design for **human time**, not model intelligence.
 
-I assume:
+Assume:
 
 * reviewers are tired
 * context-switching is expensive
 * over-explanation hurts accuracy
 
-So I bias toward **cognitive compression**, not completeness.
+Bias toward **cognitive compression**, not completeness.
 
 ```text
 Summary: 1 neutral sentence
@@ -183,15 +174,15 @@ If it takes more than 10 seconds to scan, it’s too verbose.
 
 ---
 
-## 7. I never ship prompts without an evaluation plan
+## 7. Never ship prompts without an evaluation plan
 
 A prompt without evaluation is a guess.
 
-Before shipping, I define:
+Before shipping, define:
 
-* what “good” looks like
+* what "good" looks like
 * what regression looks like
-* which metrics I’ll track weekly
+* which metrics to track weekly
 
 Common ones:
 
@@ -200,13 +191,13 @@ Common ones:
 * escalation rate
 * false-positive clusters
 
-If I can’t measure improvement, I shouldn’t iterate.
+If you can't measure improvement, don't iterate.
 
 ---
 
 ## 8. Prompt iteration *is* product iteration
 
-I version prompts like code:
+Version prompts like code:
 
 * Prompt v1.3
 * Context v1.0
@@ -215,41 +206,41 @@ I version prompts like code:
 
 When something breaks, instead of asking:
 
-> “Why did the model do this?”
+> "Why did the model do this?"
 
-I ask:
+Ask:
 
-> “What did my prompt allow?”
-> “What context did I let this system see?”
+> "What did the prompt allow?"
+> "What context was the system allowed to see?"
 
 Most failures are **prompt and context design failures**, not model failures.
 
 ---
 
-## 9. What I don’t do
+## 9. What not to do
 
 These are hard-earned lessons.
 
-I don’t:
+Don't:
 
-* ask the model to “be accurate”
+* ask the model to "be accurate"
 * rely on examples alone without rules
 * mix user-facing tone with internal logic
 * let free-form text drive automated decisions
-* ship prompts I can’t explain to ops or legal
+* ship prompts you can't explain to ops or legal
 
-If I can’t explain a prompt in plain language, it’s not ready.
+If you can't explain a prompt in plain language, it's not ready.
 
 ---
 
-## 10. The litmus test I use
+## 10. The litmus test to use
 
-Before shipping any LLM-powered feature, I ask:
+Before shipping any LLM-powered feature, ask:
 
-> “If this runs one million times, will I still trust it?”
+> "If this runs one million times, will I still trust it?"
 
-If the answer is “I’m not sure,”
-I go back to the prompt.
+If the answer is "I'm not sure,"
+go back to the prompt.
 
 
 ![prompting](../assets/img/prompting.jpg)
