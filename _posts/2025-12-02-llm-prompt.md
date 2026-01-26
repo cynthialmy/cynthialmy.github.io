@@ -258,13 +258,6 @@ Each prompt includes:
 * **When to use it**
 * **What problem it solves**
 * **The canonical prompt template**
-* **Why this template exists** (PM-level reasoning)
-
-You can drop these directly into:
-
-* internal tooling
-* LLM orchestration layers
-* interviews (by describing the structure, not pasting text)
 
 ---
 
@@ -287,7 +280,6 @@ Follow the output format exactly.
 
 **Why this matters**
 This prevents “helpful but useless” behavior.
-Senior PMs insist on this layer.
 
 ---
 
