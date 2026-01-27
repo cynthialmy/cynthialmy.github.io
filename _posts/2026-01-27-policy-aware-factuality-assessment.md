@@ -23,22 +23,18 @@ Think of it like a well-designed organization. You would not want junior analyst
 
 ## System Flow Chart
 
-```mermaid
-flowchart TD
-  input[ContentInput] --> claims[ClaimExtraction]
-  claims --> risk[RiskAssessment]
-  risk -->|LowRisk| policy[PolicyInterpretation]
-  risk -->|MediumHighRisk| retrieval[EvidenceRetrieval]
-  retrieval --> factuality[FactualityAssessment]
-  factuality --> policy
-  policy --> decision[DecisionOrchestration]
-  decision -->|LowRiskHighConfidence| allow[AutoAllow]
-  decision -->|MediumRiskMediumConfidence| warn[LabelOrDownrank]
-  decision -->|HighRiskLowConfidence| review[HumanReview]
-  decision -->|HighRiskHighConfidence| confirm[HumanConfirmation]
-  review --> feedback[ReviewerFeedback]
-  confirm --> feedback
-  feedback --> decision
+```
+Content Input
+  -> Claim Extraction
+  -> Risk Assessment
+      -> Low Risk -> Policy Interpretation
+      -> Medium or High Risk -> Evidence Retrieval -> Factuality Assessment -> Policy Interpretation
+  -> Decision Orchestration
+      -> Low Risk + High Confidence -> Auto Allow
+      -> Medium Risk + Medium Confidence -> Label or Downrank
+      -> High Risk + Low Confidence -> Human Review
+      -> High Risk + High Confidence -> Human Confirmation
+  -> Reviewer Feedback -> Decision Orchestration
 ```
 
 ## Example Flow: High-Risk Health Claim
