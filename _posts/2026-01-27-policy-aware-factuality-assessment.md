@@ -23,18 +23,22 @@ Think of it like a well-designed organization. You would not want junior analyst
 
 ## System Flow Chart
 
-```
-Content Input
-  -> Claim Extraction
-  -> Risk Assessment
-      -> Low Risk -> Policy Interpretation
-      -> Medium or High Risk -> Evidence Retrieval -> Factuality Assessment -> Policy Interpretation
-  -> Decision Orchestration
-      -> Low Risk + High Confidence -> Auto Allow
-      -> Medium Risk + Medium Confidence -> Label or Downrank
-      -> High Risk + Low Confidence -> Human Review
-      -> High Risk + High Confidence -> Human Confirmation
-  -> Reviewer Feedback -> Decision Orchestration
+```mermaid
+flowchart TD
+  input[ContentInput] --> claims[ClaimExtraction]
+  claims --> risk[RiskAssessment]
+  risk -->|LowRisk| policy[PolicyInterpretation]
+  risk -->|MediumHighRisk| retrieval[EvidenceRetrieval]
+  retrieval --> factuality[FactualityAssessment]
+  factuality --> policy
+  policy --> decision[DecisionOrchestration]
+  decision -->|LowRiskHighConfidence| allow[AutoAllow]
+  decision -->|MediumRiskMediumConfidence| warn[LabelOrDownrank]
+  decision -->|HighRiskLowConfidence| review[HumanReview]
+  decision -->|HighRiskHighConfidence| confirm[HumanConfirmation]
+  review --> feedback[ReviewerFeedback]
+  confirm --> feedback
+  feedback --> decision
 ```
 
 ## Example Flow: High-Risk Health Claim
@@ -142,7 +146,7 @@ This enables re-evaluation when policies or evidence change, which is critical f
 
 The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). You can paste in content, watch the agent pipeline in action, see the decision flow, and explore how different risk levels and policy interpretations lead to different outcomes.
 
-The full source code and architecture documentation are available in the repository. It is designed to be inspectable and educational.
+The full source code and architecture documentation are available in the repository at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow). It is designed to be inspectable and educational.
 
 ## The Bigger Picture
 

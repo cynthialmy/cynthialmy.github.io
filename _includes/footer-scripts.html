@@ -36,3 +36,32 @@
     <script src="{{ js | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<script>
+  (function () {
+    var mermaidBlocks = document.querySelectorAll('code.language-mermaid, code.mermaid');
+    if (!mermaidBlocks.length) {
+      return;
+    }
+
+    function renderMermaid() {
+      mermaid.initialize({ startOnLoad: false });
+      mermaidBlocks.forEach(function (codeEl) {
+        var preEl = codeEl.parentElement;
+        var container = document.createElement('div');
+        container.className = 'mermaid';
+        container.textContent = codeEl.textContent;
+        if (preEl && preEl.parentElement) {
+          preEl.parentElement.replaceChild(container, preEl);
+        }
+      });
+      mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+    script.defer = true;
+    script.onload = renderMermaid;
+    document.body.appendChild(script);
+  })();
+</script>
