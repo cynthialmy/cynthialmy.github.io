@@ -3,7 +3,7 @@ layout: post
 title: Measurement Framework Design for Operations
 subtitle: Systematic approaches to quantifying manual work and automation readiness
 tags: [Product Strategy, Measurement Framework, Systematic Thinking, Product Thinking, Analytical Reasoning, Operations Product Management, Framework Design, Case Study]
-project_type: work-experience
+project_type: enterprise
 thumbnail-img: assets/img/measure.jpg
 share-img: assets/img/measure.jpg
 comments: true
