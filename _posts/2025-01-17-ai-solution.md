@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Designing Responsible AI Systems
-subtitle: Balancing innovation, governance, and differentiation
-tags: [AI implementation, procurement process, risk mitigation, project management]
+title: Strategic Risk Management for AI Products
+subtitle: Decision frameworks for responsible AI system design
+tags: [Product Strategy, Risk Analysis, Decision Frameworks, Strategic Thinking, Product Thinking, Responsible AI, Risk Management, Product Design]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/architecture.png

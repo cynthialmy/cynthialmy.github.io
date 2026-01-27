@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Scaling Global Payout Infrastructure
-subtitle: Making SWIFT reliable at scale
-tags: [Product Management, Global Payments, SWIFT, Product Development, Product Design, Product Strategy, Product Launch, Product Metrics, Testing, Validation, Iteration]
+title: Strategic Tradeoff Analysis for Payment Infrastructure
+subtitle: Decision frameworks for reliability and coverage at scale
+tags: [Product Strategy, Tradeoff Analysis, Decision Frameworks, Strategic Thinking, Product Thinking, Infrastructure Product Management, Risk-Reward Analysis, Quantitative Reasoning]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/payment-gateways.png
@@ -83,6 +83,37 @@ The guiding principle became:
 This reframing shaped everything that followed.
 
 ---
+
+## Strategic Decision Framework
+
+### Decision Tree: Support SWIFT or Not
+
+| Path | Customer Outcome | Business Impact | Decision |
+| --- | --- | --- | --- |
+| Do not support SWIFT | Limited corridor coverage | Lost enterprise deals | Not acceptable |
+| Support SWIFT without validation | Higher failure rate and support load | Trust erosion | Not acceptable |
+| Support SWIFT with smart validation | Higher success rate with manageable ops | Scalable coverage | Chosen |
+
+### Quantified Impact Model
+
+I modeled the impact using a simple reliability equation so we could set clear targets.
+
+**First-pass success** = 1 - failure rate  
+**Support load** = payment volume * failure rate * tickets per failure  
+**Failure cost** = support load * cost per ticket + delay penalties
+
+**Targets for v1 validation:**
+- Reduce failure rate by 30% in top corridors
+- Cut average support handling time by 25%
+- Achieve 60% self-serve correction rate for fixable errors
+
+### Risk-Reward Analysis: Validation Strictness
+
+| Validation Level | Reward | Risk | Decision Logic |
+| --- | --- | --- | --- |
+| Too strict | Lower downstream failure | Higher false blocks | Apply only to high-risk corridors |
+| Balanced | Stable success rate | Moderate ops load | Default policy |
+| Too loose | Higher conversion | High failure and support cost | Avoid |
 
 ## **What we built: validation as a growth strategy**
 

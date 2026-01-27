@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Operationalizing Generative AI in Procurement
-subtitle: From discovery to enterprise adoption
-tags: [AI integration, procurement transformation, process optimization, strategic implementation, LLM, OpenAI, Azure, LangChain, RAG, GPT-4]
+title: Strategic AI Implementation in Enterprise
+subtitle: Discovery frameworks, ROI modeling, and risk analysis for procurement AI
+tags: [Product Strategy, Strategic Thinking, Decision Frameworks, ROI Modeling, Risk Analysis, Enterprise AI, Product Thinking, Analytical Reasoning, Business Case Development]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/procurement_3.png
@@ -179,6 +179,47 @@ C. RAG (Retrieval Augmented Generation)
 **High-Level Description**
 
 ![High-Level Description](../assets/img/procurement_1.png)
+
+## Decision Framework
+
+I scored the three architecture options against product constraints to make tradeoffs explicit.
+
+| Criteria | Weight | Fine-tune | Enterprise Search | RAG |
+| --- | --- | --- | --- | --- |
+| Data sensitivity and compliance | 5 | 2 | 4 | 5 |
+| Explainability and trust | 4 | 2 | 3 | 5 |
+| Iteration speed | 4 | 2 | 4 | 4 |
+| Retrieval accuracy | 5 | 3 | 3 | 5 |
+| Total score |  | 41 | 60 | 74 |
+
+RAG won because it balanced trust, compliance, and iteration speed while preserving explainability.
+
+## ROI Model
+
+I modeled business value using a simple time-savings framework:
+
+**Annual value** = hours saved * fully loaded cost per hour  
+**ROI** = (annual value - annual platform cost) / annual platform cost
+
+The 6,800 hours saved metric provided the anchor. The model made it clear that even conservative hourly cost assumptions created a strong payback case.
+
+## Risk Analysis
+
+| Risk | Likelihood | Impact | Mitigation |
+| --- | --- | --- | --- |
+| Hallucinated answers | Medium | High | Citations, confidence thresholds, fallback to source docs |
+| Access control leakage | Low | High | Role-based filtering and data partitioning |
+| Low user trust | Medium | High | UX transparency, training, and explicit evidence |
+| Stale documents | Medium | Medium | Update cadence, freshness signals in retrieval |
+
+## Hypothesis Testing Framework
+
+| Hypothesis | Metric | Success Threshold | Method |
+| --- | --- | --- | --- |
+| AI reduces search time | Avg search time | 25% reduction | Before and after tasks |
+| AI improves decision accuracy | Error rate | 30% reduction | Controlled scenarios |
+| Buyers trust AI answers | Satisfaction score | 4.5 or higher | Post-task survey |
+| Retrieval is reliable | Accuracy | 85% or higher | Ground-truth validation |
 
 ---
 

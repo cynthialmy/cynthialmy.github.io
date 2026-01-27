@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Automating EU Customs Operations with Agentic AI
-subtitle: Turning border complexity into operational advantage
-tags: [EU Customs, Economic Value, Agentic AI, Case Study, Customs Optimization, Customs Automation]
+title: Economic Analysis for Customs Automation
+subtitle: Strategic frameworks and quantitative modeling for trade optimization
+tags: [Product Strategy, Economic Analysis, Strategic Thinking, Quantitative Reasoning, Product Thinking, Business Case Development, Financial Modeling, Case Study]
 project_type: enterprise
 thumbnail-img: assets/img/customs_1.png
 share-img: assets/img/customs_1.png

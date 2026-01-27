@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Standardizing Data Contracts for Decentralized Teams
-subtitle: Turning theory into a product for scalable data quality and trust
-tags: [Data Management, Data Mesh, Data Contracts, Governance, Product Strategy, Case Study]
+title: Product Strategy for Data Governance
+subtitle: Systematic approaches to scaling data contracts across teams
+tags: [Product Strategy, Strategic Thinking, Product Thinking, Data Product Management, Framework Design, Systematic Thinking, Case Study]
 project_type: enterprise
 comments: true
 thumbnail-img: assets/img/data_contract_1.png

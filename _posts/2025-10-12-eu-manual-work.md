@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Standardizing Manual Work Measurement
-subtitle: Building a scalable framework for automation readiness across global operations
-tags: [Product Metrics, Manual Work, Automation Readiness, Global Operations, Case Study, Automation Framework, Measurement Framework]
+title: Measurement Framework Design for Operations
+subtitle: Systematic approaches to quantifying manual work and automation readiness
+tags: [Product Strategy, Measurement Framework, Systematic Thinking, Product Thinking, Analytical Reasoning, Operations Product Management, Framework Design, Case Study]
 project_type: work-experience
 thumbnail-img: assets/img/measure.jpg
 share-img: assets/img/measure.jpg
