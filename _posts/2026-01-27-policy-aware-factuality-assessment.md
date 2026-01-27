@@ -118,6 +118,8 @@ Most AI demos hide their limitations. This system makes uncertainty explicit.
 
 The dashboard tracks metrics that matter for trust: human AI disagreement rates, review load concentration, and appeal reversal proxies.
 
+![policy-aware-factuality-assessment-example-6](../assets/img/policy-aware-factuality-assessment.png)
+
 ## Human Review: The Safety Net
 
 When content gets escalated, human reviewers see the full chain of reasoning, all evidence, the policy interpretation and confidence level, and similar prior decisions. Reviewers can override recommendations and provide rationale. This feedback loop surfaces edge cases and policy gaps.
