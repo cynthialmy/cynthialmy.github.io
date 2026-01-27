@@ -11,6 +11,9 @@ layout: page
 {% if post.project_type %}
 {% assign type_array = post.project_type | split: '|' %}
 {% assign available_types = available_types | concat: type_array | uniq %}
+{% else %}
+{% assign other_array = 'other' | split: '|' %}
+{% assign available_types = available_types | concat: other_array | uniq %}
 {% endif %}
 {% endfor %}
 
