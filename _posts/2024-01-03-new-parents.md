@@ -3,7 +3,7 @@ layout: post
 title: Turning Parental Pain Points into Product Insights
 subtitle: Mapping unmet needs into actionable automation opportunities for new parents
 tags: [product management, user research, product strategy, baby products, customer insights, baby products, parental insights, product development]
-project_type: independent
+project_type: zero-to-one-builds
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/parent-mental-map_3.png
 share-img: assets/img/parent-mental-map_3.png

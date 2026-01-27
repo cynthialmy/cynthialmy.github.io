@@ -3,7 +3,7 @@ layout: post
 title: Driving Data Quality Through Contracts
 subtitle: Exploring frameworks for sustainable data governance
 tags: [data quality, data contracts, implementation, case study]
-project_type: professional
+project_type: work-experience
 comments: true
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/data-book-summary-1.png

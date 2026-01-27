@@ -3,7 +3,7 @@ layout: post
 title: Designing Responsible AI Systems
 subtitle: Balancing innovation, governance, and differentiation
 tags: [AI implementation, procurement process, risk mitigation, project management]
-project_type: professional
+project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/architecture.png
 share-img: assets/img/architecture.png

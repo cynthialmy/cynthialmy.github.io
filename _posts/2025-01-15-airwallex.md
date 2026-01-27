@@ -3,7 +3,7 @@ layout: post
 title: Scaling Global Payout Infrastructure
 subtitle: Making SWIFT reliable at scale
 tags: [Product Management, Global Payments, SWIFT, Product Development, Product Design, Product Strategy, Product Launch, Product Metrics, Testing, Validation, Iteration]
-project_type: professional
+project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/payment-gateways.png
 share-img: assets/img/payment-gateways.png

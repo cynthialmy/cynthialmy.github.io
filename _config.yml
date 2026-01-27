@@ -121,11 +121,11 @@ post_search: true
 
 # Project case-study taxonomy used for badges and filters
 project_types:
-    professional:
-        label: "Professional"
+    enterprise:
+        label: "ENTERPRISE"
         color: "#0050d7"
-    independent:
-        label: "Independent"
+    zero-to-one-builds:
+        label: "0→1 BUILDS"
         color: "#008a5c"
     other:
         label: "Other"

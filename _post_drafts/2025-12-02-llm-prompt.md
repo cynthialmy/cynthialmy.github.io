@@ -3,7 +3,7 @@ layout: post
 title: LLM Prompting Playbook for Product Managers
 subtitle: How to design prompts for real-world systems and failure modes.
 tags: [LLM Prompting, Product Management, Prompt Engineering, Prompt Design, Prompt Optimization]
-project_type: professional
+project_type: enterprise
 thumbnail-img: assets/img/prompting.jpg
 share-img: assets/img/prompting.jpg
 comments: true

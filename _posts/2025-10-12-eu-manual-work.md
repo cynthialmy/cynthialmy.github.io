@@ -3,7 +3,7 @@ layout: post
 title: Standardizing Manual Work Measurement
 subtitle: Building a scalable framework for automation readiness across global operations
 tags: [Product Metrics, Manual Work, Automation Readiness, Global Operations, Case Study, Automation Framework, Measurement Framework]
-project_type: professional
+project_type: work-experience
 thumbnail-img: assets/img/measure.jpg
 share-img: assets/img/measure.jpg
 comments: true
@@ -24,9 +24,9 @@ Each team had its own way of quantifying effort:
 3. **System logs**: full of data, but blind to the human context behind it.
 
 The result was a patchwork of estimates that didn’t hold up under review.
-We couldn’t tell which processes truly consumed time, where automation would add value, or how to compare results across regions.
+The team couldn’t tell which processes truly consumed time, where automation would add value, or how to compare results across regions.
 
-We needed a **measurement approach that combined credibility with practicality** - rigorous enough for leadership discussions but simple enough for everyday use.
+The team needed a **measurement approach that combined credibility with practicality** - rigorous enough for leadership discussions but simple enough for everyday use.
 
 The framework needed to:
 - Create a **frozen baseline** before automation began
@@ -52,14 +52,14 @@ That shift from time measurement to process simplification became the design pri
 
 ## The Approach
 
-We built a **Manual Effort Measurement Framework (MEMF)** that connected human judgment with system data.
+I built a **Manual Effort Measurement Framework (MEMF)** that connected human judgment with system data.
 It was built on three layers: **baseline, validation, and tracking**.
 
 ### 1. Establishing the Human Baseline
 
-We defined each **process** as the core measurement unit - not individuals or teams.
+I defined each **process** as the core measurement unit - not individuals or teams.
 
-Through structured mapping sessions, we broke processes down into manual steps and captured:
+Through structured mapping sessions, I broke processes down into manual steps and captured:
 - **Manual touchpoints** – where human input was required
 - **Time bands** – five levels from XS (<2 min) to XL (>30 min) to capture effort range
 - **Frequency** – how often each process ran (daily, weekly, monthly)
@@ -70,7 +70,7 @@ Once validated by local teams, these baselines were frozen before any automation
 
 ### 2. Adding System Signals
 
-We then integrated “system truth” - the objective data from operational systems:
+I then integrated “system truth” - the objective data from operational systems:
 - Straight-through processing (STP) rates
 - Manual override and exception rates
 - Throughput and volume patterns
@@ -81,7 +81,7 @@ Together, the human baseline and system signals provided both **the what and the
 
 ### 3. Measuring Progress by Manual Step Reduction
 
-Instead of reporting “hours saved,” we tracked **manual steps removed**.
+Instead of reporting “hours saved,” I tracked **manual steps removed**.
 This approach made automation outcomes clear and defensible, even when regional processes or volumes changed.
 
 It also created a fair comparison between countries with different scales and roles - one of the key challenges in global measurement.
@@ -92,9 +92,9 @@ One challenge with measuring manual work is that a lot of it lives only in peopl
 
 Workshops and interviews work, but they don’t scale well — and they often miss the small decisions, exceptions, and workarounds that make up real day-to-day effort.
 
-We started exploring how AI could help here, not by automating decisions, but by making it easier for business users to **externalize how their work is actually done**.
+I started exploring how AI could help here, not by automating decisions, but by making it easier for business users to **externalize how their work is actually done**.
 
-Instead of asking people to write process documentation, we let them **talk**.
+Instead of asking people to write process documentation, I let them **talk**.
 
 When someone runs a repetitive task, they can describe the steps out loud, in their own words. AI turns that voice input into simple, structured markdown:
 
@@ -113,9 +113,9 @@ They became direct inputs into the measurement framework.
 
 The documented steps map naturally to manual touchpoints.
 Language patterns help infer effort bands and variability.
-Repeated descriptions across users surface process variants we would otherwise miss.
+Repeated descriptions across users surface process variants the team would otherwise miss.
 
-Instead of reconstructing reality in workshops, we started capturing it as people worked.
+Instead of reconstructing reality in workshops, I started capturing it as people worked.
 
 Another important choice was to treat these documents as long-lived artifacts.
 
@@ -157,7 +157,7 @@ Looking back, this project reinforced one of the most important lessons in produ
 sometimes, **you need to design the measurement system before you can design the product itself.**
 
 It was less about analytics and more about **creating shared understanding**.
-By focusing on clarity, repeatability, and trust, we built something that outlived the initial automation program, a framework that teams could keep using as processes evolved.
+By focusing on clarity, repeatability, and trust, the team built something that outlived the initial automation program, a framework that teams could keep using as processes evolved.
 
 It also taught me that:
 - **Simplicity scales better than precision.**
