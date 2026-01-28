@@ -9,9 +9,7 @@ share-img: assets/img/customs_2.png
 comments: true
 ---
 
-As large language models enter regulated, high-stakes domains, the hardest problems are no longer about model capability.
-
-They are about **how to manage AI systems that operate under uncertainty**, where errors are costly, delayed, and sometimes irreversible.
+As large language models enter regulated, high-stakes domains, the hardest problems are no longer about model capability. They are about **how to manage AI systems that operate under uncertainty**, where errors are costly, delayed, and sometimes irreversible.
 
 This article describes how we designed an AI-driven customs compliance decision system in a global trade environment and the principles that made it viable in a high-risk, audit-heavy setting.
 
