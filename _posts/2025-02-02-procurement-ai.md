@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Discovery Frameworks and ROI Modeling for Procurement AI
-subtitle: From shadowing buyers to RAG architecture: quantifying cognitive load reduction
+subtitle: "From shadowing buyers to RAG architecture: quantifying cognitive load reduction"
 tags: [Enterprise AI, ROI Modeling, Discovery Methods, RAG Architecture, Business Case Development, Procurement Technology, Analytical Reasoning, User Research]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png

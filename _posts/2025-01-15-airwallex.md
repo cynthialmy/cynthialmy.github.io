@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Moving Failure Upstream: SWIFT Validation at Airwallex
+title: "Moving Failure Upstream: SWIFT Validation at Airwallex"
 subtitle: Corridor-aware validation and precision vs conversion tradeoffs
 tags: [Infrastructure Product Management, Tradeoff Analysis, Validation Design, Risk-Reward Analysis, Payment Systems, Quantitative Reasoning, Reliability Engineering]
 project_type: enterprise
