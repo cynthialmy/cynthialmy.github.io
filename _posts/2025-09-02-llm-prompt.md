@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Context Engineering in LLM Prompts for Scale and Safety
-subtitle: From prompt templates to production systems: designing for failure modes, not happy paths
+subtitle: Designing prompt templates and production systems for failure modes, not happy paths
 tags: [Context Engineering, Prompt Design, Production LLM Systems, Failure Mode Design, Scale Engineering, LLM Product Development]
 project_type: other
 thumbnail-img: assets/img/prompting.jpg
