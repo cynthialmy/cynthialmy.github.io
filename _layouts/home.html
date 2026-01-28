@@ -5,9 +5,10 @@ layout: page
 {{ content }}
 
 {% assign posts = paginator.posts | default: site.posts %}
+{% assign all_posts = site.posts %}
 {% assign project_types = site.project_types %}
 {% assign available_types = '' | split: '' %}
-{% for post in posts %}
+{% for post in all_posts %}
 {% if post.project_type %}
 {% assign type_array = post.project_type | split: '|' %}
 {% assign available_types = available_types | concat: type_array | uniq %}

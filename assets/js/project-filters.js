@@ -31,9 +31,12 @@
       `[data-project-filter-target="${groupId}"] [data-project-type]`
     );
     targets.forEach((item) => {
-      const itemType = item.getAttribute('data-project-type') || 'other';
-      const matches = filterValue === 'all' || itemType === filterValue;
-      item.hidden = !matches;
+      const rawType = item.getAttribute('data-project-type');
+      const typeList = rawType
+        ? rawType.split('|').map(formatValue)
+        : ['other'];
+      const matches = filterValue === 'all' || typeList.includes(filterValue);
+      item.style.display = matches ? '' : 'none';
     });
   };
 
@@ -57,8 +60,13 @@
     };
 
     const initialValue = formatValue(initialFilter);
-    sync(initialValue);
-    updatePaginationLinks(initialValue);
+    const hasMatchingButton = Array.from(buttons).some((btn) => {
+      const btnValue = formatValue(btn.getAttribute('data-filter-value'));
+      return btnValue === initialValue;
+    });
+    const safeInitialValue = hasMatchingButton ? initialValue : 'all';
+    sync(safeInitialValue);
+    updatePaginationLinks(safeInitialValue);
 
     buttons.forEach((btn) => {
       btn.addEventListener('click', (event) => {
