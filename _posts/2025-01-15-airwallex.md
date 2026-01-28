@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Strategic Tradeoff Analysis for Payment Infrastructure
-subtitle: Decision frameworks for reliability and coverage at scale
-tags: [Product Strategy, Tradeoff Analysis, Decision Frameworks, Strategic Thinking, Product Thinking, Infrastructure Product Management, Risk-Reward Analysis, Quantitative Reasoning]
+title: Moving Failure Upstream: SWIFT Validation at Airwallex
+subtitle: Corridor-aware validation and precision vs conversion tradeoffs
+tags: [Infrastructure Product Management, Tradeoff Analysis, Validation Design, Risk-Reward Analysis, Payment Systems, Quantitative Reasoning, Reliability Engineering]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/payment-gateways.png
@@ -98,8 +98,8 @@ This reframing shaped everything that followed.
 
 I modeled the impact using a simple reliability equation so we could set clear targets.
 
-**First-pass success** = 1 - failure rate  
-**Support load** = payment volume * failure rate * tickets per failure  
+**First-pass success** = 1 - failure rate
+**Support load** = payment volume * failure rate * tickets per failure
 **Failure cost** = support load * cost per ticket + delay penalties
 
 **Targets for v1 validation:**

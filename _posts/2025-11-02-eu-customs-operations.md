@@ -1,8 +1,8 @@
 ---
 layout: post
-title: EU Customs Operations Measurement to Strategic Optimization
-subtitle: Quantifying manual effort and unlocking margin through customs intelligence
-tags: [Product Strategy, Economic Analysis, Strategic Thinking, Quantitative Reasoning, Product Thinking, Business Case Development, Financial Modeling, Case Study, Measurement Framework, Systematic Thinking, Analytical Reasoning, Operations Product Management, Framework Design]
+title: Measuring Manual Effort to Unlock Customs Optimization
+subtitle: The Manual Effort Measurement Framework (MEMF) and €2M margin optimization
+tags: [Operations Product Management, Economic Analysis, Measurement Framework, Financial Modeling, Customs Intelligence, Quantitative Reasoning, Business Case Development, Framework Design, Case Study]
 project_type: enterprise
 thumbnail-img: assets/img/customs_1.png
 share-img: assets/img/customs_1.png

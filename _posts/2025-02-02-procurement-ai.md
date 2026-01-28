@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Strategic AI Implementation in Enterprise
-subtitle: Discovery frameworks, ROI modeling, and risk analysis for procurement AI
-tags: [Product Strategy, Strategic Thinking, Decision Frameworks, ROI Modeling, Risk Analysis, Enterprise AI, Product Thinking, Analytical Reasoning, Business Case Development]
+title: Discovery Frameworks and ROI Modeling for Procurement AI
+subtitle: From shadowing buyers to RAG architecture: quantifying cognitive load reduction
+tags: [Enterprise AI, ROI Modeling, Discovery Methods, RAG Architecture, Business Case Development, Procurement Technology, Analytical Reasoning, User Research]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/procurement_3.png
@@ -198,7 +198,7 @@ RAG won because it balanced trust, compliance, and iteration speed while preserv
 
 I modeled business value using a simple time-savings framework:
 
-**Annual value** = hours saved * fully loaded cost per hour  
+**Annual value** = hours saved * fully loaded cost per hour
 **ROI** = (annual value - annual platform cost) / annual platform cost
 
 The 6,800 hours saved metric provided the anchor. The model made it clear that even conservative hourly cost assumptions created a strong payback case.

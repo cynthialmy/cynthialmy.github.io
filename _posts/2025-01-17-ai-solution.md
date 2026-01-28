@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Strategic Risk Management for AI Products
-subtitle: Decision frameworks for responsible AI system design
-tags: [Product Strategy, Risk Analysis, Decision Frameworks, Strategic Thinking, Product Thinking, Responsible AI, Risk Management, Product Design]
+title: Four-Layer Harm Mitigation for Enterprise AI
+subtitle: Layered safety architecture from model to UX
+tags: [Responsible AI, Risk Analysis, Multi-Layer Safety, Harm Mitigation, Enterprise AI, Product Design, Trust and Safety]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/architecture.png

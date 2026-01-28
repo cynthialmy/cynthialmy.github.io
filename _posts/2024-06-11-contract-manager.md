@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Product Strategy for Data Governance
-subtitle: Systematic approaches to scaling data contracts across teams
-tags: [Product Strategy, Strategic Thinking, Product Thinking, Data Product Management, Framework Design, Systematic Thinking, Case Study]
+title: Operationalizing Data Contracts at Scale
+subtitle: Making governance supportive, not bureaucratic, through contract-driven workflows
+tags: [Data Product Management, Contract-Driven Design, Framework Design, Federated Governance, Product Operations, Case Study]
 project_type: enterprise
 comments: true
 thumbnail-img: assets/img/data_contract_1.png
