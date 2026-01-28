@@ -3,7 +3,7 @@ layout: post
 title: Context Engineering for LLM Products
 subtitle: Systematic frameworks for prompt design and evaluation
 tags: [Product Strategy, Systematic Thinking, Product Thinking, LLM Product Development, Framework Design, Analytical Reasoning, Product Management]
-project_type: enterprise
+project_type: other
 thumbnail-img: assets/img/prompting.jpg
 share-img: assets/img/prompting.jpg
 comments: true
