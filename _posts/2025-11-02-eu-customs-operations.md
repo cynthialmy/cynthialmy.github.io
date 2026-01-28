@@ -190,6 +190,8 @@ In mature deployment, such systems could reduce:
 
 Measurement frameworks like MEMF make this automation practical by prioritizing which processes to instrument first, validating baseline performance, and tracking impact through manual step reduction rather than noisy hour estimates.
 
+> **For the AI system design principles that make such automation viable in high-risk, regulated environments, see [Managing AI in High-Risk Decisions: Lessons from an AI-Driven Customs Compliance System](/2026/01/28/ai-customs-compliance-system.html).**
+
 ---
 
 ## **Conclusion: Measurement Enables Strategy**
