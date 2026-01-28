@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Four-Layer Harm Mitigation for Enterprise AI
-subtitle: Layered safety architecture from model to UX
-tags: [Responsible AI, Risk Analysis, Multi-Layer Safety, Harm Mitigation, Enterprise AI, Product Design, Trust and Safety]
+title: Four-Layer Harm Mitigation in Enterprise AI
+subtitle: How model selection, grounding, and UX constraints combine to build trustworthy procurement systems
+tags: [Multi-Layer Safety, Enterprise AI Safety, Grounding Design, UX Constraints, Procurement AI, Trustworthy AI Systems]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/architecture.png
@@ -86,6 +86,14 @@ This layer covers the application interface and user documentation. I designed u
 - **Solution:** Design interfaces guiding precise queries and provide thorough documentation on system use and limitations.
 
 ---
+
+## Product Decisions This Framework Drove
+
+This framework translated into clear product constraints:
+- **No LLMs for deterministic tasks** like ID lookups and compliance rules; those stayed in backend logic.
+- **Mandatory citations** for any contract interpretation that could affect spend or compliance.
+- **Scope-first rollouts** (VGS before VPC/SI+) to protect data quality and user trust.
+- **Escalation paths** for ambiguous queries, rather than forcing a confident answer.
 
 **Use AI Where It Adds Value - Not Everywhere It Can Fit**
 

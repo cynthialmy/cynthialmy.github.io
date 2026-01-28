@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Policy-Aware AI for Factuality Assessment
-subtitle: Agentic workflow design with confidence-gated decisions
-tags: [Product Strategy, Decision Frameworks, Risk Analysis, Responsible AI, Trust and Safety, Agentic AI, Product Thinking, Analytical Reasoning]
+title: "Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints"
+subtitle: How confidence thresholds and human routing reduce false positives in content moderation
+tags: [Confidence Gating, Escalation Design, Multi-Agent Systems, Policy Constraints, Content Moderation, False Positive Reduction]
 project_type: other
 thumbnail-img: assets/img/policy-aware-factuality-assessment.png
 share-img: assets/img/policy-aware-factuality-assessment.png
@@ -96,6 +96,15 @@ The system combines risk assessment and policy confidence to decide:
 - **High risk and low confidence** leads to human review
 - **High risk and high confidence** still requires human confirmation
 
+## Why This Design vs Simpler Baselines
+
+I considered simpler baselines and rejected them for specific failure modes:
+- **Single-model classifiers** were faster, but collapsed policy nuance into a binary label and hid evidence quality.
+- **Trust-score-only systems** were cheaper, but produced confident-looking outputs with weak justification, increasing false positives.
+- **Human-only review** was safest, but overloaded reviewers and created unacceptable latency for low-risk content.
+
+The multi-agent design keeps the core tradeoff visible: pay more compute only when risk is high, and always preserve the evidence trail for accountable decisions.
+
 ## Tool Selection: Right Tool for the Job
 
 One key insight from building this system is that you do not always need the most powerful model.
@@ -141,6 +150,7 @@ This enables re-evaluation when policies or evidence change, which is critical f
 3. **Escalation design matters more than raw accuracy.** Smart routing builds trust faster than a marginal accuracy gain.
 4. **Factuality and moderation are different problems.** False content can be policy-compliant and true content can still violate policy.
 5. **Observability is everything.** In production, you need to know why a decision was made, not only what it was.
+6. **Tradeoffs must be explicit.** I tuned thresholds to balance reviewer load, latency, and policy coverage, prioritizing high-risk recall over low-risk throughput.
 
 ## Try It Yourself
 

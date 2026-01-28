@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Moving Failure Upstream: SWIFT Validation at Airwallex"
-subtitle: Corridor-aware validation and precision vs conversion tradeoffs
-tags: [Infrastructure Product Management, Tradeoff Analysis, Validation Design, Risk-Reward Analysis, Payment Systems, Quantitative Reasoning, Reliability Engineering]
+title: Moving Failure Upstream for SWIFT Validation at Airwallex
+subtitle: Corridor-aware validation that balances precision vs conversion to reduce support load by 25%
+tags: [Failure Upstream, Corridor-Aware Validation, Precision vs Conversion, Payment Infrastructure, Support Load Reduction, Reliability Engineering]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/payment-gateways.png
@@ -114,6 +114,10 @@ I modeled the impact using a simple reliability equation so we could set clear t
 | Too strict | Lower downstream failure | Higher false blocks | Apply only to high-risk corridors |
 | Balanced | Stable success rate | Moderate ops load | Default policy |
 | Too loose | Higher conversion | High failure and support cost | Avoid |
+
+### Metrics-Driven Iteration
+
+Once the baseline was set, I treated validation rules as experiments. We A/B tested strictness by corridor, tuned error messaging for self-serve correction, and monitored three rollback triggers: corridor-level failure spikes, conversion drops beyond 3%, and support ticket volume rising above target. This kept optimization grounded in reliability, not instinct.
 
 ## **What we built: validation as a growth strategy**
 

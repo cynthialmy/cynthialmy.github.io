@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Operationalizing Data Contracts at Scale
-subtitle: Making governance supportive, not bureaucratic, through contract-driven workflows
-tags: [Data Product Management, Contract-Driven Design, Framework Design, Federated Governance, Product Operations, Case Study]
+title: Making Data Contracts Feel Supportive, Not Bureaucratic
+subtitle: How contract-driven workflows enable federated data teams without breaking trust
+tags: [Data Contracts, Federated Governance, Contract-Driven Design, Data Mesh, Governance UX, Data Product Management]
 project_type: enterprise
 comments: true
 thumbnail-img: assets/img/data_contract_1.png
@@ -35,6 +35,12 @@ Decentralization brings speed, but also predictable failure modes:
 * Data quality issues surface late, downstream, and expensively
 
 Traditional metadata tools help with *discoverability*, but they don’t enforce expectations. What we needed was a product that made **agreements explicit, validated, and easy to maintain** - even for non-expert users.
+
+---
+
+## Product Discovery: Why This Was Worth Building
+
+I spoke with producers, consumers, and platform teams and found the same pattern: producers wanted autonomy, consumers wanted stability, and platform teams wanted fewer emergency fixes. We considered policy-only governance and manual review boards, but both created bottlenecks without changing behavior in daily workflows. That feedback pushed us toward a productized, in-flow contract experience instead of a compliance-only process.
 
 ---
 
@@ -84,6 +90,12 @@ The **Data Contract Manager** is a web application that helps teams create, vali
   Allows teams with similar data structures to move faster while staying consistent.
 
 The guiding principle was: **governance should feel supportive, not bureaucratic**.
+
+### Success Metrics
+
+- **Schema breakages reduced** in downstream pipelines
+- **Time to onboard new producers** decreased with reusable templates
+- **Percentage of datasets under contract** increased quarter over quarter
 
 ---
 

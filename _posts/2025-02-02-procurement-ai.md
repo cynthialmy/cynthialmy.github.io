@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Discovery Frameworks and ROI Modeling for Procurement AI
-subtitle: "From shadowing buyers to RAG architecture: quantifying cognitive load reduction"
-tags: [Enterprise AI, ROI Modeling, Discovery Methods, RAG Architecture, Business Case Development, Procurement Technology, Analytical Reasoning, User Research]
+subtitle: "Shadowing buyers to quantify cognitive load, then building RAG that reduces search time by 25%"
+tags: [User Shadowing, Cognitive Load Measurement, RAG Architecture, Search Time Reduction, Procurement Technology, Discovery Methods]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/procurement_3.png
@@ -298,9 +298,19 @@ The introduction of Gen AI in procurement is expected to bring significant benef
 - **Future-Proofing:** Gen AI’s adaptability and scalability prepare the procurement department for evolving challenges and growth.
 - **Boosting Employee Morale:** By automating routine tasks, employees can focus on more strategic initiatives, improving job satisfaction and productivity.
 
+## Roadmap & Non-Goals
+
+To keep scope tight and learning fast, we deferred adjacent use cases:
+- **SI+ deep integration** until data quality and ownership issues were resolved
+- **Automated approvals or negotiations**, which carry higher risk and require legal redesign
+- **Pricing optimization**, which needed cleaner spend data and cross-functional buy-in
+
+These non-goals protected the pilot from overreach and kept the first release centered on information retrieval and trust.
+
 **What I Learned**
 
 - AI adoption is more change management than model management.
 - Users need trust, not just answers.
 - Starting narrow accelerates scaling.
 - Enterprise AI must be safe, explainable, and grounded.
+- The highest-leverage PM work is sequencing: pick the smallest scope that still proves value, then expand with evidence.

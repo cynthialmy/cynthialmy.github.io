@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Managing AI in High-Risk Decisions
-subtitle: Lessons from an AI-Driven Customs Compliance System
-tags: [AI System Design, Risk Management, Compliance Systems, Decision Frameworks, Responsible AI, Enterprise AI, Product Strategy, Uncertainty Management]
+title: "When AI Can't Decide: Risk-Bucketed Automation in Customs Compliance"
+subtitle: Designing for auditability and reversibility in high-stakes regulatory systems
+tags: [Risk-Bucketed Automation, Auditability Design, Regulatory AI, Case-Based Decisions, Uncertainty Management, Customs Compliance, System-Level Constraints]
 project_type: enterprise
 thumbnail-img: assets/img/customs_2.png
 share-img: assets/img/customs_2.png
@@ -43,6 +43,29 @@ Traditional approaches struggle to balance these constraints:
 The core insight was this:
 
 > **This is not a tooling gap. It is a problem of managing uncertainty at scale.**
+
+---
+
+## Product Framing: A Decision System, Not a Model
+
+The product objective was to **reduce expert workload without increasing audit risk**. That required changing behavior in two places: brokers needed fast, trustworthy evidence to act confidently, and experts needed a reliable way to sample, challenge, and refine risky decisions without reviewing everything.
+
+Constraints shaped the product surface more than model choice:
+- Decisions must be **auditable years later**
+- Risk is **asymmetric** (a false negative is worse than a false positive)
+- Most volume is routine and should stay deterministic
+- Data and policy text are **incomplete, changing, and jurisdiction-specific**
+
+---
+
+## Design Alternatives and Tradeoffs
+
+I considered three paths and rejected two:
+- **Rules-only expansion**: auditable but brittle in policy nuance and costly to maintain across 100+ markets
+- **Full automation**: efficient in throughput, unsafe in irreversible, high-impact decisions
+- **Human-only review**: safest, but operationally unscalable
+
+The chosen design balanced these tradeoffs: a **case-based decision system** that keeps automation for the low-risk 80% while routing ambiguous cases through structured AI reasoning and human judgment.
 
 ---
 
@@ -433,6 +456,14 @@ High-leverage approach:
 - Define, upfront, when the system must "hit the brakes"
 
 After that, every additional 10,000 cases and every new country or policy does not require linear human workload scaling, but system capability does scale.
+
+---
+
+## Business Outcomes: Safety-Constrained Efficiency
+
+I explicitly traded some automation upside for risk containment. The system aimed to increase throughput **only where reversibility was high**, while shifting expert time toward the most dangerous 10–20% of cases. This made improvements measurable and defensible: fewer high-intensity reviews, safer defaulting in low-risk buckets, and an audit trail that preserved rationale for years.
+
+In short, I optimized for **controllable risk exposure** over maximum automation.
 
 ---
 
