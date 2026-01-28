@@ -7,25 +7,6 @@
 
   const formatValue = (value) => (value || 'all').toLowerCase();
 
-  const updatePaginationLinks = (filterValue) => {
-    const links = document.querySelectorAll('.pagination a');
-    if (!links.length) return;
-
-    links.forEach((anchor) => {
-      try {
-        const url = new URL(anchor.href, window.location.origin);
-        if (filterValue === 'all') {
-          url.searchParams.delete('type');
-        } else {
-          url.searchParams.set('type', filterValue);
-        }
-        anchor.href = url.toString();
-      } catch (_) {
-        // skip anchors that can't be parsed
-      }
-    });
-  };
-
   const applyFilter = (groupId, filterValue) => {
     const targets = document.querySelectorAll(
       `[data-project-filter-target="${groupId}"] [data-project-type]`
@@ -66,7 +47,6 @@
     });
     const safeInitialValue = hasMatchingButton ? initialValue : 'all';
     sync(safeInitialValue);
-    updatePaginationLinks(safeInitialValue);
 
     buttons.forEach((btn) => {
       btn.addEventListener('click', (event) => {
@@ -80,7 +60,6 @@
         }
         window.history.replaceState({}, '', url);
         sync(value);
-        updatePaginationLinks(value);
       });
     });
   });

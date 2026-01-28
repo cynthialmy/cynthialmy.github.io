@@ -4,7 +4,7 @@ layout: page
 
 {{ content }}
 
-{% assign posts = paginator.posts | default: site.posts %}
+{% assign posts = site.posts %}
 {% assign all_posts = site.posts %}
 {% assign project_types = site.project_types %}
 {% assign available_types = '' | split: '' %}
@@ -144,27 +144,6 @@ layout: page
   </li>
   {% endfor %}
 </ul>
-
-{% if paginator.total_pages > 1 %}
-<ul class="pagination main-pager">
-  {% if paginator.previous_page %}
-  <li class="page-item previous">
-    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
-      <i class="fas fa-arrow-left" alt="Newer"></i>
-      <span class="d-none d-sm-inline-block">Newer</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="page-item next">
-    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
-      <span class="d-none d-sm-inline-block">Older</span>
-      <i class="fas fa-arrow-right" alt="Older"></i>
-    </a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
 
 {% if project_types %}
 <script src="{{ '/assets/js/project-filters.js' | relative_url }}"></script>
