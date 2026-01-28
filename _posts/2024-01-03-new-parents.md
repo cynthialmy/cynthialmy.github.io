@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From Parent Interviews to Product Bets: Mapping Cognitive Load to AI Features"
+title: Mapping Cognitive Load to AI Feature Bets from Parent Interviews
 subtitle: How 20 interviews and 150 surveys revealed automation opportunities worth €6M+ in time savings
 tags: [User Research, Parent Interviews, Cognitive Load Mapping, Product Discovery, Automation Opportunities, Research-to-Product]
 project_type: zero-to-one-builds
