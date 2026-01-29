@@ -11,7 +11,7 @@ comments: true
 
 Content moderation at scale is one of the hardest problems in modern tech. When platforms like TikTok, YouTube, or Facebook need to make decisions about billions of pieces of content daily, they cannot just build a better AI model and call it solved. The real challenge is not only detecting misinformation, it is making responsible decisions under genuine uncertainty.
 
-I built a demo system to explore how agentic AI workflows can approach this challenge with a specific focus on factuality checking. The project, deployed at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), demonstrates how multiple specialized AI agents can work together within policy constraints, while keeping humans firmly in the loop for high-stakes decisions.
+This demo explores how agentic AI workflows can approach this challenge through deliberate escalation and policy-aware decision design. The project, deployed at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), demonstrates how multiple specialized AI agents can work together within policy constraints, while keeping humans firmly in the loop for high-stakes decisions.
 
 ## Product Framing: Agents Propose, Policies Constrain, Humans Decide
 
@@ -84,6 +84,12 @@ For medium and high-risk content, the system retrieves evidence. It starts with 
 
 A frontier model assesses whether claims are likely true, likely false, or uncertain. Factuality is not the same as a policy violation. Something can be false and still be allowed.
 
+> **Design Decision: Separating Factuality from Policy Interpretation**
+>
+> This system intentionally separates factuality assessment from policy interpretation. In early designs, combining these steps caused the system to become overconfident in gray-area health claims—false claims were treated as automatically violative, even when policy guidance was ambiguous or evolving.
+>
+> This increased false positives and pushed the system toward over-enforcement. By isolating factuality as a non-enforcement signal, the system can acknowledge uncertainty without prematurely triggering action.
+
 ### 5. Policy Interpretation (Zentropi with Fallback)
 
 A specialized agent reads the platform policy and determines whether the content violates it. The policy text is treated as input, not hard-coded rules, which allows adaptation to different policy frameworks.
@@ -105,16 +111,15 @@ I considered simpler baselines and rejected them for specific failure modes:
 
 The multi-agent design keeps the core tradeoff visible: pay more compute only when risk is high, and always preserve the evidence trail for accountable decisions.
 
-## Tool Selection: Right Tool for the Job
+## Decision Economics: Matching Cost and Confidence to Risk
 
-One key insight from building this system is that you do not always need the most powerful model.
+Instead of defaulting to a single powerful model, the system allocates compute based on decision criticality.
 
-- **Groq Llama** for claim extraction, ultra-fast and good enough
-- **Zentropi small model** for risk and policy classification, cheap and fast with confidence-gated fallback
-- **Azure OpenAI** for factuality assessment, highest-stakes reasoning
-- **External search** only when internal evidence is insufficient
+For low-risk, reversible steps like claim extraction, speed and cost efficiency matter more than perfect reasoning. For high-stakes factual judgments that could influence enforcement or user trust, the system intentionally escalates to stronger models.
 
-This layered approach keeps costs reasonable and latency low while reserving expensive compute for decisions that matter most.
+This design treats model accuracy as a *scarce resource* to be spent where mistakes are most expensive, rather than optimizing for uniform model quality across the pipeline.
+
+In practice, this means using fast, low-cost models where mistakes are cheap, and reserving frontier models for decisions with real trust impact.
 
 ## What Makes This Different: Embracing Uncertainty
 
@@ -128,6 +133,21 @@ Most AI demos hide their limitations. This system makes uncertainty explicit.
 The dashboard tracks metrics that matter for trust: human AI disagreement rates, review load concentration, and appeal reversal proxies.
 
 ![policy-aware-factuality-assessment-example-6](../assets/img/policy-aware-factuality-assessment.png)
+
+## How I Measure Success
+
+This system is not optimized for raw accuracy. Instead, success is defined by whether it improves trust outcomes at scale. I focus on three primary metrics:
+
+**1. High-risk misinformation exposure**
+The share of user views that contain high-risk misinformation. This reflects what users actually experience, not just what the system flags.
+
+**2. Over-enforcement proxy**
+Human overrides, appeal reversals, and disagreement between automated decisions and reviewers. Rising over-enforcement is treated as a failure signal, even if model confidence is high.
+
+**3. Human review concentration**
+The percentage of human review capacity spent on high-risk, high-uncertainty cases. If reviewers are overloaded with low-impact content, the system is misallocating attention.
+
+Precision and recall are tracked internally as guardrail metrics, but they are not the optimization target. The goal is not to be "right" on every item—it is to make the *right mistakes* less often, and only where they are recoverable.
 
 ## Human Review: The Safety Net
 
@@ -152,6 +172,16 @@ This enables re-evaluation when policies or evidence change, which is critical f
 5. **Observability is everything.** In production, you need to know why a decision was made, not only what it was.
 6. **Tradeoffs must be explicit.** I tuned thresholds to balance reviewer load, latency, and policy coverage, prioritizing high-risk recall over low-risk throughput.
 
+## What This System Is Designed *Not* To Do
+
+This system is intentionally conservative in several ways:
+
+– It does **not** aim to make instant decisions on ambiguous, high-risk content. In these cases, it prioritizes human judgment over speed.
+– It does **not** optimize for maximum automation. Reversibility and trust recovery are valued more than throughput.
+– It does **not** attempt to collapse uncertainty into a single score. Conflicting evidence and policy ambiguity are preserved and surfaced.
+
+These constraints are deliberate. In content moderation, the most damaging failures come not from being uncertain, but from being confidently wrong at scale.
+
 ## Try It Yourself
 
 The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). You can paste in content, watch the agent pipeline in action, see the decision flow, and explore how different risk levels and policy interpretations lead to different outcomes.
@@ -160,9 +190,9 @@ The full source code and architecture documentation are available in the reposit
 
 ## The Bigger Picture
 
-This is a demo, not a production system. Real-world content moderation requires multilingual support, multimedia understanding, real-time processing at scale, and adversarial robustness.
+This demo is intentionally designed to explore decision-making patterns in high-stakes domains. Real-world content moderation requires multilingual support, multimedia understanding, real-time processing at scale, and adversarial robustness.
 
-But it demonstrates how to think systematically about AI-assisted decision-making in high-stakes domains. The patterns here apply beyond misinformation to any domain where AI needs to help humans make better decisions under uncertainty.
+The patterns here apply beyond misinformation to any domain where AI needs to help humans make better decisions under uncertainty.
 
 Whether you are building content moderation, compliance review, medical triage, or fraud detection systems, the core challenge is the same. How do you combine AI pattern recognition with human judgment and accountability?
 
