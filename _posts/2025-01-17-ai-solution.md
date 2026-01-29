@@ -21,7 +21,7 @@ A recent article on [Builder.io](https://www.builder.io/blog/build-ai) emphasize
 
 **Start With the Workflow, Not the Model**
 
-When I began exploring how AI could improve procurement, the first instinct from many teams was to ask, “Which model should we use - GPT-4, GPT-3.5, or a fine-tuned alternative?” But I quickly realized none of those questions mattered until we deeply understood the workflow. So instead of opening an LLM playground, I started sitting with buyers and watching how they actually worked.
+When I began exploring how AI could improve procurement, the first instinct from many teams was to ask, “Which model should we use - GPT-4, GPT-3.5, or a fine-tuned alternative?” But I quickly realized none of those questions mattered until I deeply understood the workflow. So instead of opening an LLM playground, I started sitting with buyers and watching how they actually worked.
 
 I noticed how they bounced between VGS, SI+, and VPC. I watched them dig through PDFs, reconcile price changes, hunt down attachments, and sometimes ask a colleague just to validate a detail. It became clear that the true problem wasn’t lack of functionality. It was cognitive load - the mental burden of connecting fragmented information scattered across three systems.
 
@@ -116,7 +116,7 @@ What made our procurement AI successful wasn’t the sophistication of the model
 
 AI demos are thrilling - everything works, everything looks smart, everything is snappy. But the moment you bring real workflows and real documents into the picture, the cracks appear. That’s why I leaned heavily on user testing, both structured and exploratory.
 
-Sometimes the AI responded perfectly; other times it struggled because the prompt was vague or the document structure was messy. But every failure taught us something useful. We discovered that users needed training as much as the model did. We realized that citations and transparency mattered more than conversational polish. And we learned which tasks needed hybrid logic rather than pure AI.
+Sometimes the AI responded perfectly; other times it struggled because the prompt was vague or the document structure was messy. But every failure taught us something useful. I discovered that users needed training as much as the model did. I realized that citations and transparency mattered more than conversational polish. And I learned which tasks needed hybrid logic rather than pure AI.
 
 This reinforced a principle I now deeply believe in: AI products live or die in the hands of real users, not in the hands of engineers.
 
@@ -126,7 +126,7 @@ This reinforced a principle I now deeply believe in: AI products live or die in 
 
 The most counterintuitive lesson I’ve learned is that the fastest way to scale an AI system is to start with a very small scope. With procurement, I deliberately resisted the temptation to boil the ocean. Instead of integrating all procurement systems at once, I focused on VGS. That constraint allowed the team to validate our assumptions earlier, refine the safety layers quickly, and avoid building a system that was too complex to adopt.
 
-By choosing depth over breadth, we created a foundation that could scale predictably - and safely. It reminded me that good product strategy is often about protecting the team from over-ambition, not encouraging them to add more features.
+By choosing depth over breadth, the team created a foundation that could scale predictably - and safely. It reminded me that good product strategy is often about protecting the team from over-ambition, not encouraging them to add more features.
 
 ---
 

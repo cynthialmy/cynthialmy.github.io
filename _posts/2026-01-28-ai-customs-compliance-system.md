@@ -11,7 +11,7 @@ comments: true
 
 As large language models enter regulated, high-stakes domains, the hardest problems are no longer about model capability. They are about **how to manage AI systems that operate under uncertainty**, where errors are costly, delayed, and sometimes irreversible.
 
-This article describes how we designed an AI-driven customs compliance decision system in a global trade environment and the principles that made it viable in a high-risk, audit-heavy setting.
+This article describes how I designed an AI-driven customs compliance decision system in a global trade environment and the principles that made it viable in a high-risk, audit-heavy setting.
 
 At a automotive company, we operate import and export flows across more than 100 markets. Customs compliance decisions like HS classification, origin determination, and FTA eligibility are high-risk, high-volume, and written in natural language policy. A wrong decision may only surface years later during audit, but the financial and legal impact is real.
 
@@ -116,7 +116,7 @@ For trade compliance experts, the workflow focuses on sampling, monitoring, deep
 
 ## Reframing the Role of AI
 
-Instead of treating the LLM as a decision maker, we designed it as a **policy reasoning layer** inside a broader decision system.
+Instead of treating the LLM as a decision maker, I designed it as a **policy reasoning layer** inside a broader decision system.
 
 The AI does not say *"approved"* or *"rejected."*
 It produces **structured reasoning artifacts** that humans and systems can act on.
@@ -237,7 +237,7 @@ This framework prevented a common failure mode:
 
 Accuracy alone was not a sufficient metric.
 
-Instead, we designed a **risk-aware evaluation framework** with three layers.
+Instead, I designed a **risk-aware evaluation framework** with three layers.
 
 ### 1. Decision Quality (Risk-Weighted)
 
@@ -289,7 +289,7 @@ Every human override requires structured labeling:
 - Missing data
 - Genuine ambiguity
 
-We monitor whether the same error types decrease over time and whether routing logic and thresholds are correctly adjusted. Repeated overrides in the same category indicate a systematic issue.
+I monitor whether the same error types decrease over time and whether routing logic and thresholds are correctly adjusted. Repeated overrides in the same category indicate a systematic issue.
 
 ### 3. Business and Operational Impact
 
@@ -318,7 +318,7 @@ This represents a conservative expected value, not an optimistic projection.
 
 ## Example Metric: Risk-Segmented Confusion Matrix
 
-Instead of a single global F1 score, we tracked performance by decision bucket.
+Instead of a single global F1 score, I tracked performance by decision bucket.
 
 ### High-Risk, Non-Automated Decisions
 
