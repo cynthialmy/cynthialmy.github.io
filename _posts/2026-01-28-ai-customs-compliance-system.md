@@ -71,7 +71,11 @@ The chosen design balanced these tradeoffs: a **case-based decision system** tha
 
 ## System Architecture: A Case-Based Decision Platform
 
-Before diving into design principles, it is important to clarify what this system is not: it is not a chat interface or prompt-driven AI product. Users never interact with the model directly. Instead, this is a case-based decision system where the LLM runs automatically in the background as a policy reasoning layer.
+Before diving into design principles, it is important to clarify what this system is not:
+
+> **It is not a chat interface or prompt-driven AI product.**
+
+Users never interact with the model directly. Instead, this is a case-based decision system where the LLM runs automatically in the background as a policy reasoning layer.
 
 ### Users and Workflows
 
