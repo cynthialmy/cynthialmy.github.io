@@ -68,7 +68,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   </article>
 
   <article class="project-card" data-project-type="technical-projects">
-    <a class="project-card-link" href="https://github.com/cynthialmy/bridge-dash" target="_blank" rel="noopener">
+    <a class="project-card-link" href="https://bridge-dash.streamlit.app/" target="_blank" rel="noopener">
       <div class="project-card-header">
         <h3>Infrastructure Insights</h3>
         <p class="project-card-subtitle">bridge-dash</p>
