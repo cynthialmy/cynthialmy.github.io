@@ -15,6 +15,19 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://bridge-dash.streamlit.app/" target="_blank" rel="noopener">
+      <div class="project-card-header">
+        <h3>Infrastructure Insights</h3>
+        <p class="project-card-subtitle">bridge-dash</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/imba-habit/" target="_blank" rel="noopener">
       <img src="{{ '/assets/img/dopamine-box.png' | relative_url }}" alt="Dopamine Box" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
@@ -63,19 +76,6 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
         Enhances user interaction with data charts, transforming static visuals into interactive experiences.
-      </p>
-    </a>
-  </article>
-
-  <article class="project-card" data-project-type="technical-projects">
-    <a class="project-card-link" href="https://bridge-dash.streamlit.app/" target="_blank" rel="noopener">
-      <div class="project-card-header">
-        <h3>Infrastructure Insights</h3>
-        <p class="project-card-subtitle">bridge-dash</p>
-      </div>
-      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
-      <p class="project-card-excerpt">
-        BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
       </p>
     </a>
   </article>
