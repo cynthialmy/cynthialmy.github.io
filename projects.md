@@ -15,6 +15,32 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://cynthialmy.github.io/course-website-design/" target="_blank" rel="noopener">
+      <div class="project-card-header">
+        <h3>Educational Platform Redesign</h3>
+        <p class="project-card-subtitle">course-website-design</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        Enhance user experience and interactivity with this restyling project for CS 7450 at Georgia Tech.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://cynthialmy.github.io/d3-scrollama/" target="_blank" rel="noopener">
+      <div class="project-card-header">
+        <h3>Interactive Scrollytelling</h3>
+        <p class="project-card-subtitle">d3-scrollama</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        Highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://bridge-dash.streamlit.app/" target="_blank" rel="noopener">
       <div class="project-card-header">
         <h3>Infrastructure Insights</h3>
@@ -37,32 +63,6 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
         Log daily activities and moods with Imba (a language that compiles to JavaScript). Explore on GitHub.
-      </p>
-    </a>
-  </article>
-
-  <article class="project-card" data-project-type="technical-projects">
-    <a class="project-card-link" href="https://cynthialmy.github.io/course-website-design/" target="_blank" rel="noopener">
-      <div class="project-card-header">
-        <h3>Educational Platform Redesign</h3>
-        <p class="project-card-subtitle">course-website-design</p>
-      </div>
-      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
-      <p class="project-card-excerpt">
-        Enhance user experience and interactivity with this restyling project for CS 7450 at Georgia Tech.
-      </p>
-    </a>
-  </article>
-
-  <article class="project-card" data-project-type="technical-projects">
-    <a class="project-card-link" href="https://cynthialmy.github.io/d3-scrollama/" target="_blank" rel="noopener">
-      <div class="project-card-header">
-        <h3>Interactive Scrollytelling</h3>
-        <p class="project-card-subtitle">d3-scrollama</p>
-      </div>
-      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
-      <p class="project-card-excerpt">
-        Highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
       </p>
     </a>
   </article>
