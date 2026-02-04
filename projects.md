@@ -72,6 +72,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
 
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/d3-Interaction/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/Engaging-Data-Charts.png' | relative_url }}" alt="Engaging Data Charts" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
         <h3>Engaging Data Charts</h3>
         <p class="project-card-subtitle">d3-Interaction</p>
@@ -85,6 +86,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
 
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/simple-d3-charts/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/Back-to-Basics.png' | relative_url }}" alt="Back to Basics" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
         <h3>Back to Basics</h3>
         <p class="project-card-subtitle">simple-d3-charts</p>
