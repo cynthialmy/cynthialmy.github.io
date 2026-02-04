@@ -16,6 +16,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/course-website-design/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/course-design.png' | relative_url }}" alt="Educational Platform Redesign" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
         <h3>Educational Platform Redesign</h3>
         <p class="project-card-subtitle">course-website-design</p>
@@ -29,6 +30,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
 
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/d3-scrollama/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/scrollytelling.jpeg' | relative_url }}" alt="Interactive Scrollytelling" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
         <h3>Interactive Scrollytelling</h3>
         <p class="project-card-subtitle">d3-scrollama</p>
@@ -42,6 +44,7 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
 
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://bridge-dash.streamlit.app/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/bridge-dash.png' | relative_url }}" alt="Infrastructure Insights" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
         <h3>Infrastructure Insights</h3>
         <p class="project-card-subtitle">bridge-dash</p>
