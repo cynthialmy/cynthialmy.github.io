@@ -11,17 +11,45 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-Procurement at Volvo Cars handles thousands of contracts, millions in spend, and complex documentation spread across several legacy systems. The primary goal of our project was to streamline the procurement process by leveraging Gen AI to facilitate contract management and decision-making.
+Procurement at Volvo Cars manages 1,169 suppliers, 7,000+ contracts, and millions in spend distributed across three fragmented legacy systems (VGS, VPC, SI+). The core challenge was not simply "making procurement faster" — it was designing a decision system that could safely automate information retrieval without introducing new forms of risk in a highly regulated, high-stakes environment.
 
-This case study is how I approached the discovery, designed the solution, validated its value, and shaped the organization’s journey toward AI-augmented procurement.
+This case study demonstrates how I transformed an ambiguous problem space into a controllable AI system by: explicitly mapping decision boundaries, designing human-in-the-loop mechanisms as first-class features, establishing risk categorization frameworks, and building escalation paths that degrade safely under uncertainty.
+
+The outcome was not just time savings — it was a trust architecture that procurement teams could confidently rely on for contract decisions.
+
+## Risk Framing: Categorizing What Could Go Wrong
+
+Before defining any solution, I established a risk categorization framework. Introducing AI into procurement is not just a productivity play — it carries legal, financial, and compliance implications. I mapped risks across three dimensions:
+
+**Risk Matrix: Impact × Reversibility × Data Sensitivity**
+
+| Risk Category | Impact | Reversibility | Mitigation Strategy |
+|---------------|---------|---------------|---------------------|
+| **Wrong contract retrieved** | High | Low | Human verification required, source citations mandatory |
+| **Hallucinated clause interpretation** | Critical | Low | Never generate legal text, retrieval-only mode |
+| **Outdated information surfaced** | Medium | Medium | Document freshness signals, timestamp validation |
+| **Unauthorized data access** | Critical | None | Role-based filtering, pre-retrieval permission checks |
+| **Search returns no results** | Low | High | Graceful degradation to manual search |
+
+**Decision Boundaries: What Should Never Be Automated**
+
+I explicitly defined three automation zones:
+
+1. **AI-Assisted (Safe Zone):** Contract search, document retrieval, historical data lookup, process guidance
+2. **Human-in-the-Loop (Verification Required):** Contract term interpretation, price comparisons across systems, supplier evaluation
+3. **Human-Only (No Automation):** Contract approval, negotiation decisions, exception handling, legal interpretation
+
+This framework became the foundation for every design decision that followed. It ensured that AI augmented procurement workflows without introducing uncontrolled risk.
+
+---
 
 ## Discovery
 
-When I started this initiative, I didn’t approach it as an “AI project.”
-I approached it as a procurement problem-solving mission.
+When I started this initiative, I didn't approach it as an "AI project."
+I approached it as a procurement problem-solving mission with clear risk boundaries.
 So instead of thinking about models or tools, my first question was:
 
-“What exactly slows buyers down?”
+"What exactly slows buyers down, and which friction points can we safely automate?"
 
 Sitting With Buyers, Not Assumptions
 
@@ -176,7 +204,37 @@ C. RAG (Retrieval Augmented Generation)
 - Scalable across systems
 - Explainable through citations
 
-**High-Level Description**
+**System Design Under Uncertainty: Decision Flow and Failure Modes**
+
+The architecture was designed not just for the happy path, but for safe degradation under uncertainty. The system operates through a multi-stage decision flow:
+
+**Stage 1: Query Classification (Confidence Threshold: 0.85)**
+- Input: Natural language query from buyer
+- Decision: Can this query be safely handled by retrieval?
+- Failure Mode: Low confidence → Route to manual search + log for analysis
+
+**Stage 2: Retrieval and Grounding (Minimum 2 Source Documents)**
+- Input: Structured query to vector database
+- Decision: Are retrieved documents relevant and fresh?
+- Failure Mode: No results or stale docs → Explicit "No confident answer" response
+
+**Stage 3: Response Generation (With Citations)**
+- Input: Retrieved documents + query
+- Decision: Can we generate a grounded, non-hallucinated answer?
+- Failure Mode: Contradictory sources → Surface conflict, require human judgment
+
+**Stage 4: Human Verification Layer**
+- Input: AI-generated response
+- Decision: Does buyer accept, reject, or escalate?
+- Failure Mode: High rejection rate → Trigger model retraining or query reclassification
+
+**Escalation Paths:**
+- Buyer uncertainty → Escalate to senior procurement lead
+- Legal/compliance queries → Route to legal team, log for policy review
+- System errors → Ops alert + fallback to legacy system
+
+**Safe Degradation:**
+If the RAG system fails, buyers can always access source systems directly. The AI is positioned as an assistant, not a replacement, ensuring operational continuity even during system downtime.
 
 ![High-Level Description](../assets/img/procurement_1.png)
 
@@ -241,13 +299,46 @@ Integrating Gen AI with our procurement systems (VGS, VPC, and SI+) enables natu
 
 ![Procurement chatbot](../assets/img/procurement_3.png)
 
+## Human-in-the-Loop as First-Class Design
+
+I designed the system with the assumption that AI outputs would require human verification. This was not a limitation — it was a trust mechanism. Human-in-the-loop was architected as a first-class feature, not an afterthought.
+
+**Reviewer Workflow:**
+1. AI surfaces answer with source citations
+2. Buyer reviews sources (one-click access to original documents)
+3. Buyer provides explicit feedback: Accept / Reject / Escalate
+4. System logs feedback for continuous learning
+
+**Override Mechanisms:**
+- Buyers can override AI suggestions at any point
+- Override reasons are categorized (wrong source, outdated info, incomplete answer)
+- High-override queries trigger manual review and potential system adjustments
+
+**Trust Signals Tracked:**
+
+| Metric | Baseline (Month 1) | Month 3 | Interpretation |
+|--------|-------------------|---------|----------------|
+| **Acceptance Rate** | 68% | 82% | Increased trust over time |
+| **Override with Justification** | 22% | 14% | Fewer disagreements as retrieval improved |
+| **Escalations to Legal** | 10% | 4% | Better query routing |
+| **Time Spent Verifying Sources** | 4.2 min | 2.8 min | Faster confidence building |
+
+**Feedback Loop Design:**
+- Rejected answers were analyzed weekly to identify retrieval gaps
+- High-frequency queries with low confidence were flagged for data quality improvements
+- Buyer feedback directly influenced retrieval model tuning and system prompt refinements
+
+This human-in-the-loop design turned users from passive consumers into active system trainers, accelerating both trust and performance improvements.
+
+---
+
 ## Validation
 
 **Approach**
 
 1. **Technology Integration:** I unified the VGS, VPC, and SI+ systems to work cohesively with Gen AI. This required creating data products and ensuring smooth interaction between Gen AI and Microsoft Teams.
-2. **Process Simplification:** The introduction of Gen AI shifted our process from manual search and review to an AI-driven approach. Training the procurement team on these new capabilities and adjusting workflows were essential steps.
-3. **Cultural Shift:** Implementing Gen AI required a shift in mindset, emphasizing a technology-first approach for routine tasks, allowing the human workforce to focus on strategic initiatives.
+2. **Process Simplification:** The introduction of Gen AI shifted our process from manual search and review to an AI-assisted approach with mandatory human verification. Training the procurement team on these new capabilities and adjusting workflows were essential steps.
+3. **Cultural Shift:** Implementing Gen AI required a mindset shift, positioning AI as a decision-support tool rather than a decision-maker, allowing the human workforce to focus on strategic judgment rather than information gathering.
 
 **Validation**
 
@@ -298,6 +389,38 @@ The introduction of Gen AI in procurement is expected to bring significant benef
 - **Future-Proofing:** Gen AI’s adaptability and scalability prepare the procurement department for evolving challenges and growth.
 - **Boosting Employee Morale:** By automating routine tasks, employees can focus on more strategic initiatives, improving job satisfaction and productivity.
 
+## Trade-Offs: What We Intentionally Did NOT Do
+
+Every decision to build something requires an equally clear decision about what NOT to build. Here are the trade-offs I consciously accepted to manage risk and maximize learning velocity:
+
+**1. Did Not Pursue Full Automation**
+- **Why:** Contract decisions carry legal and financial consequences that require human judgment. Automating retrieval without automating interpretation preserved trust while reducing workload.
+- **Impact:** Longer workflows than a fully automated system, but significantly lower risk of consequential errors.
+
+**2. Did Not Optimize for Recall in Early Iterations**
+- **Why:** Prioritized precision over recall to avoid surfacing incorrect or irrelevant contracts. A missed result is recoverable; a wrong result erodes trust permanently.
+- **Impact:** Some edge-case queries returned "no confident answer," requiring manual fallback. This was acceptable during pilot phase.
+
+**3. Did Not Use the Most Advanced LLM**
+- **Why:** GPT-4 would have provided better reasoning, but latency, cost, and stability concerns led us to start with GPT-3.5-turbo for retrieval tasks.
+- **Impact:** Slightly lower answer quality, but faster response times and predictable costs during validation.
+
+**4. Did Not Integrate SI+ in the Initial Pilot**
+- **Why:** SI+ data was fragmented, lacked clear ownership, and had inconsistent structure. Including it would have introduced uncontrollable variability into the PoV.
+- **Impact:** Limited scope, but clean validation of the RAG approach with VGS data.
+
+**5. Did Not Build Custom Embedding Models**
+- **Why:** Off-the-shelf embeddings (OpenAI, Cohere) were sufficient for contract retrieval. Custom models would have delayed launch by months with marginal accuracy gains.
+- **Impact:** Dependency on third-party APIs, but faster time-to-value.
+
+**6. Did Not Cover All Edge Cases Initially**
+- **Why:** Edge cases (multilingual contracts, scanned PDFs, handwritten amendments) represented <5% of queries but would have consumed 40%+ of engineering effort.
+- **Impact:** Explicit "unsupported query" messages for edge cases, with manual escalation paths.
+
+These trade-offs were not technical limitations — they were deliberate risk management decisions that allowed us to validate the core value proposition without overbuilding.
+
+---
+
 ## Roadmap & Non-Goals
 
 To keep scope tight and learning fast, we deferred adjacent use cases:
@@ -307,10 +430,58 @@ To keep scope tight and learning fast, we deferred adjacent use cases:
 
 These non-goals protected the pilot from overreach and kept the first release centered on information retrieval and trust.
 
+## Evolution Over Time: What Broke and How We Adapted
+
+This system did not succeed on the first iteration. Here's what changed as we learned from real-world usage:
+
+**Month 1: Initial Deployment (VGS Only)**
+- **What Worked:** Basic contract retrieval, document search
+- **What Broke:** 32% of queries returned "no confident answer" due to overly conservative confidence thresholds
+- **What Changed:** Lowered retrieval threshold from 0.90 to 0.85, added "partial match" suggestions
+
+**Month 2: Expanded Query Types**
+- **What Worked:** Improved recall, buyers started asking complex multi-part questions
+- **What Broke:** System struggled with queries spanning multiple contracts (e.g., "compare terms across suppliers A, B, C")
+- **What Changed:** Added query decomposition logic to break complex queries into sub-queries, then synthesize results
+
+**Month 3: Integration with VPC**
+- **What Worked:** Cross-system queries became possible
+- **What Broke:** Inconsistent data formats between VGS and VPC caused retrieval failures in 18% of cross-system queries
+- **What Changed:** Built normalization layer to standardize supplier IDs and contract references before retrieval
+
+**Month 4: Trust Drift Incident**
+- **What Broke:** A buyer escalated a case where the AI cited an outdated contract version, leading to a pricing discrepancy
+- **Root Cause:** Document update lag — VGS updates were not syncing to the vector database in real-time
+- **What Changed:** Implemented daily re-indexing schedule + added "last updated" timestamp to all AI responses
+
+**Month 5: High Rejection Rate for Legal Queries**
+- **What Broke:** Legal/compliance queries had 45% rejection rate — buyers didn't trust AI for interpretation
+- **What Changed:** Reclassified all legal queries as "human-only" in routing logic, AI now explicitly says "This requires legal review" and surfaces relevant clauses without interpretation
+
+**Key Assumption Changes:**
+- **Initial Assumption:** Buyers would trust AI if answers were accurate
+- **Reality:** Buyers trusted AI only when they could verify sources quickly
+- **Design Change:** Made source citations one-click accessible, added document previews in-chat
+
+**System Adaptations:**
+- Confidence thresholds adjusted based on query category (retrieval vs. interpretation)
+- Routing logic evolved from binary (AI vs. human) to tiered (AI-assisted, human-verified, human-only)
+- Feedback loop frequency increased from monthly to weekly as usage scaled
+
+**Lessons Learned from Real Incidents:**
+1. **Precision > Recall in High-Stakes Environments:** One wrong answer costs more trust than ten "I don't know" responses
+2. **Document Freshness is a Feature, Not an Afterthought:** Real-time sync is non-negotiable for contract management
+3. **Query Classification is Never "Done":** User behavior evolves, and routing logic must evolve with it
+4. **Transparency Builds Trust Faster Than Accuracy:** Showing sources mattered more than generating perfect summaries
+
+This evolution reinforced the core insight: Enterprise AI systems are never static. The PM's job is to design for drift, monitor for failure modes, and iterate based on real-world breakage.
+
+---
+
 **What I Learned**
 
 - AI adoption is more change management than model management.
-- Users need trust, not just answers.
-- Starting narrow accelerates scaling.
-- Enterprise AI must be safe, explainable, and grounded.
-- The highest-leverage PM work is sequencing: pick the smallest scope that still proves value, then expand with evidence.
+- Users need trust, not just answers — and trust is built through transparency, not perfection.
+- Starting narrow with clear risk boundaries accelerates scaling.
+- Enterprise AI must be safe, explainable, and grounded — or it will not be used.
+- The highest-leverage PM work is not building features — it's designing decision boundaries, anticipating failure modes, and structuring systems that degrade safely under uncertainty.
