@@ -4,16 +4,21 @@ title: Cynthia Mengyuan Li
 subtitle: Product Manager & more
 ---
 
-👋 Hi there! I’m Cynthia, a former engineer turned product manager, building data and AI products that automate workflows and scale globally.
+👋 Hi, I’m Cynthia. I build AI decision systems for high-risk, policy-constrained environments, where accuracy, accountability, and scale all matter.
 
-I’ve shipped products across Europe, Asia, and the U.S. at Volvo Cars, SAP, Airwallex, and Alibaba, including GenAI procurement tools, cross-border commerce, and payment infra.
+My work focuses on turning ambiguous, high-impact problems into controllable systems: combining LLM-powered and agentic workflows with human-in-the-loop governance, clear risk boundaries, and measurable quality signals.
 
-I’m especially interested in:
-- Enterprise AI capabilities & data platforms
-- Enable adoption by driving AI Quality & Safety
-- Cross-border eCommerce and logistics
+I’ve shipped and scaled products across Europe, Asia, and the U.S. at Volvo Cars, SAP, Airwallex, and Alibaba, spanning trade compliance, procurement decision support, cross-border commerce, and payment infrastructure. Across domains, the common thread has been designing AI systems that support better decisions under uncertainty.
 
-Also, check out all my other links on my [portrait](https://portrait.so/cynthiali) if you want to know more about me.
+I’m particularly focused on:
+
+- AI decision platforms and internal systems at scale
+- Trust, safety, and governance for production AI
+- Enabling adoption by making AI systems trustworthy
+
+Outside of work, I build small apps and internal tools, and write about technology, career growth, and women in tech.
+
+Check out all my other links on my [portrait](https://portrait.so/cynthiali) if you want to know more about me.
 
 ---
 
