@@ -90,7 +90,7 @@ It also created a fair comparison between countries with different scales and ro
 
 One challenge with measuring manual work is that a lot of it lives only in people’s heads.
 
-Workshops and interviews work, but they don’t scale well — and they often miss the small decisions, exceptions, and workarounds that make up real day-to-day effort.
+Workshops and interviews work, but they don’t scale well and they often miss the small decisions, exceptions, and workarounds that make up real day-to-day effort.
 
 I started exploring how AI could help here, not by automating decisions, but by making it easier for business users to **externalize how their work is actually done**.
 

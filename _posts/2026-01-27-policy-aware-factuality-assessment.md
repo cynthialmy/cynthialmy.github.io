@@ -86,7 +86,7 @@ A frontier model assesses whether claims are likely true, likely false, or uncer
 
 > **Design Decision: Separating Factuality from Policy Interpretation**
 >
-> This system intentionally separates factuality assessment from policy interpretation. In early designs, combining these steps caused the system to become overconfident in gray-area health claims—false claims were treated as automatically violative, even when policy guidance was ambiguous or evolving.
+> This system intentionally separates factuality assessment from policy interpretation. In early designs, combining these steps caused the system to become overconfident in gray-area health claims. False claims were treated as automatically violative, even when policy guidance was ambiguous or evolving.
 >
 > This increased false positives and pushed the system toward over-enforcement. By isolating factuality as a non-enforcement signal, the system can acknowledge uncertainty without prematurely triggering action.
 
@@ -147,7 +147,7 @@ Human overrides, appeal reversals, and disagreement between automated decisions 
 **3. Human review concentration**
 The percentage of human review capacity spent on high-risk, high-uncertainty cases. If reviewers are overloaded with low-impact content, the system is misallocating attention.
 
-Precision and recall are tracked internally as guardrail metrics, but they are not the optimization target. The goal is not to be "right" on every item—it is to make the *right mistakes* less often, and only where they are recoverable.
+Precision and recall are tracked internally as guardrail metrics, but they are not the optimization target. The goal is not to be "right" on every item . It is to make the *right mistakes* less often, and only where they are recoverable.
 
 ## Human Review: The Safety Net
 

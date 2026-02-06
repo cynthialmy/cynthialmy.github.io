@@ -16,7 +16,7 @@ At Volvo Cars, dozens of teams gained the ability to publish data products indep
 
 Cross-domain integrations broke without warning. Schema drift caused downstream pipeline failures. Data quality issues surfaced late, expensively, and blamed no one specifically.
 
-The real problem wasn't technical—it was **unmanaged risk in a federated system**.
+The real problem was **unmanaged risk in a federated system**.
 
 **My approach:** Turn an ambiguous governance challenge into a controllable decision system by:
 - Categorizing risk explicitly

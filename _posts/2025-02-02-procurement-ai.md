@@ -11,15 +11,15 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-Procurement at Volvo Cars manages 1,169 suppliers, 7,000+ contracts, and millions in spend distributed across three fragmented legacy systems (VGS, VPC, SI+). The core challenge was not simply "making procurement faster" — it was designing a decision system that could safely automate information retrieval without introducing new forms of risk in a highly regulated, high-stakes environment.
+Procurement at Volvo Cars manages 1,169 suppliers, 7,000+ contracts, and millions in spend distributed across three fragmented legacy systems (VGS, VPC, SI+). The core challenge was designing a decision system that could safely automate information retrieval without introducing new forms of risk in a highly regulated, high-stakes environment.
 
 This case study demonstrates how I transformed an ambiguous problem space into a controllable AI system by: explicitly mapping decision boundaries, designing human-in-the-loop mechanisms as first-class features, establishing risk categorization frameworks, and building escalation paths that degrade safely under uncertainty.
 
-The outcome was not just time savings — it was a trust architecture that procurement teams could confidently rely on for contract decisions.
+The outcome was a trust architecture that procurement teams could confidently rely on for contract decisions.
 
 ## Risk Framing: Categorizing What Could Go Wrong
 
-Before defining any solution, I established a risk categorization framework. Introducing AI into procurement is not just a productivity play — it carries legal, financial, and compliance implications. I mapped risks across three dimensions:
+Before defining any solution, I established a risk categorization framework. Introducing AI into procurement carries legal, financial, and compliance implications. I mapped risks across three dimensions:
 
 **Risk Matrix: Impact × Reversibility × Data Sensitivity**
 
@@ -301,7 +301,7 @@ Integrating Gen AI with our procurement systems (VGS, VPC, and SI+) enables natu
 
 ## Human-in-the-Loop as First-Class Design
 
-I designed the system with the assumption that AI outputs would require human verification. This was not a limitation — it was a trust mechanism. Human-in-the-loop was architected as a first-class feature, not an afterthought.
+I designed the system with the assumption that AI outputs would require human verification. This was a trust mechanism. Human-in-the-loop was architected as a first-class feature, not an afterthought.
 
 **Reviewer Workflow:**
 1. AI surfaces answer with source citations
@@ -417,7 +417,7 @@ Every decision to build something requires an equally clear decision about what 
 - **Why:** Edge cases (multilingual contracts, scanned PDFs, handwritten amendments) represented <5% of queries but would have consumed 40%+ of engineering effort.
 - **Impact:** Explicit "unsupported query" messages for edge cases, with manual escalation paths.
 
-These trade-offs were not technical limitations — they were deliberate risk management decisions that allowed us to validate the core value proposition without overbuilding.
+These trade-offs were deliberate risk management decisions that allowed us to validate the core value proposition without overbuilding.
 
 ---
 
@@ -451,11 +451,11 @@ This system did not succeed on the first iteration. Here's what changed as we le
 
 **Month 4: Trust Drift Incident**
 - **What Broke:** A buyer escalated a case where the AI cited an outdated contract version, leading to a pricing discrepancy
-- **Root Cause:** Document update lag — VGS updates were not syncing to the vector database in real-time
+- **Root Cause:** Document update lag: VGS updates were not syncing to the vector database in real-time
 - **What Changed:** Implemented daily re-indexing schedule + added "last updated" timestamp to all AI responses
 
 **Month 5: High Rejection Rate for Legal Queries**
-- **What Broke:** Legal/compliance queries had 45% rejection rate — buyers didn't trust AI for interpretation
+- **What Broke:** Legal/compliance queries had 45% rejection rate as buyers didn't trust AI for interpretation
 - **What Changed:** Reclassified all legal queries as "human-only" in routing logic, AI now explicitly says "This requires legal review" and surfaces relevant clauses without interpretation
 
 **Key Assumption Changes:**
@@ -481,7 +481,7 @@ This evolution reinforced the core insight: Enterprise AI systems are never stat
 **What I Learned**
 
 - AI adoption is more change management than model management.
-- Users need trust, not just answers — and trust is built through transparency, not perfection.
+- Users need trust, not just answers and trust is built through transparency, not perfection.
 - Starting narrow with clear risk boundaries accelerates scaling.
-- Enterprise AI must be safe, explainable, and grounded — or it will not be used.
-- The highest-leverage PM work is not building features — it's designing decision boundaries, anticipating failure modes, and structuring systems that degrade safely under uncertainty.
+- Enterprise AI must be safe, explainable, and grounded or it will not be used.
+- The highest-leverage PM work is designing decision boundaries, anticipating failure modes, and structuring systems that degrade safely under uncertainty.
