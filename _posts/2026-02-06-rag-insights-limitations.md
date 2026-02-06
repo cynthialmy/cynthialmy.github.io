@@ -4,8 +4,8 @@ title: "RAG and Context Engineering: Insights, Limitations, and When Not to Use 
 subtitle: Why retrieval-augmented generation is powerful but not universal, and what mature AI product thinking looks like
 tags: [RAG, Context Engineering, Agentic RAG, Information Retrieval, AI Architecture, Product Thinking, LLM Systems]
 project_type: other
-thumbnail-img: assets/img/rag-insights-limitations.png
-share-img: assets/img/rag-insights-limitations.png
+thumbnail-img: assets/img/rag-insights-limitations.jpg
+share-img: assets/img/rag-insights-limitations.jpg
 comments: true
 ---
 
@@ -172,6 +172,8 @@ Retrieval-Augmented Generation (RAG) has become the default architecture for gro
 - **Layer 2**: Evidence chunks (citation only)
 
 ---
+
+![rag-insights-limitations](assets/img/rag-insights-limitations.jpg)
 
 ## When NOT to Use RAG
 
