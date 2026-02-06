@@ -10,19 +10,23 @@ share-img: assets/img/data_contract_1.png
 # author: Cynthia Mengyuan Li
 ---
 
-At Volvo Cars, dozens of teams gained the ability to publish data products independently. Speed increased dramatically. So did the rate of silent failures.
+At Volvo Cars, dozens of domain teams gained the ability to publish data products independently under a federated data mesh architecture. Development velocity increased dramatically. So did the rate of silent failures.
 
-Cross-domain integrations broke without warning, leaving consumers scrambling to identify root causes. Schema drift caused downstream pipeline failures that took hours or days to debug. Data quality issues surfaced late in the process, creating expensive remediation work while pointing fingers at no one specifically responsible.
+Cross-domain integrations broke without warning, leaving consumer teams scrambling to identify root causes across organizational boundaries. Schema drift caused downstream pipeline failures that took hours or days to debug. Data quality issues surfaced late in the process, creating expensive remediation work while no one could be held specifically responsible.
 
-The real problem wasn't technical. It was **unmanaged risk in a federated system** where autonomy and reliability were treated as opposing forces.
+I did not receive a clean problem statement. What I inherited was a growing collection of outages, finger-pointing between domain teams, and executive frustration that "data mesh" was not delivering on its promise. The obvious solution would have been to centralize control, but that would have killed the autonomy that made the architecture valuable in the first place.
 
-**My approach:** I turned this ambiguous governance challenge into a controllable decision system by categorizing risk explicitly across multiple dimensions, designing clear validation boundaries that define where automation ends, and building human-in-the-loop gates at critical decision points where machine judgment alone would be insufficient.
+The real problem was not technical. It was **unmanaged risk in a federated system** where autonomy and reliability were treated as opposing forces. No existing tool addressed this tension directly, because the challenge sat at the intersection of governance policy, organizational incentives, and system design.
+
+**What I chose to do:** I reframed the governance problem as a decision-routing problem. Instead of building a compliance gate, I designed a system that categorizes risk explicitly, defines clear boundaries for where automation ends and human judgment begins, and routes decisions to the right people at the right time. This approach preserved team autonomy while making reliability a shared, enforceable property.
 
 ---
 
-## 1. How I Framed Risk (Not Just Solved Problems)
+## 1. Problem Framing: Classifying Risk Before Building Anything
 
-Most governance systems treat all failures equally. I didn't.
+Before writing a single line of code, I needed to understand what kinds of failures actually mattered. Most governance systems treat all violations identically, applying the same process to a missing metadata tag and a breaking schema change. That uniformity creates two problems: it overwhelms reviewers with noise, and it desensitizes teams to real risk.
+
+I spent the first two weeks interviewing domain owners, data engineers, and platform leads across six teams. The signal I used to narrow the problem was the pattern of past incidents: what broke, how long it took to detect, and whether the damage was reversible. From those conversations, I built a risk categorization matrix that became the foundation for every automation and routing decision in the system.
 
 ### Risk Categorization Matrix
 
@@ -55,16 +59,27 @@ Some decisions are inherently human and should never be delegated to machines. D
 
 ### Why This Framing Mattered
 
-Traditional governance asks: *"Is this data good?"*  
-I reframed it as: *"What's the worst that happens if this passes?"*
+Traditional governance asks: *"Is this data good?"* I reframed the question as: *"What is the worst that happens if this passes unchecked?"*
 
-This shifted conversations from compliance theater to risk-adjusted decision-making.
+This reframing shifted conversations from compliance theater to risk-adjusted decision-making. It also gave engineering and legal stakeholders a shared language for evaluating changes. Instead of debating whether something "should be reviewed," teams could point to the matrix and agree on the appropriate response based on impact, reversibility, and detection window.
+
+### What I Explicitly Decided Not to Solve
+
+I chose not to build a general-purpose data quality platform. The scope could have expanded to cover data profiling, anomaly detection, or lineage visualization. I rejected all of those for the initial release because they would have delayed the core value proposition: giving producers and consumers a reliable, low-friction way to negotiate data interfaces. Solving the contract problem first created the foundation that made those other capabilities viable later.
 
 ---
 
-## 2. System Design Under Uncertainty
+## 2. System Design: Choosing the Architecture Under Uncertainty
 
-The Data Contract Manager isn't a form builder. It's a **decision routing system** disguised as a UX layer.
+I evaluated three design approaches before settling on the current architecture.
+
+**Option A: Centralized approval workflow.** Every contract change goes through a single governance team. This approach maximizes control but creates a bottleneck. At the rate teams were shipping data products, the governance team would have needed to review over 200 contracts per month. I rejected this because it would have made governance the enemy of velocity.
+
+**Option B: Fully automated validation with no human gates.** Every check is deterministic and machine-enforced. This approach maximizes speed but cannot handle ambiguity. Breaking change detection, semantic conflicts, and compliance edge cases all require judgment that no rule engine can reliably automate. I rejected this because the false-negative risk was too high for a regulated automotive environment.
+
+**Option C: Risk-tiered routing with adaptive automation boundaries.** This is the approach I chose. Low-risk changes auto-approve. Medium-risk changes go to platform engineers. High-risk changes trigger cross-domain negotiation. The boundaries between tiers shift over time as the system learns from human decisions.
+
+I chose Option C because it balanced speed against safety in a way that could improve over time. The Data Contract Manager is not a form builder. It is a **decision routing system** with a UX layer designed to make the routing feel natural to producers and reviewers.
 
 ### Decision Flow Architecture
 
@@ -96,9 +111,9 @@ graph TD
     style J fill:#d1ecf1
 ```
 
-### Failure Modes & Safe Degradation
+### Failure Modes and Safe Degradation
 
-**What happens when things break?**
+I designed for failure from the beginning, because in a distributed system serving dozens of teams, partial outages are inevitable.
 
 | Failure Scenario | System Response | Fallback Path |
 |------------------|----------------|---------------|
@@ -123,9 +138,9 @@ Successful processing generates four key outputs. The validated contract is stor
 
 ---
 
-## 3. Human-in-the-Loop as a First-Class Design Choice
+## 3. AI and Human Judgment as Complementary System Components
 
-Unlike "full automation" platforms, I designed human judgment as a **reliability feature, not a fallback**.
+A common instinct in platform design is to automate humans out of the loop entirely. I took the opposite position. I designed human judgment as a **reliability feature, not a fallback**. The AI components in this system, including NLP-based semantic analysis, automated impact detection, and adaptive threshold tuning, exist to reduce the cost and friction of human review, not to replace it.
 
 ![data_contract](../assets/img/data_contract_1.png)
 
@@ -143,89 +158,86 @@ When the system detects potential breaking changes but the impact appears contai
 
 The most complex scenario arises when a contract change affects more than five downstream consumers or modifies the definition of a core business entity. In these cases, the system automatically routes the proposal to all impacted domain owners, initiating an in-tool negotiation process. Producers explain their rationale, consumers voice concerns about migration costs or timing, and the platform team serves as a neutral mediator when conflicts arise. This collaborative process takes a median of two days but results in a 94% acceptance rate after negotiation, demonstrating that given sufficient communication, most cross-domain conflicts can be resolved to everyone's satisfaction.
 
-### How Feedback Changes System Behavior
+### How AI Learned from Human Decisions
 
-**Early System (Month 1-3):**
+The AI components in the system are not static rule engines. They adapt based on structured feedback from human reviewers, and this feedback loop is what makes the automation trustworthy over time.
+
+**Early System (Month 1 through 3):**
 - Flagged 40% of contracts for human review
-- Over-cautious breaking change detection
-- High false-positive rate on "semantic drift"
+- Breaking change detection was over-cautious, generating excessive false positives
+- Semantic drift analysis had a 12% false-positive rate
 
 **Feedback Loop Implementation:**
-- Platform team marks false positives
-- Accepted breaking changes tagged with justification
-- System learns organizational risk tolerance
+- Platform engineers mark false positives with structured annotations
+- Accepted breaking changes are tagged with justification categories
+- The system learns the organization's actual risk tolerance from these signals
 
-**Mature System (Month 6+):**
-- Human review rate dropped to 18%
-- False positive rate: 12% → 3%
-- Zero undetected breaking changes in production
+**Mature System (Month 6 onward):**
+- Human review rate dropped to 18%, a 55% reduction in reviewer workload
+- False positive rate fell from 12% to 3%
+- Zero undetected breaking changes reached production
 
-**Key Insight:** The system doesn't just validate contracts. It **learns organizational boundaries** through human signals.
+**Key Insight:** The system does not just validate contracts. It **learns organizational boundaries** through human signals. Each review decision trains the system to better distinguish routine changes from genuinely risky ones.
 
-### Why This Matters
+### Why This Matters for AI in Enterprise Systems
 
-Most platforms treat human review as friction to eliminate.  
-I designed it as **the mechanism that makes automation trustworthy**.
+Most platforms treat human review as friction to eliminate. I designed it as **the mechanism that makes automation trustworthy**. The AI reduces the volume of decisions humans need to make. The humans teach the AI where the real boundaries are. This feedback loop is what allows the system to scale without losing reliability.
 
 ---
 
 ## 4. Trade-Offs I Consciously Accepted
 
-Every design is a series of deliberate "no" decisions. Here are mine.
+Every design is a series of deliberate decisions about what not to do. The trade-offs below reflect the constraints I navigated across engineering, legal, and organizational boundaries.
 
 ### What We Intentionally Did NOT Do
 
-**❌ Did not pursue full automation**  
-*Why:* High-stakes changes (core entities, wide-impact deprecations) require human judgment on business context the system cannot infer.  
-*Cost:* 18% of contracts wait hours-to-days for human review.  
-*Benefit:* Zero major production incidents from unreviewed breaking changes.
+**Did not pursue full automation.**
+High-stakes changes affecting core entities and wide-impact deprecations require human judgment on business context that the system cannot infer. The cost is that 18% of contracts wait hours to days for human review. The benefit is zero major production incidents from unreviewed breaking changes.
 
-**❌ Did not optimize for contract creation speed early**  
-*Why:* Fast, wrong contracts are worse than slow, correct ones.  
-*Cost:* Early adopters complained about "too many validation errors."  
-*Benefit:* Schema breakages in downstream pipelines dropped 73% in 6 months.
+**Did not optimize for contract creation speed early.**
+Fast, incorrect contracts are worse than slow, correct ones. This was a deliberate choice to prioritize correctness over velocity during the adoption phase. Early adopters complained about "too many validation errors," but schema breakages in downstream pipelines dropped 73% within six months.
 
-**❌ Did not enforce contracts retroactively on existing datasets**  
-*Why:* Would have blocked 200+ legacy pipelines, killing adoption.  
-*Cost:* ~40% of organizational data remains uncontracted.  
-*Benefit:* New data products adopted contracts willingly; legacy systems migrated gradually.
+**Did not enforce contracts retroactively on existing datasets.**
+Retroactive enforcement would have blocked over 200 legacy pipelines and killed adoption entirely. I chose to accept that roughly 40% of organizational data remains uncontracted. The benefit is that new data products adopted contracts willingly, and legacy systems are migrating gradually on their own timelines.
 
-**❌ Did not cover edge cases initially**  
-*Why:* 90% of contracts follow 3 standard patterns (event streams, dimension tables, aggregated metrics).  
-*Cost:* Advanced users (ML teams, real-time analytics) needed custom workarounds.  
-*Benefit:* Core user base (data engineers, BI teams) onboarded 3x faster.
+**Did not cover edge cases initially.**
+90% of contracts follow three standard patterns: event streams, dimension tables, and aggregated metrics. Optimizing for these three patterns meant that advanced users on ML and real-time analytics teams needed custom workarounds. The trade-off was worth it because the core user base of data engineers and BI teams onboarded three times faster.
 
-**❌ Did not use the strongest validation rules from day one**  
-*Why:* Organizational data quality culture was immature.  
-*Cost:* Early contracts had looser quality guarantees.  
-*Benefit:* Teams built trust in the system before tightening rules. Adoption grew 10x in 8 months.
+**Did not use the strongest validation rules from day one.**
+The organization's data quality culture was immature. Imposing strict rules immediately would have generated resistance and driven teams away from the system. I chose to start with looser guarantees and tighten them as teams built trust. Adoption grew tenfold in eight months as a result.
 
-### What This Reveals
+### What This Reveals About Product Judgment
 
-Seniority isn't knowing all the answers. It's **knowing which problems to defer**.
+Seniority is not about knowing all the answers. It is about **knowing which problems to defer and which constraints to accept** in order to deliver value within a complex organizational environment.
 
 ---
 
-## 5. Evolution Over Time (Not Static Success)
+## 5. Cross-Functional Leadership and Evolution Over Time
 
-The system that exists today is not the system we launched.
+The system that exists today is not the system we launched. Every major improvement came from navigating stakeholder tensions, conflicting incentives, and organizational resistance.
+
+### How I Drove Alignment Without Authority
+
+I did not have organizational authority over the domain teams, the platform engineering group, or the legal and compliance stakeholders. Alignment required structured persuasion across groups with fundamentally different incentives.
+
+**Domain teams** wanted maximum autonomy and minimum process overhead. They viewed governance as friction. I earned their buy-in by designing the low-risk auto-approval path first, proving that the system could accelerate their workflow rather than slow it down.
+
+**Platform engineers** wanted reliability guarantees and standardized interfaces. They were willing to accept process overhead in exchange for fewer production incidents. I aligned with them by making the impact analysis and dependency tracking features their primary tools for incident prevention.
+
+**Legal and compliance stakeholders** needed audit trails and enforceable data handling policies for GDPR and automotive safety regulations. I built the immutable audit log and compliance-sensitive exception workflow specifically to address their requirements, which also gave the project executive sponsorship.
+
+These groups disagreed regularly. When domain teams pushed back on breaking change review timelines, I facilitated decision forums where affected parties could negotiate directly, with clear escalation paths when consensus failed.
 
 ### What Broke
 
-**Month 2: Schema Registry Integration Failed**
-- Azure schema registry had intermittent connection issues
-- Contracts validated but failed to publish
-- **Fix:** Added async retry queue + manual override path
+**Month 2: Schema Registry Integration Failed.**
+The Azure schema registry had intermittent connection issues. Contracts validated successfully but failed to publish. I added an async retry queue and a manual override path so that producers were never blocked by infrastructure instability.
 
-**Month 4: "Breaking Change" Detection Was Too Sensitive**
-- Flagged 62% of updates as breaking (mostly false positives)
-- Added new nullable field? Flagged as breaking.
-- **Fix:** Refined detection logic; backwards-compatible changes auto-approved
+**Month 4: Breaking Change Detection Was Too Sensitive.**
+The system flagged 62% of updates as breaking changes, most of which were false positives. Adding a new nullable field triggered the same alert as removing a required column. I refined the detection logic to distinguish backwards-compatible changes from genuinely breaking ones, and backwards-compatible additions now auto-approve.
 
-**Month 7: Cross-Domain Negotiation Became a Bottleneck**
-- High-impact changes took 2+ weeks to resolve
-- Platform team became arbiters of business logic disputes
-- **Fix:** Added expiration timers + escalation paths to VP-level stakeholders
+**Month 7: Cross-Domain Negotiation Became a Bottleneck.**
+High-impact changes took over two weeks to resolve because the platform team had become the default arbiters of business logic disputes. I added expiration timers and escalation paths to VP-level stakeholders, which reduced median resolution time from fourteen days to two days.
 
 ### What Drifted
 
@@ -243,43 +255,56 @@ The system that exists today is not the system we launched.
 
 **Early System:**
 
-When we first launched, the system operated with a conservative 40% human review rate. We erred on the side of caution, flagging any change that seemed remotely ambiguous or potentially impactful. This conservative automation strategy was intentional. We needed to build organizational trust and observe failure patterns before expanding automation boundaries.
+When we first launched, the system operated with a conservative 40% human review rate. We erred on the side of caution, flagging any change that seemed remotely ambiguous or potentially impactful. This conservative strategy was intentional. We needed to build organizational trust and observe failure patterns before expanding automation boundaries.
 
 **Current System:**
 
-After six months of learning from human decisions, the review rate dropped to 18%. We expanded automation to confidently handle scenarios that initially seemed risky but proved routine in practice. Backwards-compatible schema additions, like adding new optional fields or expanding enums, now auto-approve because they cannot break existing consumers. Metadata-only updates that change descriptions, examples, or documentation proceed without review since they affect discoverability but not data structure. Quality rule relaxations, such as allowing wider value ranges or accepting null values, can be automated because they make validation less strict. However, quality rule tightening still requires human review because it can cause existing data to suddenly fail validation.
+After six months of learning from human decisions, the review rate dropped to 18%. We expanded automation to confidently handle scenarios that initially seemed risky but proved routine in practice. Backwards-compatible schema additions now auto-approve because they cannot break existing consumers. Metadata-only updates proceed without review since they affect discoverability but not data structure. Quality rule relaxations can be automated because they make validation less strict. However, quality rule tightening still requires human review because it can cause existing data to suddenly fail validation.
 
 **What stayed human-only:**
 
-Despite expanded automation, certain scenarios remain firmly in the human judgment zone. Breaking changes to core entities like customer, order, or product definitions always require review because these concepts anchor the entire data ecosystem. Cross-domain semantic conflicts, where two teams define the same concept differently, need human negotiation to resolve business logic disagreements. Exception requests for compliance-sensitive data must go through legal and privacy review, a responsibility we will never delegate to automation regardless of how sophisticated our systems become.
+Despite expanded automation, certain scenarios remain firmly in the human judgment zone. Breaking changes to core entities like customer, order, or product definitions always require review because these concepts anchor the entire data ecosystem. Cross-domain semantic conflicts need human negotiation to resolve business logic disagreements that no algorithm can adjudicate. Exception requests for compliance-sensitive data must go through legal and privacy review. This is a responsibility we will never delegate to automation regardless of how sophisticated our systems become.
 
 ### Lessons from Real Incidents
 
-**Incident 1:** Producer deprecated a field still used by 12 downstream dashboards.  
-**Root cause:** Dependency graph was incomplete (consumers self-registered pipelines but not BI tools).  
-**System change:** Added BI tool lineage tracking. Breaking change detection now scans dashboards, not just pipelines.
+**Incident 1:** A producer deprecated a field that was still actively used by 12 downstream dashboards.
+**Root cause:** The dependency graph was incomplete because consumers had self-registered their pipelines but not their BI tools. The system had no visibility into dashboard-level dependencies.
+**System change:** I added BI tool lineage tracking so that breaking change detection now scans dashboards and reports, not just data pipelines.
 
-**Incident 2:** Quality rule change caused 3-day pipeline backlog.  
-**Root cause:** Producer tightened a rule; 40% of historical data suddenly failed validation.  
-**System change:** New quality rules apply only to new data by default. Retroactive enforcement requires explicit flag + platform approval.
+**Incident 2:** A quality rule change caused a three-day pipeline backlog affecting multiple consumer teams.
+**Root cause:** A producer tightened a validation rule, and 40% of historical data suddenly failed the new check. The system had no mechanism to distinguish new data from historical data during validation.
+**System change:** New quality rules now apply only to incoming data by default. Retroactive enforcement requires an explicit flag and platform team approval.
 
-### Why This Section Matters
+### Why Evolution Matters
 
-Static portfolios show success.  
-Evolution shows **how you think when reality fights back**.
+Static portfolios show success. Evolution shows **how you think when reality contradicts your assumptions**. Every change described above came from structured incident analysis, stakeholder negotiation, and deliberate prioritization of which fixes would prevent the most costly future failures.
+
+---
+
+## Measurable Outcomes
+
+The system delivered concrete, measurable improvements across four dimensions:
+
+| Metric | Before | After | Timeframe |
+|--------|--------|-------|-----------|
+| **Schema breakages in downstream pipelines** | Frequent, multi-day debugging | 73% reduction | 6 months |
+| **Human review overhead** | N/A (no structured process) | 18% of contracts reviewed, 82% auto-approved | 6 months |
+| **False positive rate in breaking change detection** | N/A | Reduced from 12% to 3% | 6 months |
+| **Cross-domain negotiation resolution time** | 14+ days | 2 days median | 7 months |
+| **Adoption** | 0 contracted data products | 10x growth in contracted products | 8 months |
+| **Undetected breaking changes in production** | Regular occurrence | Zero | 6 months onward |
+
+These are not vanity metrics. Each one maps to a specific cost, risk, or throughput improvement that the organization can quantify.
 
 ---
 
 ## Closing: What This System Really Does
 
-The Data Contract Manager doesn't just validate schemas.
+The Data Contract Manager does not just validate schemas.
 
-It turns **"Who owns this data?"** into a routing decision.  
-It turns **"Is this change safe?"** into a risk classification.  
-It turns **"Should we allow this?"** into a controllable system with known degradation paths.
+It turns **"Who owns this data?"** into a routing decision with clear accountability. It turns **"Is this change safe?"** into a risk classification with known response paths. It turns **"Should we allow this?"** into a controllable system with explicit degradation modes.
 
-**The single narrative:**  
-I took an ambiguous governance problem, how to enable autonomy without breaking trust, and built a decision system with clear boundaries, explicit trade-offs, and human judgment where it matters most.
+**The single narrative:** I took an ambiguous governance problem in a regulated, cross-functional environment and built a decision system with clear boundaries, explicit trade-offs, and human judgment precisely where it matters most. The result is a system that scales governance without sacrificing the autonomy that makes federated architecture valuable.
 
 ---
 
