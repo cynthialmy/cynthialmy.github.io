@@ -188,16 +188,6 @@ The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformatio
 
 The full source code and architecture documentation are available in the repository at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow). It is designed to be inspectable and educational.
 
-## The Bigger Picture
-
-This demo is intentionally designed to explore decision-making patterns in high-stakes domains. Real-world content moderation requires multilingual support, multimedia understanding, real-time processing at scale, and adversarial robustness.
-
-The patterns here apply beyond misinformation to any domain where AI needs to help humans make better decisions under uncertainty.
-
-Whether you are building content moderation, compliance review, medical triage, or fraud detection systems, the core challenge is the same. How do you combine AI pattern recognition with human judgment and accountability?
-
-This project is one attempt at an answer. The code is open, the architecture is documented, and I would love to hear what you think.
-
 ---
 
 Want to explore the technical details? Check out the [architecture documentation](https://github.com/yourusername/llm-misinformation) and [API usage guide](https://github.com/yourusername/llm-misinformation/blob/main/API_Usage_Explanation.md). The demo is running at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).

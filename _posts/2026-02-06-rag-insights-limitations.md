@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "RAG and Context Engineering: Insights, Limitations, and When Not to Use It"
-subtitle: Why retrieval-augmented generation is powerful but not universal, and what mature AI product thinking looks like
+title: "RAG vs Context Engineering Insights and Limitations"
+subtitle: Why retrieval-augmented generation is not universal 
 tags: [RAG, Context Engineering, Agentic RAG, Information Retrieval, AI Architecture, Product Thinking, LLM Systems]
 project_type: other
 thumbnail-img: assets/img/rag-insights-limitations.jpg
@@ -311,26 +311,8 @@ Retrieval-Augmented Generation (RAG) has become the default architecture for gro
 
 > Don't spend energy learning to build a simple wheel when advanced engines are already at your disposal. Master first principles (Agentic thinking, joint optimization, information retrieval fundamentals) and any new paradigm (RAG 2.0 or otherwise) becomes navigable.
 
-**Mature design principle:**
+**Design principle:**
 
 > RAG is not broken, but treating it as universal is where risk begins.
 >
 > Maturity is not "add more RAG." It is knowing when to say "I don't know right now."
-
----
-
-## Connecting to TikTok: Why RAG Does Not Fit
-
-For TikTok's emerging misinformation, RAG is the wrong tool because:
-- Facts have not stabilized, so there is no baseline to retrieve
-- Novel tactics evolve daily, making historical data instantly stale
-- Minute-level scale means RAG cannot deliver real-time judgment
-
-You need event-level governance that manages velocity under uncertainty, not retrieval that assumes stable truth.
-
-This connects technical boundaries to TikTok's specific challenges:
-- **Massive scale**: Content generated every second requires coverage at scale
-- **Emerging events**: New misinformation appears before detection models are trained
-- **Content authenticity**: AIGC, edited media, intellectual property, fake engagement
-
-**Key insight:** RAG assumes a stable knowledge foundation, but TikTok faces **velocity management under uncertainty**.
