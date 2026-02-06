@@ -11,8 +11,7 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-
-I began this project with a vague hypothesis: new parents are overwhelmed, and "something with AI" could help. That is not a product. It is a sentiment wrapped in a buzzword. The real work was figuring out *which* problems were acute enough to warrant a new tool, *where* AI would genuinely reduce friction rather than add complexity, and *what* to explicitly leave out of scope.
+This project began with a vague hypothesis: new parents are overwhelmed, and "something with AI" could help. That is not a product. It is a sentiment wrapped in a buzzword. The real work was figuring out *which* problems were acute enough to warrant a new tool, *where* AI would genuinely reduce friction rather than add complexity, and *what* to explicitly leave out of scope.
 
 Through 20 one-on-one interviews, 4 focus groups, contextual in-home observations, and a 150-respondent survey, I narrowed a sprawling problem space into a single, defensible product bet: **akaTask**, an AI-assisted task management surface that automates routine parenting decisions (meal planning, activity generation, gentle parenting scripts) and reduces cognitive load by an estimated 40 minutes per day per household.
 
