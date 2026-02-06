@@ -112,7 +112,7 @@ This layer covers the application interface and user documentation. I designed u
 
 ## Human-in-the-Loop as First-Class Design
 
-One of the most critical insights from this project is that human oversight is not a fallback—it is the primary control mechanism. I designed the system so that humans and AI operate as partners in a structured decision workflow, with clear roles, feedback loops, and trust calibration mechanisms.
+One of the most critical insights from this project is that human oversight is not a fallback. It is the primary control mechanism. I designed the system so that humans and AI operate as partners in a structured decision workflow, with clear roles, feedback loops, and trust calibration mechanisms.
 
 **Reviewer Workflows**
 
@@ -144,7 +144,7 @@ I implemented monitoring dashboards that track:
 - Time-to-decision with vs without AI assistance
 - False positive rate (AI flagged uncertainty but human found answer acceptable)
 
-After the first month, we observed that acceptance rates increased from 72% to 89% as users learned how to formulate better queries. This validated that both the system and users needed calibration—not just the model.
+After the first month, we observed that acceptance rates increased from 72% to 89% as users learned how to formulate better queries. This validated that both the system and users needed calibration, not just the model.
 
 **Trust Building Through Transparency**
 
@@ -228,7 +228,7 @@ Trade-off Accepted: More complex system architecture with multiple model types. 
 
 **We Did Not Cover Edge Cases Initially**
 
-Why: Procurement contracts have infinite edge cases—multilingual amendments, handwritten annotations, redacted sections, legacy formats. Attempting to handle all variations upfront would have delayed launch indefinitely.
+Why: Procurement contracts have infinite edge cases, including multilingual amendments, handwritten annotations, redacted sections, and legacy formats. Attempting to handle all variations upfront would have delayed launch indefinitely.
 
 Trade-off Accepted: The system explicitly flagged "unsupported document types" and routed them to human review. We prioritized the 80% common case, then iteratively expanded coverage based on real usage patterns.
 
@@ -256,7 +256,7 @@ The system I deployed in month one looked very different from the system in mont
 
 **Initial Assumption:** Procurement contracts follow standardized templates with consistent section headers and clause numbering.
 
-**Reality:** After three months, we encountered contracts with non-standard formatting—merged PDFs, scanned images, multilingual sections, and supplier-specific templates.
+**Reality:** After three months, we encountered contracts with non-standard formatting, including merged PDFs, scanned images, multilingual sections, and supplier-specific templates.
 
 **What Happened:** The RAG retrieval system failed to extract relevant sections because it relied on section header patterns that didn't exist in these documents. Similarity scores dropped below threshold, and queries returned "insufficient information" even when answers were present.
 
@@ -315,12 +315,12 @@ The system I deployed in month one looked very different from the system in mont
 
 **Key Lesson: Static Systems Fail in Dynamic Environments**
 
-The most valuable realization was that trust in AI systems is not earned once—it is continuously maintained. Every month brought new edge cases, shifting user expectations, and evolving document formats. The system survived because it was designed to adapt, not to be perfect on day one.
+The most valuable realization was that trust in AI systems is not earned once. It is continuously maintained. Every month brought new edge cases, shifting user expectations, and evolving document formats. The system survived because it was designed to adapt, not to be perfect on day one.
 
 ---
 Closing Reflection
 
-Building AI for procurement at Volvo Cars taught me that the hardest problems in enterprise AI are not technical—they are problems of control under uncertainty. How do you deploy generative models in environments where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
+Building AI for procurement at Volvo Cars taught me that the hardest problems in enterprise AI are not technical. They are problems of control under uncertainty. How do you deploy generative models in environments where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
 
 The answer is not better models. It is better decision architectures.
 
@@ -330,7 +330,7 @@ This is the discipline that separates AI experiments from production systems. It
 
 The AI products I build feel predictable, transparent, and sometimes boring. They do not surprise users. They do not make decisions autonomously when uncertainty is high. They degrade safely. They earn trust through consistency.
 
-Because in high-stakes environments, the most valuable AI systems are the ones that turn ambiguous, risky problems into controllable, auditable decisions—every time, for every user, without surprises.
+Because in high-stakes environments, the most valuable AI systems are the ones that turn ambiguous, risky problems into controllable, auditable decisions, every time, for every user, without surprises.
 
 ---
 

@@ -14,7 +14,7 @@ At Volvo Cars, dozens of teams gained the ability to publish data products indep
 
 Cross-domain integrations broke without warning, leaving consumers scrambling to identify root causes. Schema drift caused downstream pipeline failures that took hours or days to debug. Data quality issues surfaced late in the process, creating expensive remediation work while pointing fingers at no one specifically responsible.
 
-The real problem wasn't technical—it was **unmanaged risk in a federated system** where autonomy and reliability were treated as opposing forces.
+The real problem wasn't technical. It was **unmanaged risk in a federated system** where autonomy and reliability were treated as opposing forces.
 
 **My approach:** I turned this ambiguous governance challenge into a controllable decision system by categorizing risk explicitly across multiple dimensions, designing clear validation boundaries that define where automation ends, and building human-in-the-loop gates at critical decision points where machine judgment alone would be insufficient.
 
@@ -43,7 +43,7 @@ Certain validations are deterministic and low-risk enough to run without human o
 
 **AI-Assisted + Human Review**
 
-For ambiguous scenarios, I designed a hybrid approach where AI surfaces potential issues but humans make final decisions. The system uses NLP to detect semantic consistency problems across domains—for instance, when "customer_id" in one domain might conflict with "client_id" in another—but routes these findings to domain owners who understand the business context. Similarly, cross-domain impact analysis automatically flags dependencies and affected consumers, but requires the contract owner to review and approve the changes. Breaking change classification runs through automated detection algorithms, but platform engineers review flagged items to distinguish true breaking changes from false positives.
+For ambiguous scenarios, I designed a hybrid approach where AI surfaces potential issues but humans make final decisions. The system uses NLP to detect semantic consistency problems across domains. For instance, "customer_id" in one domain might conflict with "client_id" in another. The system routes these findings to domain owners who understand the business context. Similarly, cross-domain impact analysis automatically flags dependencies and affected consumers, but requires the contract owner to review and approve the changes. Breaking change classification runs through automated detection algorithms, but platform engineers review flagged items to distinguish true breaking changes from false positives.
 
 **Always Human-in-the-Loop**
 
@@ -64,7 +64,7 @@ This shifted conversations from compliance theater to risk-adjusted decision-mak
 
 ## 2. System Design Under Uncertainty
 
-The Data Contract Manager isn't a form builder—it's a **decision routing system** disguised as a UX layer.
+The Data Contract Manager isn't a form builder. It's a **decision routing system** disguised as a UX layer.
 
 ### Decision Flow Architecture
 
@@ -133,7 +133,7 @@ Unlike "full automation" platforms, I designed human judgment as a **reliability
 
 **Low-Risk Path (Automated Approval)**
 
-For straightforward changes with minimal downstream impact, the system provides an express lane. When a producer submits a contract, the validation layer runs automated checks, and if all criteria pass, the contract is immediately published without human intervention. This path handles the majority of routine updates—adding new optional fields, updating documentation, or relaxing validation rules. The override rate remains below 2%, meaning producers voluntarily request manual review only in rare edge cases where they want extra certainty despite automated approval.
+For straightforward changes with minimal downstream impact, the system provides an express lane. When a producer submits a contract, the validation layer runs automated checks, and if all criteria pass, the contract is immediately published without human intervention. This path handles the majority of routine updates, such as adding new optional fields, updating documentation, or relaxing validation rules. The override rate remains below 2%, meaning producers voluntarily request manual review only in rare edge cases where they want extra certainty despite automated approval.
 
 **Medium-Risk Path (Platform Team Review)**
 
@@ -160,7 +160,7 @@ The most complex scenario arises when a contract change affects more than five d
 - False positive rate: 12% → 3%
 - Zero undetected breaking changes in production
 
-**Key Insight:** The system doesn't just validate contracts—it **learns organizational boundaries** through human signals.
+**Key Insight:** The system doesn't just validate contracts. It **learns organizational boundaries** through human signals.
 
 ### Why This Matters
 
@@ -202,7 +202,7 @@ Every design is a series of deliberate "no" decisions. Here are mine.
 
 ### What This Reveals
 
-Seniority isn't knowing all the answers—it's **knowing which problems to defer**.
+Seniority isn't knowing all the answers. It's **knowing which problems to defer**.
 
 ---
 
@@ -243,15 +243,15 @@ The system that exists today is not the system we launched.
 
 **Early System:**
 
-When we first launched, the system operated with a conservative 40% human review rate. We erred on the side of caution, flagging any change that seemed remotely ambiguous or potentially impactful. This conservative automation strategy was intentional—we needed to build organizational trust and observe failure patterns before expanding automation boundaries.
+When we first launched, the system operated with a conservative 40% human review rate. We erred on the side of caution, flagging any change that seemed remotely ambiguous or potentially impactful. This conservative automation strategy was intentional. We needed to build organizational trust and observe failure patterns before expanding automation boundaries.
 
 **Current System:**
 
-After six months of learning from human decisions, the review rate dropped to 18%. We expanded automation to confidently handle scenarios that initially seemed risky but proved routine in practice. Backwards-compatible schema additions—like adding new optional fields or expanding enums—now auto-approve because they cannot break existing consumers. Metadata-only updates that change descriptions, examples, or documentation proceed without review since they affect discoverability but not data structure. Quality rule relaxations, such as allowing wider value ranges or accepting null values, can be automated because they make validation less strict. However, quality rule tightening still requires human review because it can cause existing data to suddenly fail validation.
+After six months of learning from human decisions, the review rate dropped to 18%. We expanded automation to confidently handle scenarios that initially seemed risky but proved routine in practice. Backwards-compatible schema additions, like adding new optional fields or expanding enums, now auto-approve because they cannot break existing consumers. Metadata-only updates that change descriptions, examples, or documentation proceed without review since they affect discoverability but not data structure. Quality rule relaxations, such as allowing wider value ranges or accepting null values, can be automated because they make validation less strict. However, quality rule tightening still requires human review because it can cause existing data to suddenly fail validation.
 
 **What stayed human-only:**
 
-Despite expanded automation, certain scenarios remain firmly in the human judgment zone. Breaking changes to core entities like customer, order, or product definitions always require review because these concepts anchor the entire data ecosystem. Cross-domain semantic conflicts—where two teams define the same concept differently—need human negotiation to resolve business logic disagreements. Exception requests for compliance-sensitive data must go through legal and privacy review, a responsibility we will never delegate to automation regardless of how sophisticated our systems become.
+Despite expanded automation, certain scenarios remain firmly in the human judgment zone. Breaking changes to core entities like customer, order, or product definitions always require review because these concepts anchor the entire data ecosystem. Cross-domain semantic conflicts, where two teams define the same concept differently, need human negotiation to resolve business logic disagreements. Exception requests for compliance-sensitive data must go through legal and privacy review, a responsibility we will never delegate to automation regardless of how sophisticated our systems become.
 
 ### Lessons from Real Incidents
 
@@ -279,7 +279,7 @@ It turns **"Is this change safe?"** into a risk classification.
 It turns **"Should we allow this?"** into a controllable system with known degradation paths.
 
 **The single narrative:**  
-I took an ambiguous governance problem—how to enable autonomy without breaking trust—and built a decision system with clear boundaries, explicit trade-offs, and human judgment where it matters most.
+I took an ambiguous governance problem, how to enable autonomy without breaking trust, and built a decision system with clear boundaries, explicit trade-offs, and human judgment where it matters most.
 
 ---
 
