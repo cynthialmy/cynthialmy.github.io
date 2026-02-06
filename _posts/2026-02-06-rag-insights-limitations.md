@@ -173,7 +173,7 @@ Retrieval-Augmented Generation (RAG) has become the default architecture for gro
 
 ---
 
-![rag-insights-limitations](assets/img/rag-insights-limitations.jpg)
+![rag-insights-limitations](../assets/img/rag-insights-limitations.jpg)
 
 ## When NOT to Use RAG
 
