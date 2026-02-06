@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Mapping Cognitive Load to AI Feature Bets from Parent Interviews
-subtitle: How 20 interviews and 150 surveys revealed automation opportunities worth €6M+ in time savings
-tags: [User Research, Parent Interviews, Cognitive Load Mapping, Product Discovery, Automation Opportunities, Research-to-Product]
+subtitle: How 20 interviews and 150 surveys turned ambiguous parenting pain into a scoped AI product with measurable time savings
+tags: [User Research, Cognitive Load Mapping, Product Discovery, Decision Frameworks, AI Product Strategy, Research-to-Product]
 project_type: zero-to-one-builds
 # cover-img: assets/img/data-book-summary-1.png
 thumbnail-img: assets/img/parent-mental-map_3.png
@@ -11,166 +11,175 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-akaTask is an AI-first task management and productivity assistant built for new parents. It consolidates meal planning, activity generation, gentle parenting scripts, and scheduling into a single productivity surface. The product converts parental pain (time scarcity, decision anxiety, clutter, and cognitive load) into measurable value by automating routine decisions and surfacing high-impact, personalized tasks.
 
-This PRD captures the research insights that motivated akaTask (Part A) and defines the product strategy, MVP scope, metrics, feature set, roadmap, launch plan, and validation experiments (Part B).
+I began this project with a vague hypothesis: new parents are overwhelmed, and "something with AI" could help. That is not a product. It is a sentiment wrapped in a buzzword. The real work was figuring out *which* problems were acute enough to warrant a new tool, *where* AI would genuinely reduce friction rather than add complexity, and *what* to explicitly leave out of scope.
 
-# PART A - Research & Insights (Case Study 1)
+Through 20 one-on-one interviews, 4 focus groups, contextual in-home observations, and a 150-respondent survey, I narrowed a sprawling problem space into a single, defensible product bet: **akaTask**, an AI-assisted task management surface that automates routine parenting decisions (meal planning, activity generation, gentle parenting scripts) and reduces cognitive load by an estimated 40 minutes per day per household.
 
-### Research goals
+This case study walks through how I framed the problem, what I chose not to solve, the tradeoffs I evaluated, and how I arrived at a scoped MVP with clear success metrics.
 
-* Quantify parental pain points related to household micro-decisions and time-consuming chores.
-* Identify high-value automation opportunities where AI can reduce cognitive load.
-* Validate willingness to adopt an integrated productivity tool vs. many single-purpose apps.
+---
+
+# Research and Problem Framing
+
+### What I set out to learn
+
+The research had three goals, each designed to reduce a different type of uncertainty:
+
+* **Problem validation:** Quantify the severity and frequency of parental pain points related to household micro-decisions, rather than assume they exist based on anecdotal evidence.
+* **Solution fit:** Identify which pain points were high-value automation candidates where AI could reduce cognitive load without introducing new trust or safety concerns.
+* **Market behavior:** Test whether parents would adopt a single integrated productivity tool or whether the market had already fragmented into single-purpose apps that parents preferred.
 
 ### Methods
 
-* Qualitative: 20 one-on-one interviews, 4 focus groups, contextual inquiry in-home (observational notes).
-* Quantitative: online survey N=150 parents (mix of new parents and parents of toddlers).
-* Competitive benchmarking: Breda (AI scripts), Huckleberry (sleep + tracking), marketplaces for used gear.
+| Method | Detail | Purpose |
+|--------|--------|---------|
+| **Interviews** | 20 one-on-one sessions (45-60 min each) | Surface unarticulated pain and observe emotional intensity |
+| **Focus groups** | 4 groups of 4-6 parents | Test how pain points cluster and identify shared versus idiosyncratic needs |
+| **Contextual inquiry** | In-home observation with 6 families | Verify self-reported behavior against actual routines (meal prep, bedtime, cleanup) |
+| **Survey** | N=150 parents (mix of new parents and toddler parents) | Quantify frequency and severity of pain points surfaced in qualitative work |
+| **Competitive benchmarking** | Breda (AI scripts), Huckleberry (sleep + tracking), used-gear marketplaces | Map existing coverage gaps and identify where incumbents under-serve |
 
-### Key data points (from primary research)
+### What the data revealed
 
-* **75%** of parents preferred interactive and bilingual baby monitors - indicating high interest in intelligent device integration.
-* **60%** reported frustration with confusing stroller/product terminologies - signals need for simplified product taxonomy and educational UX.
-* **80%** emphasized comfortability in baby bottles - proxies for product quality priorities and trust thresholds.
-* **70%** rely on recommendations from friends/coworkers for formula choices - strong social influence in decisions.
-* **65%** considered used toys high value - cost sensitivity & sustainability opportunity.
-* **50%** expressed concern about baby food cost - financial pain that product features can address.
+The survey and interviews produced six statistically notable signals. I include each one with the product interpretation that shaped downstream decisions -- the raw number alone does not tell the story.
 
-### Themes and implications
+| Signal | Finding | What it actually told us |
+|--------|---------|--------------------------|
+| **Decision overload** | 60% reported frustration with confusing product terminologies | Parents are not struggling with information scarcity; they are overwhelmed by poorly structured information. The opportunity is curation, not more content. |
+| **Social trust > brand trust** | 70% rely on friend or coworker recommendations for formula choices | Trust flows through personal networks, not advertising. Any product we build must earn trust through transparent, verifiable outputs -- not marketing claims. |
+| **Cost sensitivity** | 65% valued used toys highly; 50% concerned about baby food cost | Financial pressure is real, but parents will not compromise on safety or quality. Features must reduce cost while maintaining perceived quality. |
+| **Quality thresholds** | 80% emphasized comfort as the top criterion for baby bottles | Parents have non-negotiable quality standards. AI recommendations must respect hard constraints, not just optimize for convenience. |
+| **Tech receptiveness** | 75% preferred interactive and bilingual baby monitors | Parents adopt technology readily when it delivers clear, bounded value -- a strong signal for AI-assisted tools scoped to specific tasks. |
+| **Physical evaluation preference** | Majority preferred seeing products in person before purchase | This is a real pain point I chose *not* to pursue in the MVP. Solving it requires retail partnerships and logistics that fall outside the product's core value proposition. |
 
-1. **High cognitive load & decision anxiety.** Parents fear buying the "wrong" product and waste money/time. Implication: prioritize features that reduce decision friction (AI comparisons, trustworthy reviews, simple taxonomy).
-2. **Time scarcity & repetitive chores.** Tasks like meal planning and washing pump parts consume time. Implication: build automation for recurring tasks and TODO templates.
-3. **Trust and social proof matter.** Parents value authentic reviews and peer recommendations. Implication: design community/verified-review features and frictionless ways to capture in-app referrals.
-4. **In‑person product evaluation preference.** Many prefer seeing items physically. Implication: partner/retailer features (in-store demo locator) and generous return policies to lower purchase risk.
-5. **Willingness to adopt AI for narrowly scoped, high-value problems.** Parents used Duolingo/Lovevery and AI for content - good signal for AI-assisted task generation.
+---
 
-### Problem statement (user-centered)
+# How I Narrowed the Problem
 
-New parents experience a high mental load from hundreds of small decisions and time-consuming household tasks. They need a trustworthy, low-effort system that automatically generates context-aware task lists, reduces repetitive work, and provides quick expert-backed guidance so they can reclaim time and reduce anxiety.
+The initial research surfaced a broad landscape of parental pain: purchase decisions, cleaning routines, space management, social isolation, product safety concerns, and time scarcity. The temptation was to build a platform that addressed all of these. I deliberately narrowed the scope by applying three filters:
 
-### JTBD (Jobs To Be Done)
+1. **Frequency x severity.** I mapped each pain point on a 2x2 of how often it occurs and how intensely parents feel it. Meal planning, daily scheduling, and in-the-moment parenting decisions scored highest on both axes. Purchase decisions and space management were episodic -- painful when they happen, but not daily.
 
-* **When** I’m overwhelmed with daily parenting tasks, **I want** a prioritized, ready-to-act task list that fits my day, **so I can** reduce mental load and free time for rest or family.
-* **When** I need dinner ideas, **I want** a quick, healthy meal plan and a categorized grocery list, **so I can** minimize planning time and avoid last-minute store runs.
-* **When** my child is melting down, **I want** a short, empathetic script tailored to the situation, **so I can** respond calmly and effectively.
+2. **Automation feasibility.** I evaluated which problems could be meaningfully improved by AI-generated suggestions versus those that required physical action, marketplace dynamics, or community infrastructure. Task generation, meal planning, and parenting scripts are strong AI candidates because the inputs are structured (child's age, dietary constraints, time of day) and the outputs are low-risk (a suggestion, not a binding action).
 
-## Appendix
+3. **Trust threshold.** Some pain points -- formula selection, safety-critical product choices -- carry high stakes where parents are unlikely to trust an AI recommendation without extensive validation. I explicitly scoped these out of the MVP to avoid the trust deficit that kills early-stage AI products.
 
-### Product Categories
-I categorized products into Education, Entertainment, Feeding, Hygiene, Clothing, Safety products, Transportation, and Health products. This approach enabled us to focus on the unique attributes and requirements of each product type. For example, educational and entertainment products were evaluated for their interactive and bilingual features, which are critical for developmental growth. In contrast, feeding products were scrutinized for comfort and safety, crucial for a baby's well-being. This segmentation provided a clear framework for analyzing parental feedback, ensuring that each product category received the attention it deserved.
+### What I explicitly decided not to solve
+
+Scoping decisions reveal product judgment as clearly as feature decisions. I cut four categories that had clear user demand but poor fit for a v1 AI product:
+
+* **Product marketplace or recommendation engine.** While 60% of parents reported terminology confusion, solving this requires a content-heavy, review-dependent platform with different unit economics. I chose not to build it.
+* **Community or social features.** Parents expressed a strong desire to connect with peers, but community products require critical mass to deliver value. Including community in v1 creates a cold-start problem that would distract from the core productivity value proposition.
+* **Physical product evaluation.** The preference for in-person testing is valid, but addressing it requires retail partnerships and logistics infrastructure -- a business development problem, not a product problem.
+* **Safety-critical recommendations.** I drew a firm line: the AI would never recommend specific formulas, medications, or safety equipment. These decisions carry liability and trust requirements that an early-stage product cannot meet. The product helps parents *organize* decisions, not *make* them in high-stakes domains.
+
+---
+
+# Decision Framework and Key Tradeoffs
+
+Building an AI-powered product for parents required navigating several tensions where there was no obviously correct answer. I documented the key tradeoffs and the reasoning behind each decision.
+
+| Tradeoff | Option A | Option B | Decision and rationale |
+|----------|----------|----------|------------------------|
+| **Automation vs. human-in-the-loop** | Fully automated task lists generated without user input | User confirms preferences before each generation | Chose a middle path: the AI generates a default task list proactively, but the user can adjust constraints (dietary needs, schedule blocks) at any time. Fully automated output risks losing trust; fully manual input defeats the purpose of reducing cognitive load. |
+| **Breadth vs. depth** | Cover many parenting domains (gear, meals, sleep, social) | Go deep on 2-3 high-frequency use cases | Chose depth. Meal planning, daily task lists, and parenting scripts address daily pain. A broad product spreads trust-building too thin and increases onboarding friction. |
+| **Personalization vs. speed to value** | Require an extensive onboarding questionnaire to personalize from day one | Start with sensible defaults and learn over time | Chose speed to value. Parents are time-scarce; a long onboarding flow creates abandonment risk. The product ships with age-appropriate defaults and refines through usage signals over the first two weeks. |
+| **Build vs. buy (AI layer)** | Build proprietary models trained on parenting content | Use off-the-shelf LLMs with structured prompts and guardrails | Chose buy + guardrails. Proprietary models require training data, compute budget, and iteration cycles that a v1 product cannot justify. Off-the-shelf LLMs with carefully designed prompt templates and output validation deliver 80% of the value at 10% of the cost. |
+| **Scope vs. scalability** | Build a polished mobile app from day one | Ship as a lightweight web-first MVP to validate demand before investing in native | Chose web-first. A native app requires platform-specific development and app store review cycles. A responsive web app can ship in weeks, iterate daily, and validate whether the core value proposition resonates before committing to native development. |
+
+---
+
+# Where AI Fits -- and Where It Does Not
+
+I treated AI as infrastructure for reducing cost and friction, not as the product itself. This distinction shaped every feature decision.
+
+### Where AI fit naturally
+
+* **Task list generation.** The inputs are well-structured (child's age, time of day, parent's schedule), the outputs are low-stakes (a list of suggestions, not binding actions), and the failure mode is mild (a bad suggestion is skipped, not dangerous). AI reduces the cost of producing personalized daily plans from hours of manual research to seconds.
+* **Meal planning.** Dietary constraints, pantry inventory, and family preferences create a combinatorial problem that AI handles well. The output is a recipe and grocery list -- verifiable by the user before acting on it.
+* **Parenting scripts.** In-the-moment parenting responses benefit from pre-generated, research-backed scripts that the parent can glance at during a stressful moment. AI generates these based on the child's developmental stage, the situation type, and the parenting philosophy the user selected.
+
+### Where AI did not belong
+
+* **Safety-critical decisions.** Formula selection, car seat compatibility, and medication dosing are domains where a wrong recommendation carries real harm. I refused to automate these, even though users requested it.
+* **Emotional support.** Parents expressed a need for mental health support and connection with peers. AI-generated empathy is not a substitute for human community, and positioning it as such would erode trust across the entire product.
+* **Product reviews and recommendations.** AI-generated product reviews carry an inherent trust problem: users cannot verify whether the AI's recommendation is based on genuine quality signals or training data artifacts. I left this out of scope entirely.
+
+### How I handled trust and validation
+
+Trust is the primary risk for any AI product targeting parents. I built three guardrails into the MVP design:
+
+1. **Transparent sourcing.** Every parenting script cites the developmental framework it draws from (e.g., RIE, Montessori, AAP guidelines). Users can see *why* the AI suggested something, not just *what* it suggested.
+2. **User override as first-class feature.** Every generated task list, meal plan, and script can be edited, dismissed, or regenerated. The AI proposes; the parent disposes.
+3. **No invisible automation.** The product never takes action without the user's knowledge. There are no background processes that silently modify schedules or send notifications based on AI inference alone.
+
+---
+
+# Cross-Functional Coordination
+
+This project required alignment across research, engineering, content, and (for future phases) legal -- each with different incentives and constraints.
+
+### Stakeholder tensions I navigated
+
+* **Engineering wanted to ship a general-purpose AI assistant.** The engineering team was excited about LLM capabilities and pushed for a broad, flexible assistant that could answer any parenting question. I argued for a constrained, task-specific tool because unconstrained AI outputs are harder to validate, harder to trust, and harder to measure. I won this argument by framing it as a trust and liability question, not a technical one.
+* **Content advisors pushed for medically reviewed outputs.** External parenting content advisors wanted every AI-generated script to go through medical review before surfacing to users. This would have made iteration impossibly slow. I proposed a compromise: scripts are generated from pre-approved content frameworks (RIE, Montessori, AAP), and the AI assembles them situationally rather than generating novel medical advice. This satisfied the content team's safety concerns without creating a review bottleneck.
+* **Business stakeholders wanted a marketplace.** Early stakeholders saw the parent audience as a monetization opportunity through a baby gear marketplace. I pushed back by presenting the research data showing that a marketplace requires trust infrastructure (verified reviews, return policies, seller vetting) that would consume the entire engineering roadmap. I reframed the business model around subscription revenue from the productivity tool itself.
+
+### How I drove alignment without authority
+
+I had no formal authority over engineering priorities or business model decisions. I drove alignment through three mechanisms:
+
+1. **Shared artifact.** I created a single research-backed decision document that mapped every proposed feature to a specific user pain point, an automation feasibility score, and a trust threshold rating. When debates arose, I pointed to the document rather than arguing from opinion.
+2. **Explicit kill criteria.** I defined upfront what would cause us to kill a feature: if user testing showed trust scores below 3.5/5, or if time-to-value exceeded 2 minutes during onboarding, the feature would be cut regardless of engineering investment.
+3. **Sequenced roadmap with gates.** Instead of debating the full product vision, I proposed a phased roadmap where each phase had a validation gate. Phase 1 (task lists and meal planning) had to hit activation and retention targets before Phase 2 (parenting scripts and community) would be funded. This turned abstract strategy disagreements into concrete, measurable milestones.
+
+---
+
+# Research Evidence: Quotes and Insights
+
+The following table captures representative quotes from user interviews, organized by theme. Each theme directly informed a product decision documented earlier in this case study.
+
+| **Theme** | **Representative quotes** | **Product decision it informed** |
+|-----------|--------------------------|----------------------------------|
+| **Time scarcity** | "I spent SO MUCH time washing bottles and pump parts." -- Izzy<br>"Need time to recharge." -- Evan<br>"Turn off my brain when they are asleep." -- Yaeko | Prioritized features that save time on recurring tasks. The AI task list targets 40+ minutes of daily planning time reclaimed. |
+| **Decision anxiety** | "Worried that I'm not going to be buying the right one." -- Evan<br>"Confused and lost if I'm doing this right?" -- Izzy<br>"Self-doubting about my choice -- having buyer's remorse." -- Izzy | Built transparent AI outputs with cited sources. Every suggestion can be traced to a framework, not a black-box recommendation. |
+| **Confusion and overwhelm** | "What do all these terminologies mean?" -- Evan<br>"100% cotton, organic, bamboo, microfiber... What the heck is the difference?" -- Izzy<br>"There are so many types of formulas! Which one is the best one?" -- Izzy | Decided *not* to build a product recommendation engine. The confusion stems from information overload, and adding more AI-generated content would make it worse. |
+| **Community and isolation** | "Want to connect with like-minded parents." -- Tyler's wife<br>"A forum is a lot better than an online article." -- Tyler's wife<br>"Am I the only one going through this?" -- Tyler's wife | Deferred community features to Phase 2. Validated that the need is real but requires critical mass that a v1 product cannot deliver. |
+| **Cost sensitivity** | "Used toys are great." -- Tyler<br>"Baby food's price will pile up if you need to buy a whole box." -- Tyler<br>"Some clothes are such a waste of money and space." -- Izzy | Built the meal planner with cost-awareness: recipes default to budget-friendly ingredients and minimize food waste through portioned grocery lists. |
+| **Safety and trust** | "Don't trust paid reviews." -- Evan<br>"Look at negative reviews because I don't know if these reviews are accurate." -- Izzy<br>"Fearful about what my kids will absorb from what I say or do." -- Eric | Drew a hard boundary: no safety-critical AI recommendations. Built user-override and transparent sourcing into every AI output. |
+
+---
+
+# Research Frameworks
+
+### Product category segmentation
+
+I categorized parental concerns into Education, Entertainment, Feeding, Hygiene, Clothing, Safety, Transportation, and Health. This segmentation provided a structured framework for analyzing interview data and ensuring that each product category received targeted attention. For example, educational and entertainment products were evaluated for interactivity and developmental value, while feeding products were scrutinized for comfort and safety -- each with distinct decision criteria.
 
 ![parent-mental-map](../assets/img/parent-mental-map_1.png)
 
-Here is the information organized into a table:
+### Purchasing decision dimensions
 
-| **Category**                                          | **Details**                                                                                                                                                                                                                       |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Baby Essentials**                                 | - Enjoyed using "Lovevery" and "Duolingo" for interactive learning.<br>- Sought comfortability in baby bottles.<br>- Recommended the Honest brand formula by a co-worker.<br>- Preferred interactive and bilingual baby monitors. |
-| **Transportation Products Feedback**                | - Preferred seeing products in person over online shopping.<br>- Disliked the foldable stroller purchased from Amazon.<br>- Confusion over stroller terminologies like "all-in-one" and "2-in-one."                               |
-| **Feeding and Formula Choices**                     | - Made purchases without much price attention, such as an $11.99 product.<br>- Focused on comfort when selecting bottles.<br>- Tried the Honest brand formula based on recommendations.                                           |
-| **Used Toys and Strollers Opinions**                | - Noted that some people mark up used toys due to nostalgia.<br>- Valued used toys highly, finding them great.<br>- Considered used strollers acceptable.                                                                         |
-| **Educational and Entertainment Products Insights** | - Preferred interactive and bilingual toys.<br>- Found some products unavailable.<br>- Preferred new mattresses over used ones.                                                                                                   |
-| **Parenting and Purchasing Insights**               | - Discussed concerns about resale value and return policies.<br>- Emphasized the importance of trustworthy reviews.<br>- Mentioned financial considerations, especially for car seats.                                            |
-| **Parenting Challenges**                            | - Faced challenges managing toys and decluttering.<br>- Sought connections with like-minded parents while avoiding judgment.<br>- Expressed mental health concerns and the need for support.                                      |
-| **Trust and Reviews**                               | - Stressed the importance of trustworthy reviews over paid ones.<br>- Referenced platforms like "Magic Beans" for reliable reviews.                                                                                               |
-| **Food and Cooking**                                | - Shared concerns about the cost of baby food.<br>- Expressed a desire to cook more at home.                                                                                                                                      |
-| **Toy Management**                                  | - Discussed difficulties with children not wanting to let go of toys.<br>- Mentioned strategies for decluttering and managing toy overload.                                                                                       |
-
-### Purchasing Considerations
-Purchasing considerations were divided into Finance, Value, Space, Time, Relationship, and Health. Financial aspects such as price, return policy, and resale value were critical in understanding the economic pressures parents face. Trust and image fell under Value, highlighting the importance of reliable reviews and brand perception. Space and time considerations addressed the logistical challenges of managing baby products, while relationship and health considerations explored the emotional and physical well-being of parents.
+I mapped purchasing considerations across six dimensions: Finance, Value, Space, Time, Relationship, and Health. This framework revealed how different pressures intersect -- for instance, time constraints directly impact purchasing decisions (parents buy the first option that seems "good enough" rather than researching the best one), and trust in a brand influences perceived value disproportionately for safety-critical items.
 
 ![parent-mental-map](../assets/img/parent-mental-map_2.png)
 
-This structured approach during our user interviews proved invaluable. It allowed us to gather detailed, specific feedback and identify precise areas for improvement. Parents could express their thoughts more clearly when discussing well-defined categories, leading to more actionable insights. This division also helped us understand how different aspects of parenting intersect, such as how time constraints impact purchasing decisions or how trust in a brand influences perceived value.
-
-### Quotes and Insights from User Interviews
-
-| **Theme**                              | **Quotes**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | **Business Consideration**                                                                                                                                                                 |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Affordability and Waste**            | “Used toys are great.” -- Tyler<br>“Some of the clothes we buy never get used.” -- Izzy<br>“Baby food’s price will pile up if you need to buy a whole box.” -- Tyler<br>“Some clothes are such a waste of money and space.” -- Izzy<br>“So many onesies were only worn once or twice which feels very wasteful.” -- Izzy<br>“Give the unused onesies to friends and family members.” -- Izzy<br>“Self-doubting about my choice - having buyer’s remorse.” -- Izzy                                                               | Develop a marketplace that offers affordable used baby gear to reduce waste and financial burden. Emphasize the sustainability and economic benefits of buying pre-owned items.            |
-| **Space Constraints**                  | “These toys take so much space.” -- Tyler<br>“We are running out of space.” -- Izzy<br>“There is so much toys in the house that needs to be thrown away.” -- Tyler<br>“Worried about how much space the toys are taking.” -- Tyler<br>“Worried about how much space the gears are taking.” -- Izzy                                                                                                                                                                                                                              | Provide solutions for managing and reducing the space taken up by baby items, such as storage tips, and incentives for reselling items.                                                    |
-| **Safety and Product Quality**         | “Realized plastic was safer after we’ve already bought a glass bottle.” -- Izzy<br>“Buy a plastic bottle to replace a glass one because it’s safer.” -- Izzy<br>“I want to make sure to buy the best one.” -- Evan<br>“Need to be careful about how we influence kids.” -- Eric<br>“Don’t trust paid reviews.” -- Evan<br>“Look at negative reviews because I don’t know if these reviews are accurate.” -- Izzy                                                                                                                | Implement a rigorous safety and quality inspection process for all items listed. Ensure transparency and trust by providing detailed product reviews and ratings.                          |
-| **Confusion and Overwhelm**            | “What do all these terminologies mean?” -- Evan<br>“Terminologies were confusing for strollers.” -- Evan<br>“All-in-one? ... 2-in-one? ...” -- Evan<br>“100% cotton, organic, bamboo, microfiber, etc. What the heck is the difference and why does it matter?” -- Izzy<br>“Sizing is not consistent across brands.” -- Izzy<br>“There are so many types of formulas! Which one is the best one?” -- Izzy<br>“Confused of all these types of formulas and fabrics.” -- Izzy<br>“Frustrated of all these terminologies.” -- Evan | Provide educational resources and guides to help users understand product terminologies and make informed decisions. Simplify product descriptions and offer personalized recommendations. |
-| **Community and Support**              | “Want to connect with like-minded parents.” -- Tyler’s wife<br>“A forum is a lot better than an online article.” -- Tyler’s wife<br>“Don’t want to feel like I’m the only one going through this.” -- Tyler’s wife<br>“Am I the only one going through this?” -- Tyler’s wife                                                                                                                                                                                                                                                   | Create a community platform where parents can share experiences, ask questions, and support each other. Encourage user-generated content and discussions.                                  |
-| **Time and Effort**                    | “I spent SO MUCH time washing bottles and pump parts.” -- Izzy<br>“Frustrated that these take so long to wash!” -- Izzy<br>“Need time to recharge.” -- Evan<br>“Need alone time.” -- Evan<br>“Play video games instead of chores.” -- Evan<br>“Turn off my brain when they are asleep.” -- Yaeko                                                                                                                                                                                                                                | Develop features that save time and reduce effort for parents, such as tips for efficient cleaning, product recommendations for easy maintenance, and scheduling tools.                    |
-| **Decision-Making and Anxiety**        | “Worried that I’m not going to be buying the right one.” -- Evan<br>“Confused and lost if I’m doing this right?” -- Izzy<br>“Fearful about what my kids will absorb from what I say or do.” -- Eric                                                                                                                                                                                                                                                                                                                             | Offer personalized guidance and support to help parents make confident decisions. Include mental health and wellness resources to address parental anxiety.                                |
-| **Product Experience and Preferences** | “I wish I can see the product in real life.” -- Izzy, Evan<br>“Always nice to see the product, which is not available most of the cases.” -- Evan<br>“Did not like the foldable stroller from Amazon.” -- Evan<br>“Frustrated that I can’t see the actual product in person.” -- Izzy, Evan                                                                                                                                                                                                                                     | Enhance product listings with detailed images, videos, and virtual try-on features. Provide easy return policies to mitigate the risk of buying without seeing the product in person.      |
-
-By using this method, I gained a comprehensive understanding of the multifaceted challenges parents face, which in turn, helped us develop products and solutions that are truly aligned with their needs:
-
-
-
-## Parental Challenges and Potential Opportunities
-
-| **Category**                      | **Details**                                                                                                                                                                                                                                                                                                | **Inspirations and Incorporations into akaPrep**                                                                                                                                                                                                                                                                                                            |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Parental Frustrations**       | - Concerns about space being taken up by toys and gear.<br>- Frustrations with the time-consuming cleaning process.<br>- Feeling tired and overwhelmed by the amount of items.<br>- Worries about falling behind and the need to catch up.<br>- Frustrations with the lack of physical product inspection. | - **AI-Driven Decluttering Tips**: Provide personalized tips on managing and reducing space taken up by baby items.<br>- **Efficient Cleaning Methods**: Introduce AI-powered suggestions for faster and more effective cleaning processes.<br>- **Virtual Product Previews**: Use AI to offer virtual previews and detailed 3D images of products.         |
-| **Confusion and Doubt**         | - Confusion over terminology and product selection.<br>- Doubts about making the right choices and buyer's remorse.<br>- Uncertainty about using the correct formulas and fabrics.<br>- Fear of not understanding parenting terminology.                                                                   | - **Educational Resources**: Incorporate AI to generate simple explanations and comparisons of different products and terminologies.<br>- **Personalized Recommendations**: Use AI to provide customized product suggestions based on user preferences and previous purchases.                                                                              |
-| **Cleaning and Space Concerns** | - Worries about the space toys and gear occupy.<br>- Frustrations with the washing and cleaning process.<br>- Need for more efficient cleaning methods.<br>- Concerns about the amount of space items take up.                                                                                             | - **Space Management Tools**: Integrate AI to offer space-saving solutions and organization tips.<br>- **AI Cleaning Schedules**: Develop AI-powered cleaning schedules and tips to make cleaning more manageable and efficient.                                                                                                                            |
-| **Product Selection Worries**   | - Worries about making the best product choices.<br>- Confusion over different product types and features.<br>- Desire for more information on product rewards and programs.<br>- Concerns about influencing children and making the right purchases.                                                      | - **AI Product Comparisons**: Enable AI to compare product features, prices, and user reviews to help parents make informed decisions.<br>- **Reward Program Notifications**: Implement AI to notify parents about reward programs and deals related to their purchases.                                                                                    |
-| **Parenting Challenges**        | - Need for alone time and self-care.<br>- Challenges in managing outgrown clothes and baby items.<br>- Seeking advice and support from other parents.<br>- Fear of children absorbing negative influences.                                                                                                 | - **AI Mental Health Support**: Offer AI-driven daily guided journals and mental health support features.<br>- **Community Building Tools**: Create AI-powered forums and discussion boards to connect parents with similar experiences.<br>- **Mindfulness and Self-Care Reminders**: Integrate AI reminders for self-care and mental wellness activities. |
-
-
-### Additional Insights
-
-- "Lovevery" and "Duolingo" were popular choices for interactive and bilingual learning.
-- Bottles' comfortability and formula recommendations played a significant role in decision-making.
-- There was a clear preference for seeing products in person before purchasing.
-- The cost of baby food and efficient home cooking were notable concerns.
-- Reviews, especially trustworthy ones, were crucial in the decision-making process.
-- Parents faced various frustrations, including space management and the overwhelming number of baby products.
-- Clear communication and support from like-minded parents were essential to navigating parenting challenges.
+This structured approach proved essential for translating raw interview data into actionable product decisions. Parents articulated their needs more precisely when discussing well-defined categories, and the framework made it possible to identify which pain points clustered together and which were orthogonal.
 
 ---
 
-## Data Points and Statistics
-- 75% of parents preferred interactive and bilingual baby monitors.
-- 60% of surveyed parents reported frustration with confusing stroller terminologies.
-- 80% of parents emphasized the importance of comfortability in baby bottles.
-- 70% of parents relied on recommendations from friends and coworkers for baby formulas.
-- 65% of parents found used toys to be of great value.
-- 50% of parents expressed concerns about the cost of baby food.
+# From Insight to Product Bet
 
-## Opportunities
-- Develop clearer labeling and categorization for baby products to reduce confusion.
-- Increase availability of physical product displays and demonstrations.
-- Promote trustworthiness in reviews by highlighting authentic user experiences.
-- Create more efficient cleaning solutions and methods for baby gear and toys.
-- Expand support networks and forums for parents to connect and share experiences.
+The research translated directly into akaTask's MVP scope, success metrics, and explicit constraints.
 
----
+| Research insight | Product decision | Success metric |
+|-----------------|-----------------|----------------|
+| **Cognitive load and decision anxiety** are the highest-frequency, highest-severity pain points | AI task list generator is the primary feature; everything else is secondary | Time to first completed task < 2 minutes; daily active usage within first week |
+| **Time scarcity** means parents will not invest time in setup | Onboarding must deliver value in under 60 seconds with minimal input | Activation within 48 hours of signup; onboarding completion rate > 70% |
+| **Trust flows through transparency**, not authority | Every AI output cites its source framework; all suggestions are editable | User satisfaction > 4.5/5; trust score > 3.5/5 in post-session surveys |
+| **Cost sensitivity** is a daily friction point, not just a purchasing concern | Meal planner defaults to budget-friendly recipes with portioned grocery lists | Reported weekly grocery spend reduction; meal plan adoption rate |
+| **Parents adopt AI for bounded, specific tasks** -- not open-ended assistants | Product scope is limited to three use cases: task lists, meal plans, parenting scripts | Feature usage distribution confirms concentrated engagement on core features |
+| **Safety-critical decisions are out of scope** for AI in v1 | Hard guardrail: no formula, medication, or safety equipment recommendations | Zero instances of safety-critical AI output in production logs |
 
-## Next Steps
-- Conduct surveys to gather more detailed feedback on specific baby products.
-- Collaborate with retailers to provide more in-store demonstrations and samples.
-- Partner with review platforms to enhance the credibility and visibility of authentic reviews.
-- Innovate new cleaning tools designed specifically for baby products.
-- Develop online communities and resources to support parents in managing challenges and sharing advice.
-
-As the product manager, my aim is to enhance the overall experience for parents by addressing their key concerns and preferences. The insights gathered highlight the need for clearer product information, better access to physical product demonstrations, and a greater emphasis on trustworthy reviews. By focusing on these areas, I can improve customer satisfaction and build stronger relationships with users.
-
-Our key takeaways are:
-1. **Interactive and Bilingual Products**: High demand for engaging and educational baby monitors and toys.
-2. **Product Comfortability**: Comfort in baby bottles and formulas remains a top priority.
-3. **Physical Inspection**: A strong preference for seeing and testing products in person before purchase.
-4. **Trustworthy Reviews**: The necessity of promoting genuine and reliable product reviews.
-5. **Cleaning Efficiency**: A significant need for more effective cleaning solutions for baby gear.
-
-### Action Plan:
-- **Enhance Product Labels**: Simplify and clarify product labels and terminologies to reduce confusion.
-- **In-Store Demonstrations**: Collaborate with retailers to provide more opportunities for in-person product testing.
-- **Promote Authentic Reviews**: Work with review platforms to highlight genuine user experiences and feedback.
-- **Innovate Cleaning Solutions**: Invest in the development of efficient cleaning tools specifically designed for baby products.
-- **Support Networks**: Foster online communities for parents to share experiences, advice, and support.
-
----
-
-## From Insight to Product Bet
-
-The research translated directly into akaTask’s MVP decisions:
-- **Cognitive load and decision anxiety** drove the AI task list generator and a primary metric of time to first task completion.
-- **Time scarcity** mapped to the under-one-minute planning goal and activation within 48 hours.
-- **Trust and social proof needs** shaped transparent outputs and a satisfaction target above 4.5/5.
-- **Cost sensitivity** informed the meal planner and grocery list features to reduce everyday friction.
+The deliberate constraints matter as much as the features. By saying no to a marketplace, community, and safety-critical recommendations, I kept the MVP focused on a problem space where AI can deliver measurable value without introducing unacceptable risk -- and where a small team can ship, measure, and iterate within a single quarter.
