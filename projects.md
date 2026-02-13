@@ -15,6 +15,20 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://semantic-layer-demo.streamlit.app/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/metric-trust-explorer.png' | relative_url }}" alt="Metric Trust Explorer" class="project-card-thumbnail" loading="lazy">
+      <div class="project-card-header">
+        <h3>Metric Trust Explorer</h3>
+        <p class="project-card-subtitle">semantic-layer-demo</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        A semantic layer demo showing why defining metrics once matters at enterprise scale. Visualizes how different source systems compute the same procurement metrics differently.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/icon-studio/" target="_blank" rel="noopener">
       <img src="{{ '/assets/img/icon-studio.png' | relative_url }}" alt="Icon Studio" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
