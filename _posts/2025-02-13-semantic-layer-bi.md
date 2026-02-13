@@ -9,9 +9,9 @@ share-img: assets/img/semantic-layer.jpg
 comments: true
 ---
 
-At Volvo Cars, data is generated at enormous scale across manufacturing lines, supply chain systems, dealer networks, connected vehicles, and procurement platforms. The challenge is not producing data. The challenge is producing meaning. When ten teams define "delivery lead time" ten different ways, executive dashboards become arenas of contradiction rather than instruments of clarity.
+At Volvo Cars, data is generated at enormous scale across manufacturing lines, supply chain systems, dealer networks, connected vehicles, and procurement platforms. The challenge is not producing data. The challenge is producing meaning. Across 50+ teams, the same metric was calculated differently — "duty savings" alone had 23 conflicting definitions. Finance calculated it one way for the earnings call. Operations calculated it differently for performance reviews. Both were "correct" in their local context — and both produced different numbers in the same executive meeting.
 
-This post documents how I think about building a semantic-layer-driven BI product that treats metric definition as infrastructure, not decoration. The goal is to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization.
+This post documents how I built a semantic-layer-driven BI product that treats metric definition as infrastructure, not decoration — and the governance framework that drove adoption across every one of those teams. The goal was to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization.
 
 > **Interactive demo:** [Metric Trust Explorer](https://semantic-layer-demo.streamlit.app/) shows how three source systems compute the same procurement metrics differently, and how a governed semantic layer resolves the inconsistency. Source on [GitHub](https://github.com/cynthialmy/semantic-layer-demo).
 
@@ -36,7 +36,15 @@ Ownership of this layer is ownership of trust. Without it, every metric is a neg
 
 ## Why Global Scale Demands a Semantic Layer
 
-At a company like Volvo Cars, the absence of a semantic layer is not a theoretical concern. It is a daily operational failure with measurable cost. The following examples illustrate where the pain surfaces and why it compounds as the organization scales.
+At a company like Volvo Cars, the absence of a semantic layer is not a theoretical concern. It is a daily operational failure with measurable cost.
+
+### The Cost to Operators and the Business
+
+Analytics teams spent roughly 20% of every workweek reconciling conflicting numbers instead of producing insights. Executive meetings regularly derailed — the first 20 minutes of a 60-minute meeting were spent debating "whose number is right?" instead of making decisions. Trust in analytics was eroding, and when executives lose trust, they revert to gut decisions and spreadsheet fiefdoms.
+
+Every downstream system consumed inconsistent inputs. Dashboards contradicted each other. AI models trained on one team's metric definition produced outputs that didn't align with another team's reports. The analytics team became a bottleneck, not an accelerator — because their primary job became reconciliation, not analysis.
+
+The following examples illustrate where the pain surfaces and why it compounds as the organization scales.
 
 ### Fragmented Systems Tell Conflicting Stories
 
@@ -211,6 +219,115 @@ Track:
 - **KPI movement correlation** to determine whether the metric moved after the insight was surfaced
 
 Adoption is earned by solving real workflow problems, not by building beautiful charts. The semantic layer succeeds when people stop asking "where did this number come from?" and start asking "what should we do about it?"
+
+---
+
+## What I Built — Every Key Decision Along the Way
+
+### The Biggest Challenge
+
+**Behavior change across 50+ teams — without authority over any of them.**
+
+The 23 conflicting definitions weren't caused by bad SQL or technical incompetence. They were caused by rational teams solving local optimization problems independently. Finance needed duty savings calculated for the earnings call format. Operations needed it for performance reviews. Procurement needed it for vendor negotiations. Each team had adapted the definition to their context — rationally, independently, and incompatibly.
+
+No amount of data engineering solves a coordination problem. The challenge was getting humans who had built their workflows around their local definition to agree on one canonical version — and then actually *use* it in their daily work.
+
+### Decision 1: Start with 5 metrics, not all 23
+
+My first instinct was to standardize everything at once. Wrong. I started the parallel negotiation for all 23 definitions in month 1 — and by month 2, progress had stalled across the board. Too many parallel conversations, too many stakeholders, no visible wins.
+
+Course correction: I narrowed to 5 metrics that appeared in 80% of executive reports. Delivering canonical definitions for those 5 created immediate, visible credibility. Momentum from those wins carried the remaining 18 with far less resistance.
+
+### Decision 2: Bottom-up adoption, not top-down mandate
+
+I tried a mandate first: "Everyone must use the metric registry." Compliance was slow and grudging. Teams registered metrics on paper but didn't change their actual reports. The mandate produced formal compliance without behavior change — which is the same as nothing.
+
+**What actually worked — the UNVALIDATED watermark:**
+I added a visibility mechanism: any report or dashboard using a non-registered metric definition got an "UNVALIDATED" watermark. I didn't block the report. I didn't force anyone to change. I just made the discrepancy *visible.* Nobody wanted to present a watermarked report to their VP.
+
+Social pressure accomplished what mandates couldn't. Within 6 weeks, 80% of teams had migrated to registered definitions — not because I told them to, but because they didn't want to explain the watermark in their VP meeting.
+
+**Why this worked better than mandates:** Mandates create compliance (people follow the rule when watched). Visibility creates ownership (people change behavior because the consequence is self-evident). The watermark made non-compliance embarrassing, not punished — a critical distinction.
+
+**The adoption pattern — week by week:**
+- **Week 1–2:** Executive dashboards migrated (4 dashboards, 12 metrics) — top-down, non-negotiable.
+- **Week 3–6:** Champions from 15 teams completed training, started migrating their team reports.
+- **Week 7–12:** Watermark went live. 80% of reports migrated voluntarily within 2 weeks.
+- **Week 12+:** Remaining 20% migrated after their VPs asked "why does your report say UNVALIDATED?"
+
+The hybrid leveraged executive attention: the SVP said "I love that the numbers finally match" in a meeting → directors asked their teams to adopt. Top-down created the *demand*; bottom-up created the *supply*.
+
+### Decision 3: Translation documents for resistant teams
+
+Several teams pushed back because they didn't understand *why their definition was changing.* Their version worked for their context. I built a "metric translation" for each team: *"Your old definition counted X. The canonical definition doesn't include X because Y. Here's what changes for your specific reports and how to adjust."* This cut resistance dramatically. People don't resist change; they resist change they don't understand.
+
+### Decision 4: Data contracts — prevention, not detection
+
+Triggered by the 8% KPI discrepancy incident (full story below). I built data contracts: each source system documents schema, refresh cadence, quality SLAs, and breaking change notification rules. Any schema change requires sign-off before downstream pipelines refresh.
+
+**Why contracts matter more than monitoring:** Monitoring catches problems after they've polluted downstream reports. Contracts prevent them. The 8% incident was caused by a schema change that broke a JOIN condition silently. After implementing contracts: zero similar incidents in 12 consecutive months.
+
+### Decision 5: Governance council as shared ownership, not approval gate
+
+Created a metric governance council with reps from analytics, engineering, legal, and operations. Quarterly reviews. Each team had voting rights on metric changes. This wasn't bureaucratic overhead — it was an influence mechanism. Co-owners advocate for the system internally. Approvers create bottlenecks. The council turned stakeholders from "people who must be consulted" into "people who own the standard."
+
+### What I said no to
+
+- **Self-service metric creation without governance.** Teams wanted to create and publish new metrics freely. I allowed creation in sandboxed environments but required governance council review before any metric was published to shared dashboards. Self-service without governance = guaranteed metric proliferation = back to 23 conflicting definitions within 6 months.
+- **Automated metric reconciliation.** Engineering proposed auto-detecting and auto-correcting discrepancies. I rejected it — auto-correction without human review could mask legitimate data differences (e.g., regional tax treatment variations). The system *flags* discrepancies; humans *investigate and resolve.*
+
+---
+
+## How Operators Actually Used It
+
+**User → Workflow → Decision → Metric Impact (after):**
+- **User:** Analytics team lead (semi-technical, responsible for team-level reporting accuracy)
+- **Workflow:** Checks metric registry for canonical definition → uses registered SQL logic in their report → report shows "VALIDATED" status → presents confidently in executive review
+- **Decision:** Team lead no longer spends time reconciling against other teams' numbers. Executive meetings focus on business decisions, not data debates.
+- **Metric impact:** *"We went from spending 20% of our time arguing about which number is right to spending 0% — and the executive meetings actually make decisions now."*
+
+**How I drove and measured adoption:**
+- **UNVALIDATED watermark → social pressure:** Reports using non-registered metric definitions received a visible watermark. 80% of reports at launch → <5% at month 6. No one wanted to present a watermarked dashboard to their VP.
+- **Metric registry coverage:** 5 core metrics (month 1) → 23 metrics (month 6) → 40+ metrics (month 12)
+- **Executive feedback:** 3 VPs independently noted that meetings "stopped being about debating numbers and started being about decisions."
+- **Governance council participation:** 100% attendance at quarterly reviews — because teams saw their input reflected in policy changes. This participation metric was my proxy for "do stakeholders feel ownership?"
+
+---
+
+## Business Impact
+
+| Metric | Baseline | After | How Measured | Timeline |
+|---|---|---|---|---|
+| Conflicting metric definitions | 23 for core KPIs | 0 for governed metrics | Metric registry audit | 6 months |
+| Analytics QA time | ~20% of analyst workweek on reconciliation | ~6% (–14 percentage points) | Self-reported time tracking survey across 50+ teams | 6 months |
+| Executive meeting time on data debates | ~20 min/meeting (estimated) | ~0 min | Qualitative feedback from 3 VPs | 4 months |
+| Data incidents (wrong numbers in reports) | 2–3 per quarter | 0 for 12 consecutive months | Incident tracking system | 12 months |
+| Reports with UNVALIDATED watermark | 80% at launch | <5% | Automated report status tracking | 6 months |
+| Metric registry coverage | 0 metrics registered | 40+ with canonical definitions, SQL, owner, version history | Registry count | 12 months |
+| Framework org adoption | One team pilot | Adopted as org-wide standard | Executive mandate after demonstrated results | 9 months |
+
+**How "zero data incidents" was measured:** Before the governance framework, data quality issues were tracked reactively — incidents were logged when someone found wrong numbers in a report. After implementing data contracts and validation gates, we continued the same tracking mechanism. Zero incidents in 12 months meant: no schema changes propagated without sign-off, no validation gate failures reached production dashboards, and zero "my number vs. your number" escalations in executive reviews.
+
+---
+
+## Where I Deliberately Constrained Automation
+
+1. **Watermark, not block.** I never blocked a report from being published. I made non-compliance *visible* instead of *punished.* Blocking would have caused rebellion and workarounds. Visibility caused voluntary compliance. Preserving team autonomy while creating accountability was the key insight.
+2. **No auto-correction of metric discrepancies.** The system flags discrepancies; humans investigate. Auto-correction could mask legitimate data differences and remove the human conversation that's often where the real governance happens.
+3. **No self-service metric publishing to shared dashboards.** Sandboxed creation is free; publishing requires review. Freedom without governance creates metric chaos.
+4. **No automation of governance council decisions.** Every metric definition change requires human review and cross-functional sign-off. The hardest part of governance is the *conversation between humans with different priorities*, not the rule enforcement. That conversation can't be automated — and shouldn't be.
+
+---
+
+## The Hardest Lessons
+
+**Governance is a people problem wearing a data hat.** The 23 conflicting definitions came from rational teams solving local problems independently. Better data engineering doesn't fix that. Shared ownership, visible consequences, and translation documents do.
+
+**Mandates produce compliance; visibility produces behavior change.** The UNVALIDATED watermark accomplished in 6 weeks what 3 months of mandates couldn't.
+
+**Start with 5, not 23.** I learned this by failing at 23 first. Narrowing to 5 high-impact metrics that covered 80% of executive reports created visible wins and momentum for the remaining 18. This is the sequencing lesson I'd apply on day one at any enterprise.
+
+**What I'd do differently from the start:** Build the metric translation documents *before* announcing the canonical definitions. Multiple teams pushed back not because they disagreed, but because they didn't understand what was changing for them specifically. A proactive translation — "your old definition → new definition, here's what changes for your team" — would have halved the resistance.
 
 ---
 
