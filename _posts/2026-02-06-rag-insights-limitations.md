@@ -3,7 +3,7 @@ layout: post
 title: "RAG vs Context Engineering: Insights and Limitations"
 subtitle: Why retrieval-augmented generation is not universal 
 tags: [RAG, Context Engineering, Agentic RAG, Information Retrieval, AI Architecture, Product Thinking, LLM Systems]
-project_type: other
+project_type: enterprise
 thumbnail-img: assets/img/rag-insights-limitations.jpg
 share-img: assets/img/rag-insights-limitations.jpg
 comments: true
