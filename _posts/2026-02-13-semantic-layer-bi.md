@@ -32,7 +32,7 @@ Ownership of this layer is ownership of trust. Without it, every metric is a neg
 
 ---
 
-## Why a Semantic Layer Is Not Optional at Global Scale
+## Why Global Scale Demands a Semantic Layer
 
 At a company like Volvo Cars, the absence of a semantic layer is not a theoretical concern. It is a daily operational failure with measurable cost. The following examples illustrate where the pain surfaces and why it compounds as the organization scales.
 
