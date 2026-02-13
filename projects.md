@@ -15,6 +15,20 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://cynthialmy.github.io/icon-studio/" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/icon-studio.png' | relative_url }}" alt="Icon Studio" class="project-card-thumbnail" loading="lazy">
+      <div class="project-card-header">
+        <h3>Icon Studio</h3>
+        <p class="project-card-subtitle">icon-studio</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        A web app for generating unique iOS and Android app icons. Create original, deterministic designs from app names with algorithmic generation, preview variants, and export production-ready PNG assets.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/course-website-design/" target="_blank" rel="noopener">
       <img src="{{ '/assets/img/course-design.png' | relative_url }}" alt="Educational Platform Redesign" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
