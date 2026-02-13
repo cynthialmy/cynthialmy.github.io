@@ -13,6 +13,8 @@ At Volvo Cars, data is generated at enormous scale across manufacturing lines, s
 
 This post documents how I think about building a semantic-layer-driven BI product that treats metric definition as infrastructure, not decoration. The goal is to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization.
 
+> **Interactive demo:** [Metric Trust Explorer](https://semantic-layer-demo.streamlit.app/) shows how three source systems compute the same procurement metrics differently, and how a governed semantic layer resolves the inconsistency. Source on [GitHub](https://github.com/cynthialmy/semantic-layer-demo).
+
 ---
 
 ## What "Semantic Layer" Actually Means
@@ -221,3 +223,11 @@ At Volvo Cars, this connection between the semantic layer and AI is already conc
 The same principle applies in customs and trade. An AI system that helps brokers classify goods under the Harmonized System needs access to governed definitions of product categories, tariff logic, and FTA eligibility rules. If the AI classifies a battery module as one HS code while the customs reporting dashboard uses another, the organization faces audit risk from its own internal inconsistency. The semantic layer ensures that classification logic, duty calculations, and compliance thresholds are defined once and consumed everywhere.
 
 Building the semantic layer correctly is what makes the jump from descriptive reporting to AI-assisted decision-making possible, not as a conceptual leap, but as an engineering reality. For a global operation like Volvo Cars, where decisions span procurement, manufacturing, customs, and logistics across 100+ markets, the semantic layer is the infrastructure that turns data into organizational intelligence.
+
+---
+
+## Try the Demo
+
+The [Metric Trust Explorer](https://semantic-layer-demo.streamlit.app/) brings this post to life with synthetic procurement data modeled after the VGS, VPC, and SI+ systems described above. It demonstrates three metrics (Supplier On-Time Delivery Rate, Negotiated Savings, and Active Contract Value), shows how each source system computes them differently, and visualizes how the governed semantic layer produces a single certified answer with full lineage.
+
+The source code is available on [GitHub](https://github.com/cynthialmy/semantic-layer-demo).
