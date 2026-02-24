@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RAG vs Context Engineering: Insights and Limitations"
-subtitle: Why retrieval-augmented generation is not universal 
+subtitle: Why retrieval-augmented generation is not universal
 tags: [RAG, Context Engineering, Agentic RAG, Information Retrieval, AI Architecture, Product Thinking, LLM Systems]
 project_type: enterprise
 thumbnail-img: assets/img/rag-insights-limitations.jpg
@@ -11,7 +11,9 @@ comments: true
 
 Retrieval-Augmented Generation (RAG) has become the default architecture for grounding LLMs in enterprise knowledge. The industry conversation, however, often conflates "using RAG" with "solving the knowledge problem." These are not the same thing, and treating them interchangeably leads to brittle systems, wasted investment, and false confidence in production.
 
-This post reframes RAG through the lens of context engineering, maps where it genuinely works, identifies where it fails in ways that are difficult to detect, and proposes decision frameworks for choosing the right architecture. The goal is not to dismiss RAG but to define its boundaries clearly so that product and engineering teams can make better tradeoff decisions in constrained, high-stakes environments.
+I would like to reframe RAG through the lens of context engineering, map where it genuinely works, identify where it fails in ways that are difficult to detect, and propose decision frameworks for choosing the right architecture.
+
+The goal is not to dismiss RAG but to define its boundaries clearly so that product and engineering teams can make better tradeoff decisions in constrained, high-stakes environments.
 
 ---
 
@@ -27,7 +29,7 @@ The teams that succeed with RAG are the ones that treat context curation as a fi
 
 ## The Decision Framework
 
-The most important architectural question is not "Is the model powerful enough?" The real question is: **Does the answer exist in retrievable text, or must it be derived?**
+The most important architectural question is: **Does the answer exist in retrievable text, or must it be derived?**
 
 This single distinction determines the entire system architecture. When the answer lives explicitly in a document, RAG is a strong fit. When the answer requires computation, inference, or synthesis across concepts that are not co-located in any single passage, RAG becomes a liability. Getting this wrong leads to systems that feel intelligent in demos but fail silently in production, which is one of the most costly failure modes in enterprise AI.
 
@@ -35,7 +37,7 @@ This single distinction determines the entire system architecture. When the answ
 
 ## Why Traditional RAG Fails
 
-The fatal assumption behind many RAG deployments is that a large context window solves the problem on its own. The reasoning goes: dump everything into the context, and the model will figure out what matters. In practice, the opposite happens. More context leads to dispersed attention and worse reasoning, a phenomenon I call **Context Rot**.
+The fatal assumption behind many RAG deployments is that a large context window solves the problem on its own. The reasoning goes: dump everything into the context, and the model will figure out what matters. In practice, the opposite happens. More context leads to dispersed attention and worse reasoning, resulting in **Context Rot**.
 
 Context Rot manifests through three failure modes:
 
