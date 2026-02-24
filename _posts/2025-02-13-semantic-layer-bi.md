@@ -277,7 +277,7 @@ This aligns with the broader principle of computational data governance: governa
 
 Created a metric governance council with representatives from analytics, engineering, legal, and operations. Quarterly reviews. Each team had voting rights on metric changes. This was not bureaucratic overhead. It was an influence mechanism. Co-owners advocate for the system internally. Approvers create bottlenecks. The council turned stakeholders from "people who must be consulted" into "people who own the standard."
 
-### What I said no to
+### What I'd say no to
 
 - **Self-service metric creation without governance.** Teams wanted to create and publish new metrics freely. I allowed creation in sandboxed environments but required governance council review before any metric was published to shared dashboards. Self-service without governance leads to guaranteed metric proliferation and back to 23 conflicting definitions within 6 months.
 - **Automated metric reconciliation.** Engineering proposed auto-detecting and auto-correcting discrepancies. I rejected it because auto-correction without human review could mask legitimate data differences (e.g., regional tax treatment variations). The system *flags* discrepancies; humans *investigate and resolve.*
@@ -300,7 +300,7 @@ Created a metric governance council with representatives from analytics, enginee
 
 ---
 
-## Where I Deliberately Constrained Automation
+## Where I'd Deliberately Constrained Automation
 
 1. **Watermark, not block.** I never blocked a report from being published. I made non-compliance *visible* instead of *punished.* Blocking would have caused rebellion and workarounds. Visibility caused voluntary compliance. Preserving team autonomy while creating accountability was the key insight.
 2. **No auto-correction of metric discrepancies.** The system flags discrepancies; humans investigate. Auto-correction could mask legitimate data differences and remove the human conversation that is often where the real governance happens.
