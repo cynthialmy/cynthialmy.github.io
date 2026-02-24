@@ -55,7 +55,7 @@ This architecture handles structured, unstructured, and streaming data. It suppo
 
 ### Data Fabric: Metadata-Driven Integration
 
-Gartner's data fabric is a design concept that uses continuous analytics over metadata to facilitate the design, deployment, and utilization of integrated data across hybrid and multi-cloud environments. Its five pillars include an augmented data catalog, knowledge graphs enriched with semantics, a metadata activation and recommendation engine, AI-powered data preparation and delivery, and automated orchestration.
+Forrester's data fabric is a design concept that uses continuous analytics over metadata to facilitate the design, deployment, and utilization of integrated data across hybrid and multi-cloud environments. Its five pillars include an augmented data catalog, knowledge graphs enriched with semantics, a metadata activation and recommendation engine, AI-powered data preparation and delivery, and automated orchestration.
 
 The vision is compelling: a platform-agnostic layer that abstracts the complexity of diverse data environments and makes data a strategic asset regardless of origin or platform. In practice, much of the technology needed to fully realize this vision is still in its infancy. The effectiveness depends heavily on metadata quality, and integrating metadata from incompatible vendor systems is inherently challenging. In regulated environments, ML-based reasoning may not be acceptable due to human oversight requirements. Building and maintaining a useful knowledge graph remains complex and rarely automatable.
 
