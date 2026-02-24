@@ -77,8 +77,6 @@ Each of these architectures addresses real challenges in storage, compute, integ
 
 The result is that organizations can build technically sophisticated data platforms and still end up in executive meetings where the first twenty minutes are spent debating whose number is right.
 
-![Semantic Layer](../assets/img/semantic-layer.jpg)
-
 ---
 
 ## The Semantic Layer: The Missing Piece
