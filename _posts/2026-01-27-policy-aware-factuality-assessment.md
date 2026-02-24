@@ -186,7 +186,7 @@ These constraints are deliberate. In content moderation, the most damaging failu
 
 The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). You can paste in content, watch the agent pipeline in action, see the decision flow, and explore how different risk levels and policy interpretations lead to different outcomes.
 
-The full source code and architecture documentation are available in the repository at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow). It is designed to be inspectable and educational.
+The full source code and architecture documentation are available in the repository at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow).
 
 ---
 
