@@ -190,4 +190,4 @@ The full source code and architecture documentation are available in the reposit
 
 ---
 
-Want to explore the technical details? Check out the [architecture documentation](https://github.com/yourusername/llm-misinformation) and [API usage guide](https://github.com/yourusername/llm-misinformation/blob/main/API_Usage_Explanation.md). The demo is running at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
+Want to explore the technical details? Check out the [architecture documentation](https://github.com/cynthialmy/llm-misinformation) and [API usage guide](https://github.com/cynthialmy/llm-misinformation/blob/main/API_Usage_Explanation.md). The demo is running at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
