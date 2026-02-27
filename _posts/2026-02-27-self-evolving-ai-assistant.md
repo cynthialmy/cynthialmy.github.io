@@ -27,33 +27,35 @@ OpenClaw is a self-hosted AI assistant platform created by Peter Steinberger. It
 
 ### OpenClaw's Architecture
 
-OpenClaw follows a hub-and-spoke architecture with four distinct layers:
+OpenClaw follows a hub-and-spoke architecture where the Gateway acts as the central hub, routing messages from any channel into a shared agent and memory backend:
 
 ```mermaid
-flowchart TB
-    subgraph Top [" "]
-        direction LR
-        subgraph Channels ["User Channels"]
-            CH["WhatsApp · Telegram · Slack<br/>Discord · iMessage · WebChat"]
-        end
-        subgraph GW ["Gateway (Control Plane)"]
-            G["Router · Sessions · Auth"]
-        end
+flowchart LR
+    WA["WhatsApp"] --> GW
+    TG["Telegram"] --> GW
+    SL["Slack"] --> GW
+    DC["Discord"] --> GW
+    IM["iMessage"] --> GW
+    WC["WebChat"] --> GW
+
+    subgraph GW ["Gateway (Hub)"]
+        Router["Router"] --> Session["Sessions"] --> Auth["Auth"]
     end
 
-    subgraph Bottom [" "]
-        direction LR
-        subgraph AgentLayer ["Agent Runtime"]
-            A["Pi Agent Core · Tools · Sandbox"]
-        end
-        subgraph MemoryLayer ["Memory System"]
-            M["MEMORY.md · Daily Logs<br/>SQLite + Vectors"]
-        end
+    Auth --> Core
+
+    subgraph Agent ["Agent Runtime"]
+        Core["Pi Agent"] --> Tools["Tools"]
+        Core --> Sandbox["Sandbox"]
     end
 
-    CH --> G
-    G --> A
-    A --> M
+    Core --> Memory
+
+    subgraph Memory ["Memory System"]
+        MD["MEMORY.md"]
+        Logs["Daily Logs"]
+        DB["SQLite + Vectors"]
+    end
 ```
 
 | Layer | Component | Responsibility |
