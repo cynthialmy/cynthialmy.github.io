@@ -31,44 +31,29 @@ OpenClaw follows a hub-and-spoke architecture with four distinct layers:
 
 ```mermaid
 flowchart TB
-    subgraph Row1 [" "]
+    subgraph Top [" "]
         direction LR
         subgraph Channels ["User Channels"]
-            WA["WhatsApp"]
-            TG["Telegram"]
-            SL["Slack"]
-            DC["Discord"]
-            IM["iMessage"]
-            WC["WebChat"]
+            CH["WhatsApp · Telegram · Slack<br/>Discord · iMessage · WebChat"]
         end
         subgraph GW ["Gateway (Control Plane)"]
-            Router["Message Router"]
-            SessionMgr["Session Manager"]
-            Auth["Auth & Access Control"]
+            G["Router · Sessions · Auth"]
         end
     end
 
-    subgraph Row2 [" "]
+    subgraph Bottom [" "]
         direction LR
         subgraph AgentLayer ["Agent Runtime"]
-            Agent["Pi Agent Core"]
-            Tools["Tool Execution"]
-            Sandbox["Docker Sandbox"]
+            A["Pi Agent Core · Tools · Sandbox"]
         end
         subgraph MemoryLayer ["Memory System"]
-            MemMD["MEMORY.md"]
-            DailyLogs["Daily Logs"]
-            SQLite["SQLite + Vectors"]
+            M["MEMORY.md · Daily Logs<br/>SQLite + Vectors"]
         end
     end
 
-    Channels --> GW
-    GW --> AgentLayer
-    AgentLayer --> MemoryLayer
-    AgentLayer --> Tools
-
-    style Row1 fill:none,stroke:none
-    style Row2 fill:none,stroke:none
+    CH --> G
+    G --> A
+    A --> M
 ```
 
 | Layer | Component | Responsibility |
