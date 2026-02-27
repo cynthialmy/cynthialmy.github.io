@@ -31,27 +31,34 @@ OpenClaw follows a hub-and-spoke architecture where the Gateway acts as the cent
 
 ```mermaid
 flowchart LR
-    WA["WhatsApp"] --> GW
-    TG["Telegram"] --> GW
-    SL["Slack"] --> GW
-    DC["Discord"] --> GW
-    IM["iMessage"] --> GW
-    WC["WebChat"] --> GW
+    subgraph Channels [" "]
+        direction TB
+        WA["WhatsApp"]
+        TG["Telegram"]
+        SL["Slack"]
+        DC["Discord"]
+        IM["iMessage"]
+        WC["WebChat"]
+    end
+
+    Channels --> Router
 
     subgraph GW ["Gateway (Hub)"]
-        Router["Router"] --> Session["Sessions"] --> Auth["Auth"]
+        Router["Router"] --> Sessions["Sessions"] --> Auth["Auth"]
     end
 
     Auth --> Core
 
     subgraph Agent ["Agent Runtime"]
-        Core["Pi Agent"] --> Tools["Tools"]
+        Core["Pi Agent"]
+        Core --> Tools["Tools"]
         Core --> Sandbox["Sandbox"]
     end
 
     Core --> Memory
 
     subgraph Memory ["Memory System"]
+        direction LR
         MD["MEMORY.md"]
         Logs["Daily Logs"]
         DB["SQLite + Vectors"]
