@@ -32,16 +32,14 @@ Outside of work, I build small apps and internal tools, and write about technolo
 
 ---
 
-## What I'm Seeking
+## Focus Areas
 
-🎯 I'm actively looking for **senior PM roles** in the following areas:
+I work as a senior PM in:
 
-| Role Type | Why it fits |
-|-----------|-------------|
-| **Trust & Safety PM** | Factuality Assessment + Content Safety design directly maps to T&S work |
-| **AI/ML PM** | Procurement AI, RAG, Context Engineering: discovery through to ROI |
-| **Data Platform PM** | Semantic Layer, Data Contracts, Federated Governance |
-| **Enterprise AI PM** | Harm Mitigation, Agentic Workflows, Human-in-the-loop systems |
+- **Trust & Safety** — Factuality assessment, content safety, policy-aware systems
+- **AI/ML** — Procurement AI, RAG, context engineering, discovery through to ROI
+- **Data Platform** — Semantic layer, data contracts, federated governance
+- **Enterprise AI** — Harm mitigation, agentic workflows, human-in-the-loop design
 
 ---
 

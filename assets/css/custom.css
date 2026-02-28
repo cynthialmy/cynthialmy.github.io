@@ -52,22 +52,6 @@
   font-weight: 600;
 }
 
-.hero-seeking {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 1rem;
-  color: #1e293b;
-  background: rgba(255, 255, 255, 0.7);
-  border-left: 3px solid #0050d7;
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 0.6rem 1rem;
-  margin: 1.1rem 0;
-  display: inline-block;
-}
-
-.hero-seeking strong {
-  color: #0050d7;
-}
-
 .hero-actions {
   display: flex;
   gap: 0.85rem;
