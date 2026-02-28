@@ -3,7 +3,7 @@ layout: post
 title: "Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints"
 subtitle: How confidence thresholds and human routing reduce false positives in content moderation
 tags: [Confidence Gating, Escalation Design, Multi-Agent Systems, Policy Constraints, Content Moderation, False Positive Reduction]
-project_type: other
+project_type: enterprise
 thumbnail-img: assets/img/policy-aware-factuality-assessment.png
 share-img: assets/img/policy-aware-factuality-assessment.png
 comments: true
