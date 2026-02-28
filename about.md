@@ -36,10 +36,10 @@ Outside of work, I build small apps and internal tools, and write about technolo
 
 I work as a senior PM in:
 
-- **Trust & Safety** — Factuality assessment, content safety, policy-aware systems
-- **AI/ML** — Procurement AI, RAG, context engineering, discovery through to ROI
-- **Data Platform** — Semantic layer, data contracts, federated governance
-- **Enterprise AI** — Harm mitigation, agentic workflows, human-in-the-loop design
+- **Trust & Safety**: Factuality assessment, content safety, policy-aware systems
+- **AI/ML**: Procurement AI, RAG, context engineering, discovery through to ROI
+- **Data Platform**: Semantic layer, data contracts, federated governance
+- **Enterprise AI**: Harm mitigation, agentic workflows, human-in-the-loop design
 
 ---
 
