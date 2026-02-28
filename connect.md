@@ -24,4 +24,4 @@ Reach out and let's schedule a chat. Virtual or in-person.
 
 ---
 
-Feel free to reach out directly through my [email](mailto:cynthiamengyuanli@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/).
+Feel free to reach out directly at cynthiamengyuanli@gmail.com or connect with me on [LinkedIn](https://www.linkedin.com/in/mengyuan-li-cynthia/).
