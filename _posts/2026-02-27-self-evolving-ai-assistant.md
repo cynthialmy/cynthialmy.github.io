@@ -13,9 +13,9 @@ In early 2026, an open-source project called [OpenClaw](https://github.com/openc
 
 I was fascinated by OpenClaw's architecture, particularly its layered design (Gateway, Agents, Memory, Skills, Heartbeat) and its emphasis on local-first ownership. But as a product manager who primarily works inside a code editor, I did not need a full multi-channel platform with WhatsApp, Telegram, and Docker sandboxing. What I needed was something much lighter: an AI assistant that lives in my IDE, remembers what I care about, and gets better at helping me over time.
 
-So I built **Daily Assistant**, a lightweight, OpenClaw-inspired personal AI system that runs entirely as Markdown files and Cursor IDE rules. No servers. No daemons. No external dependencies. Just files, rules, and a structured evolution workflow.
+So I built two interrelated things. First, **Daily Assistant**: a lightweight, OpenClaw-inspired personal AI system that runs entirely as Markdown files and Cursor IDE rules. No servers. No daemons. No external dependencies. Just files, rules, and a structured evolution workflow. Second, using Daily Assistant as my development partner, I built **[bip](https://github.com/cynthialmy/build-in-public-automate)**: a CLI tool that reads your git commits, sends them to Claude, and publishes tailored progress updates to X, LinkedIn, Reddit, and HackerNews. bip became the first real project shipped with this workflow and the first entry in the `skills/` directory.
 
-This post covers the design thinking, implementation details, and trade-offs behind this project.
+This post covers the design thinking, implementation details, and trade-offs behind both projects.
 
 ---
 
@@ -89,7 +89,7 @@ Cross-cutting: the **Memory system** (Markdown files as canonical source, SQLite
 
 ## Why I Built My Own Instead of Using OpenClaw Directly
 
-This was a deliberate product decision, not a case of "not invented here" syndrome. The reasoning came down to four factors.
+This was a deliberate product decision, not a case of "not invented here" syndrome. The reasoning came down to five factors.
 
 ### Safety and Transparency
 
@@ -117,6 +117,10 @@ Compare this to OpenClaw, where state is distributed across `~/.openclaw/` in JS
 
 OpenClaw has the infrastructure for agents to learn (memory files, SOUL.md, workspace skills), but it does not prescribe a structured evolution workflow. My system makes self-improvement an explicit, trackable process with dedicated directories, reflection templates, and a changelog.
 
+### A Concrete Project to Validate the System
+
+The most compelling reason to build something simpler was having a concrete project to ship with it. **[bip](https://github.com/cynthialmy/build-in-public-automate)** is a CLI tool I built using Daily Assistant as my development partner. It reads your recent git commits and diffs, sends them to Claude alongside your project brief, and publishes two tailored post variants per platform to X, LinkedIn, Reddit, and HackerNews. bip became the first entry in the `skills/` directory and the clearest proof that this lightweight system actually helps you ship things.
+
 ---
 
 ## Daily Assistant: System Design
@@ -128,7 +132,7 @@ The core insight is that Cursor IDE already provides two of OpenClaw's four laye
 - **Gateway** = Cursor itself (it handles the user interface, message routing, and tool orchestration)
 - **Agent Runtime** = Cursor's built-in AI agent (it does the LLM reasoning, tool calling, and streaming)
 
-What Cursor does not provide out of the box is the "operating system" layer around the agent: persistent identity, structured memory, and self-improvement mechanisms. That is what Daily Assistant builds.
+What Cursor does not provide out of the box is the "operating system" layer around the agent: persistent identity, structured memory, and self-improvement mechanisms. That is what Daily Assistant builds. And once that layer exists, shipping real tools like bip becomes a natural extension of it.
 
 ```mermaid
 flowchart TB
@@ -140,8 +144,13 @@ flowchart TB
     Rule -->|"reads for context"| Memory["MEMORY.md<br/>(Long-term Memory)"]
     Rule -->|"checks recent logs"| DailyLog["memory/YYYY-MM-DD.md<br/>(Daily Logs)"]
     Rule -->|"triggers on command"| Evolution["evolution/<br/>(Self-improvement)"]
-    Rule -->|"uses capabilities"| Skills["skills/<br/>(Reusable Skills)"]
+    Rule -->|"uses capabilities"| Skills["skills/<br/>(Reusable Workflows)"]
     Rule -->|"runs checklist"| Heartbeat["HEARTBEAT.md<br/>(Health Check)"]
+
+    Skills -->|"first shipped skill"| BIP["bip CLI<br/>skills/build-in-public.md"]
+    BIP -->|"analyzes"| Commits["git commits + diffs"]
+    BIP -->|"generates via Claude AI"| Posts["platform-specific posts"]
+    Posts -->|"publishes to"| Platforms["X / LinkedIn / Reddit / HackerNews"]
 
     Evolution -->|"proposes changes to"| Soul
     Evolution -->|"proposes changes to"| Rule
@@ -183,11 +192,12 @@ daily-assistant/
 |       +-- 2026-02-27.md           # Deeper self-analysis notes from
 |       +-- ...                      # explicit "evolve" sessions
 |
-+-- skills/                          # Project-specific reusable skills
-|   +-- (future additions)
++-- skills/                          # Project-specific reusable workflows
+|   +-- build-in-public.md          # bip: automated social sharing
+|                                    # workflow (first shipped skill)
 |
 +-- workflows/                       # Reusable workflow templates
-|   +-- (future additions)
+|   +-- research.md                  # Multi-source research and synthesis
 |
 +-- config/
 |   +-- mcporter.json                # External tool config (Exa search)
@@ -236,20 +246,26 @@ flowchart LR
         D3["memory/2026-03-01.md"]
     end
 
+    subgraph Projects ["Active Project Work"]
+        BIP["bip development sessions<br/>commit patterns, draft history"]
+    end
+
     subgraph LongTerm ["Long-term (Curated)"]
-        Mem["MEMORY.md"]
+        Mem["MEMORY.md<br/>(includes bip project context,<br/>platform auth status,<br/>post style preferences)"]
     end
 
     D1 -->|"promote important facts"| Mem
     D2 -->|"promote important facts"| Mem
     D3 -->|"promote important facts"| Mem
+    BIP -->|"session notes"| D3
+    BIP -->|"stable conventions"| Mem
 
     Mem -->|"loaded every session"| Agent["Agent Context"]
     D3 -->|"latest log loaded"| Agent
 ```
 
-- **Daily logs** (`memory/YYYY-MM-DD.md`): Append-only, one file per day. Captures decisions, TODOs, experiments, and session notes. High volume, moderate signal.
-- **Long-term memory** (`MEMORY.md`): Curated, stable facts. User profile, preferences, project context, conventions. Low volume, high signal. Updated only when daily log entries prove to be persistent.
+- **Daily logs** (`memory/YYYY-MM-DD.md`): Append-only, one file per day. Captures decisions, TODOs, experiments, and session notes. High volume, moderate signal. bip development sessions, draft quality observations, and platform quirks all flow here first.
+- **Long-term memory** (`MEMORY.md`): Curated, stable facts. User profile, preferences, project context, conventions. Low volume, high signal. Updated only when daily log entries prove to be persistent. For bip, this includes platform authentication status, preferred post tone per platform, and commit conventions that generate the best drafts.
 
 This mirrors OpenClaw's approach (Markdown files as canonical source) but skips the SQLite vector index. For a single-user system where the assistant reads files directly, full-text file reading is sufficient.
 
@@ -259,7 +275,7 @@ A structured checklist with five sections:
 
 1. **Memory Health**: Is `MEMORY.md` current? Any daily log facts to promote? Any stale entries?
 2. **Open Loops**: Unresolved TODOs, parked questions, temporary decisions that became permanent
-3. **Tools and Integrations**: Run `agent-reach doctor`, check external channel status
+3. **Tools and Integrations**: Run `bip doctor` to verify platform auth, check Anthropic API quota, confirm git repo state
 4. **Workflows and Friction**: Identify repeated manual steps, propose automation
 5. **Evolution Hooks**: Flag patterns that warrant a full reflection session
 
@@ -271,11 +287,11 @@ This is the most distinctive component of the system. The evolution workflow fol
 
 ```mermaid
 flowchart TD
-    Trigger["User says 'evolve'<br/>or assistant notices<br/>recurring friction"]
+    Trigger["User says 'evolve'<br/>or assistant notices<br/>recurring friction<br/>(e.g. bip drafts need<br/>manual tone editing)"]
     ReadLogs["Read recent daily logs<br/>and past reflections"]
-    Identify["Identify patterns:<br/>- Repeated pain points<br/>- Re-derived instructions<br/>- User work habits"]
+    Identify["Identify patterns:<br/>- Repeated pain points<br/>- Re-derived instructions<br/>- User work habits<br/>- bip post quality signals"]
     Draft["Draft reflection in<br/>evolution/reflections/YYYY-MM-DD.md"]
-    Propose["Show proposals to user:<br/>- SOUL.md changes<br/>- New rules<br/>- New skills/workflows"]
+    Propose["Show proposals to user:<br/>- SOUL.md changes<br/>- New rules<br/>- New skills/workflows<br/>- bip BUILD_IN_PUBLIC.md updates"]
     Approve{"User approves?"}
     Implement["Implement changes"]
     Log["Append to<br/>evolution/CHANGELOG.md"]
@@ -290,7 +306,19 @@ flowchart TD
     Implement --> Log
 ```
 
-Key design principle: **the assistant never silently changes its own identity or rules.** Every modification goes through explicit user approval and gets logged with a timestamp and rationale. This creates a fully auditable evolution trail.
+Key design principle: **the assistant never silently changes its own identity or rules.** Every modification goes through explicit user approval and gets logged with a timestamp and rationale. This creates a fully auditable evolution trail. For bip, this has meant iterating the `BUILD_IN_PUBLIC.md` project brief over several sessions as the assistant learned which commit patterns generate the strongest drafts.
+
+#### 6. Skills: `skills/build-in-public.md`
+
+The `skills/` directory is where reusable workflows live as Markdown files. The first and most complete skill is `build-in-public.md`, which documents the bip workflow:
+
+- When to trigger a draft run (after a meaningful commit or feature completion)
+- How to write commit messages that give Claude enough context for a good post
+- Platform-specific tone guidelines (technical depth for HackerNews, story-driven for LinkedIn, concise for X)
+- How to review and select from the two generated variants
+- When to use dry-run mode before publishing
+
+The skill file is not code. It is a structured Markdown guide that the assistant reads and applies. This keeps it auditable, editable, and version-controlled alongside everything else.
 
 ---
 
@@ -303,21 +331,23 @@ Key design principle: **the assistant never silently changes its own identity or
 | **Background execution** | None (pull-based) | 24/7 Gateway with Heartbeat and Cron |
 | **Memory format** | Plain Markdown (human-readable) | Markdown + SQLite + vector embeddings |
 | **Memory search** | File reading (sequential) | Hybrid: vector similarity + BM25 keyword |
-| **Skill ecosystem** | Manual (project-local files) | ClawHub marketplace (5,700+ skills) |
+| **Skill ecosystem** | Local Markdown files (e.g., bip build-in-public workflow, research template) | ClawHub marketplace (5,700+ skills) |
 | **Multi-agent** | Single agent | Multiple isolated agents with separate workspaces |
 | **Security model** | File-level transparency + boundaries in SOUL.md | DM pairing, Docker sandbox, exec approval, Tailscale |
 | **Self-evolution** | First-class workflow with reflection, approval, and changelog | Ad-hoc (no prescribed evolution process) |
+| **Social publishing** | bip CLI: git-to-post automation for X, LinkedIn, Reddit, HackerNews | Not supported natively |
 | **Voice / Canvas** | Not supported | Voice Wake, Talk Mode, Live Canvas |
 | **Mobile integration** | Not supported | iOS and Android nodes (camera, screen, location) |
-| **Setup time** | ~2 minutes | 15-60 minutes depending on channels |
+| **Setup time** | About 2 minutes | 15 to 60 minutes depending on channels |
 
 ### Where Daily Assistant Wins
 
-- **Radical simplicity**: The entire system is ~10 Markdown files. Anyone can understand it in 5 minutes. There is no build step, no runtime, no package manager.
+- **Radical simplicity**: The entire system is about 10 Markdown files. Anyone can understand it in 5 minutes. There is no build step, no runtime, no package manager.
 - **Total transparency**: Every piece of state is a plain text file. Nothing is hidden in a database or binary format. Git diff shows exactly what changed and when.
 - **Structured evolution**: Self-improvement is not an afterthought. It has dedicated directories, a formal workflow, and an auditable changelog.
 - **IDE-native**: Designed specifically for the Cursor IDE workflow. The assistant is context-aware about your code, files, and terminal, not just chat messages.
 - **Zero attack surface**: No external skill registry, no network listeners, no Docker containers, no credential stores.
+- **Ships real tools**: Daily Assistant was the development environment for building bip. The system is productive enough to ship its own skills.
 
 ### Where OpenClaw Wins
 
@@ -341,6 +371,34 @@ These were scoping decisions, not oversights. Each one reduced complexity withou
 ---
 
 ## Use Cases and Workflow Examples
+
+### Build in Public: Shipping bip
+
+**Scenario**: I want to share my development progress without spending 30 minutes writing platform-specific posts after every meaningful commit.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Assistant
+    participant BIP as bip CLI
+    participant Git as git repo
+    participant Claude as Claude AI
+    participant Platforms as X / LinkedIn / Reddit / HN
+
+    User->>Assistant: "I just shipped the dry-run feature.<br/>Let's build in public."
+    Assistant->>BIP: Run: bip draft
+    BIP->>Git: Read last 20 commits + diffs
+    Git-->>BIP: Commit history and changed files
+    BIP->>Claude: Send git context + BUILD_IN_PUBLIC.md brief
+    Claude-->>BIP: 2 variants per platform (8 drafts total)
+    BIP-->>User: Display drafts with previews
+    User->>BIP: Select variant for each platform
+    BIP->>Platforms: Publish via official APIs (X, LinkedIn, Reddit)<br/>or Playwright automation (HackerNews)
+    Platforms-->>User: Posts live
+    Assistant->>Assistant: Append to today's daily log:<br/>"Shipped bip dry-run. HN variant<br/>performed best. Adjust brief tone."
+```
+
+The key insight is that bip is not a standalone tool sitting outside my workflow. It is a skill that the assistant coordinates, monitors, and iterates on. When a post lands well, that signal goes into the daily log. When a draft consistently needs editing, the assistant proposes updating the `BUILD_IN_PUBLIC.md` project brief during the next evolution session.
 
 ### Research and Document Synthesis
 
@@ -368,7 +426,7 @@ The assistant decomposes the research goal into parallel search queries (English
 
 ### Project Scaffolding from a Design Reference
 
-**Scenario**: I have a reference architecture document and want to turn it into a working project structure with all the right files and conventions.
+**Scenario**: I have a reference architecture document and want to turn it into a working project structure with all the right files and conventions. This is exactly how bip was built: starting from a design sketch and building out the full CLI.
 
 ```mermaid
 sequenceDiagram
@@ -377,50 +435,51 @@ sequenceDiagram
     participant Plan as Plan Mode
     participant FS as Filesystem
 
-    User->>Assistant: "Build this workflow into<br/>the daily-assistant project"
+    User->>Assistant: "Build a CLI that reads git commits<br/>and posts to social platforms"
     Assistant->>Plan: Switch to Plan mode<br/>(complex task, needs design)
-    Plan->>User: Present architecture diagram,<br/>file structure, component specs
+    Plan->>User: Present architecture diagram,<br/>file structure, bip command spec
     User->>Plan: Approve plan
     Plan->>Assistant: Switch to Agent mode<br/>(begin implementation)
-    Assistant->>FS: Create .cursor/rules/assistant.mdc
-    Assistant->>FS: Create SOUL.md
-    Assistant->>FS: Create MEMORY.md + memory/
-    Assistant->>FS: Create HEARTBEAT.md
-    Assistant->>FS: Create evolution/ tree
-    Assistant->>FS: Update README.md
-    Assistant->>User: "All 6 components created.<br/>System is ready."
+    Assistant->>FS: Scaffold bip CLI with TypeScript
+    Assistant->>FS: Implement bip draft (git + Claude integration)
+    Assistant->>FS: Implement bip post (API + Playwright fallback)
+    Assistant->>FS: Implement bip auth, doctor, status commands
+    Assistant->>FS: Write skills/build-in-public.md workflow guide
+    Assistant->>User: "bip is ready. Run bip init to get started."
+    Assistant->>FS: Append to evolution/CHANGELOG.md:<br/>"Added bip as first skill in skills/"
 ```
 
-The assistant recognizes this is an architectural task, switches to Plan mode first, presents a structured plan with diagrams for user review, and after approval implements each component systematically while tracking progress via a todo list.
+The assistant recognizes this is an architectural task, switches to Plan mode first, presents a structured plan with diagrams for user review, and after approval implements each component systematically while tracking progress via a todo list. The resulting `skills/build-in-public.md` entry documents the workflow so future sessions can coordinate bip runs without re-explaining context.
 
 ### Self-Evolution Session
 
-**Scenario**: After a week of daily use, I ask the assistant to review itself and propose improvements.
+**Scenario**: After a week of daily use and several bip publishing runs, I ask the assistant to review itself and propose improvements.
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Assistant
     participant Logs as memory/*.md
+    participant BIP as bip / BUILD_IN_PUBLIC.md
     participant Evo as evolution/
 
     User->>Assistant: "Review yourself"
     Assistant->>Logs: Read last 7 daily logs
     Assistant->>Evo: Read past reflections
-    Assistant->>Assistant: Identify patterns:<br/>1. User often asks for bilingual<br/>2. Memory promotion is manual<br/>3. Research tasks follow<br/>same 3-step pattern
+    Assistant->>BIP: Review post performance notes
+    Assistant->>Assistant: Identify patterns:<br/>1. HN posts need more technical depth<br/>2. LinkedIn drafts too formal<br/>3. Research tasks follow same 3-step pattern<br/>4. bip brief needs Twitter char count reminder
     Assistant->>Evo: Write reflection to<br/>evolution/reflections/2026-03-05.md
-    Assistant->>User: "Here are 3 proposals:<br/>1. Add auto-promote rule<br/>2. Create research workflow<br/>3. Adjust SOUL.md tone"
-    User->>Assistant: "Approve #1 and #2,<br/>skip #3"
-    Assistant->>Evo: Implement changes
-    Assistant->>Evo: Append to CHANGELOG.md:<br/>"Added auto-promote rule<br/>and research workflow template"
-    Assistant->>User: "Evolution complete.<br/>2 changes applied."
+    Assistant->>User: "Here are 4 proposals:<br/>1. Update bip HN tone in BUILD_IN_PUBLIC.md<br/>2. Soften LinkedIn voice guidance<br/>3. Create research workflow template<br/>4. Add char limit reminders to bip skill"
+    User->>Assistant: "Approve all 4"
+    Assistant->>BIP: Update BUILD_IN_PUBLIC.md
+    Assistant->>Evo: Implement rule and workflow changes
+    Assistant->>Evo: Append to CHANGELOG.md:<br/>"Refined bip brief and research workflow"
+    Assistant->>User: "Evolution complete.<br/>4 changes applied."
 ```
-
-The assistant reads recent interaction history for patterns, drafts a structured reflection with specific and actionable proposals, waits for explicit user approval on each proposal, implements approved changes, and logs everything in the changelog.
 
 ### On-Demand Health Check (Heartbeat)
 
-**Scenario**: I want to make sure nothing has fallen through the cracks.
+**Scenario**: I want to make sure nothing has fallen through the cracks, including bip platform credentials and any pending posts.
 
 ```mermaid
 sequenceDiagram
@@ -429,16 +488,16 @@ sequenceDiagram
     participant HB as HEARTBEAT.md
     participant Mem as MEMORY.md
     participant Logs as memory/*.md
-    participant Tools as agent-reach
+    participant BIP as bip doctor
 
     User->>Assistant: "Heartbeat"
     Assistant->>HB: Load checklist (5 sections)
     Assistant->>Mem: Check: is MEMORY.md current?
     Assistant->>Logs: Check: any unresolved TODOs?
-    Assistant->>Tools: Run: agent-reach doctor
-    Tools-->>Assistant: 7/12 channels active
+    Assistant->>BIP: Run: bip doctor
+    BIP-->>Assistant: X: OK, LinkedIn: OK,<br/>Reddit: token expired, HN: OK
     Assistant->>Logs: Check: any repeated friction?
-    Assistant->>User: Report:<br/>- MEMORY.md: needs 2 updates<br/>- Open TODOs: 3 items<br/>- Tools: 7/12 channels OK<br/>- Friction: research flow<br/>  could be a workflow
+    Assistant->>User: Report:<br/>- MEMORY.md: needs 2 updates<br/>- Open TODOs: 3 items<br/>- bip: Reddit token needs refresh<br/>- Friction: HN posts need<br/>  manual title editing each time
 ```
 
 ---
@@ -447,41 +506,51 @@ sequenceDiagram
 
 These are concrete improvements organized by feasibility and impact.
 
-### Phase 1: Near-Term (Weeks)
+### Phase 1: Shipped
+
+| Improvement | Description | Status |
+|-------------|-------------|--------|
+| **bip: Build in Public CLI** | A TypeScript CLI that reads git commits, generates platform-specific post variants via Claude, and publishes to X, LinkedIn, Reddit, and HackerNews. Documented as `skills/build-in-public.md`. [Repo](https://github.com/cynthialmy/build-in-public-automate) | Shipped |
+| **Research workflow template** | A reusable `workflows/research.md` that standardizes the multi-source research and synthesis process | Shipped |
+| **Auto memory promotion** | A rule that, at the end of each session, scans today's daily log and proposes promoting stable facts to `MEMORY.md` | Shipped |
+| **Git integration** | Auto-commit memory and evolution changes so the full history is versioned | Shipped |
+
+### Phase 2: Near-Term (Weeks)
 
 | Improvement | Description | Complexity |
 |-------------|-------------|------------|
-| **Research workflow template** | A reusable `workflows/research.md` that standardizes the multi-source research and synthesis process | Low |
-| **Auto memory promotion** | A rule that, at the end of each session, scans today's daily log and proposes promoting stable facts to `MEMORY.md` | Low |
 | **Weekly review workflow** | A structured template for weekly planning and retrospectives, stored in `workflows/weekly-review.md` | Low |
-| **Git integration** | Auto-commit memory and evolution changes so the full history is versioned | Low |
+| **bip analytics integration** | Track post performance (likes, replies, upvotes) back into daily logs so the assistant can optimize the BUILD_IN_PUBLIC.md brief automatically | Medium |
+| **bip draft history browser** | A TUI for reviewing, editing, and republishing past drafts without re-running the full draft pipeline | Medium |
 
-### Phase 2: Medium-Term (Months)
+### Phase 3: Medium-Term (Months)
 
 | Improvement | Description | Complexity |
 |-------------|-------------|------------|
 | **Local cron via launchd** | A small shell script that runs daily, opens Cursor, and triggers a heartbeat check automatically | Medium |
 | **Semantic memory search** | Add a lightweight local embedding index (e.g., using `sqlite-vec` or `txtai`) over `memory/` files so the assistant can search by meaning, not just read sequentially | Medium |
 | **Multi-workspace support** | Extend the system to work across multiple Cursor projects, with a shared `MEMORY.md` and project-specific daily logs | Medium |
-| **Skill library** | Build a local `skills/` directory with reusable skill definitions (e.g., "code review checklist", "blog post template", "PR summary generator") | Medium |
+| **bip multi-project mode** | Support running bip across multiple repos with separate BUILD_IN_PUBLIC.md briefs but shared platform credentials | Medium |
 
-### Phase 3: Long-Term (Quarters)
+### Phase 4: Long-Term (Quarters)
 
 | Improvement | Description | Complexity |
 |-------------|-------------|------------|
 | **Notification bridge** | A lightweight webhook or local notification system that lets the assistant ping me outside Cursor (e.g., macOS notification center) when a cron check finds issues | High |
-| **OpenClaw hybrid** | Run OpenClaw as the background daemon for channels, cron, and proactive monitoring, while keeping Daily Assistant as the IDE-focused interface. The two systems share `MEMORY.md` as a common memory layer | High |
+| **OpenClaw hybrid** | Run OpenClaw as the background daemon for channels, cron, and proactive monitoring, while keeping Daily Assistant as the IDE-focused interface. The two systems share `MEMORY.md` as a common memory layer, and bip handles the social publishing layer | High |
 | **Multi-model routing** | Implement thinking-level routing similar to OpenClaw: use a fast model for simple queries and a stronger model for deep reasoning tasks | High |
-| **Quantified self-evolution** | Track metrics over time (tasks completed, evolution frequency, memory growth rate) and visualize the assistant's "growth curve" | High |
+| **Quantified self-evolution** | Track metrics over time (tasks completed, bip post performance, evolution frequency, memory growth rate) and visualize the assistant's "growth curve" | High |
 
 ### The OpenClaw Hybrid Vision
 
-The most interesting long-term direction is combining both systems:
+The most interesting long-term direction is combining all three systems:
 
 ```mermaid
 flowchart TB
     subgraph IDE ["Cursor IDE (Daily Work)"]
         DA["Daily Assistant<br/>(rules + memory + evolution)"]
+        BIP["bip CLI<br/>(skills/build-in-public.md)"]
+        DA -->|"coordinates"| BIP
     end
 
     subgraph OC ["OpenClaw Gateway (Background)"]
@@ -491,18 +560,26 @@ flowchart TB
     end
 
     subgraph Shared ["Shared State"]
-        MemMD["MEMORY.md"]
+        MemMD["MEMORY.md<br/>(includes bip perf data)"]
         DailyLogs["memory/*.md"]
         Soul["SOUL.md"]
     end
 
+    subgraph Social ["Social Platforms"]
+        X["X / Twitter"]
+        LI["LinkedIn"]
+        RD["Reddit"]
+        HN["HackerNews"]
+    end
+
     DA <-->|"reads/writes"| Shared
     OC <-->|"reads/writes"| Shared
+    BIP -->|"publishes"| Social
     HB -->|"proactive alerts"| Channels
-    Cron -->|"scheduled tasks"| DailyLogs
+    Cron -->|"scheduled bip runs"| DailyLogs
 ```
 
-In this model, Daily Assistant handles the IDE-centric workflow (coding, research, documentation), while OpenClaw handles everything that needs to happen when I am away from my computer (notifications, scheduled checks, multi-channel access). Both systems share the same Markdown-based memory layer, so context is never lost.
+In this model, Daily Assistant handles the IDE-centric workflow (coding, research, documentation), bip handles automated social sharing from git activity, and OpenClaw handles everything that needs to happen when I am away from my computer (notifications, scheduled checks, multi-channel access). All three systems share the same Markdown-based memory layer, so context is never lost.
 
 ---
 
@@ -510,35 +587,36 @@ In this model, Daily Assistant handles the IDE-centric workflow (coding, researc
 
 ### Start with the workflow, not the technology
 
-I did not start by asking "what framework should I use?" I started by asking "what does my actual daily workflow look like, and where does an AI assistant add the most value?" The answer was: inside my IDE, where I spend 8+ hours a day. That immediately ruled out 80% of OpenClaw's feature set and pointed toward a much simpler solution.
+I did not start by asking "what framework should I use?" I started by asking "what does my actual daily workflow look like, and where does an AI assistant add the most value?" The answer was: inside my IDE, where I spend 8+ hours a day. That immediately ruled out 80% of OpenClaw's feature set and pointed toward a much simpler solution. And once Daily Assistant was running, the next question became obvious: "what is the first real skill I want to ship?" That question produced bip.
 
 ### Transparency is a feature, not a constraint
 
-Making every piece of state a readable Markdown file is not a limitation. It is a product advantage. I can audit my assistant's memory in 30 seconds. I can edit its personality with a text editor. I can see exactly how it evolved over time by reading `git log`. This level of transparency builds trust in a way that database-backed systems cannot.
+Making every piece of state a readable Markdown file is not a limitation. It is a product advantage. I can audit my assistant's memory in 30 seconds. I can edit its personality with a text editor. I can see exactly how bip's `BUILD_IN_PUBLIC.md` brief evolved over time by reading `git log`. This level of transparency builds trust in a way that database-backed systems cannot.
 
 ### Evolution needs structure, not just capability
 
-OpenClaw gives agents the capability to learn (memory files, personality configs, workspace skills). But capability without process leads to ad-hoc, hard-to-audit changes. By adding a formal evolution workflow with reflections, proposals, approvals, and a changelog, I turned a vague "the AI learns" promise into a concrete, trackable process.
+OpenClaw gives agents the capability to learn (memory files, personality configs, workspace skills). But capability without process leads to ad-hoc, hard-to-audit changes. By adding a formal evolution workflow with reflections, proposals, approvals, and a changelog, I turned a vague "the AI learns" promise into a concrete, trackable process. For bip specifically, this meant that post quality improvements were not random: they followed a clear cycle of observation, reflection, and deliberate brief updates.
 
 ### The best v1 is the one you actually use
 
-A full OpenClaw deployment would have taken me a day to set up and would have required ongoing maintenance. My Daily Assistant took about 2 minutes to set up and started providing value immediately. The "worse" technology choice was the better product choice because I actually use it every day.
+A full OpenClaw deployment would have taken me a day to set up and would have required ongoing maintenance. My Daily Assistant took about 2 minutes to set up and started providing value immediately. And bip took one focused session to scaffold because the assistant already had full context about my workflow, preferences, and conventions from `MEMORY.md`. The "worse" technology choice was the better product choice because I actually use it every day.
 
 ### Design for composability, not completeness
 
-By keeping the system simple and file-based, I preserved the option to integrate with OpenClaw later (the hybrid vision described above). If I had built a complex custom system with its own database and daemon, integrating with OpenClaw would be much harder. Simple, file-based systems compose well.
+By keeping the system simple and file-based, I preserved the option to integrate with OpenClaw later (the hybrid vision described above). bip itself follows the same principle: credentials live in a local `.buildpublic/` directory, drafts are stored as JSON, and the project brief is a plain Markdown file. If I had built a complex custom system with its own database and daemon, integrating these pieces would be much harder. Simple, file-based systems compose well.
 
 ---
 
 ## Conclusion
 
-Building Daily Assistant taught me that the most impactful AI products are not always the most technically impressive ones. OpenClaw is a remarkable piece of engineering with 230,000+ stars for good reason. But for my specific use case (single user, single device, IDE-centric workflow), a handful of Markdown files and a well-designed Cursor rule delivered more daily value than a full platform deployment would have.
+Building Daily Assistant and bip taught me that the most impactful AI products are not always the most technically impressive ones. OpenClaw is a remarkable piece of engineering with 230,000+ stars for good reason. But for my specific use case (single user, single device, IDE-centric workflow), a handful of Markdown files, a well-designed Cursor rule, and a focused CLI tool delivered more daily value than a full platform deployment would have.
 
-The key insight is that AI assistant architecture is not one-size-fits-all. OpenClaw optimizes for multi-channel reach, always-on availability, and community ecosystem. Daily Assistant optimizes for transparency, simplicity, and structured self-improvement. Both are valid product choices for different user contexts.
+The key insight is that AI assistant architecture is not one-size-fits-all. OpenClaw optimizes for multi-channel reach, always-on availability, and community ecosystem. Daily Assistant optimizes for transparency, simplicity, and structured self-improvement. bip optimizes for frictionless build-in-public consistency, ensuring that every meaningful commit has a chance to become a post without requiring manual effort. All three are valid product choices for different user contexts and they compose naturally when you keep the underlying state as plain files.
 
-If you are a product manager, developer, or anyone who spends most of their day in a code editor, I would encourage you to try this approach. Fork the repo, customize the `SOUL.md` to match your working style, and see what happens when your AI assistant starts remembering and evolving.
+If you are a product manager, developer, or anyone who spends most of their day in a code editor, I would encourage you to try this approach. Fork the Daily Assistant repo, customize the `SOUL.md` to match your working style, and add bip as your first skill. See what happens when your AI assistant starts remembering, evolving, and helping you share your work with the world.
 
 ---
 
-*Project repository: [daily-assistant](https://github.com/cynthialmy/daily-assistant)*
+*Daily Assistant repository: [daily-assistant](https://github.com/cynthialmy/daily-assistant)*
+*bip repository: [build-in-public-automate](https://github.com/cynthialmy/build-in-public-automate)*
 *Inspired by: [OpenClaw](https://github.com/openclaw/openclaw) (235K+ stars)*
