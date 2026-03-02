@@ -613,7 +613,7 @@ Building Daily Assistant and bip taught me that the most impactful AI products a
 
 The key insight is that AI assistant architecture is not one-size-fits-all. OpenClaw optimizes for multi-channel reach, always-on availability, and community ecosystem. Daily Assistant optimizes for transparency, simplicity, and structured self-improvement. bip optimizes for frictionless build-in-public consistency, ensuring that every meaningful commit has a chance to become a post without requiring manual effort. All three are valid product choices for different user contexts and they compose naturally when you keep the underlying state as plain files.
 
-If you are a product manager, developer, or anyone who spends most of their day in a code editor, I would encourage you to try this approach. Fork the Daily Assistant repo, customize the `SOUL.md` to match your working style, and add bip as your first skill. See what happens when your AI assistant starts remembering, evolving, and helping you share your work with the world.
+If you are a builder, product manager, developer, or anyone who spends most of their day in a code editor, I would encourage you to fork the Daily Assistant repo, customize the `SOUL.md` to match your working style, and add bip as your first skill. See what happens when your AI assistant starts remembering, evolving, and helping you share your work with the world.
 
 ---
 
