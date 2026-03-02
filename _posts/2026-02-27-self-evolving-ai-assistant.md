@@ -618,5 +618,7 @@ If you are a product manager, developer, or anyone who spends most of their day 
 ---
 
 *Daily Assistant repository: [daily-assistant](https://github.com/cynthialmy/daily-assistant)*
+
 *bip repository: [build-in-public-automate](https://github.com/cynthialmy/build-in-public-automate)*
+
 *Inspired by: [OpenClaw](https://github.com/openclaw/openclaw) (235K+ stars)*
