@@ -145,7 +145,7 @@ With sub-agents, isolation, and memory, the system **got harder to debug**. The 
 
 **Product tradeoff:** Without traces, “iterate the prompt” becomes superstition. With traces, I can ask concrete questions: *Did the planner waste tokens rewriting a spec? Did the analyst see implementation details it should not? Did we attach tool docs that were never used?*
 
-Only then did Anthropic’s guidance on [long-running agent harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) feel **aligned with my stack**, not because I was finally smart enough, but because I had **earned** the complexity they describe.
+Only then did Anthropic’s guidance on [long-running agent harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) feel **aligned with my stack** if I had **earned** the complexity they describe.
 
 ---
 
