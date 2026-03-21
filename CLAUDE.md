@@ -55,5 +55,5 @@ Posts support these custom fields beyond standard Jekyll:
 ### Assets
 - `assets/img/` — all images (78 files); portfolio screenshots, nav logo, social icons
 - `assets/data/` — data files served statically
-- `resources/` — PDFs and templates (resume, product-thinking-template)
+- `resources/` — PDFs and templates (e.g. product-thinking-template)
 - `_site/` — generated output, excluded from git

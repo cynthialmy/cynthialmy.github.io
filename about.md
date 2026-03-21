@@ -225,14 +225,6 @@ I work as a senior PM in:
     </div>
   </a>
 
-  <a class="contact-card" href="/resources/Cynthia_Li_resume.pdf" target="_blank" rel="noopener">
-    <span class="contact-icon">📄</span>
-    <div>
-      <strong>Resume</strong>
-      <p>Download PDF</p>
-    </div>
-  </a>
-
   <a class="contact-card" href="https://github.com/cynthialmy" target="_blank" rel="noopener">
     <span class="contact-icon">⚙️</span>
     <div>
