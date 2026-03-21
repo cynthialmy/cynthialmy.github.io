@@ -14,9 +14,9 @@ comments: true
 
 Procurement at Volvo Cars manages 1,169 suppliers, over 7,000 contracts, and millions in annual spend distributed across three fragmented legacy systems: VGS, VPC, and SI+. When I joined this initiative, there was no product brief. What I had was a vague executive mandate to "explore AI for procurement" and a growing backlog of complaints from buyers who were spending more time searching for information than using it.
 
-The obvious solution would have been to build a search tool. But search was only the visible symptom. The underlying problem was that buyers could not trust any single system to give them a complete, current answer. They compensated by cross-referencing multiple systems manually, which consumed hours daily and introduced errors that carried legal and financial consequences in a regulated automotive procurement environment.
+The obvious solution would have been to build a search tool. Search looked like the whole problem; underneath, buyers could not trust any single system to give them a complete, current answer. They compensated by cross-referencing multiple systems manually, which consumed hours daily and introduced errors that carried legal and financial consequences in a regulated automotive procurement environment.
 
-I did not start by evaluating AI models. I started by asking a more fundamental question: what decisions do buyers actually make, where does friction prevent them from making those decisions confidently, and which of those friction points can be safely automated without introducing new risk?
+I began by asking a more fundamental question before evaluating AI models: what decisions do buyers actually make, where does friction prevent them from making those decisions confidently, and which of those friction points can be safely automated without introducing new risk?
 
 ---
 
@@ -50,17 +50,17 @@ This framework became the foundation for every design decision that followed. It
 
 ## 2. Discovery: Sitting With Buyers, Not Making Assumptions
 
-When I started this initiative, I did not approach it as an "AI project." I approached it as a procurement problem that needed structured investigation before any technology decisions could be made. Instead of thinking about models or tools, my first question was: "What exactly slows buyers down, and which friction points can we safely automate?"
+When I started this initiative, I framed it as a procurement problem that needed structured investigation before any technology decisions—not as an "AI project" first. Instead of thinking about models or tools, my first question was: "What exactly slows buyers down, and which friction points can we safely automate?"
 
-### Shadowing to Find Friction, Not Feature Requests
+### Shadowing to find friction before cataloging feature requests
 
-I spent my first two weeks shadowing buyers across commodity teams. I was not looking for feature requests. I was looking for friction. I watched how buyers navigated VGS, VPC, and SI+. I observed how they searched through attachments, how often they switched screens to confirm information, and how long it took them to feel confident in their answers.
+I spent my first two weeks shadowing buyers across commodity teams, prioritizing friction over feature requests. I watched how buyers navigated VGS, VPC, and SI+. I observed how they searched through attachments, how often they switched screens to confirm information, and how long it took them to feel confident in their answers.
 
 By the third user interview, a pattern was unmistakable. One buyer described it plainly: "We spend more time finding information than using it."
 
-One buyer walked me through a routine task: checking a contract clause across systems. It took nearly 15 minutes and involved searching in VGS, opening a PDF, checking a supplier file, checking VPC for price history, verifying SI+ for implementation records, and confirming the result with a colleague. This was not an isolated workflow. It was daily reality for every buyer on the team.
+One buyer walked me through a routine task: checking a contract clause across systems. It took nearly 15 minutes and involved searching in VGS, opening a PDF, checking a supplier file, checking VPC for price history, verifying SI+ for implementation records, and confirming the result with a colleague. This workflow was routine for every buyer on the team, not a one-off anecdote.
 
-> **Insight 1:** The real problem was cognitive load, not system capability. Buyers were not lacking expertise. They were drowning in scattered data.
+> **Insight 1:** The real problem was cognitive load: buyers had expertise but were drowning in scattered data.
 
 The procurement process at Volvo Cars was fragmented and heavily manual. Managing over 1,169 suppliers and approximately 7,000 contracts, with attachments in various formats including PDF, Excel, Word, and zip files, was both time-consuming and error-prone. The lack of integration among VGS, VPC, and SI+ compounded these inefficiencies and increased the risk of human error, especially during rapid regulatory changes or detailed contract term monitoring.
 
@@ -74,19 +74,19 @@ That variability revealed a deeper structural problem.
 
 ### Understanding Buyer Psychology: The Unspoken Jobs to Be Done
 
-Beyond functionality, I listened for emotional triggers during the shadowing sessions. The real jobs to be done that emerged were not about system features. They were about human needs:
+Beyond functionality, I listened for emotional triggers during the shadowing sessions. The real jobs to be done centered on human needs more than on system features:
 
 1. "Help me find the correct information quickly."
 2. "Help me avoid making a mistake."
 3. "Help me feel confident in my decision."
 
-These were not system requirements. They were trust requirements. This insight shaped every UX decision that followed, from mandatory source citations to explicit error handling to the choice of Microsoft Teams as the delivery surface. Trust would make or break adoption, regardless of how accurate the underlying AI was.
+Those needs map to trust requirements in the product: mandatory source citations, explicit error handling, and Microsoft Teams as the delivery surface all followed from that insight. Trust would make or break adoption, regardless of how accurate the underlying AI was.
 
 ### Validating Scale: Is AI the Right Tool?
 
 I then analyzed one month of procurement support tickets and categorized each query by type. A clear Pareto distribution emerged. Approximately 40% of all inquiries were repetitive information retrieval. Buyers were asking questions like "Where is this contract?" and "Which version is the latest?" and "Where is the implementation record?" hundreds of times per month.
 
-> **Insight 3:** A large portion of procurement work was repetitive, structured, and suitable for AI-assisted automation. This was the signal that confirmed AI was a strategic match for the problem, not just a technology in search of a use case.
+> **Insight 3:** A large portion of procurement work was repetitive, structured, and suitable for AI-assisted automation. This was the signal that confirmed AI was a strategic match for the problem rather than a technology looking for a use case.
 
 ---
 
@@ -111,7 +111,7 @@ The use case was moderately complex due to four intersecting challenges. Technic
 
 ### What I Explicitly Decided Not to Build
 
-I evaluated the three main systems and chose to start with VGS only for the initial proof of value. This was a deliberate scoping decision, not a limitation.
+I evaluated the three main systems and chose to start with VGS only for the initial proof of value. This was a deliberate scoping decision.
 
 VGS was the right starting point because it was structured enough to test retrieval-augmented generation, high-impact for buyers because it anchored most daily workflows, low-risk in terms of access control, and foundational to procurement processes across the organization.
 
@@ -149,7 +149,7 @@ RAG scored highest because it balanced trust, compliance, and iteration speed wh
 
 ### System Design for Safe Degradation
 
-The architecture was designed for safe behavior under failure, not just for the happy path. The system operates through a multi-stage decision flow where each stage has an explicit failure mode and fallback.
+The architecture was designed for safe behavior under failure as well as on the happy path. The system operates through a multi-stage decision flow where each stage has an explicit failure mode and fallback.
 
 **Stage 1: Query Classification (Confidence Threshold: 0.85).** The system classifies each incoming query to determine whether it can be safely handled by retrieval. If confidence falls below the threshold, the query routes to manual search and the system logs it for analysis.
 
@@ -164,7 +164,7 @@ The architecture was designed for safe behavior under failure, not just for the 
 - Legal or compliance queries route directly to the legal team, with the interaction logged for policy review.
 - System errors trigger an operations alert and automatic fallback to the legacy system.
 
-If the RAG system fails entirely, buyers can always access source systems directly. The AI is positioned as an assistant, not a replacement, ensuring operational continuity during downtime.
+If the RAG system fails entirely, buyers can always access source systems directly. The AI is positioned as an assistant that preserves operational continuity during downtime rather than replacing source systems.
 
 ![High-Level Description](../assets/img/procurement_1.png)
 
@@ -186,11 +186,11 @@ When these groups disagreed, I used the risk matrix as a shared decision framewo
 
 ---
 
-## 6. AI as a System Component, Not the Product
+## 6. AI as a system component inside a broader product
 
 ### How AI Reduced Friction Without Replacing Judgment
 
-The AI in this system serves a specific, bounded purpose: it reduces the time buyers spend searching for information so they can focus on making decisions. The AI is not the product. The product is confident, fast procurement decisions. The AI is the mechanism that makes them possible.
+The AI in this system serves a specific, bounded purpose: it reduces the time buyers spend searching for information so they can focus on making decisions. The product is confident, fast procurement decisions; the AI is the mechanism that makes them possible.
 
 This distinction shaped three design choices:
 
@@ -202,7 +202,7 @@ This distinction shaped three design choices:
 
 ### Human-in-the-Loop as a First-Class Feature
 
-I designed the system with the assumption that AI outputs would require human verification. This was not a fallback mechanism. It was the core trust architecture.
+I designed the system with the assumption that AI outputs would require human verification. Human verification sat at the center of the trust architecture, not at the edge as an afterthought.
 
 **Reviewer Workflow:**
 1. The AI surfaces an answer with source citations.
@@ -311,7 +311,7 @@ Beyond the numbers, the pilot delivered three strategic benefits. Improved data 
 
 ## 10. Trade-Offs I Consciously Accepted
 
-Every decision to build something requires an equally clear decision about what not to build. The trade-offs below were deliberate risk management decisions, not compromises.
+Every decision to build something requires an equally clear decision about what not to build. The trade-offs below were deliberate risk management decisions with clear intent.
 
 **Did not pursue full automation.**
 Contract decisions carry legal and financial consequences that require human judgment. Automating retrieval without automating interpretation preserved trust while reducing workload. The cost was longer workflows than a fully automated system. The benefit was significantly lower risk of consequential errors.
@@ -378,7 +378,7 @@ Legal and compliance queries had a 45% rejection rate because buyers did not tru
 ### Lessons Learned from Real Incidents
 
 1. **Precision matters more than recall in high-stakes environments.** One wrong answer costs more trust than ten "I do not know" responses.
-2. **Document freshness is a feature, not an afterthought.** Real-time sync is non-negotiable for contract management in a regulated environment.
+2. **Document freshness belongs in the product spec from day one.** Real-time sync is non-negotiable for contract management in a regulated environment.
 3. **Query classification is never finished.** User behavior evolves continuously, and routing logic must evolve with it.
 4. **Transparency builds trust faster than accuracy.** Showing sources mattered more to buyers than generating perfect summaries.
 
@@ -386,6 +386,6 @@ Legal and compliance queries had a 45% rejection rate because buyers did not tru
 
 ## Learnings and Reflections
 
-AI adoption in enterprise procurement is more about change management than model management. Users need trust, not just answers, and trust is built through transparency rather than perfection. Starting narrow with clear risk boundaries accelerates scaling far more than launching broadly with loose constraints. Enterprise AI must be safe, explainable, and grounded in source documents, or it will not be used regardless of its technical capability.
+AI adoption in enterprise procurement depends heavily on change management alongside model choices. Users need trustworthy answers, and trust is built through transparency rather than perfection. Starting narrow with clear risk boundaries accelerates scaling far more than launching broadly with loose constraints. Enterprise AI must be safe, explainable, and grounded in source documents, or it will not be used regardless of its technical capability.
 
 The highest-leverage product management work in this domain is designing decision boundaries, anticipating failure modes, and structuring systems that degrade safely under uncertainty. The AI is a component. The product is the decision system that surrounds it.

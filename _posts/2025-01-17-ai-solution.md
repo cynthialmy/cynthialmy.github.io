@@ -11,9 +11,9 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-Over the past year building generative AI capabilities inside Volvo Cars' procurement organization, I confronted a fundamental challenge: how do you deploy generative AI in a high-stakes environment where mistakes carry legal, financial, and compliance consequences? The answer wasn't better models or more features. It was turning an inherently uncertain technology into a controllable decision system.
+Over the past year building generative AI capabilities inside Volvo Cars' procurement organization, I confronted a fundamental challenge: how do you deploy generative AI in a high-stakes environment where mistakes carry legal, financial, and compliance consequences? The answer lay in turning an inherently uncertain technology into a controllable decision system.
 
-This reflection documents how I approach building AI products for enterprise environments where risk is non-negotiable. It captures the frameworks I developed for categorizing risk, defining decision boundaries, designing human-in-the-loop workflows, and allowing systems to degrade safely when uncertainty exceeds acceptable thresholds. This is not about building powerful AI. This is about building trustworthy decision systems that operate predictably under constraint.
+This reflection documents how I approach building AI products for enterprise environments where risk is non-negotiable. It captures the frameworks I developed for categorizing risk, defining decision boundaries, designing human-in-the-loop workflows, and allowing systems to degrade safely when uncertainty exceeds acceptable thresholds. The focus here is trustworthy decision systems that operate predictably under constraint, more than raw model capability alone.
 
 A recent article on [Builder.io](https://www.builder.io/blog/build-ai) emphasized the importance of crafting unique AI products that stand out in an increasingly crowded field.
 
@@ -21,11 +21,11 @@ A recent article on [Builder.io](https://www.builder.io/blog/build-ai) emphasize
 
 **Start With the Workflow, Not the Model**
 
-When I began exploring how AI could improve procurement, the first instinct from many teams was to ask, “Which model should we use - GPT-4, GPT-3.5, or a fine-tuned alternative?” But I quickly realized none of those questions mattered until I deeply understood the workflow. So instead of opening an LLM playground, I started sitting with buyers and watching how they actually worked.
+When I began exploring how AI could improve procurement, the first instinct from many teams was to ask, “Which model should we use - GPT-4, GPT-3.5, or a fine-tuned alternative?” Those questions only mattered after I deeply understood the workflow. So instead of opening an LLM playground, I started sitting with buyers and watching how they actually worked.
 
-I noticed how they bounced between VGS, SI+, and VPC. I watched them dig through PDFs, reconcile price changes, hunt down attachments, and sometimes ask a colleague just to validate a detail. It became clear that the true problem wasn’t lack of functionality. It was cognitive load - the mental burden of connecting fragmented information scattered across three systems.
+I noticed how they bounced between VGS, SI+, and VPC. I watched them dig through PDFs, reconcile price changes, hunt down attachments, and sometimes ask a colleague just to validate a detail. It became clear that the true problem was cognitive load—the mental burden of connecting fragmented information scattered across three systems—more than a lack of functionality in any one tool.
 
-That insight fundamentally changed how I framed the project. Instead of “building an AI tool,” I focused on redesigning a workflow where AI acts as the semantic layer that unifies system knowledge and reduces uncertainty. AI became valuable not because it was clever, but because it removed friction that humans were never meant to carry.
+That insight fundamentally changed how I framed the project. Instead of “building an AI tool,” I focused on redesigning a workflow where AI acts as the semantic layer that unifies system knowledge and reduces uncertainty. AI became valuable by removing friction that humans were never meant to carry, whether or not the model felt clever in the moment.
 
 ---
 **How I Frame Risk: Building Decision Boundaries Before Building Features**
@@ -49,7 +49,7 @@ I established clear boundaries that protected both the business and users:
 - Any decision where the AI confidence score fell below our calibrated threshold
 - Ambiguous queries that could be interpreted multiple ways
 
-These boundaries were not technical limitations. They were strategic choices about where uncertainty was acceptable and where it was not.
+These boundaries reflected strategic choices about where uncertainty was acceptable and where it had to stay out of automation.
 
 ---
 **Reduce Risk Before Adding Intelligence**
@@ -62,9 +62,9 @@ This taught me that discipline is far more important than ambition in enterprise
 
 ---
 
-**Safety Is Not a Feature - It’s a Multi-Layered Design Philosophy**
+**Safety as a Multi-Layered Design Philosophy**
 
-People often think AI safety is purely technical. But I now see it as a deeply cross-functional product challenge. For our procurement solution, I embraced a layered approach: selecting the right model, activating Azure OpenAI’s platform-level safety filters, designing strong retrieval and grounding workflows, and shaping the user experience so that misuse becomes harder than correct use.
+People often think AI safety is purely technical. I treat it as a deeply cross-functional product challenge. For our procurement solution, I embraced a layered approach: selecting the right model, activating Azure OpenAI’s platform-level safety filters, designing strong retrieval and grounding workflows, and shaping the user experience so that misuse becomes harder than correct use.
 
 Each layer solved a different part of the risk landscape. The model layer ensured we weren’t over-engineering; the safety system layer handled guardrails and logging; the grounding layer ensured every answer was traceable to the original contract; and the UX layer guided buyers into asking the right questions in the right way.
 
@@ -112,7 +112,7 @@ This layer covers the application interface and user documentation. I designed u
 
 ## Human-in-the-Loop as First-Class Design
 
-One of the most critical insights from this project is that human oversight is not a fallback. It is the primary control mechanism. I designed the system so that humans and AI operate as partners in a structured decision workflow, with clear roles, feedback loops, and trust calibration mechanisms.
+One of the most critical insights from this project is that human oversight functions as the primary control mechanism with the same weight as any model choice. I designed the system so that humans and AI operate as partners in a structured decision workflow, with clear roles, feedback loops, and trust calibration mechanisms.
 
 **Reviewer Workflows**
 
@@ -144,18 +144,18 @@ I implemented monitoring dashboards that track:
 - Time-to-decision with vs without AI assistance
 - False positive rate (AI flagged uncertainty but human found answer acceptable)
 
-After the first month, we observed that acceptance rates increased from 72% to 89% as users learned how to formulate better queries. This validated that both the system and users needed calibration, not just the model.
+After the first month, we observed that acceptance rates increased from 72% to 89% as users learned how to formulate better queries. This validated that both the system and users needed calibration alongside the model itself.
 
 **Trust Building Through Transparency**
 
-Trust was not assumed. It was built through:
+Trust had to be built deliberately through:
 - Explicit confidence scores on every output
 - Always-visible source citations
 - Clear explanation of what the AI can and cannot do
 - Regular communication about system updates and limitations
 - Opt-in participation (no forced adoption)
 
-Buyers reported that the system felt trustworthy not because it was always right, but because it was consistently transparent about when it was uncertain.
+Buyers reported that the system felt trustworthy when it stayed transparent about uncertainty, even on answers that were not perfect.
 
 ---
 
@@ -167,33 +167,33 @@ This framework translated into clear product constraints:
 - **Scope-first rollouts** (VGS before VPC/SI+) to protect data quality and user trust.
 - **Escalation paths** for ambiguous queries, rather than forcing a confident answer.
 - **Human-in-the-loop for all medium and high-risk decisions**, with override authority always retained by buyers.
-- **Confidence thresholds tied to decision impact**, not uniform across all query types.
+- **Confidence thresholds that vary by decision impact** (for example, stricter bars for pricing than for metadata lookups).
 - **Explicit "I don't know" responses** when uncertainty exceeds acceptable bounds.
 
-**Use AI Where It Adds Value - Not Everywhere It Can Fit**
+**Use AI Where It Adds Value**
 
-One of the biggest lessons I learned is that not everything needs to be solved with an LLM. Some tasks are much better handled with deterministic rules, structured search, or backend logic. Many AI products fail because they assume a model should sit at the center of everything.
+One of the biggest lessons I learned is that plenty of problems are better solved without an LLM at the center. Some tasks are much better handled with deterministic rules, structured search, or backend logic. Many AI products fail because they assume a model should sit at the center of everything.
 
 In the procurement project, I intentionally designed a hybrid architecture. The LLM handled reasoning and summarization. RAG handled truth and grounding. Backend logic handled IDs, metadata, and compliance rules. Traditional search handled exact matches. This mix allowed us to optimize for cost, accuracy, and speed - all without turning every interaction into a model call.
 
-Ultimately, this approach helped me see AI not as a replacement for traditional software, but as an orchestrator. It’s the connective tissue that makes existing systems more accessible and intelligent, without overshadowing the strengths of traditional engineering.
+Ultimately, this approach helped me see AI as orchestration layered on traditional software: connective tissue that makes existing systems more accessible and intelligent while engineering keeps owning deterministic logic.
 
 
 ---
-**Differentiation Comes From Insight, Not Models**
+**Differentiation Comes From Insight**
 
-One of the most humbling realizations I had is that access to models is no longer a competitive advantage. Anyone can use GPT-4. Anyone can wire up a RAG pipeline. But not everyone understands the domain deeply enough to design systems that truly solve problems.
+Access to models is no longer a competitive advantage on its own. Anyone can use GPT-4 or wire up a RAG pipeline; fewer people understand the domain deeply enough to design systems that truly solve problems.
 
-What made our procurement AI successful wasn’t the sophistication of the model. It was the specificity of the product insight: how buyers search, what they fear missing, how contracts evolve, the subtle differences between VGS and VPC content types, the edge cases around amendments, and the real-world variation in document formats. These nuances made the solution genuinely defensible - because they came from watching, listening, and learning, not from plugging a model into a template.
+What made our procurement AI successful was the specificity of the product insight: how buyers search, what they fear missing, how contracts evolve, the subtle differences between VGS and VPC content types, the edge cases around amendments, and the real-world variation in document formats. Those nuances came from watching, listening, and learning, which made the solution genuinely defensible compared with dropping a model into a generic template.
 
 ---
-**Validate With Real Users, Not Demos**
+**Validate With Real Users and Real Documents**
 
 AI demos are thrilling - everything works, everything looks smart, everything is snappy. But the moment you bring real workflows and real documents into the picture, the cracks appear. That’s why I leaned heavily on user testing, both structured and exploratory.
 
 Sometimes the AI responded perfectly; other times it struggled because the prompt was vague or the document structure was messy. But every failure taught us something useful. I discovered that users needed training as much as the model did. I realized that citations and transparency mattered more than conversational polish. And I learned which tasks needed hybrid logic rather than pure AI.
 
-This reinforced a principle I now deeply believe in: AI products live or die in the hands of real users, not in the hands of engineers.
+This reinforced a principle I now deeply believe in: AI products live or die in the hands of real users more than in internal engineering demos.
 
 ---
 
@@ -201,7 +201,7 @@ This reinforced a principle I now deeply believe in: AI products live or die in 
 
 The most counterintuitive lesson I’ve learned is that the fastest way to scale an AI system is to start with a very small scope. With procurement, I deliberately resisted the temptation to boil the ocean. Instead of integrating all procurement systems at once, I focused on VGS. That constraint allowed the team to validate our assumptions earlier, refine the safety layers quickly, and avoid building a system that was too complex to adopt.
 
-By choosing depth over breadth, the team created a foundation that could scale predictably - and safely. It reminded me that good product strategy is often about protecting the team from over-ambition, not encouraging them to add more features.
+By choosing depth over breadth, the team created a foundation that could scale predictably - and safely. It reminded me that good product strategy often means protecting the team from over-ambition and scope creep.
 
 ---
 ## What We Intentionally Did NOT Do
@@ -244,7 +244,7 @@ Why: Unstructured queries increased ambiguity and hallucination risk. Instead, w
 
 Trade-off Accepted: Reduced user flexibility and conversational feel. However, query success rates were 40% higher with structured inputs. We gradually relaxed constraints once users understood system boundaries.
 
-These trade-offs were not compromises. They were deliberate choices about where to invest complexity, where to accept limitations, and how to build trust before scaling.
+These trade-offs were deliberate choices about where to invest complexity, where to accept limitations, and how to build trust before scaling.
 
 ---
 
@@ -274,7 +274,7 @@ The system I deployed in month one looked very different from the system in mont
 
 **Reality:** After analyzing six months of override data, we discovered that confidence calibration degraded over time. Queries about pricing and amendments had higher rejection rates than queries about supplier metadata, even at identical confidence levels.
 
-**What Happened:** The initial calibration was based on synthetic test cases, not real user behavior. As the query distribution shifted (more complex pricing questions, fewer simple lookups), the confidence-to-accuracy mapping became misaligned.
+**What Happened:** The initial calibration relied on synthetic test cases before we had enough live traffic to mirror real behavior. As the query distribution shifted (more complex pricing questions, fewer simple lookups), the confidence-to-accuracy mapping became misaligned.
 
 **System Adaptation:**
 - Introduced query-type-specific confidence thresholds (pricing queries required 0.90, metadata queries required 0.80)
@@ -315,22 +315,22 @@ The system I deployed in month one looked very different from the system in mont
 
 **Key Lesson: Static Systems Fail in Dynamic Environments**
 
-The most valuable realization was that trust in AI systems is not earned once. It is continuously maintained. Every month brought new edge cases, shifting user expectations, and evolving document formats. The system survived because it was designed to adapt, not to be perfect on day one.
+The most valuable realization was that trust in AI systems must be maintained continuously. Every month brought new edge cases, shifting user expectations, and evolving document formats. The system survived because it was designed to adapt from day one rather than ship as a finished monument.
 
 ---
-Closing Reflection
+## Closing reflection
 
-Building AI for procurement at Volvo Cars taught me that the hardest problems in enterprise AI are not technical. They are problems of control under uncertainty. How do you deploy generative models in environments where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
+Building AI for procurement at Volvo Cars taught me that the hardest problems in enterprise AI are problems of control under uncertainty, ahead of pure technical novelty. How do you deploy generative models in environments where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
 
-The answer is not better models. It is better decision architectures.
+The durable answer is better decision architectures, ahead of incrementally better models alone.
 
 Today, when I design AI systems, I start by mapping risk, defining boundaries, and designing for failure modes. I ask where automation stops, where humans must remain in control, and how the system should behave when confidence is low. I prioritize transparency over cleverness, constraints over flexibility, and evolution over perfection.
 
-This is the discipline that separates AI experiments from production systems. It is the difference between building features and building trust.
+This is the discipline that separates AI experiments from production systems: shipping features that earn trust over time.
 
 The AI products I build feel predictable, transparent, and sometimes boring. They do not surprise users. They do not make decisions autonomously when uncertainty is high. They degrade safely. They earn trust through consistency.
 
-Because in high-stakes environments, the most valuable AI systems are the ones that turn ambiguous, risky problems into controllable, auditable decisions, every time, for every user, without surprises.
+In high-stakes environments, the most valuable AI systems turn ambiguous, risky problems into controllable, auditable decisions for every user, without surprises.
 
 ---
 
@@ -358,7 +358,7 @@ Many AI products are mere extensions of existing models like ChatGPT. This easy 
 Even if you develop substantial technology with LLMs where OpenAI plays a minor yet vital role, you might still face two significant challenges.
 
 ### 2. **Cost and Customization Constraints**
-Large Language Models (LLMs) are not only costly and slow but also often include irrelevant data for specific applications, offering limited customization. For instance, GitHub Copilot, as reported by the Wall Street Journal, was [operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), indicating a mismatch between user willingness to pay and the cost of running services on top of LLMs.
+Large Language Models (LLMs) are costly and slow, and they often include irrelevant data for specific applications, which limits customization. For instance, GitHub Copilot, as reported by the Wall Street Journal, was [operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), indicating a mismatch between user willingness to pay and the cost of running services on top of LLMs.
 
 Moreover, while fine-tuning can help, it falls short of providing the level of customization needed for specific use cases.
 

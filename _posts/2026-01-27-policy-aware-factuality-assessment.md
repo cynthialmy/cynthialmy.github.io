@@ -9,7 +9,7 @@ share-img: assets/img/policy-aware-factuality-assessment.png
 comments: true
 ---
 
-Content moderation at scale is one of the hardest problems in modern tech. When platforms like TikTok, YouTube, or Facebook need to make decisions about billions of pieces of content daily, they cannot just build a better AI model and call it solved. The real challenge is not only detecting misinformation, it is making responsible decisions under genuine uncertainty.
+Content moderation at scale is one of the hardest problems in modern tech. When platforms like TikTok, YouTube, or Facebook need to make decisions about billions of pieces of content daily, a stronger model alone does not finish the job. The real challenge is making responsible decisions under genuine uncertainty while still catching harmful content at scale.
 
 This demo explores how agentic AI workflows can approach this challenge through deliberate escalation and policy-aware decision design. The project, deployed at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), demonstrates how multiple specialized AI agents can work together within policy constraints, while keeping humans firmly in the loop for high-stakes decisions.
 
@@ -19,7 +19,7 @@ Most AI moderation demos fall into one of two traps: either they are fully auton
 
 This system takes a different approach. It is built on a simple principle: **AI agents should propose analysis and recommendations, policy frameworks should constrain what is actionable, and humans should make final decisions when stakes are high.**
 
-Think of it like a well-designed organization. You would not want junior analysts making final calls on edge cases, but you also do not want senior leadership drowning in routine decisions. The system is designed to escalate intelligently, automate the clear cases, surface the ambiguous ones, and always provide full reasoning for review.
+Think of it like a well-designed organization. Junior analysts handle volume; edge cases rise to senior review. The system is designed to escalate intelligently, automate the clear cases, surface the ambiguous ones, and always provide full reasoning for review.
 
 ## System Flow Chart
 
@@ -54,7 +54,7 @@ Risk confidence: 0.85
 ![policy-aware-factuality-assessment-example-2](../assets/img/policy-2.png)
 
 **AI found something interesting and conflicting:**
-External search triggered due to high novelty. It surfaced a general study about apples and cancer risk that does not support the extreme claim. The system treated this as conflicting context rather than proof.
+External search triggered due to high novelty. It surfaced a general study about apples and cancer risk that weakens the extreme claim. The system treated this as conflicting context, stopping short of treating any single source as definitive proof.
 ![policy-aware-factuality-assessment-example-3](../assets/img/policy-3.png)
 ![policy-aware-factuality-assessment-example-4](../assets/img/policy-4.png)
 
@@ -70,7 +70,7 @@ When you submit a piece of content like a social media transcript, it flows thro
 
 ### 1. Claim Extraction (Groq)
 
-A fast language model extracts factual claims from the content. This is not about judging truth yet, it is about identifying statements that can be verified. Each claim is tagged by domain, because different domains require different evidentiary standards.
+A fast language model extracts factual claims from the content. At this step the focus is on identifying statements that can be verified; truth judgments come later. Each claim is tagged by domain, because different domains require different evidentiary standards.
 
 ### 2. Risk Assessment (Zentropi)
 
@@ -82,7 +82,7 @@ For medium and high-risk content, the system retrieves evidence. It starts with 
 
 ### 4. Factuality Assessment (Azure OpenAI)
 
-A frontier model assesses whether claims are likely true, likely false, or uncertain. Factuality is not the same as a policy violation. Something can be false and still be allowed.
+A frontier model assesses whether claims are likely true, likely false, or uncertain. Factuality and policy violation are separate signals. Something can be false and still be allowed.
 
 > **Design Decision: Separating Factuality from Policy Interpretation**
 >
@@ -92,7 +92,7 @@ A frontier model assesses whether claims are likely true, likely false, or uncer
 
 ### 5. Policy Interpretation (Zentropi with Fallback)
 
-A specialized agent reads the platform policy and determines whether the content violates it. The policy text is treated as input, not hard-coded rules, which allows adaptation to different policy frameworks.
+A specialized agent reads the platform policy and determines whether the content violates it. The policy text is treated as flexible input, which allows adaptation to different policy frameworks without encoding every rule in code.
 
 ### 6. Decision Orchestration
 
@@ -117,7 +117,7 @@ Instead of defaulting to a single powerful model, the system allocates compute b
 
 For low-risk, reversible steps like claim extraction, speed and cost efficiency matter more than perfect reasoning. For high-stakes factual judgments that could influence enforcement or user trust, the system intentionally escalates to stronger models.
 
-This design treats model accuracy as a *scarce resource* to be spent where mistakes are most expensive, rather than optimizing for uniform model quality across the pipeline.
+This design treats model accuracy as a *scarce resource* to be spent where mistakes are most expensive. Cheaper steps can tolerate lighter models; the pipeline saves frontier capacity for trust-critical judgments.
 
 In practice, this means using fast, low-cost models where mistakes are cheap, and reserving frontier models for decisions with real trust impact.
 
@@ -125,10 +125,10 @@ In practice, this means using fast, low-cost models where mistakes are cheap, an
 
 Most AI demos hide their limitations. This system makes uncertainty explicit.
 
-- Conflicting evidence is preserved, not collapsed into one truth
-- Low confidence triggers escalation, not automated action
-- Policy ambiguity is flagged, not hidden
-- Human review is treated as a feature, not a failure mode
+- Conflicting evidence stays visible in the record
+- Low confidence routes to escalation before any automated action
+- Policy ambiguity surfaces explicitly in the UI
+- Human review is a first-class outcome with full context
 
 The dashboard tracks metrics that matter for trust: human AI disagreement rates, review load concentration, and appeal reversal proxies.
 
@@ -136,10 +136,10 @@ The dashboard tracks metrics that matter for trust: human AI disagreement rates,
 
 ## How I Measure Success
 
-This system is not optimized for raw accuracy. Instead, success is defined by whether it improves trust outcomes at scale. I focus on three primary metrics:
+Success here means improving trust outcomes at scale more than maximizing raw accuracy on a leaderboard. I focus on three primary metrics:
 
 **1. High-risk misinformation exposure**
-The share of user views that contain high-risk misinformation. This reflects what users actually experience, not just what the system flags.
+The share of user views that contain high-risk misinformation. This reflects what users actually experience in the feed, beyond internal flag counts alone.
 
 **2. Over-enforcement proxy**
 Human overrides, appeal reversals, and disagreement between automated decisions and reviewers. Rising over-enforcement is treated as a failure signal, even if model confidence is high.
@@ -147,7 +147,7 @@ Human overrides, appeal reversals, and disagreement between automated decisions 
 **3. Human review concentration**
 The percentage of human review capacity spent on high-risk, high-uncertainty cases. If reviewers are overloaded with low-impact content, the system is misallocating attention.
 
-Precision and recall are tracked internally as guardrail metrics, but they are not the optimization target. The goal is not to be "right" on every item . It is to make the *right mistakes* less often, and only where they are recoverable.
+Precision and recall are tracked internally as guardrail metrics. The optimization target sits above them: reduce *recoverable* errors first, accept that perfection on every item is unrealistic, and keep mistakes in zones where humans can fix them.
 
 ## Human Review: The Safety Net
 
@@ -169,18 +169,18 @@ This enables re-evaluation when policies or evidence change, which is critical f
 2. **Policy as input beats policy as code.** Hard-coded rules are brittle. Natural language policies are adaptable.
 3. **Escalation design matters more than raw accuracy.** Smart routing builds trust faster than a marginal accuracy gain.
 4. **Factuality and moderation are different problems.** False content can be policy-compliant and true content can still violate policy.
-5. **Observability is everything.** In production, you need to know why a decision was made, not only what it was.
+5. **Observability is everything.** In production, you need the full rationale behind each decision, including inputs, thresholds, and policy version.
 6. **Tradeoffs must be explicit.** I tuned thresholds to balance reviewer load, latency, and policy coverage, prioritizing high-risk recall over low-risk throughput.
 
-## What This System Is Designed *Not* To Do
+## Conservative by design
 
 This system is intentionally conservative in several ways:
 
-– It does **not** aim to make instant decisions on ambiguous, high-risk content. In these cases, it prioritizes human judgment over speed.
-– It does **not** optimize for maximum automation. Reversibility and trust recovery are valued more than throughput.
-– It does **not** attempt to collapse uncertainty into a single score. Conflicting evidence and policy ambiguity are preserved and surfaced.
+– On ambiguous, high-risk content, it favors human judgment and accepts slower turnaround.
+– It trades maximum automation for reversibility and trust recovery; throughput is secondary.
+– It keeps uncertainty visible: conflicting evidence and policy ambiguity stay in the record instead of collapsing into one opaque score.
 
-These constraints are deliberate. In content moderation, the most damaging failures come not from being uncertain, but from being confidently wrong at scale.
+These constraints are deliberate. In content moderation, the most damaging failures are confident wrong answers at scale; healthy uncertainty is easier to recover from.
 
 ## Try It Yourself
 
