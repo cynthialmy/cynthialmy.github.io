@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "From One API Call to a Production Agent: What Enterprise AI Work at Volvo Taught Me About Product Tradeoffs"
-subtitle: Why elegance can make AI systems worse, when workflows beat agents, and how context engineering and memory earn their place
+title: From One API Call to a Production Agent
+subtitle: What Enterprise AI Work at Volvo Taught Me About Product Tradeoffs
 tags: [AI Agents, Product Thinking, Context Engineering, LLM Systems, Enterprise AI, Volvo, Workflow Design, Observability, Portfolio]
 project_type: enterprise
 thumbnail-img: assets/img/agent.jpg
