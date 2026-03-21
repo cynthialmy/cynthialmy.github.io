@@ -9,7 +9,7 @@ share-img: assets/img/agent.jpg
 comments: true
 ---
 
-I have been working on **enterprise AI copilots and automation** in a large automotive context (including **Volvo**). Along the way I read everything I could find on agents, including Anthropic’s recent writing on long-running tasks and context engineering. My first instinct was honest and unglamorous: *if I copy the architecture in those articles, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like an elegant, “serious” stack.
+I have been working on **enterprise AI copilots and automation** in a large automotive context (including **Volvo**). Along the way I read everything I could find on agents, including Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). My first instinct was honest and unglamorous: *if I copy the architecture in those articles, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like an elegant, “serious” stack.
 
 The result was worse. Token cost went up. Quality did not. Failures increased, and some failures were impossible to debug. I questioned whether I was simply bad at this. Then I rolled the design back, and slowly realized that **AI agent design is not traditional software design with a new runtime**. This post is my first-person account of how a tiny problem grows into a real system, **what product tradeoffs forced each layer**, and why the “finished architecture” articles online rarely show the messy path that makes those architectures justified.
 
@@ -107,7 +107,7 @@ Adding tools felt great, and each tool unlocked new work. Then performance **cre
 
 Every tool ships with descriptions. Tasks got longer. History accumulated: prior turns, snippets, code, pasted policy excerpts. **Attention spread across noise.** This is the practical meaning of **context rot** in a product: not mystical, just **too much heterogeneous information competing for the same narrow window**.
 
-Anthropic’s writing on **context engineering** helped here. At a high level, context engineering is: **for each task class, show the model what it needs, and not more**.
+Anthropic’s [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) helped here. At a high level, context engineering is: **for each task class, show the model what it needs, and not more**.
 
 In one copilot we shipped, two modes collided:
 
@@ -145,7 +145,7 @@ With sub-agents, isolation, and memory, the system **got harder to debug**. The 
 
 **Product tradeoff:** Without traces, “iterate the prompt” becomes superstition. With traces, I can ask concrete questions: *Did the planner waste tokens rewriting a spec? Did the analyst see implementation details it should not? Did we attach tool docs that were never used?*
 
-Only then did the Anthropic articles feel **aligned with my stack**, not because I was finally smart enough, but because I had **earned** the complexity they describe.
+Only then did Anthropic’s guidance on [long-running agent harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) feel **aligned with my stack**, not because I was finally smart enough, but because I had **earned** the complexity they describe.
 
 ---
 
