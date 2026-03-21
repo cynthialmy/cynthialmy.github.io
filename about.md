@@ -232,6 +232,14 @@ I work as a senior PM in:
       <p>cynthialmy</p>
     </div>
   </a>
+
+  <a class="contact-card" href="https://adplist.org/mentors/cynthia-li" target="_blank" rel="noopener">
+    <span class="contact-icon">🎓</span>
+    <div>
+      <strong>ADPList</strong>
+      <p>Mentoring profile</p>
+    </div>
+  </a>
 </div>
 
 <style>
