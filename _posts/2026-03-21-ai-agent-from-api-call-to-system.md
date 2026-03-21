@@ -9,19 +9,19 @@ share-img: assets/img/agent.jpg
 comments: true
 ---
 
-I have been working on **enterprise AI copilots and automation** in a large automotive context (including **Volvo**). Along the way I read everything I could find on agents, including Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). My first instinct was honest and unglamorous: *if I copy the architecture in those articles, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like an elegant, “serious” stack.
+I've been building **enterprise AI copilots and automation** in a large automotive setting (including **Volvo**). I read everything I could on agents: Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), among others. My first instinct was, honestly, a bit embarrassing: *if I copy the architecture in those posts, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like a serious, “grown-up” stack.
 
-The result was worse. Token cost went up. Quality did not. Failures increased, and some failures were impossible to debug. I questioned whether I was simply bad at this. Then I rolled the design back, and slowly realized that **AI agent design follows different rules than traditional software**, even when the stack looks familiar. This post is my first-person account of how a tiny problem grows into a real system, **what product tradeoffs forced each layer**, and why the “finished architecture” articles online rarely show the messy path that makes those architectures justified.
+It backfired. Token cost went up. Quality did not. Failures increased, and some of them were impossible to debug. I wondered if I was just bad at this. Then I rolled the design back and slowly saw that **AI agent design follows different rules than traditional software**, even when the stack looks familiar. This post is a first-person walkthrough of how a small problem grows into a real system, **which product tradeoffs forced each layer**, and why the polished “finished architecture” pieces online rarely show the messy path that makes those architectures worth it.
 
 ---
 
 ## The trap: stacking determinism on top of non-determinism
 
-When I write backend services, I am used to front-loading structure: containers, modules, deployment boundaries. The cost is usually extra time up front instead of sudden failure later. **LLM-based agents are non-deterministic.** If I wrap them in a heavy, intricate orchestration layer without grounding that layer in measured need, I am stacking **uncertainty on uncertainty**.
+When I write backend services, I’m used to front-loading structure: containers, modules, deployment boundaries. You usually pay with extra time up front instead of a surprise failure later. **LLM-based agents are non-deterministic.** If I wrap them in a heavy orchestration layer without grounding it in measured need, I end up stacking **uncertainty on uncertainty**.
 
-Here is a mistake I actually made. I wanted to turn a short service bulletin into a **one-line summary for a dashboard**. That is one model call. Instead, I routed it through a **plan-and-execute** pattern: plan first, then execute. The task did not get harder; the **path** did. The model was fine. I had simply chosen a longer, more fragile chain for no gain.
+Here's a mistake I actually made. I wanted to turn a short service bulletin into a **one-line summary for a dashboard**. That should be one model call. Instead, I routed it through **plan-and-execute**: plan first, then execute. The task did not get harder; the **path** did. The model was fine. I had chosen a longer, more fragile chain for no benefit.
 
-That experience shaped the through-line of this post: **an agent grows when the problem forces it to**. I treat diagram polish as secondary to that pressure.
+That experience became the thread of this post: **an agent grows when the problem forces it to**. Diagram polish comes second to that pressure.
 
 ---
 
@@ -29,21 +29,21 @@ That experience shaped the through-line of this post: **an agent grows when the 
 
 Teams often start with deliberately plain AI: paste **release notes** and ask for **five headline options** for an internal newsletter; draft a **single paragraph** explaining a policy change to retailers; turn a messy email into a **neutral reply** a coordinator can send. Those jobs are **single-shot**: one call, one artifact, human judgment at the end.
 
-**Product tradeoff:** If I wrapped that in an agent with tools, memory, and orchestration, I would pay latency, cost, and failure surface for **no new capability**. It would be “strapping a rocket to copy editing.”
+**Product tradeoff:** Wrapping that in an agent with tools, memory, and orchestration would buy latency, cost, and failure surface for **no new capability**. It would be strapping a rocket to copy editing.
 
-**Rule I now use:** If one API call solves the job, **do not use an agent**. Avoid building an agent to be on trend.
+**Rule I use now:** If one API call does the job, **do not use an agent**. Do not build an agent because it is fashionable.
 
 ---
 
 ## Stage 2: Multi-step, but still not an agent
 
-A messier need showed up on the operations side. We had **repetitive triage**: incoming documents (claims forms, supplier notices, dealer inquiries) that had to be **read, classified, routed, and summarized** before anyone could act. Humans were doing the same cleanup steps every week.
+A messier need showed up on the operations side. We had **repetitive triage**: incoming documents (claims forms, supplier notices, dealer inquiries) that had to be **read, classified, routed, and summarized** before anyone could act. People were running the same cleanup steps every week.
 
-That is not one call. The pipeline looks like: **extract text → classify intent and priority → map to internal case type → attach metadata → open or update a record → notify the right queue**. Multiple steps, multiple models or rules engines possible.
+That is not one call. The pipeline looks like **extract text, classify intent and priority, map to an internal case type, attach metadata, open or update a record, notify the right queue**. Multiple steps, multiple models or rules engines possible.
 
-**Common mistake:** “Multi-step ⇒ agent.” Not always.
+**Common mistake:** assuming multi-step always means agent. It does not.
 
-This pipeline has a crucial product property: **the user does not need to participate between steps**. The happy path is: upload a file or forward an email → click once → get a **routed case and a draft summary** in the system of record. Input is known, intermediate steps are fixed, output is delivered in one shot. That is a **deterministic workflow** from the product’s point of view, even if ML is non-deterministic inside each step.
+This pipeline has a crucial product property: **the user does not need to participate between steps**. On the happy path they upload a file or forward an email, click once, and get a **routed case and a draft summary** in the system of record. Input is known, intermediate steps are fixed, output lands in one shot. From the product’s point of view that is a **deterministic workflow**, even if ML is non-deterministic inside each step.
 
 **Tradeoff:** A workflow engine (for example **n8n**, **Make**, **Azure Logic Apps**, or a small custom pipeline with queues and retries) fits this shape. You want **reliability, idempotency, and observability** across steps. Open-ended dialogue is a different product shape.
 
@@ -53,11 +53,11 @@ This pipeline has a crucial product property: **the user does not need to partic
 
 ## Stage 3: When a “one-click” product lies to you
 
-We tried **one-click generation** for a customer-facing explanation: press a button, get a complete answer that fits **brand, market, and legal guardrails**. I used the same mental model as one-click triage. In practice the work behaved like **judgment-heavy iteration**: the first draft might be wrong in tone, missing a regional exception, or overclaiming on timing. Stakeholders needed **tight loops**: “keep the facts, soften the opening,” “add the warranty caveat,” “shorten for Germany, expand for US fleet rules.”
+We tried **one-click generation** for a customer-facing explanation: press a button, get a complete answer that fits **brand, market, and legal guardrails**. I used the same mental model as one-click triage. In practice the work behaved like **judgment-heavy iteration**: the first draft might miss the tone, skip a regional exception, or overclaim on timing. Stakeholders needed **tight loops**: “keep the facts, soften the opening,” “add the warranty caveat,” “shorten for Germany, expand for US fleet rules.”
 
-If I refused chat and tried to capture that with UI, I would add **one button per failure mode**: regenerate, shorten, add compliance block, switch audience, insert standard paragraph, attach source link. The product becomes a **cockpit**, and every new nuance demands another control.
+If I refused chat and tried to capture that in the UI, I would add **one button per failure mode**: regenerate, shorten, add compliance block, switch audience, insert standard paragraph, attach source link. The product turns into a **cockpit**, and every new nuance demands another control.
 
-**Tradeoff:** When options explode faster than the frontend can absorb, a **generic surface** (natural language + structured actions) wins. That is when a **narrow, conversational agent** starts to make product sense: **policy, brand, and local nuance** are part of the job, and teams iterate on those dimensions constantly.
+**Tradeoff:** When options explode faster than the frontend can absorb, a **generic surface** (natural language plus structured actions) wins. That is when a **narrow, conversational agent** starts to make product sense: **policy, brand, and local nuance** are part of the job, and teams iterate on those dimensions constantly.
 
 **Signals that push me toward a dialogue-style agent:**
 
@@ -68,12 +68,12 @@ If I refused chat and tried to capture that with UI, I would add **one button pe
 
 ## Stage 4: Two meanings of “long” (workflow length vs dialogue length)
 
-After I committed to an agent, I made a category error. I assumed: *long chain of work ⇒ heavy orchestration framework.* I confused two different kinds of “long.”
+After I committed to an agent, I made a category error. I assumed a long chain of work meant I needed a heavy orchestration framework. I had confused two different kinds of “long.”
 
-- **Workflow length (backend):** One scheduled job runs step 1→20 without stopping (for example **nightly reconciliation** across regions). You care about **queues, retries, concurrency, recovery**: the job truly marches across the server.
+- **Workflow length (backend):** One scheduled job runs step 1 through 20 without stopping (for example **nightly reconciliation** across regions). You care about **queues, retries, concurrency, recovery**: the job really marches across the server.
 - **Dialogue length (agent):** The *overall* task can be long, but execution is **chunked by human checkpoints**. Each slice of work can be short. You often do **not** need a twenty-step autonomous runner on day one.
 
-I chose a **boring integration path** (an AI SDK with solid tool-calling and fast iteration) over the most “powerful” graph framework. The win was **velocity and falsifiability**: ship basic chat + tools, learn where the model fails, then add structure with evidence.
+I chose a **boring integration path** (an AI SDK with solid tool-calling and fast iteration) over the most “powerful” graph framework. The win was **velocity and falsifiability**: ship basic chat plus tools, learn where the model fails, then add structure with evidence.
 
 **Product tradeoff:** Fancy frameworks can **seduce you into designing nodes before you have baselines**. You sketch steps, data contracts, and flows while still unsure whether the model can solve the simplest version of the problem. That doubles uncertainty: **will the model succeed**, and **will my graph fight the model?**
 
@@ -87,7 +87,7 @@ I chose a **boring integration path** (an AI SDK with solid tool-calling and fas
 
 I tried to “win” with **system prompts**: curated mega-prompts from well-known projects, even leaked system prompts I treated as sacred texts. Token use spiked. Latency rose. Quality did not reliably improve.
 
-**Concrete example:** Drafting a short **FAQ answer** for a B2B portal. With a light prompt like “You are a concise technical writer for Volvo-facing customer content; give one clear answer in plain language,” I often got something usable quickly. When I loaded the same task with **long procedural instructions** (plan, decompose, self-critique, multi-phase execution), the model spent more tokens **acting busy** without clearly better outcomes.
+**Concrete example:** Drafting a short **FAQ answer** for a B2B portal. With a light prompt like “You are a concise technical writer for Volvo-facing customer content; give one clear answer in plain language,” I often got something usable quickly. When I loaded the same task with **long procedural instructions** (plan, decompose, self-critique, multi-phase execution), the model spent more tokens **looking busy** without clearly better outcomes.
 
 **Tradeoff:** Prompt v1 should be **short and permissive**. I tighten constraints when I see **repeatable failure modes**: stricter output shape, more thinking budget on a specific section, few-shot examples for the brittle part. If the agent **follows instructions**, prompt iteration is usually enough for a while.
 
@@ -103,11 +103,11 @@ Then I hit tasks where **prompting could not help**. I wanted answers that refle
 
 ## Stage 6: Tool sprawl and context rot
 
-Adding tools felt great, and each tool unlocked new work. Then performance **crept downward**: more failures, uneven quality, “it understands but acts confused.” **Context had rotted**, which matched the symptoms I was seeing.
+Adding tools felt great, and each tool unlocked new work. Then performance **crept downward**: more failures, uneven quality, “it understands but acts confused.” **Context had rotted**, which matched what I was seeing.
 
-Every tool ships with descriptions. Tasks got longer. History accumulated: prior turns, snippets, code, pasted policy excerpts. **Attention spread across noise.** This is the practical meaning of **context rot** in a product: **too much heterogeneous information competing for the same narrow window**.
+Every tool ships with descriptions. Tasks got longer. History accumulated: prior turns, snippets, code, pasted policy excerpts. **Attention spread across noise.** That is the practical meaning of **context rot** in a product: **too much heterogeneous information competing for the same narrow window**.
 
-Anthropic’s [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) helped here. At a high level, context engineering means: **for each task class, show the model only what it needs**.
+Anthropic’s [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) helped here. At a high level, context engineering means **for each task class, show the model only what it needs**.
 
 In one copilot we shipped, two modes collided:
 
@@ -139,7 +139,7 @@ That is when **memory** (session vs durable, “RAM vs disk” metaphors) become
 
 ---
 
-## Stage 8: Observability, or you cannot improve what you cannot see
+## Stage 8: Observability: you cannot improve what you cannot see
 
 With sub-agents, isolation, and memory, the system **got harder to debug**. The fix was unglamorous: **log entire runs**, including **final answers**, **tool order**, **inputs/outputs summaries**, **per-step tokens**, **which context blocks were unused**, and **which worker saw which slice**.
 
