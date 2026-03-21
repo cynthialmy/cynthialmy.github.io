@@ -159,7 +159,7 @@ My failed “big bang” upgrade was not proof that advanced patterns are wrong.
 - **Separate workflow agents from dialogue agents** by **whether humans must co-evolve the spec mid-run**.
 - **Treat prompts, tools, context splits, memory, and telemetry** as **levers with costs**, each bought for a specific failure class, not as a checklist of sophistication.
 
-If you are building in this space, the honest portfolio line is not “I implemented every pattern.” It is: **I know which pattern I skipped, why I skipped it, and what evidence would change my mind.**
+If you are building in this space, the honest takeaway is to know *which pattern to skip, why you skipped it, and what evidence would change your mind*.
 
 ---
 
