@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "OpenClaw-Inspired Self-Evolving AI Assistant for Local-First IDE Workflows"
-subtitle: Designing a lightweight, file-based AI system with structured memory and evolution using Cursor IDE rules, and a CLI for automated build-in-public sharing
+title: "OpenClaw-Inspired Self-Evolving Local-First IDE Workflows"
+subtitle: Designing a lightweight, file-based AI system with structured memory and evolution
 tags: [Local-First AI, Self-Evolving Systems, AI Architecture, IDE Assistants, Product Thinking, Privacy-Preserving AI, Developer Tools]
 project_type: zero-to-one-builds
 thumbnail-img: assets/img/openclaw.jpg
