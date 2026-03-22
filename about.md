@@ -16,11 +16,11 @@ subtitle: PM building AI systems that earn trust at scale
 
 ## Who I Am
 
-I build AI decision systems for high-risk, policy-constrained environments where accuracy, accountability, and scale all matter.
+I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter. Examples include [routing low-confidence claims to escalation instead of one automatic pass]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}) and [what it takes to move from one API call to a production agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}).
 
-My work focuses on turning ambiguous, high-impact problems into controllable systems: combining LLM-powered and agentic workflows with human-in-the-loop governance, clear risk boundaries, and measurable quality signals.
+I turn unclear, high-impact problems into systems you can run: [when RAG is the wrong abstraction]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}), [harm mitigation across model, grounding, and UX]({{ '/2025-01-17-ai-solution' | relative_url }}), and automation with human review plus clear quality signals.
 
-I've shipped and scaled products across Europe, Asia, and the U.S. at **Volvo Cars, SAP, Airwallex, and Alibaba**, spanning trade compliance, procurement decision support, cross-border commerce, and payment infrastructure. Across domains, the common thread has been designing AI systems that support better decisions under uncertainty.
+I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S., from trade compliance and procurement to cross-border commerce and payments. I've written about [discovery and ROI for procurement AI]({{ '/2025-02-02-procurement-ai' | relative_url }}) and [governed metrics through the semantic layer]({{ '/2025-02-13-semantic-layer-bi' | relative_url }}). Across domains, the common thread is AI that helps people decide under uncertainty.
 
 I'm particularly focused on:
 
@@ -29,17 +29,6 @@ I'm particularly focused on:
 - **Enabling adoption** by making AI systems transparent and trustworthy
 
 Outside of work, I build small apps and internal tools, and write about technology, career growth, and women in tech.
-
----
-
-## Focus Areas
-
-I work as a senior PM in:
-
-- **Trust & Safety**: Factuality assessment, content safety, policy-aware systems
-- **AI/ML**: Procurement AI, RAG, context engineering, discovery through to ROI
-- **Data Platform**: Semantic layer, data contracts, federated governance
-- **Enterprise AI**: Harm mitigation, agentic workflows, human-in-the-loop design
 
 ---
 
