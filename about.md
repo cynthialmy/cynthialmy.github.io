@@ -1,16 +1,20 @@
 ---
-layout: page
+layout: about
 title: About Me
 subtitle: PM building AI systems that earn trust at scale
 ---
 
 <div class="about-hero">
   <div class="about-avatar">
-    <img src="{{ '/assets/img/avatar-icon.png' | relative_url }}" alt="Cynthia Mengyuan Li" />
+    <img src="{{ '/assets/img/avatar-icon.png' | relative_url }}" alt="Cynthia Mengyuan Li" width="112" height="112" loading="eager" />
   </div>
-  <div class="about-intro">
-    <h2>Cynthia Mengyuan Li</h2>
-    <p class="about-tagline">Product Manager · AI Decision Systems · Trust &amp; Safety · Enterprise AI</p>
+  <div class="about-hero__body">
+    <h2 class="about-hero__title">Cynthia Mengyuan Li</h2>
+    <p class="about-tagline">Product Manager · AI decision systems · Trust &amp; safety · Enterprise AI</p>
+    <nav class="about-hero__nav" aria-label="Portfolio">
+      <a class="about-hero__btn about-hero__btn--primary" href="{{ '/' | relative_url }}">Product work</a>
+      <a class="about-hero__btn about-hero__btn--ghost" href="{{ '/projects' | relative_url }}">Builds</a>
+    </nav>
   </div>
 </div>
 
@@ -24,9 +28,20 @@ I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia,
 
 I'm particularly focused on:
 
-- **AI decision platforms** and internal systems at scale
-- **Trust, safety, and governance** for production AI
-- **Enabling adoption** by making AI systems transparent and trustworthy
+<div class="about-focus-grid" role="list">
+  <div class="about-focus-card" role="listitem">
+    <span class="about-focus-card__label">Platforms</span>
+    <p class="about-focus-card__text">AI decision platforms and internal systems at scale</p>
+  </div>
+  <div class="about-focus-card" role="listitem">
+    <span class="about-focus-card__label">Trust &amp; safety</span>
+    <p class="about-focus-card__text">Governance and safeguards for production AI</p>
+  </div>
+  <div class="about-focus-card" role="listitem">
+    <span class="about-focus-card__label">Adoption</span>
+    <p class="about-focus-card__text">Transparent systems people can rely on</p>
+  </div>
+</div>
 
 Outside of work, I build small apps and internal tools, and write about technology, career growth, and women in tech.
 
@@ -230,402 +245,6 @@ Outside of work, I build small apps and internal tools, and write about technolo
     </div>
   </a>
 </div>
-
-<style>
-.about-hero {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0 2rem 0;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
-  border-radius: 1rem;
-  border: 1px solid rgba(0, 80, 215, 0.08);
-}
-
-.about-avatar img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  flex-shrink: 0;
-}
-
-.about-intro h2 {
-  margin: 0 0 0.35rem 0;
-  font-size: 1.5rem;
-  color: #1a1a2e;
-}
-
-.about-tagline {
-  margin: 0;
-  color: #0050d7;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 14px rgba(15, 15, 15, 0.06);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-  min-width: 0;
-}
-
-a.contact-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 80, 215, 0.12);
-  border-color: rgba(0, 80, 215, 0.2);
-  text-decoration: none;
-  color: inherit;
-}
-
-.contact-icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
-}
-
-.contact-card strong {
-  display: block;
-  font-size: 0.9rem;
-  color: #1a1a2e;
-  margin-bottom: 0.1rem;
-}
-
-.contact-card > div {
-  min-width: 0;
-}
-
-.contact-card p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #0050d7;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-/* Reference Carousel */
-.reference-carousel-container {
-  position: relative;
-  margin: 2rem 0;
-  max-width: 100%;
-}
-
-.reference-carousel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
-
-.reference-card {
-  position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 1rem;
-  padding: 1.25rem;
-  background-color: #fff;
-  box-shadow: 0 12px 26px rgba(15, 15, 15, 0.08);
-  width: 90%;
-  max-width: 600px;
-  transition: transform 0.4s ease, opacity 0.4s ease, z-index 0.4s ease;
-  opacity: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.reference-card.prev {
-  transform: translateX(-60%) scale(0.85);
-  opacity: 0.5;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.reference-card.active {
-  transform: translateX(0) scale(1);
-  opacity: 1;
-  z-index: 3;
-  position: relative;
-  pointer-events: auto;
-}
-
-.reference-card.next {
-  transform: translateX(60%) scale(0.85);
-  opacity: 0.5;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
-  position: relative;
-  z-index: 5;
-}
-
-.carousel-click-area {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 40%;
-  cursor: pointer;
-  z-index: 8;
-  background: transparent;
-}
-
-.prev-click-area {
-  left: 0;
-}
-
-.next-click-area {
-  right: 0;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  color: #000;
-  border: none;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  line-height: 1;
-  padding: 0.5rem;
-  font-family: var(--header-font, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif);
-  z-index: 10;
-  width: auto;
-  height: auto;
-  pointer-events: none;
-}
-
-.prev-btn {
-  left: 0.5rem;
-}
-
-.next-btn {
-  right: 0.5rem;
-}
-
-.carousel-btn:hover {
-  opacity: 0.7;
-  transform: translateY(-50%) scale(1.2);
-}
-
-.carousel-btn:active {
-  transform: translateY(-50%) scale(1);
-}
-
-.carousel-indicators {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-shrink: 0;
-  padding: 0 0.5rem;
-}
-
-.indicator {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  padding: 0;
-}
-
-.indicator:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-  transform: scale(1.2);
-}
-
-.indicator.active {
-  background-color: var(--link-col, #008AFF);
-  transform: scale(1.2);
-}
-
-.reference-header h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  color: var(--text-col, #404040);
-}
-
-.reference-role {
-  color: #666;
-  font-size: 0.95rem;
-  margin: 0 0 1rem 0;
-  font-style: italic;
-}
-
-.reference-quote {
-  color: var(--text-col, #404040);
-}
-
-.reference-quote p {
-  margin: 0.75rem 0;
-  line-height: 1.6;
-}
-
-.reference-quote p:first-child {
-  margin-top: 0;
-}
-
-.reference-quote p:last-child {
-  margin-bottom: 0;
-}
-
-/* Education Cards */
-.education-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-  margin: 2rem 0;
-}
-
-.education-card {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 1rem;
-  padding: 1.25rem;
-  background-color: #fff;
-  box-shadow: 0 12px 26px rgba(15, 15, 15, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.education-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 32px rgba(15, 15, 15, 0.12);
-}
-
-.education-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  color: var(--text-col, #404040);
-}
-
-.education-location {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0 0 0.75rem 0;
-}
-
-.education-degree {
-  color: var(--text-col, #404040);
-  margin: 0.5rem 0;
-  font-weight: 500;
-}
-
-.education-gpa {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0.5rem 0 0 0;
-}
-
-/* Awards List */
-.awards-list {
-  margin: 1.5rem 0;
-}
-
-.awards-list ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.awards-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  color: var(--text-col, #404040);
-}
-
-.awards-list li:last-child {
-  border-bottom: none;
-}
-
-.awards-list li::before {
-  content: "•";
-  color: var(--link-col, #008AFF);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .education-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .reference-carousel {
-    min-height: 250px;
-  }
-
-  .reference-card {
-    width: 95%;
-  }
-
-  .reference-card.prev {
-    transform: translateX(-50%) scale(0.8);
-  }
-
-  .reference-card.next {
-    transform: translateX(50%) scale(0.8);
-  }
-
-  .carousel-click-area {
-    width: 35%;
-  }
-
-  .carousel-btn {
-    font-size: 1.5rem;
-  }
-
-  .prev-btn {
-    left: 0.25rem;
-  }
-
-  .next-btn {
-    right: 0.25rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .contact-cards {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
 
 <script>
   (function() {
