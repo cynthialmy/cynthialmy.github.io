@@ -9,17 +9,17 @@ share-img: assets/img/agent.jpg
 comments: true
 ---
 
-I've been building **enterprise AI copilots and automation** in a large automotive setting (including **Volvo**). I read everything I could on agents: Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), among others. My first instinct was, honestly, a bit embarrassing: *if I copy the architecture in those posts, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like a serious, “grown-up” stack.
+I've been building **enterprise AI copilots and automation** in a large automotive setting (including **Volvo**). I read everything I could on agents: Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), among others. Those articles describe strong end states. My mistake was treating them like a kit I could assemble **before** I had sequenced the actual problem. My first instinct was, honestly, a bit embarrassing: *if I copy the architecture in those posts, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like a serious, “grown-up” stack.
 
-It backfired. Token cost went up. Quality did not. Failures increased, and some of them were impossible to debug. I wondered if I was just bad at this. Then I rolled the design back and slowly saw that **AI agent design follows different rules than traditional software**, even when the stack looks familiar. This post is a first-person walkthrough of how a small problem grows into a real system, **which product tradeoffs forced each layer**, and why the polished “finished architecture” pieces online rarely show the messy path that makes those architectures worth it.
+It backfired. Token cost went up. Quality did not. Failures increased, and some of them were impossible to debug. I wondered if I was just bad at this. Then I rolled the design back and saw that **AI agent design follows different rules than traditional software**, even when the stack looks familiar. Those articles show where a mature stack can land; they rarely show the failures that justify each layer. This post is a walkthrough of how a small problem grows into a real system, **which product tradeoffs forced each layer**, and why “finished architecture” write-ups skip the messy path that makes those architectures worth it.
 
 ---
 
 ## The trap: stacking determinism on top of non-determinism
 
-When I write backend services, I’m used to front-loading structure: containers, modules, deployment boundaries. I accept extra time up front so I do not pay with surprise failures later. **LLM-based agents are non-deterministic.** If I wrap them in a heavy orchestration layer without grounding it in measured need, I end up stacking **uncertainty on uncertainty**.
+When I write backend services, I front-load structure: containers, modules, deployment boundaries. That habit works because the moving parts are mostly deterministic once wired, so time spent early usually buys fewer surprises in production. **LLM-based agents do not behave that way at the core: their outputs vary run to run.** If I still reach for a heavy orchestration layer before I have evidence that each piece earns its place, I am not trading complexity for stability. I am layering orchestration on top of variability, which means **uncertainty on uncertainty**.
 
-Here's a mistake I actually made. I wanted to turn a short service bulletin into a **one-line summary for a dashboard**. That should be one model call. Instead, I routed it through **plan-and-execute**: plan first, then execute. The task did not get harder; the **path** did. The model was fine. I had chosen a longer, more fragile chain for no benefit.
+The same reflex showed up on a trivial task. I wanted to turn a short service bulletin into a **one-line summary for a dashboard**. That should be one model call. Instead, I routed it through **plan-and-execute**: plan first, then execute. The task did not get harder; the **path** did. The model was fine. I had chosen a longer, more fragile chain for no benefit, which is exactly the trap above: more moving parts on top of a variable core, with no new capability to show for it.
 
 That experience became the thread of this post: **an agent grows when the problem forces it to**. Diagram polish comes second to that pressure.
 
@@ -41,7 +41,7 @@ A messier need showed up on the operations side. We had **repetitive triage**: i
 
 That is not one call. The pipeline looks like **extract text, classify intent and priority, map to an internal case type, attach metadata, open or update a record, notify the right queue**. Multiple steps, multiple models or rules engines possible.
 
-**Common mistake:** assuming multi-step always means agent. It does not.
+**Common mistake:** calling that an *agent* because several models or checks appear in sequence. In product terms it is still a **pipeline**: fixed stages, known inputs and outputs, no mid-course negotiation with the system.
 
 This pipeline has a crucial product property: **the user does not need to participate between steps**. On the happy path they upload a file or forward an email, click once, and get a **routed case and a draft summary** in the system of record. Input is known, intermediate steps are fixed, output lands in one shot. From the product’s point of view that is a **deterministic workflow**, even if ML is non-deterministic inside each step.
 
@@ -53,7 +53,7 @@ This pipeline has a crucial product property: **the user does not need to partic
 
 ## Stage 3: When a “one-click” product lies to you
 
-We tried **one-click generation** for a customer-facing explanation: press a button, get a complete answer that fits **brand, market, and legal guardrails**. I used the same mental model as one-click triage. In practice the work behaved like **judgment-heavy iteration**: the first draft might miss the tone, skip a regional exception, or overclaim on timing. Stakeholders needed **tight loops**: “keep the facts, soften the opening,” “add the warranty caveat,” “shorten for Germany, expand for US fleet rules.”
+We tried **one-click generation** for a customer-facing explanation: press a button, get a complete answer that fits **brand, market, and legal guardrails**. I used the same mental model as one-click triage in the previous stage: one submission, one finished artifact. Here the mismatch was different. Triage could still be a pipeline because the outcome was a **routed case plus a draft**, both definable in advance. This task needed **judgment-heavy iteration**: the first draft might miss the tone, skip a regional exception, or overclaim on timing. Stakeholders needed **tight loops**: “keep the facts, soften the opening,” “add the warranty caveat,” “shorten for Germany, expand for US fleet rules.”
 
 If I refused chat and tried to capture that in the UI, I would add **one button per failure mode**: regenerate, shorten, add compliance block, switch audience, insert standard paragraph, attach source link. The product turns into a **cockpit**, and every new nuance demands another control.
 
@@ -68,9 +68,9 @@ If I refused chat and tried to capture that in the UI, I would add **one button 
 
 ## Stage 4: Two meanings of “long” (workflow length vs dialogue length)
 
-After I committed to an agent, I made a category error. I assumed a long chain of work meant I needed a heavy orchestration framework. I had confused two different kinds of “long.”
+After I committed to an agent, I made a category error. I treated **dialogue depth** like **batch job length**: the user-facing work felt big, so I assumed I needed a heavy orchestration framework and many autonomous steps. Those are different axes. A long nightly job is one kind of “long.” A long collaboration with a human is another.
 
-- **Workflow length (backend):** One scheduled job runs step 1 through 20 without stopping (for example **nightly reconciliation** across regions). You care about **queues, retries, concurrency, recovery**: the job really marches across the server.
+- **Workflow length (backend):** One scheduled job runs step 1 through 20 without stopping (for example **nightly reconciliation** across regions). Here you care about **queues, retries, concurrency, recovery**: the job really marches across the server without a person in the loop between steps.
 - **Dialogue length (agent):** The *overall* task can be long, but execution is **chunked by human checkpoints**. Each slice of work can be short. You often do **not** need a twenty-step autonomous runner on day one.
 
 I chose a **boring integration path** (an AI SDK with solid tool-calling and fast iteration) over the most “powerful” graph framework. The win was **velocity and falsifiability**: ship basic chat plus tools, learn where the model fails, then add structure with evidence.
@@ -91,7 +91,7 @@ I tried to “win” with **system prompts**: curated mega-prompts from well-kno
 
 **Tradeoff:** Prompt v1 should be **short and permissive**. I tighten constraints when I see **repeatable failure modes**: stricter output shape, more thinking budget on a specific section, few-shot examples for the brittle part. If the agent **follows instructions**, prompt iteration is usually enough for a while.
 
-Then I hit tasks where **prompting could not help**. I wanted answers that reflected **current recall campaigns or regional bulletins** stored in internal systems. The model had **no tool to read that world**. No prompt rewrite substitutes for **missing capability**.
+Then I hit tasks where **prompting could not help** because the facts lived in internal systems the model could not see. I wanted answers that reflected **current recall campaigns or regional bulletins** stored there. The model had **no tool to read that world**. No prompt rewrite substitutes for **missing capability**.
 
 **Correct move:** **Add tools** (search internal knowledge, fetch structured records, execute code, validate in an environment). Polishing the system prompt rarely closes a capability gap on its own. After I wired a handful of tools, behavior changed qualitatively: the model **chose** tools, chained them, and “agentic” behavior **emerged** without a bespoke planner, because the **actions** were finally available.
 
@@ -103,9 +103,9 @@ Then I hit tasks where **prompting could not help**. I wanted answers that refle
 
 ## Stage 6: Tool sprawl and context rot
 
-Adding tools felt great, and each tool unlocked new work. Then performance **crept downward**: more failures, uneven quality, “it understands but acts confused.” **Context had rotted**, which matched what I was seeing.
+Adding tools felt great, and each tool unlocked new work. Then performance **crept downward**: more failures, uneven quality, “it understands but acts confused.” The mechanism was straightforward: every tool adds descriptions and invocation patterns; logs and history grow; the model’s attention spreads across a wider, noisier pile. **Context had rotted.**
 
-Every tool ships with descriptions. Tasks got longer. History accumulated: prior turns, snippets, code, pasted policy excerpts. **Attention spread across noise.** That is the practical meaning of **context rot** in a product: **too much heterogeneous information competing for the same narrow window**.
+That is the practical meaning of **context rot** in a product: **too much heterogeneous information competing for the same narrow window**, so the useful signal dilutes even when each piece looked reasonable in isolation.
 
 Anthropic’s [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) helped here. At a high level, context engineering means **for each task class, show the model only what it needs**.
 
@@ -122,7 +122,7 @@ When I mixed both in one flat transcript, small jobs survived; **hard jobs faile
 
 ## Stage 7: When memory stops being optional
 
-Once I split roles, I faced a boring but expensive problem: **handing large artifacts between stages**.
+Once I split roles, I faced a boring but expensive problem: **handing large artifacts between stages**. Roles fix *who* sees what, but they do not solve *how* a big blob moves from planner to worker. Chat turns are a tempting bus, yet they push the model to paraphrase megabytes in natural language.
 
 Suppose the user pastes **a long specification** or **a log excerpt** for revision. A planner reads it and must delegate to a worker that actually edits the text or code. The naive approach: **have the planner restate the full content** in its message to the worker.
 
@@ -141,11 +141,13 @@ That is when **memory** (session vs durable, “RAM vs disk” metaphors) become
 
 ## Stage 8: Observability: you cannot improve what you cannot see
 
-With sub-agents, isolation, and memory, the system **got harder to debug**. The fix was unglamorous: **log entire runs**, including **final answers**, **tool order**, **inputs/outputs summaries**, **per-step tokens**, **which context blocks were unused**, and **which worker saw which slice**.
+With sub-agents, isolation, and memory, the system **got harder to debug** because failure could hide in a handoff, a tool choice, or a context block, not only in the final answer. Without a trace, “iterate the prompt” was guesswork.
 
-**Product tradeoff:** Without traces, “iterate the prompt” becomes superstition. With traces, I can ask concrete questions: *Did the planner waste tokens rewriting a spec? Did the analyst see implementation details it should not? Did we attach tool docs that were never used?*
+The fix was unglamorous: **log entire runs**, including **final answers**, **tool order**, **inputs/outputs summaries**, **per-step tokens**, **which context blocks were unused**, and **which worker saw which slice**.
 
-Anthropic’s guidance on [long-running agent harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) felt **aligned with my stack** once I had **earned** the complexity they describe through traces and baselines.
+**Product tradeoff:** Without traces, prompt tweaks float free of evidence. With traces, I can ask concrete questions: *Did the planner waste tokens rewriting a spec? Did the analyst see implementation details it should not? Did we attach tool docs that were never used?*
+
+Anthropic’s guidance on [long-running agent harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) felt **aligned with my stack** only after traces and baselines showed **where** complexity was actually buying something. Before that, the same docs had been a recipe for overbuilding.
 
 ---
 
