@@ -50,7 +50,7 @@ This framework became the foundation for every design decision that followed. It
 
 ## 2. Discovery: Sitting With Buyers, Not Making Assumptions
 
-When I started this initiative, I framed it as a procurement problem that needed structured investigation before any technology decisions—not as an "AI project" first. Instead of thinking about models or tools, my first question was: "What exactly slows buyers down, and which friction points can we safely automate?"
+When I started this initiative, I framed it as a procurement problem that needed structured investigation before any technology decisions, not as an "AI project" first. Instead of thinking about models or tools, my first question was: "What exactly slows buyers down, and which friction points can we safely automate?"
 
 ### Shadowing to find friction before cataloging feature requests
 
@@ -272,7 +272,7 @@ The projected 6,800 hours saved annually provided the anchor. Even under conserv
 
 Validation required alignment across three dimensions:
 
-1. **Technology Integration:** I unified VGS, VPC, and SI+ to work cohesively with the AI system. This required creating data products and ensuring smooth interaction between the AI layer and Microsoft Teams.
+1. **Technology Integration:** I connected the AI layer to Microsoft Teams and to VGS for the pilot, with data products and handoffs designed so VPC and SI+ could follow in later phases (see evolution over time below). This matched the deliberate VGS-first scope rather than pretending all three systems were integrated on day one.
 2. **Process Simplification:** The introduction of AI shifted the procurement process from manual search and review to an AI-assisted approach with mandatory human verification. Training the team on new capabilities and adjusting workflows were essential steps.
 3. **Cultural Shift:** Implementing AI in procurement required a mindset shift. I positioned the system as a decision-support tool rather than a decision-maker, which allowed the team to focus on strategic judgment rather than information gathering.
 
@@ -386,6 +386,6 @@ Legal and compliance queries had a 45% rejection rate because buyers did not tru
 
 ## Learnings and Reflections
 
-AI adoption in enterprise procurement depends heavily on change management alongside model choices. Users need trustworthy answers, and trust is built through transparency rather than perfection. Starting narrow with clear risk boundaries accelerates scaling far more than launching broadly with loose constraints. Enterprise AI must be safe, explainable, and grounded in source documents, or it will not be used regardless of its technical capability.
+AI adoption in enterprise procurement depends heavily on change management alongside model choices. Buyers need trustworthy answers, and trust is built through transparency rather than perfection. Starting narrow with clear risk boundaries accelerates scaling far more than launching broadly with loose constraints. Enterprise AI must be safe, explainable, and grounded in source documents, or it will not be used regardless of its technical capability.
 
 The highest-leverage product management work in this domain is designing decision boundaries, anticipating failure modes, and structuring systems that degrade safely under uncertainty. The AI is a component. The product is the decision system that surrounds it.

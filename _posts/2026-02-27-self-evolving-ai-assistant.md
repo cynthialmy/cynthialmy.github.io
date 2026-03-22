@@ -355,7 +355,7 @@ bip status                       # platform status and recent drafts at a glance
 bip history                      # browse past drafts with previews
 ```
 
-### Project Structure
+### bip: repository layout
 
 ```
 your-project/

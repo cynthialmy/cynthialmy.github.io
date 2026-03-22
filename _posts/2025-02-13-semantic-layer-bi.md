@@ -13,7 +13,7 @@ At Volvo Cars, data is generated at enormous scale across manufacturing lines, s
 
 Better pipelines, newer warehouses, or trendier architectures cannot solve this problem on their own. Over the past fifteen years, the industry has produced a rich landscape of data architectures: data lakes, modern warehouses, lakehouses, data fabrics, and data meshes. Each addresses real problems. None of them, by themselves, solve the problem of *meaning*.
 
-This post traces the evolution of modern data architectures and explains where and why they fall short. The goal was to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization, regardless of which architecture sits underneath.
+This post traces the evolution of modern data architectures and explains where and why they fall short. It also shows how to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization, regardless of which architecture sits underneath.
 
 > **Interactive demo:** [Metric Trust Explorer](https://semantic-layer-demo.streamlit.app/) shows how three source systems compute the same procurement metrics differently, and how a governed semantic layer resolves the inconsistency. Source on [GitHub](https://github.com/cynthialmy/semantic-layer-demo).
 
@@ -136,9 +136,9 @@ Once a governed semantic layer exists, it becomes the foundation for capabilitie
 
 ### Trustworthy AI Assistants Over Enterprise Data
 
-When I built a RAG-based procurement assistant at Volvo Cars, the hardest problem was ensuring that the AI's answers matched the numbers on the official dashboard—harder than retrieval accuracy or prompt engineering alone. If a buyer asks the assistant "what is the current contract value for supplier X?" and the assistant returns a different number than the one in VGS, the buyer blames the AI.
+When I built a RAG-based procurement assistant at Volvo Cars, the hardest problem was ensuring that the AI's answers matched the numbers on the official dashboard. That problem was harder than retrieval accuracy or prompt engineering alone. If a buyer asks the assistant "what is the current contract value for supplier X?" and the assistant returns a different number than the one in VGS, the buyer blames the AI.
 
-A semantic layer gives the AI system the same governed metric definitions that power dashboards, reports, and analyst queries. The LLM does not need to interpret raw tables or infer business logic. It queries the semantic layer, which returns the certified answer—the same figure stakeholders already trust in official reporting.
+A semantic layer gives the AI system the same governed metric definitions that power dashboards, reports, and analyst queries. The LLM does not need to interpret raw tables or infer business logic. It queries the semantic layer, which returns the certified answer: the same figure stakeholders already trust in official reporting.
 
 ### Automated Compliance Monitoring at Scale
 
@@ -211,7 +211,7 @@ These definitions belong in SQL-backed logic, not PowerPoint. A metric definitio
 
 ### Build Reusable Data Models
 
-As product owner, the job is to define what must exist in the semantic layer, prioritize the build sequence based on decision impact, ensure metric consistency across consumption tools, and prevent metric sprawl, because every new metric needs justification.
+As product owner, I defined what had to exist in the semantic layer, prioritized the build sequence by decision impact, pushed for metric consistency across consumption tools, and guarded against metric sprawl, because every new metric needs justification.
 
 At Volvo Cars, where data flows through systems like VGS, SI+, and VPC, the semantic layer becomes the single point of reconciliation. Without it, each system tells its own version of the truth.
 
@@ -305,13 +305,13 @@ Created a metric governance council with representatives from analytics, enginee
 1. **Watermark instead of blocking.** I never blocked a report from being published. I made non-compliance *visible* instead of *punished.* Blocking would have caused rebellion and workarounds. Visibility caused voluntary compliance. Preserving team autonomy while creating accountability was the key insight.
 2. **No auto-correction of metric discrepancies.** The system flags discrepancies; humans investigate. Auto-correction could mask legitimate data differences and remove the human conversation that is often where the real governance happens.
 3. **No self-service metric publishing to shared dashboards.** Sandboxed creation is free; publishing requires review. Freedom without governance creates metric chaos.
-4. **No automation of governance council decisions.** Every metric definition change requires human review and cross-functional sign-off. The hardest part of governance is the *conversation between humans with different priorities*—more than automating rule enforcement. That conversation cannot be automated, and should not be.
+4. **No automation of governance council decisions.** Every metric definition change requires human review and cross-functional sign-off. The hardest part of governance is the *conversation between humans with different priorities*, not automating rule enforcement. That conversation cannot be automated, and should not be.
 
 ---
 
 ## The Hardest Lessons
 
-**Governance is a people problem wearing a data hat.** The 23 conflicting definitions came from rational teams solving local problems independently. Fixing that takes shared ownership, visible consequences, and translation documents—more than a new lakehouse, data mesh, or fabric rollout on its own.
+**Governance is a people problem wearing a data hat.** The 23 conflicting definitions came from rational teams solving local problems independently. Fixing that takes shared ownership, visible consequences, and translation documents, not only a new lakehouse, data mesh, or fabric rollout on its own.
 
 **Mandates produce compliance; visibility produces behavior change.** The UNVALIDATED watermark accomplished in 6 weeks what 3 months of mandates could not.
 

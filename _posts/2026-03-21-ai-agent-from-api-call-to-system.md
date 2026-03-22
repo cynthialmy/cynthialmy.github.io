@@ -17,7 +17,7 @@ It backfired. Token cost went up. Quality did not. Failures increased, and some 
 
 ## The trap: stacking determinism on top of non-determinism
 
-When I write backend services, I’m used to front-loading structure: containers, modules, deployment boundaries. You usually pay with extra time up front instead of a surprise failure later. **LLM-based agents are non-deterministic.** If I wrap them in a heavy orchestration layer without grounding it in measured need, I end up stacking **uncertainty on uncertainty**.
+When I write backend services, I’m used to front-loading structure: containers, modules, deployment boundaries. I accept extra time up front so I do not pay with surprise failures later. **LLM-based agents are non-deterministic.** If I wrap them in a heavy orchestration layer without grounding it in measured need, I end up stacking **uncertainty on uncertainty**.
 
 Here's a mistake I actually made. I wanted to turn a short service bulletin into a **one-line summary for a dashboard**. That should be one model call. Instead, I routed it through **plan-and-execute**: plan first, then execute. The task did not get harder; the **path** did. The model was fine. I had chosen a longer, more fragile chain for no benefit.
 

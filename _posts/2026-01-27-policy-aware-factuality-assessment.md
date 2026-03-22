@@ -11,7 +11,7 @@ comments: true
 
 Content moderation at scale is one of the hardest problems in modern tech. When platforms like TikTok, YouTube, or Facebook need to make decisions about billions of pieces of content daily, a stronger model alone does not finish the job. The real challenge is making responsible decisions under genuine uncertainty while still catching harmful content at scale.
 
-This demo explores how agentic AI workflows can approach this challenge through deliberate escalation and policy-aware decision design. The project, deployed at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), demonstrates how multiple specialized AI agents can work together within policy constraints, while keeping humans firmly in the loop for high-stakes decisions.
+I built a demo, live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), that shows how agentic AI workflows can approach this challenge through deliberate escalation and policy-aware decision design. Multiple specialized agents work together within policy constraints, with humans in the loop for high-stakes decisions.
 
 ## Product Framing: Agents Propose, Policies Constrain, Humans Decide
 
@@ -66,7 +66,7 @@ Rationale: High risk content with high policy confidence requires human confirma
 
 ## How It Works: A Pipeline of Specialized Agents
 
-When you submit a piece of content like a social media transcript, it flows through a cascade of specialized agents.
+When someone submits a piece of content like a social media transcript, it flows through a cascade of specialized agents.
 
 ### 1. Claim Extraction (Groq)
 
@@ -169,16 +169,16 @@ This enables re-evaluation when policies or evidence change, which is critical f
 2. **Policy as input beats policy as code.** Hard-coded rules are brittle. Natural language policies are adaptable.
 3. **Escalation design matters more than raw accuracy.** Smart routing builds trust faster than a marginal accuracy gain.
 4. **Factuality and moderation are different problems.** False content can be policy-compliant and true content can still violate policy.
-5. **Observability is everything.** In production, you need the full rationale behind each decision, including inputs, thresholds, and policy version.
+5. **Observability is everything.** In production, operators need the full rationale behind each decision, including inputs, thresholds, and policy version.
 6. **Tradeoffs must be explicit.** I tuned thresholds to balance reviewer load, latency, and policy coverage, prioritizing high-risk recall over low-risk throughput.
 
 ## Conservative by design
 
 This system is intentionally conservative in several ways:
 
-– On ambiguous, high-risk content, it favors human judgment and accepts slower turnaround.
-– It trades maximum automation for reversibility and trust recovery; throughput is secondary.
-– It keeps uncertainty visible: conflicting evidence and policy ambiguity stay in the record instead of collapsing into one opaque score.
+- On ambiguous, high-risk content, it favors human judgment and accepts slower turnaround.
+- It trades maximum automation for reversibility and trust recovery; throughput is secondary.
+- It keeps uncertainty visible: conflicting evidence and policy ambiguity stay in the record instead of collapsing into one opaque score.
 
 These constraints are deliberate. In content moderation, the most damaging failures are confident wrong answers at scale; healthy uncertainty is easier to recover from.
 
@@ -186,8 +186,4 @@ These constraints are deliberate. In content moderation, the most damaging failu
 
 The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). You can paste in content, watch the agent pipeline in action, see the decision flow, and explore how different risk levels and policy interpretations lead to different outcomes.
 
-The full source code and architecture documentation are available in the repository at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow).
-
----
-
-Want to explore the technical details? Check out the [architecture documentation](https://github.com/cynthialmy/llm-misinformation) and [API usage guide](https://github.com/cynthialmy/llm-misinformation/blob/main/API_Usage_Explanation.md). The demo is running at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
+Code and reference docs: [github.com/cynthialmy/llm-misinformation](https://github.com/cynthialmy/llm-misinformation) ([architecture overview](https://github.com/cynthialmy/llm-misinformation), [API usage](https://github.com/cynthialmy/llm-misinformation/blob/main/API_Usage_Explanation.md)). The decision-flow write-up and layout also live at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow).
