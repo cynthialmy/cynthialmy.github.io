@@ -11,7 +11,7 @@ comments: true
 
 I've been building **enterprise AI copilots and automation** in a large automotive setting (including **Volvo**). I read everything I could on agents: Anthropic’s [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), among others. Those articles describe strong end states. My mistake was treating them like a kit I could assemble **before** I had sequenced the actual problem.
 
-My first instinct was,embarrassingly: *if I repeat the architecture in those posts, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like a serious, “grown-up” stack.
+My first instinct was, embarrassingly, to copy the architecture in those posts: *if I repeat the architecture in those posts, our agent will be perfect.* So I upgraded system prompts, isolated contexts, added more memory, and stitched together what felt like a serious, “grown-up” stack.
 
 It backfired. Token cost went up. Quality did not. Failures increased, and some of them were impossible to debug. I wondered if I was just bad at this. Then I rolled the design back and saw that **AI agent design follows different rules than traditional software**, even when the stack looks familiar. Those articles show where a mature stack can land; they rarely show the failures that justify each layer. This post is a walkthrough of how a small problem grows into a real system, **which product tradeoffs forced each layer**, and why “finished architecture” write-ups skip the messy path that makes those architectures worth it.
 
