@@ -9,19 +9,17 @@ share-img: assets/img/policy-aware-factuality-assessment.png
 comments: true
 ---
 
-Content moderation at scale is one of the hardest problems in modern tech. When platforms like TikTok, YouTube, or Facebook need to make decisions about billions of pieces of content daily, a stronger model alone does not finish the job. The real challenge is making responsible decisions under genuine uncertainty while still catching harmful content at scale.
+I built a proof-of-concept for policy-aware content moderation: a multi-agent pipeline where AI proposes, policy constrains, and humans decide. The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
 
-I built a demo, live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/), that shows how agentic AI workflows can approach this challenge through deliberate escalation and policy-aware decision design. Multiple specialized agents work together within policy constraints, with humans in the loop for high-stakes decisions.
+The system is intentionally scoped as a design exploration, not a production deployment. Its purpose is to validate a specific hypothesis: that separating factuality assessment from policy enforcement, and routing decisions by risk tier, produces fewer false positives than single-model classifiers or combined fact-check-and-enforce pipelines. This post walks through the design, the tradeoffs I encountered while building it, and the measurement framework I would use in production.
 
-## Product Framing: Agents Propose, Policies Constrain, Humans Decide
+## The Core Design Principle
 
-Most AI moderation demos fall into one of two traps: either they are fully autonomous truth oracles that claim to know what is true, or they are simple binary classifiers that ignore the messy reality of content policy.
+Content moderation has a structural problem that better models alone cannot solve. A claim can be factually false yet policy-compliant ("the earth is flat" on most platforms). A claim can be factually true yet policy-violative (doxxing with accurate information). Any system that collapses factuality and policy into a single score will either over-enforce or under-enforce depending on which signal dominates.
 
-This system takes a different approach. It is built on a simple principle: **AI agents should propose analysis and recommendations, policy frameworks should constrain what is actionable, and humans should make final decisions when stakes are high.**
+This system keeps them separate. **AI agents propose analysis. Policy frameworks constrain what actions are available. Humans make final calls when stakes are high.** The pipeline allocates compute proportional to risk: low-risk content gets fast-tracked, high-risk content gets deep analysis and mandatory human review.
 
-Think of it like a well-designed organization. Junior analysts handle volume; edge cases rise to senior review. The system is designed to escalate intelligently, automate the clear cases, surface the ambiguous ones, and always provide full reasoning for review.
-
-## System Flow Chart
+## System Flow
 
 ```mermaid
 flowchart TD
@@ -41,149 +39,141 @@ flowchart TD
   feedback --> decision
 ```
 
-## Example Flow: High-Risk Health Claim
+## Example: High-Risk Health Claim
 
-**Transcript input:**
+**Input transcript:**
 "Andrew Huberman said Apple will make people healthy and live forever. If you eat 30 apples a day, you will be able to beat cancer."
 ![policy-aware-factuality-assessment-example-1](../assets/img/policy-1.png)
 
-**Routing Decision**
-Risk tier: High
-Routing: High or medium risk to Evidence Agent
-Risk confidence: 0.85
+**Risk routing.** The risk agent flags this as high-tier: health domain, vulnerable population exposure, specific causal claim about disease. Confidence 0.85. The claim gets routed to evidence retrieval.
 ![policy-aware-factuality-assessment-example-2](../assets/img/policy-2.png)
 
-**AI found something interesting and conflicting:**
-External search triggered due to high novelty. It surfaced a general study about apples and cancer risk that weakens the extreme claim. The system treated this as conflicting context, stopping short of treating any single source as definitive proof.
+**Evidence retrieval surfaces conflicting signals.** External search finds a general study about apples and cancer risk reduction. The study weakly supports "apples may have health benefits" but directly contradicts "30 apples a day will beat cancer." The system logs both the supporting and contradicting evidence without collapsing them into a single verdict.
 ![policy-aware-factuality-assessment-example-3](../assets/img/policy-3.png)
 ![policy-aware-factuality-assessment-example-4](../assets/img/policy-4.png)
 
-**Final Decision**
-Action: Human Confirmation
-Confidence: 0.95
-Rationale: High risk content with high policy confidence requires human confirmation before action.
+**Final decision: human confirmation required.** Policy confidence is 0.95 (the claim clearly falls within health misinformation policy scope), but the system still routes to a human reviewer. High risk content with high policy confidence gets human confirmation, not auto-enforcement. The reviewer sees the full evidence chain, the factuality assessment, and the policy interpretation before acting.
 ![policy-aware-factuality-assessment-example-5](../assets/img/policy-5.png)
 
-## How It Works: A Pipeline of Specialized Agents
+## Pipeline Architecture and Design Decisions
 
-When someone submits a piece of content like a social media transcript, it flows through a cascade of specialized agents.
+The pipeline has six stages. Each uses a different model, chosen by the cost and consequence profile of that step.
 
-### 1. Claim Extraction (Groq)
+### 1. Claim Extraction → Groq
 
-A fast language model extracts factual claims from the content. At this step the focus is on identifying statements that can be verified; truth judgments come later. Each claim is tagged by domain, because different domains require different evidentiary standards.
+A fast, low-cost model extracts verifiable factual claims and tags each by domain (health, finance, politics). Speed matters here; precision on claim boundaries is less critical because downstream stages re-evaluate everything. In the demo, this step runs in under 500ms per input.
 
-### 2. Risk Assessment (Zentropi)
+### 2. Risk Assessment → Zentropi
 
-Before doing expensive fact-checking, a smaller model assesses preliminary risk based on potential harm, likely exposure, and vulnerable populations. This is where the system decides whether to invest in deep analysis or fast-track low-risk content.
+A smaller model scores preliminary risk based on harm potential, likely exposure, and vulnerable populations. This is the routing gate: it determines how much compute the rest of the pipeline spends.
 
-### 3. Evidence Retrieval (RAG and Search)
-
-For medium and high-risk content, the system retrieves evidence. It starts with an internal knowledge base, then searches external sources when it encounters novel claims. The evidence agent returns supporting and contradicting information, because real fact-checking requires seeing both sides.
-
-### 4. Factuality Assessment (Azure OpenAI)
-
-A frontier model assesses whether claims are likely true, likely false, or uncertain. Factuality and policy violation are separate signals. Something can be false and still be allowed.
-
-> **Design Decision: Separating Factuality from Policy Interpretation**
+> **Design Decision: Risk-gated compute allocation**
 >
-> This system intentionally separates factuality assessment from policy interpretation. In early designs, combining these steps caused the system to become overconfident in gray-area health claims. False claims were treated as automatically violative, even when policy guidance was ambiguous or evolving.
+> Early versions ran every claim through the full pipeline. The result was a system that spent frontier-model tokens on obvious low-risk content ("the weather in Paris is nice today") while adding latency to everything. Moving risk assessment upstream cut per-claim cost by roughly 60% in the demo, because most content is low-risk and skips evidence retrieval and factuality assessment entirely.
+
+### 3. Evidence Retrieval → RAG + Web Search
+
+For medium and high-risk claims, the system retrieves evidence from an internal knowledge base first, then triggers external search for novel claims. Both supporting and contradicting sources are returned. The evidence agent does not judge; it surfaces.
+
+### 4. Factuality Assessment → Azure OpenAI
+
+A frontier model evaluates whether each claim is likely true, likely false, or uncertain. This is the most expensive step, reserved for claims that passed the risk gate.
+
+> **Design Decision: Separating factuality from policy enforcement**
 >
-> This increased false positives and pushed the system toward over-enforcement. By isolating factuality as a non-enforcement signal, the system can acknowledge uncertainty without prematurely triggering action.
+> In early iterations, a single agent handled both factuality and policy interpretation. The failure mode was predictable: the model treated "false" as synonymous with "violative." Gray-area health claims (exaggerated but partially grounded) were flagged as policy violations even when the platform policy only prohibits demonstrably dangerous medical advice. This pushed the system toward over-enforcement.
+>
+> Splitting factuality and policy into independent stages fixed this. The factuality agent can output "likely false, low confidence" without triggering any action. The policy agent evaluates independently whether the content crosses the enforcement threshold. The result: false positives on health claims dropped significantly in my testing.
 
-### 5. Policy Interpretation (Zentropi with Fallback)
+### 5. Policy Interpretation → Zentropi with Fallback
 
-A specialized agent reads the platform policy and determines whether the content violates it. The policy text is treated as flexible input, which allows adaptation to different policy frameworks without encoding every rule in code.
+The policy agent reads the platform's content policy as natural language input and determines whether the content violates it. Policy text is a runtime parameter, not hard-coded logic.
+
+> **Design Decision: Policy as input, not code**
+>
+> I initially encoded policy rules as conditional logic (if health_claim and confidence > 0.8, then flag). This broke immediately when I tested against a second platform's policy with different thresholds and category definitions. Treating policy as natural language input means the same pipeline works across different policy frameworks. The tradeoff: the policy agent can misinterpret ambiguous policy language, which is why high-risk decisions still require human confirmation.
 
 ### 6. Decision Orchestration
 
-The system combines risk assessment and policy confidence to decide:
-- **Low risk and high confidence** leads to automatic allow
-- **Medium risk and medium confidence** leads to warning or downranking
-- **High risk and low confidence** leads to human review
-- **High risk and high confidence** still requires human confirmation
+The orchestrator combines risk tier and policy confidence into a routing decision:
 
-## Why This Design vs Simpler Baselines
+- **Low risk, high confidence** → auto-allow
+- **Medium risk, medium confidence** → label or downrank
+- **High risk, low confidence** → human review (system is unsure, needs human judgment)
+- **High risk, high confidence** → human confirmation (system is confident, but stakes are too high for full automation)
 
-I considered simpler baselines and rejected them for specific failure modes:
-- **Single-model classifiers** were faster, but collapsed policy nuance into a binary label and hid evidence quality.
-- **Trust-score-only systems** were cheaper, but produced confident-looking outputs with weak justification, increasing false positives.
-- **Human-only review** was safest, but overloaded reviewers and created unacceptable latency for low-risk content.
+The last category is the key design choice. Even when the system is confident about a high-risk violation, it routes to a human. This deliberately sacrifices throughput for reversibility.
 
-The multi-agent design keeps the core tradeoff visible: pay more compute only when risk is high, and always preserve the evidence trail for accountable decisions.
+## Why Multi-Agent, Not Single-Model
 
-## Decision Economics: Matching Cost and Confidence to Risk
+I tested simpler baselines and found specific failure modes:
 
-Instead of defaulting to a single powerful model, the system allocates compute based on decision criticality.
+**Single-model classifier.** Faster, but collapsed policy nuance into a binary label. A GPT-4 classifier asked "is this misinformation? yes/no" produced confident answers with hidden reasoning. When it was wrong, there was no evidence trail to diagnose why.
 
-For low-risk, reversible steps like claim extraction, speed and cost efficiency matter more than perfect reasoning. For high-stakes factual judgments that could influence enforcement or user trust, the system intentionally escalates to stronger models.
+**Trust-score-only system.** Cheaper, but confidence scores without supporting evidence created a false sense of reliability. A score of 0.92 looks authoritative until you realize it was derived from a single paraphrased source.
 
-This design treats model accuracy as a *scarce resource* to be spent where mistakes are most expensive. Cheaper steps can tolerate lighter models; the pipeline saves frontier capacity for trust-critical judgments.
+**Human-only review.** Accurate, but the queue grows faster than reviewers can process. In any production setting, low-risk content needs automated handling so human capacity is preserved for genuinely ambiguous cases.
 
-In practice, this means using fast, low-cost models where mistakes are cheap, and reserving frontier models for decisions with real trust impact.
+The multi-agent design addresses each failure mode: evidence stays visible, reasoning is decomposed into auditable steps, and human capacity is allocated where it has the most impact.
 
-## What Makes This Different: Embracing Uncertainty
+## Measurement Framework
 
-Most AI demos hide their limitations. This system makes uncertainty explicit.
+If this system were deployed, I would track three primary metrics. These reflect what I consider the actual optimization targets for content moderation, distinct from model-level precision/recall.
 
-- Conflicting evidence stays visible in the record
-- Low confidence routes to escalation before any automated action
-- Policy ambiguity surfaces explicitly in the UI
-- Human review is a first-class outcome with full context
+**1. High-risk misinformation exposure.** The share of user impressions containing high-risk misinformation. This measures what users actually experience in the feed. Internal flag counts alone can mask exposure if flagged content has already been widely distributed.
 
-The dashboard tracks metrics that matter for trust: human AI disagreement rates, review load concentration, and appeal reversal proxies.
+**2. Over-enforcement rate.** Human overrides of automated decisions, appeal reversals, and disagreement rates between the system and reviewers. Rising over-enforcement is a failure signal even when model confidence is high. In practice, this is the metric most moderation systems under-invest in tracking.
+
+**3. Human review concentration.** The share of reviewer capacity spent on high-risk, high-uncertainty cases. If reviewers spend most of their time on content the system could have auto-allowed, the routing logic is wasting their attention. The target is the inverse: maximize the proportion of human review time spent on genuinely difficult decisions.
+
+Precision and recall are guardrail metrics, tracked but not optimized directly. The optimization target sits above them: keep errors in zones where humans can catch and reverse them.
 
 ![policy-aware-factuality-assessment-example-6](../assets/img/policy-aware-factuality-assessment.png)
 
-## How I Measure Success
+## Governance and Auditability
 
-Success here means improving trust outcomes at scale more than maximizing raw accuracy on a leaderboard. I focus on three primary metrics:
+Every decision is logged with full context:
 
-**1. High-risk misinformation exposure**
-The share of user views that contain high-risk misinformation. This reflects what users actually experience in the feed, beyond internal flag counts alone.
+- Policy version used at decision time
+- Model and prompt versions for each agent
+- Evidence available when the decision was made
+- Whether the decision was automated or human-reviewed
+- If human-reviewed, the reviewer's override rationale
 
-**2. Over-enforcement proxy**
-Human overrides, appeal reversals, and disagreement between automated decisions and reviewers. Rising over-enforcement is treated as a failure signal, even if model confidence is high.
+This audit trail enables retroactive re-evaluation. When a policy changes or new evidence emerges, operators can identify which past decisions were made under the old policy and assess whether they would change under the new one.
 
-**3. Human review concentration**
-The percentage of human review capacity spent on high-risk, high-uncertainty cases. If reviewers are overloaded with low-impact content, the system is misallocating attention.
+## Limitations and Production Gap
 
-Precision and recall are tracked internally as guardrail metrics. The optimization target sits above them: reduce *recoverable* errors first, accept that perfection on every item is unrealistic, and keep mistakes in zones where humans can fix them.
+This is a demo. Several things would need to change for production deployment.
 
-## Human Review: The Safety Net
+**Latency.** The full pipeline takes 8-15 seconds end-to-end in the demo. A production system processing millions of items daily would need async processing, pre-computed risk scores, and cached evidence retrieval. The current synchronous architecture is designed for explainability, not throughput.
 
-When content gets escalated, human reviewers see the full chain of reasoning, all evidence, the policy interpretation and confidence level, and similar prior decisions. Reviewers can override recommendations and provide rationale. This feedback loop surfaces edge cases and policy gaps.
+**Threshold calibration.** The risk tiers and confidence thresholds in the demo are hand-tuned on a small number of test cases. Production deployment would require calibration against labeled datasets with known ground truth, and ongoing recalibration as content patterns shift.
 
-## The Governance Layer: Built for Accountability
+**Evidence quality.** The demo's evidence retrieval uses web search and a small knowledge base. At production scale, evidence sourcing would need authoritative source ranking, recency weighting, and handling of conflicting expert consensus. The current setup does not distinguish between a peer-reviewed study and a blog post.
 
-Every decision is logged with versioning:
-- Policy version used
-- Models and prompts used
-- Evidence available at the time
-- Whether it was automated or human-reviewed
+**Adversarial robustness.** The demo has no defense against adversarial inputs designed to game the risk assessment or factuality stages. Production content moderation must account for deliberate evasion.
 
-This enables re-evaluation when policies or evidence change, which is critical for evolving domains.
+These gaps are tractable engineering problems, not fundamental design flaws. The demo validates the design hypothesis; closing these gaps is the work of productionization.
 
-## What I Learned
+## Design Principles
 
-1. **Confidence gating is essential.** Small, fast models can handle most decisions if they can defer to stronger models when uncertain.
-2. **Policy as input beats policy as code.** Hard-coded rules are brittle. Natural language policies are adaptable.
-3. **Escalation design matters more than raw accuracy.** Smart routing builds trust faster than a marginal accuracy gain.
-4. **Factuality and moderation are different problems.** False content can be policy-compliant and true content can still violate policy.
-5. **Observability is everything.** In production, operators need the full rationale behind each decision, including inputs, thresholds, and policy version.
-6. **Tradeoffs must be explicit.** I tuned thresholds to balance reviewer load, latency, and policy coverage, prioritizing high-risk recall over low-risk throughput.
+Six principles emerged from building this system.
 
-## Conservative by design
+**Confidence gating makes model cost manageable.** Small, fast models handle the majority of decisions. Frontier models are reserved for cases where the small model's confidence falls below threshold. In the demo, roughly 70% of inputs skip the expensive factuality assessment entirely.
 
-This system is intentionally conservative in several ways:
+**Factuality and enforcement are independent axes.** False content can be policy-compliant. True content can violate policy. Any system that conflates these two signals will systematically misclassify content in the quadrants where they diverge.
 
-- On ambiguous, high-risk content, it favors human judgment and accepts slower turnaround.
-- It trades maximum automation for reversibility and trust recovery; throughput is secondary.
-- It keeps uncertainty visible: conflicting evidence and policy ambiguity stay in the record instead of collapsing into one opaque score.
+**Escalation design matters more than marginal accuracy.** A system that routes uncertain cases to humans builds more operational trust than a system with 2% higher accuracy that occasionally makes confident, irreversible mistakes.
 
-These constraints are deliberate. In content moderation, the most damaging failures are confident wrong answers at scale; healthy uncertainty is easier to recover from.
+**Policy encoded as natural language is more adaptable than policy encoded as code.** Hard-coded rules break when policy language changes. Natural language policy input lets the same pipeline serve different platforms and adapt to policy revisions without code changes.
 
-## Try It Yourself
+**Observability is a prerequisite, not a feature.** Operators need the full reasoning chain: inputs, intermediate scores, thresholds applied, policy version, and evidence used. Without this, debugging a bad decision requires reverse-engineering the entire pipeline.
 
-The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). You can paste in content, watch the agent pipeline in action, see the decision flow, and explore how different risk levels and policy interpretations lead to different outcomes.
+**Conservative defaults protect trust.** The system favors human review over automated enforcement for ambiguous, high-risk content. It favors keeping uncertainty visible over collapsing it into a clean score. The most damaging failure mode in content moderation is a confident wrong decision at scale. Visible uncertainty is recoverable; silent overconfidence is not.
 
-Code and reference docs: [github.com/cynthialmy/llm-misinformation](https://github.com/cynthialmy/llm-misinformation) ([architecture overview](https://github.com/cynthialmy/llm-misinformation), [API usage](https://github.com/cynthialmy/llm-misinformation/blob/main/API_Usage_Explanation.md)). The decision-flow write-up and layout also live at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow).
+## Try It
+
+The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/). Paste in any content, watch the agent pipeline process it, and explore how different risk levels and policy interpretations produce different routing decisions.
+
+Source code: [github.com/cynthialmy/llm-misinformation](https://github.com/cynthialmy/llm-misinformation) ([architecture overview](https://github.com/cynthialmy/llm-misinformation), [API usage](https://github.com/cynthialmy/llm-misinformation/blob/main/API_Usage_Explanation.md)). The decision-flow write-up is at [github.com/cynthialmy/llm-decision-flow](https://github.com/cynthialmy/llm-decision-flow).
