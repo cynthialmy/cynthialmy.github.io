@@ -11,380 +11,162 @@ comments: true
 # author: Cynthia Mengyuan Li
 ---
 
-Over the past year building generative AI capabilities inside Volvo Cars' procurement organization, I confronted a fundamental challenge: how do you deploy generative AI in a high-stakes environment where mistakes carry legal, financial, and compliance consequences? The answer lay in turning an inherently uncertain technology into a controllable decision system.
+Over the past year building generative AI inside Volvo Cars' procurement organization, I confronted a design problem that most AI product literature skips: how do you make an inherently uncertain technology behave predictably in an environment where mistakes carry legal, financial, and compliance consequences?
 
-This reflection documents how I approach building AI products for enterprise environments where risk is non-negotiable. It captures the frameworks I developed for categorizing risk, defining decision boundaries, designing human-in-the-loop workflows, and allowing systems to degrade safely when uncertainty exceeds acceptable thresholds. The focus here is trustworthy decision systems that operate predictably under constraint, more than raw model capability alone.
+The answer is not a single technique. It is a layered architecture where each layer catches failures the others miss. This post documents the four-layer harm mitigation framework I developed, with implementation details from the procurement AI system. The focus is on control and trustworthiness as product outcomes, not model capability in isolation.
 
-A recent article on [Builder.io](https://www.builder.io/blog/build-ai) emphasized the importance of crafting unique AI products that stand out in an increasingly crowded field.
-
----
-
-**Start With the Workflow, Not the Model**
-
-When I began exploring how AI could improve procurement, the first instinct from many teams was to ask, “Which model should we use - GPT-4, GPT-3.5, or a fine-tuned alternative?” Those questions only mattered after I deeply understood the workflow. So instead of opening an LLM playground, I started sitting with buyers and watching how they actually worked.
-
-I noticed how they bounced between VGS, SI+, and VPC. I watched them dig through PDFs, reconcile price changes, hunt down attachments, and sometimes ask a colleague just to validate a detail. It became clear that the true problem was cognitive load—the mental burden of connecting fragmented information scattered across three systems—more than a lack of functionality in any one tool.
-
-That insight fundamentally changed how I framed the project. Instead of “building an AI tool,” I focused on redesigning a workflow where AI acts as the semantic layer that unifies system knowledge and reduces uncertainty. AI became valuable by removing friction that humans were never meant to carry, whether or not the model felt clever in the moment.
-
----
-**How I Frame Risk: Building Decision Boundaries Before Building Features**
-
-Before writing a single line of code, I mapped procurement decisions across three dimensions: impact (financial/legal consequences), reversibility (can errors be caught and corrected), and scale (how many decisions per day). This risk matrix became the foundation for every design decision that followed.
-
-**High Impact × Low Reversibility × High Scale = No Automation**
-Contract compliance interpretations, pricing approvals above threshold, and supplier obligation assessments fell into this category. These decisions required mandatory human review. The AI system could surface relevant information and highlight risk factors, but could never make the final decision.
-
-**Medium Impact × Medium Reversibility = AI-Assisted with Human-in-the-Loop**
-Contract clause summarization, historical price comparisons, and amendment tracking fell here. The AI could generate outputs, but humans retained override authority. Every AI-generated answer included source citations, confidence signals, and an explicit escalation path.
-
-**Low Impact × High Reversibility = Automation with Monitoring**
-Document metadata extraction, clause categorization, and basic entity recognition could be automated. However, we implemented drift detection and periodic human audits to catch model degradation early.
-
-**What Must Never Be Automated**
-I established clear boundaries that protected both the business and users:
-- Legal interpretation that could affect contractual obligations
-- Pricing decisions above defined spend thresholds
-- Supplier relationship assessments
-- Any decision where the AI confidence score fell below our calibrated threshold
-- Ambiguous queries that could be interpreted multiple ways
-
-These boundaries reflected strategic choices about where uncertainty was acceptable and where it had to stay out of automation.
-
----
-**Reduce Risk Before Adding Intelligence**
-
-Procurement work has legal, financial, and compliance implications. Mistakes have real costs. That meant I couldn’t approach the project by asking only what AI could do - I had to ask what AI should never do. This shift in perspective made risk-mitigation a strategic pillar rather than an afterthought.
-
-Before designing any feature, I mapped potential failure points: where hallucinations might mislead buyers, which questions were too ambiguous for an LLM to answer confidently, and which contract interpretations must always remain grounded in source documents. By defining the “no-go zones” early, I ensured intelligence was layered into the system only where it could operate safely.
-
-This taught me that discipline is far more important than ambition in enterprise AI. A safe, predictable system outperforms a “smart” but unreliable one every time.
+A recent article on [Builder.io](https://www.builder.io/blog/build-ai) made a related argument: the differentiator in AI products is not access to models but the specificity of your product insight. I agree, and I would add that in enterprise contexts, the specificity of your *risk design* matters equally.
 
 ---
 
-**Safety as a Multi-Layered Design Philosophy**
+## Start With the Workflow, Not the Model
 
-People often think AI safety is purely technical. I treat it as a deeply cross-functional product challenge. For our procurement solution, I embraced a layered approach: selecting the right model, activating Azure OpenAI’s platform-level safety filters, designing strong retrieval and grounding workflows, and shaping the user experience so that misuse becomes harder than correct use.
+The first instinct from many teams was to ask which model to use: GPT-4, GPT-3.5, or a fine-tuned alternative. Those questions only matter after you understand the workflow.
 
-Each layer solved a different part of the risk landscape. The model layer ensured we weren’t over-engineering; the safety system layer handled guardrails and logging; the grounding layer ensured every answer was traceable to the original contract; and the UX layer guided buyers into asking the right questions in the right way.
+I started by sitting with buyers and watching how they worked. They bounced between VGS, SI+, and VPC. They dug through PDFs, reconciled price changes, hunted down attachments, and asked colleagues to validate details. The true problem was cognitive load: the mental burden of connecting fragmented information across three systems.
 
-The cumulative effect was profound. The model didn’t feel magical - it felt trustworthy. And trust, I realized, is the most important product outcome in enterprise AI.
+That insight changed the project framing. Instead of "building an AI tool," I focused on redesigning a workflow where AI acts as the connective tissue that unifies system knowledge and reduces uncertainty. AI became valuable by removing friction that humans were never meant to carry, regardless of whether the model felt clever in the moment.
 
 ---
 
-**The Four-Layered Approach to Harm Mitigation**
+## Risk Framing: Decision Boundaries Before Features
 
-Developing safe generative AI solutions requires a structured approach. Here's how I applied this approach in our procurement AI project:
+Before writing any code, I mapped procurement decisions across three dimensions: impact (financial and legal consequences), reversibility (can errors be caught and corrected), and scale (how many decisions per day).
 
-### 1. The Model Layer
+**High Impact × Low Reversibility × High Scale = No Automation.** Contract compliance interpretations, pricing approvals above threshold, and supplier obligation assessments. The AI could surface relevant information and highlight risk factors but could never make the final decision.
 
-Choosing the right model is crucial. While GPT-4 is powerful, a simpler model might suffice for specific tasks, reducing the risk of harmful content. I fine-tuned our model with procurement-specific data to ensure relevant and safe outputs.
+**Medium Impact × Medium Reversibility = AI-Assisted with Human-in-the-Loop.** Contract clause summarization, historical price comparisons, amendment tracking. AI could generate outputs; humans retained override authority. Every answer included source citations, confidence signals, and an escalation path.
 
-**Example:**
-- **Problem Identified:** Risk of generating inaccurate procurement contract details.
-- **Solution:** Fine-tune GPT-4 with procurement-specific data to understand the nuances of contracts and queries.
+**Low Impact × High Reversibility = Automation with Monitoring.** Document metadata extraction, clause categorization, basic entity recognition. Automated, but with drift detection and periodic human audits.
 
-### 2. The Safety System Layer
+The boundary list that followed was explicit. Legal interpretation affecting contractual obligations: never automated. Pricing decisions above defined spend thresholds: never automated. Supplier relationship assessments: never automated. Any query where AI confidence fell below the calibrated threshold: never automated. Ambiguous queries interpretable in multiple ways: never automated.
 
-Platform-level configurations help mitigate harm. I used Azure OpenAI Service’s content filters to manage content severity and implemented abuse detection algorithms and alert systems to prevent misuse and respond promptly to any harmful behavior.
+These boundaries were strategic choices about where uncertainty was acceptable and where it had to stay out of the system entirely.
 
-**Example:**
-- **Problem Identified:** Potential for generating inappropriate responses.
-- **Solution:** Implement content filters and abuse detection systems to monitor and flag inappropriate content.
+---
 
-### 3. The Metaprompt and Grounding Layer
+## The Four Layers
 
-Constructing prompts is critical. I used metaprompts to define behavioral parameters and applied prompt engineering to ensure safe outputs. Retrieval augmented generation (RAG) was used to pull contextual data from trusted sources, enhancing prompt quality and safety.
+Safety in enterprise AI is a cross-functional product challenge, not a purely technical one. The procurement system uses four layers, each solving a different part of the risk landscape. No single layer is sufficient. The cumulative effect is what makes the system trustworthy.
 
-**Example:**
-- **Problem Identified:** Ambiguity in user queries leading to harmful responses.
-- **Solution:** Use metaprompts and RAG to provide clear, contextually relevant instructions, pulling data from reliable sources.
+### Layer 1: Model Selection
 
-### 4. The User Experience Layer
+The model layer is about using the right tool for each task, not defaulting to the most powerful option available. Not every task in the procurement system needed GPT-4's reasoning capabilities. For entity extraction, metadata tagging, and structured clause identification, lighter models and sometimes rule-based logic were faster, cheaper, and more reliable.
 
-This layer covers the application interface and user documentation. I designed user interfaces to limit inputs to specific subjects and types, validating inputs and outputs to reduce the risk of harmful responses. Transparent documentation about the system’s capabilities and limitations was also crucial.
+In practice, the system used a hybrid architecture. The LLM handled reasoning and summarization tasks where natural language understanding was essential. RAG handled truth and grounding by retrieving from actual contract documents. Backend logic handled supplier IDs, metadata lookups, and compliance rules that are deterministic by nature. Traditional search handled exact-match queries.
 
-**Example:**
-- **Problem Identified:** Users inputting vague queries leading to misleading responses.
-- **Solution:** Design interfaces guiding precise queries and provide thorough documentation on system use and limitations.
+This mix reduced API costs by 60% and improved response latency for low-complexity queries. The principle: many problems are better solved without an LLM at the center. AI products fail when they assume a model should sit at the center of everything.
+
+As [Builder.io](https://www.builder.io/blog/build-ai) argued, beginning with non-AI solutions for solvable problems and layering specialized models only where they fill distinct gaps yields faster, more reliable, and more cost-effective products than wrapping everything in a single large model. GitHub Copilot was [reported operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), illustrating the mismatch between user willingness to pay and the cost of running every interaction through a frontier model.
+
+![architecture](../assets/img/architecture.png)
+
+### Layer 2: Platform Safety Systems
+
+Platform-level configurations handle categories of harm that are orthogonal to product logic. The system used Azure OpenAI Service's content filters to manage content severity across categories. Abuse detection algorithms and alert systems monitored for misuse patterns and flagged anomalous behavior.
+
+These guardrails operated independently of the application logic. If the content filters flagged a response, it was blocked regardless of whether the RAG pipeline considered it a valid answer. This independence matters: a grounding failure that produces a technically relevant but harmful response still gets caught.
+
+The platform layer also provided logging infrastructure. Every interaction was logged with the query, retrieved documents, generated response, confidence score, and user feedback. This audit trail served both compliance requirements and system improvement.
+
+### Layer 3: Metaprompt and Grounding
+
+The grounding layer is where most of the product-specific safety engineering happens. It determines what the system can say and what it must refuse to say.
+
+Metaprompts defined behavioral parameters: the system operates in retrieval-only mode, never generates legal text, always cites sources, and states uncertainty explicitly when confidence is low. These constraints were encoded in the system prompt, not left as aspirational guidelines.
+
+RAG provided the grounding mechanism. Every response was anchored in retrieved contract documents. If the retrieval step returned no relevant documents or documents below the relevance threshold, the system responded with "No confident answer available" rather than generating a plausible-sounding answer from parametric knowledge.
+
+When retrieved sources contradicted each other, the system surfaced the conflict and routed to human judgment rather than choosing one interpretation. This was critical for procurement, where two contract versions might contain different pricing terms, and choosing the wrong one has direct financial consequences.
+
+The confidence threshold (0.85 for most queries, 0.90 for pricing queries) acted as a quality gate. Queries below threshold were routed to manual search with logging for analysis. Over time, these thresholds became query-type-specific based on observed acceptance rates, because a 0.85 confidence on a metadata lookup meant something different from a 0.85 on a contract interpretation.
+
+![conversation-array](../assets/img/conversation-array.png)
+
+### Layer 4: User Experience
+
+The UX layer is the last line of defense and the most underappreciated. Its goal: make misuse harder than correct use.
+
+Initially, the system did not accept free-text queries. Instead, it provided structured query templates ("Find pricing for Supplier X in Contract Y") that constrained the problem space. Query success rates were 40% higher with structured inputs. Free-text was introduced gradually as users understood system boundaries.
+
+Every response displayed source citations before the AI-generated summary. The summary was collapsed by default; the source excerpts were visible first. This inverted review flow prevented anchoring bias: buyers saw the evidence before the AI's interpretation, ensuring human judgment remained primary.
+
+Confidence scores were visible on every output. The system's capabilities and limitations were documented and linked from the interface. Participation was opt-in; no forced adoption.
+
+The UX also handled graceful degradation visibly. When the system could not answer confidently, it displayed an explicit "I don't know" message with a link to the manual search path. When a document type was unsupported, it said so and routed to human review. This transparency built trust: buyers reported that the system felt reliable precisely because it was honest about its limitations.
+
+![performance-checklist](../assets/img/performance-checklist.png)
 
 ---
 
 ## Human-in-the-Loop as First-Class Design
 
-One of the most critical insights from this project is that human oversight functions as the primary control mechanism with the same weight as any model choice. I designed the system so that humans and AI operate as partners in a structured decision workflow, with clear roles, feedback loops, and trust calibration mechanisms.
+Human oversight is the primary control mechanism, with the same weight as any model choice. The system was designed so that humans and AI operate as partners in a structured decision workflow.
 
-**Reviewer Workflows**
+When the AI generates a response, buyers see the AI-generated summary (collapsed by default), source document excerpts with highlighted relevant sections, a confidence score with uncertainty indicators, and Accept / Reject / Request Refinement options. Buyers are trained to review source documents first, then validate AI summaries.
 
-When the AI generates a contract interpretation or pricing analysis, buyers see:
-1. The AI-generated summary (collapsed by default)
-2. Source document excerpts with highlighted relevant sections
-3. Confidence score and uncertainty indicators
-4. Accept / Reject / Request Refinement options
+When a buyer rejects an output, they must select a reason: incorrect interpretation of contract language, missing relevant context, hallucinated information not present in source, or ambiguous query requiring human expertise. These rejection signals feed back in two ways. Immediately: similar queries route to human review until the issue is resolved. In batch: rejection patterns inform prompt refinement and retrieval tuning priorities.
 
-Buyers are trained to review source documents first, then validate AI summaries. This inverted review flow prevents anchoring bias and ensures human judgment remains primary.
+Monitoring dashboards track acceptance rate by query type (target: >85% for medium-risk queries), override rate by confidence band (validates calibration), time-to-decision with vs. without AI assistance, and false positive rate (AI flagged uncertainty but human found the answer acceptable).
 
-**Handling Disagreements**
+After the first month, acceptance rates increased from 72% to 89% as users learned to formulate better queries. This validated that both the system and users needed calibration alongside the model.
 
-When a buyer rejects an AI output, they must select a reason:
-- Incorrect interpretation of contract language
-- Missing relevant context
-- Hallucinated information not present in source
-- Ambiguous query requiring human expertise
-
-These rejection signals feed back into the system in two ways:
-- Immediate: Similar queries are routed to human review until the issue is resolved
-- Batch: Rejection patterns inform prompt refinement and model retraining priorities
-
-**Acceptance vs Rejection Signals Over Time**
-
-I implemented monitoring dashboards that track:
-- Acceptance rate by query type (target: >85% for medium-risk queries)
-- Override rate by confidence band (validates calibration)
-- Time-to-decision with vs without AI assistance
-- False positive rate (AI flagged uncertainty but human found answer acceptable)
-
-After the first month, we observed that acceptance rates increased from 72% to 89% as users learned how to formulate better queries. This validated that both the system and users needed calibration alongside the model itself.
-
-**Trust Building Through Transparency**
-
-Trust had to be built deliberately through:
-- Explicit confidence scores on every output
-- Always-visible source citations
-- Clear explanation of what the AI can and cannot do
-- Regular communication about system updates and limitations
-- Opt-in participation (no forced adoption)
-
-Buyers reported that the system felt trustworthy when it stayed transparent about uncertainty, even on answers that were not perfect.
+Trust was built deliberately: explicit confidence scores, always-visible citations, clear explanation of capabilities and limits, regular communication about updates, and opt-in participation. Buyers reported that the system felt trustworthy when it stayed transparent about uncertainty, even on imperfect answers.
 
 ---
 
 ## Product Decisions This Framework Drove
 
-This framework translated into clear product constraints:
-- **No LLMs for deterministic tasks** like ID lookups and compliance rules; those stayed in backend logic.
-- **Mandatory citations** for any contract interpretation that could affect spend or compliance.
-- **Scope-first rollouts** (VGS before VPC/SI+) to protect data quality and user trust.
-- **Escalation paths** for ambiguous queries, rather than forcing a confident answer.
-- **Human-in-the-loop for all medium and high-risk decisions**, with override authority always retained by buyers.
-- **Confidence thresholds that vary by decision impact** (for example, stricter bars for pricing than for metadata lookups).
-- **Explicit "I don't know" responses** when uncertainty exceeds acceptable bounds.
+The four-layer framework translated into concrete product constraints:
 
-**Use AI Where It Adds Value**
+No LLMs for deterministic tasks. ID lookups and compliance rules stayed in backend logic.
 
-One of the biggest lessons I learned is that plenty of problems are better solved without an LLM at the center. Some tasks are much better handled with deterministic rules, structured search, or backend logic. Many AI products fail because they assume a model should sit at the center of everything.
+Mandatory citations for any interpretation that could affect spend or compliance.
 
-In the procurement project, I intentionally designed a hybrid architecture. The LLM handled reasoning and summarization. RAG handled truth and grounding. Backend logic handled IDs, metadata, and compliance rules. Traditional search handled exact matches. This mix allowed us to optimize for cost, accuracy, and speed - all without turning every interaction into a model call.
+Scope-first rollouts: VGS before VPC and SI+, to protect data quality and user trust.
 
-Ultimately, this approach helped me see AI as orchestration layered on traditional software: connective tissue that makes existing systems more accessible and intelligent while engineering keeps owning deterministic logic.
+Escalation paths for ambiguous queries, rather than forcing a confident answer.
 
+Human-in-the-loop for all medium and high-risk decisions, with override authority always retained by buyers.
 
----
-**Differentiation Comes From Insight**
+Confidence thresholds that vary by decision impact: stricter bars for pricing than for metadata lookups.
 
-Access to models is no longer a competitive advantage on its own. Anyone can use GPT-4 or wire up a RAG pipeline; fewer people understand the domain deeply enough to design systems that truly solve problems.
-
-What made our procurement AI successful was the specificity of the product insight: how buyers search, what they fear missing, how contracts evolve, the subtle differences between VGS and VPC content types, the edge cases around amendments, and the real-world variation in document formats. Those nuances came from watching, listening, and learning, which made the solution genuinely defensible compared with dropping a model into a generic template.
-
----
-**Validate With Real Users and Real Documents**
-
-AI demos are thrilling - everything works, everything looks smart, everything is snappy. But the moment you bring real workflows and real documents into the picture, the cracks appear. That’s why I leaned heavily on user testing, both structured and exploratory.
-
-Sometimes the AI responded perfectly; other times it struggled because the prompt was vague or the document structure was messy. But every failure taught us something useful. I discovered that users needed training as much as the model did. I realized that citations and transparency mattered more than conversational polish. And I learned which tasks needed hybrid logic rather than pure AI.
-
-This reinforced a principle I now deeply believe in: AI products live or die in the hands of real users more than in internal engineering demos.
+Explicit "I don't know" responses when uncertainty exceeds acceptable bounds.
 
 ---
 
-**Scoping Narrowly Is a Strategic Advantage**
+## What Differentiation Actually Looks Like
 
-The most counterintuitive lesson I’ve learned is that the fastest way to scale an AI system is to start with a very small scope. With procurement, I deliberately resisted the temptation to boil the ocean. Instead of integrating all procurement systems at once, I focused on VGS. That constraint allowed the team to validate our assumptions earlier, refine the safety layers quickly, and avoid building a system that was too complex to adopt.
+Access to models is no longer a competitive advantage on its own. Anyone can use GPT-4 or wire up a RAG pipeline. Fewer people understand the domain deeply enough to design systems that solve problems.
 
-By choosing depth over breadth, the team created a foundation that could scale predictably - and safely. It reminded me that good product strategy often means protecting the team from over-ambition and scope creep.
+What made the procurement AI defensible was the specificity of the product insight: how buyers search, what they fear missing, how contracts evolve, the differences between VGS and VPC content types, the edge cases around amendments, the real-world variation in document formats. Those nuances came from watching, listening, and learning. They made the system genuinely differentiated compared with dropping a model into a generic template.
 
----
-## What We Intentionally Did NOT Do
-
-Every strategic decision involves trade-offs. Here are the boundaries I consciously chose to protect system integrity, user trust, and sustainable scaling:
-
-**We Did Not Pursue Full Automation**
-
-Why: Procurement decisions involve legal interpretation, supplier relationships, and financial commitments. Fully automated decisions would eliminate accountability and create unacceptable risk exposure.
-
-Trade-off Accepted: Lower throughput efficiency in exchange for error containment and user trust. Buyers spend more time per query than a fully automated system would require, but error rates remain near zero.
-
-**We Did Not Optimize for Recall Early**
-
-Why: In the initial phase, false positives (showing irrelevant contract clauses) were far less harmful than false negatives (missing critical obligations). We deliberately tuned the system for high precision, even if it meant surfacing fewer results.
-
-Trade-off Accepted: Some queries returned "insufficient information" when relevant data existed elsewhere in the contract corpus. This was acceptable during trust-building. We expanded recall only after precision was validated.
-
-**We Did Not Use GPT-4 for All Tasks**
-
-Why: Not all tasks required the reasoning capabilities of GPT-4. For entity extraction, metadata tagging, and structured clause identification, lighter models (and sometimes rule-based logic) were faster, cheaper, and more reliable.
-
-Trade-off Accepted: More complex system architecture with multiple model types. However, this reduced API costs by 60% and improved response latency for low-complexity queries.
-
-**We Did Not Cover Edge Cases Initially**
-
-Why: Procurement contracts have infinite edge cases, including multilingual amendments, handwritten annotations, redacted sections, and legacy formats. Attempting to handle all variations upfront would have delayed launch indefinitely.
-
-Trade-off Accepted: The system explicitly flagged "unsupported document types" and routed them to human review. We prioritized the 80% common case, then iteratively expanded coverage based on real usage patterns.
-
-**We Did Not Integrate VPC and SI+ Systems in Phase 1**
-
-Why: VGS represented the highest-volume, most structured data source. Adding VPC and SI+ simultaneously would have introduced multiple sources of quality variation, making root cause analysis of failures impossible.
-
-Trade-off Accepted: Users still needed to check VPC and SI+ manually for the first six months. This created workflow friction but allowed us to validate safety mechanisms, calibrate confidence thresholds, and build user trust before expanding scope.
-
-**We Did Not Allow Free-Text Query Inputs Initially**
-
-Why: Unstructured queries increased ambiguity and hallucination risk. Instead, we provided structured query templates ("Find pricing for Supplier X in Contract Y") that constrained the problem space.
-
-Trade-off Accepted: Reduced user flexibility and conversational feel. However, query success rates were 40% higher with structured inputs. We gradually relaxed constraints once users understood system boundaries.
-
-These trade-offs were deliberate choices about where to invest complexity, where to accept limitations, and how to build trust before scaling.
+AI demos are compelling: everything works, everything looks smart. The moment you bring real workflows and real documents, the cracks appear. Users need training as much as the model does. Citations and transparency matter more than conversational polish. Some tasks need hybrid logic rather than pure AI. AI products live or die in the hands of real users, not in engineering demos.
 
 ---
 
-## Evolution Over Time: What Broke, What Drifted, What We Learned
+## What Changed Over Twelve Months
 
-The system I deployed in month one looked very different from the system in month twelve. This section documents the critical adaptations we made as real-world usage exposed gaps in our initial assumptions.
+The system deployed in month one looked different from the system in month twelve. Three categories of adaptation illustrate why static AI systems fail in dynamic environments.
 
-**What Broke: Document Format Drift**
+**Document format drift.** The initial assumption was that contracts follow standardized templates. After three months, the system encountered merged PDFs, scanned images, multilingual sections, and supplier-specific templates. The RAG system relied on section header patterns that did not exist in these documents. Fix: fallback retrieval using sliding-window chunking, document quality scoring at ingestion, and a feedback loop where users flag missed information. Recall for non-standard documents improved from 65% to 82% within two months.
 
-**Initial Assumption:** Procurement contracts follow standardized templates with consistent section headers and clause numbering.
+**Confidence calibration decay.** Confidence scores above 0.85 initially correlated with high acceptance rates. After six months, pricing and amendment queries had higher rejection rates than metadata queries at identical confidence levels. The initial calibration relied on synthetic test cases that did not match real query distributions. Fix: query-type-specific thresholds, quarterly recalibration using acceptance/rejection data, and confidence band visualizations showing historical acceptance rates. False confidence (high score plus user rejection) dropped from 18% to 6%.
 
-**Reality:** After three months, we encountered contracts with non-standard formatting, including merged PDFs, scanned images, multilingual sections, and supplier-specific templates.
+**User behavior evolution.** Month 1 through 3: users treated the system as a search engine with short, transactional queries. Month 4 through 6: users tested boundaries with increasingly complex questions. Month 7 through 12: power users developed sophisticated strategies while new users still needed basic guidance. Fix: user segmentation (novice vs. power user modes), contextual help adapted to experience level, and query suggestions that guided novice users toward well-supported question types. Onboarding time dropped by 40%.
 
-**What Happened:** The RAG retrieval system failed to extract relevant sections because it relied on section header patterns that didn't exist in these documents. Similarity scores dropped below threshold, and queries returned "insufficient information" even when answers were present.
-
-**System Adaptation:**
-- Implemented fallback retrieval using sliding-window chunking for unstructured documents
-- Added document quality scoring at ingestion (flagged low-quality scans for manual review)
-- Updated user guidance to indicate which document types had lower AI coverage
-- Created a feedback loop where users could flag missed information, triggering manual document reprocessing
-
-**Impact:** Recall improved from 65% to 82% for non-standard documents within two months.
-
-**What Drifted: Confidence Calibration**
-
-**Initial Assumption:** Confidence scores above 0.85 correlate with high human acceptance rates.
-
-**Reality:** After analyzing six months of override data, we discovered that confidence calibration degraded over time. Queries about pricing and amendments had higher rejection rates than queries about supplier metadata, even at identical confidence levels.
-
-**What Happened:** The initial calibration relied on synthetic test cases before we had enough live traffic to mirror real behavior. As the query distribution shifted (more complex pricing questions, fewer simple lookups), the confidence-to-accuracy mapping became misaligned.
-
-**System Adaptation:**
-- Introduced query-type-specific confidence thresholds (pricing queries required 0.90, metadata queries required 0.80)
-- Implemented quarterly recalibration using actual acceptance/rejection data
-- Added confidence band visualization showing historical acceptance rates per band
-
-**Impact:** False confidence (high score + user rejection) dropped from 18% to 6%.
-
-**What Changed: Automation Boundaries**
-
-**Initial Assumption:** Buyers would use the system primarily for quick lookups ("What is the lead time for Part X?").
-
-**Reality:** Buyers increasingly asked complex multi-document questions ("Compare pricing across three suppliers for this component family over the last two years").
-
-**What Happened:** These queries required reasoning across multiple contracts, which exceeded the system's initial design. Early attempts to answer resulted in incomplete or misleading summaries.
-
-**System Adaptation:**
-- Explicitly flagged multi-document queries as "complex analysis required" and routed to human analysts
-- Built a secondary workflow where AI pre-aggregated relevant contract sections, but humans performed the final synthesis
-- Added a "request detailed analysis" option that triggered an async workflow with human review
-
-**Impact:** User satisfaction increased because expectations were properly set. Complex queries took longer but produced accurate results. Simple queries remained fast.
-
-**What We Learned: User Behavior Evolves**
-
-**Month 1-3:** Users treated the system as a search engine. Queries were short and transactional.
-
-**Month 4-6:** Users began testing boundaries, asking increasingly complex questions to see what the system could handle.
-
-**Month 7-12:** Power users developed sophisticated query strategies, while new users still needed basic training. This created a bifurcation in usage patterns.
-
-**System Adaptation:**
-- Implemented user segmentation (novice vs power user modes)
-- Added contextual help that adapted based on user experience level
-- Created a query suggestion feature that guided novice users toward well-supported question types
-
-**Impact:** Onboarding time reduced by 40%. Power users gained flexibility without overwhelming new users.
-
-**Key Lesson: Static Systems Fail in Dynamic Environments**
-
-The most valuable realization was that trust in AI systems must be maintained continuously. Every month brought new edge cases, shifting user expectations, and evolving document formats. The system survived because it was designed to adapt from day one rather than ship as a finished monument.
+The most valuable realization: trust must be maintained continuously. Every month brought new edge cases, shifting expectations, and evolving document formats. The system survived because it was designed to adapt from day one.
 
 ---
-## Closing reflection
 
-Building AI for procurement at Volvo Cars taught me that the hardest problems in enterprise AI are problems of control under uncertainty, ahead of pure technical novelty. How do you deploy generative models in environments where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
+## Closing Reflection
 
-The durable answer is better decision architectures, ahead of incrementally better models alone.
+The hardest problems in enterprise AI are problems of control under uncertainty, not technical novelty. How do you deploy generative models where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
+
+The durable answer is better decision architectures, not incrementally better models alone.
 
 Today, when I design AI systems, I start by mapping risk, defining boundaries, and designing for failure modes. I ask where automation stops, where humans must remain in control, and how the system should behave when confidence is low. I prioritize transparency over cleverness, constraints over flexibility, and evolution over perfection.
-
-This is the discipline that separates AI experiments from production systems: shipping features that earn trust over time.
 
 The AI products I build feel predictable, transparent, and sometimes boring. They do not surprise users. They do not make decisions autonomously when uncertainty is high. They degrade safely. They earn trust through consistency.
 
 In high-stakes environments, the most valuable AI systems turn ambiguous, risky problems into controllable, auditable decisions for every user, without surprises.
-
----
-
-## Appendix
-
-### User Study and Implementation
-
-A thorough user study was vital in identifying and addressing potential problems:
-- **User Onboarding:** Training users on how to interact with the AI tool, emphasizing prompt construction.
-- **Controlled Experiments:** Structured scenario-based testing to ensure functionalities and safety measures.
-- **Exploratory Testing:** Open-ended user engagement to provide feedback on usability and potential harms.
-
-**Findings:**
-- Users initially struggled with prompt specificity, leading to irrelevant outputs. Training improved this.
-- Content filters effectively flagged inappropriate responses, enhancing safety.
-- Feedback highlighted the importance of clear documentation and user guidance to prevent misuse.
-
-### Avoiding Common Pitfalls in AI Product Development
-
-Reflecting on Builder.io’s article, here are some pitfalls to avoid and strategies to develop effective AI applications:
-
-### 1. **Lack of Unique Features**
-Many AI products are mere extensions of existing models like ChatGPT. This easy route often leads to products lacking distinctiveness, rendering them easily replicable and undifferentiated.
-
-Even if you develop substantial technology with LLMs where OpenAI plays a minor yet vital role, you might still face two significant challenges.
-
-### 2. **Cost and Customization Constraints**
-Large Language Models (LLMs) are costly and slow, and they often include irrelevant data for specific applications, which limits customization. For instance, GitHub Copilot, as reported by the Wall Street Journal, was [operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), indicating a mismatch between user willingness to pay and the cost of running services on top of LLMs.
-
-Moreover, while fine-tuning can help, it falls short of providing the level of customization needed for specific use cases.
-
-### 3. **Performance Limitations**
-The slow response time of LLMs is a significant drawback, especially in applications where immediate feedback is crucial.
-
-### A More Effective AI Development Strategy
-
-### 1. **Develop a Custom Toolchain**
-Instead of solely depending on pre-trained models, consider creating a bespoke toolchain. This method, which combines a fine-tuned LLM with custom compilers and models, can yield faster, more reliable, and cost-effective solutions.
-
-![architecture](../assets/img/architecture.png)
-
-### 2. **Begin with Non-AI Solutions**
-Start by addressing the problem with standard programming techniques. This approach helps pinpoint where AI can truly add value, avoiding the pitfall of over-relying on AI for solvable issues through traditional coding.
-
-![conversation-array](../assets/img/conversation-array.png)
-
-### 3. **Employ Specialized AI Models**
-Use AI models specifically where they fill distinct gaps. For example, object detection models can be efficiently trained for specific tasks using platforms like Google's Vertex AI or LangChain for highly customized applications.
-
-![performance-checklist](../assets/img/performance-checklist.png)
-
-### 4. **Merge Code with AI**
-A balanced mix of hand-coded logic and specialized AI models can lead to efficient and impactful solutions. This hybrid approach fosters the creation of responsive, high-quality products.
-
-### Harnessing LangChain and Vector Stores
-
-LangChain is a framework that simplifies the development of applications using large language models, ideal for tasks like document analysis and chatbots. Vector stores, meanwhile, are crucial for managing and retrieving vector data, essential in machine learning applications.
