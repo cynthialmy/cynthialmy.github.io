@@ -21,34 +21,17 @@ subtitle: Building reliable AI systems for high-stakes decisions
 
 ## Who I Am
 
-I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter.
+I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter. Recent work includes [Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice: Where It Works, Where It Fails, and What to Use Instead]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
 
-Recent work includes [Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice: Where It Works, Where It Fails, and What to Use Instead]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
+I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S., building systems that improve decision quality and adoption.
 
-I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S. I focus on decision quality, risk boundaries, and adoption in production systems.
-
-I'm particularly focused on:
-
-<div class="about-focus-grid" role="list">
-  <div class="about-focus-card" role="listitem">
-    <span class="about-focus-card__label">Platforms</span>
-    <p class="about-focus-card__text">AI decision platforms and internal systems at scale</p>
-  </div>
-  <div class="about-focus-card" role="listitem">
-    <span class="about-focus-card__label">Trust &amp; safety</span>
-    <p class="about-focus-card__text">Governance and safeguards for production AI</p>
-  </div>
-  <div class="about-focus-card" role="listitem">
-    <span class="about-focus-card__label">Adoption</span>
-    <p class="about-focus-card__text">Transparent systems people can rely on</p>
-  </div>
-</div>
+**Keywords:** Platforms · Trust &amp; safety · Adoption
 
 Outside of work, I build small apps and internal tools, and write about technology, career growth, and women in tech.
 
 ---
 
-## What Others Say
+## Endorsements
 
 <div class="reference-carousel-container">
   <div class="reference-carousel">
