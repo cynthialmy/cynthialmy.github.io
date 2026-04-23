@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About Me
-subtitle: PM building AI systems that earn trust at scale
+subtitle: Building reliable AI systems for high-stakes decisions
 ---
 
 <div class="about-hero">
@@ -14,17 +14,18 @@ subtitle: PM building AI systems that earn trust at scale
     <nav class="about-hero__nav" aria-label="Portfolio">
       <a class="about-hero__btn about-hero__btn--primary" href="{{ '/' | relative_url }}">Product work</a>
       <a class="about-hero__btn about-hero__btn--ghost" href="{{ '/projects' | relative_url }}">Builds</a>
+      <a class="about-hero__btn about-hero__btn--ghost" href="#get-in-touch">Contact</a>
     </nav>
   </div>
 </div>
 
 ## Who I Am
 
-I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter. Examples include [routing low-confidence claims to escalation instead of one automatic pass]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}) and [what it takes to move from one API call to a production agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}).
+I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter.
 
-I turn unclear, high-impact problems into systems you can run: [when RAG is the wrong abstraction]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}), [harm mitigation across model, grounding, and UX]({{ '/2025-01-17-ai-solution' | relative_url }}), and automation with human review plus clear quality signals.
+Recent work includes [Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice: Where It Works, Where It Fails, and What to Use Instead]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
 
-I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S., from trade compliance and procurement to cross-border commerce and payments. I've written about [discovery and ROI for procurement AI]({{ '/2025-02-02-procurement-ai' | relative_url }}) and [governed metrics through the semantic layer]({{ '/2025-02-13-semantic-layer-bi' | relative_url }}). Across domains, the common thread is AI that helps people decide under uncertainty.
+I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S. I focus on decision quality, risk boundaries, and adoption in production systems.
 
 I'm particularly focused on:
 
@@ -218,6 +219,7 @@ Outside of work, I build small apps and internal tools, and write about technolo
 
 ---
 
+<a id="get-in-touch"></a>
 ## Get in Touch
 
 <div class="contact-cards">

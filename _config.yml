@@ -20,7 +20,7 @@ author: Cynthia Mengyuan Li
 ###############################################
 
 navbar-links:
-    Product Work: "/.."
+    Product Work: "/"
     Builds: "projects"
     About: "about"
     # GitHub: "https://github.com/cynthialmy"
