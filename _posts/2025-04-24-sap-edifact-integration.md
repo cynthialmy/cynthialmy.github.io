@@ -4,8 +4,8 @@ title: Breaking Changes on a Deadline in Enterprise EDIFACT Integration
 subtitle: What coordinating regulatory format cutovers across three countries taught me about platform reliability
 tags: [Enterprise Integration, EDIFACT, Regulatory Compliance, Platform Reliability, Breaking Changes, Cutover Planning, SAP]
 project_type: enterprise
-# thumbnail-img: assets/img/sap-edifact.png
-# share-img: assets/img/sap-edifact.png
+thumbnail-img: assets/img/sap-edifact.png
+share-img: assets/img/sap-edifact.png
 comments: true
 ---
 
