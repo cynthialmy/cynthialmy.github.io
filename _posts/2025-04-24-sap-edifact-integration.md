@@ -57,6 +57,8 @@ I owned the cutover plan: which message types shipped first, which counterparty 
 
 The coordination mechanism was simple: a shared tracking sheet with every message type, counterparty, test status, rejection log, and owner. Teams updated it daily as the shared source of truth. When a rejection came in from a German grid operator at 4pm CET, the China team picked it up at 9am CST the next morning with full context already documented.
 
+![sap-edifact-integration](../assets/img/sap-edifact.png)
+
 ---
 
 ## Results
