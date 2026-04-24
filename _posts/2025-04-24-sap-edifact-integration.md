@@ -17,11 +17,11 @@ I worked on [SAP Market Communication for Utilities](https://www.sap.com/product
 
 ## The Constraint That Shaped Everything
 
-EDIFACT format updates are not optional upgrades. They are regulatory mandates with hard deadlines and no grace period. A utility that misses the cutover cannot exchange messages with grid operators. Supplier switches stall, meter readings bounce, and billing processes stop. For an energy provider serving hundreds of thousands of households, even one day of message rejection can cascade into operational chaos.
+EDIFACT format updates are mandatory regulatory migrations with hard deadlines and fixed effective dates. A utility that misses the cutover loses message exchange with grid operators. Supplier switches stall, meter readings bounce, and billing processes stop. For an energy provider serving hundreds of thousands of households, one day of message rejection can cascade into operational chaos.
 
 The format changes themselves ranged from minor field additions to structural changes in message segments. A minor change might add a new qualifier to a segment. A structural change could reorganize how meter reading data is nested, breaking every parser that assumes the old layout. Both categories had the same deadline.
 
-This created a specific product problem: the system had to absorb breaking changes, validate them against the new spec, and ship updates to production before the cutover date. There was no room for "we will fix it in the next sprint."
+This created a specific product problem: the system had to absorb breaking changes, validate them against the new spec, and ship updates to production before the cutover date. The release plan required production readiness before deadline day.
 
 ---
 
@@ -37,11 +37,11 @@ I started tracking rejection reasons from production incidents and mapping them 
 
 ## Fixing Upstream Instead of Patching Downstream
 
-The default approach was reactive: a message failed, support investigated, engineering patched, and the fix shipped. For a standard software product, that cycle can work. For a regulated cutover with a hard deadline, it cannot. Every reactive fix arrived after the damage (rejected messages, stalled business processes, and customer escalations).
+The default approach was reactive: a message failed, support investigated, engineering patched, and the fix shipped. In regulated cutovers with hard deadlines, this cycle creates customer-facing failures before fixes land. Each reactive fix arrived after rejected messages, stalled business processes, and customer escalations.
 
 I restructured the approach around three changes.
 
-**Counterparty-specific validation profiles.** Instead of validating only against the official spec, I built a registry of counterparty-specific behaviors: which grid operators enforced stricter rules, which metering companies rejected optional segments, and which market processes had the highest failure rates. Engineering used these profiles to test integrations before cutover, not after.
+**Counterparty-specific validation profiles.** Instead of validating only against the official spec, I built a registry of counterparty-specific behaviors: which grid operators enforced stricter rules, which metering companies rejected optional segments, and which market processes had the highest failure rates. Engineering used these profiles to test integrations before cutover.
 
 **Staged cutover rehearsals.** Before the regulatory deadline, I coordinated dry runs with the top 15 counterparties by message volume. Each rehearsal sent test messages in the new format and captured rejections. This surfaced issues weeks before the deadline instead of on cutover day. Engineering teams in Germany, China, and India worked the rejection backlog in parallel, with each team owning specific message types.
 
@@ -55,7 +55,7 @@ The engineering team spanned three countries. Format specification expertise sat
 
 I owned the cutover plan: which message types shipped first, which counterparty integrations were highest risk, and what rollback looked like if a deployment broke production messaging. The sequencing followed risk, not feature completeness. High-volume message types (supplier switches, meter readings) shipped and stabilized first. Lower-volume processes followed.
 
-The coordination mechanism was simple: a shared tracking sheet with every message type, counterparty, test status, rejection log, and owner. Nothing was automated. The value was not the tooling; it was forcing every team to update daily against the same source of truth. When a rejection came in from a German grid operator at 4pm CET, the China team picked it up at 9am CST the next morning with full context already documented.
+The coordination mechanism was simple: a shared tracking sheet with every message type, counterparty, test status, rejection log, and owner. Teams updated it daily as the shared source of truth. When a rejection came in from a German grid operator at 4pm CET, the China team picked it up at 9am CST the next morning with full context already documented.
 
 ---
 
@@ -71,14 +71,14 @@ The counterparty validation registry became a permanent asset. Subsequent format
 
 Three lessons from SAP that I keep applying.
 
-**Enterprise platform reliability is a people-coordination problem wearing a technical hat.** The format spec was 200+ pages. The technical implementation was straightforward. What made cutovers fail was the gap between what the spec said and what counterparties actually did. Closing that gap required relationship-building with counterparty operations teams, not just better parsing logic.
+**Enterprise platform reliability is a people-coordination problem wearing a technical hat.** The format spec was 200+ pages. The technical implementation was straightforward. Cutovers failed in the gap between specification and counterparty behavior. Closing that gap required relationship-building with counterparty operations teams alongside parsing logic improvements.
 
 **Validation is cheaper than correction.** Every failure caught before cutover cost minutes of engineering time. Every failure caught after cutover cost hours of investigation, customer communication, and emergency patching. The staged rehearsal approach cost two weeks of coordination. It saved weeks of incident response.
 
-**When you cannot control the deadline or the counterparties, control the information flow.** I could not change the regulatory timeline. I could not force grid operators to interpret the spec consistently. What I could control was how fast rejection data reached the right engineer, how clearly the failure was documented, and how quickly fixes were deployed. In constrained environments, information velocity is the primary lever.
+**When deadlines and counterparties are fixed, information flow is the primary lever.** The regulatory timeline was fixed. Grid operators interpreted the spec independently. The practical lever was information velocity: how fast rejection data reached the right engineer, how clearly the failure was documented, and how quickly fixes were deployed.
 
 SAP gave me the enterprise platform instinct: multi-tenant systems where reliability is non-negotiable, regulatory constraints become product requirements, and integration failures have business consequences far beyond a bad user experience. That instinct shaped how I approached every integration and compliance system I built afterward.
 
 ---
 
-If this "move failure upstream" framing resonates, I wrote about applying the same principle in cross-border payments at Airwallex: [Moving Failure Upstream for SWIFT Validation at Airwallex](/2025-01-15-airwallex/).
+If the move-failure-upstream framing is useful, I wrote about applying the same principle in cross-border payments at Airwallex: [Moving Failure Upstream for SWIFT Validation at Airwallex](/2025-01-15-airwallex/).
