@@ -31,20 +31,20 @@ The problem was hard to see initially because the failures were distributed acro
 
 ## Reframing: Move Failure Upstream
 
-The obvious approach would have been to expand corridor coverage and handle failures reactively. That path scales the support burden proportionally with volume, making SWIFT increasingly expensive to operate as adoption grows.
+The default path was to expand corridor coverage and handle failures reactively. That path scales support burden proportionally with volume and raises SWIFT operating cost as adoption grows.
 
 I reframed the work as a reliability problem with one guiding principle:
 
-> **If a payment is going to fail, it should fail immediately, before entering the SWIFT network, with a clear explanation the customer can act on.**
+> **If a payment will fail, it should fail immediately before entering the SWIFT network, with an explanation the customer can act on.**
 
-This reframing changed the conversation across teams. Engineering shifted from "how do we route more payments" to "how do we validate before routing." Compliance shifted from post-failure review to pre-submission surfacing. Support shifted from reactive investigation to self-serve enablement.
+This reframing changed team priorities. Engineering focused on pre-routing validation. Compliance moved key checks to pre-submission surfacing. Support moved from reactive investigation to self-serve correction.
 
 ### Decision Framework
 
 | Path | Customer Outcome | Business Impact | Decision |
 |------|-----------------|-----------------|----------|
-| Do not support SWIFT | Limited corridor coverage | Lost enterprise deals | Not acceptable |
-| Support SWIFT without validation | Higher failure rate, higher support load | Trust erosion over time | Not acceptable |
+| Do not support SWIFT | Limited corridor coverage | Lost enterprise deals | Rejected |
+| Support SWIFT without validation | Higher failure rate, higher support load | Trust erosion over time | Rejected |
 | Support SWIFT with smart validation | Higher success rate, manageable ops | Scalable coverage | Chosen |
 
 ### Quantified Impact Model
@@ -99,7 +99,7 @@ We tracked both failure rate and conversion weekly, with a 3% conversion drop as
 
 ### Metrics-Driven Iteration
 
-Validation rules were treated as experiments, not permanent fixtures. We A/B tested strictness by corridor, tuned error messaging for self-serve correction, and maintained three rollback triggers: corridor-level failure spikes, conversion drops beyond 3%, and support ticket volume rising above target.
+Validation rules were treated as experiments. We A/B tested strictness by corridor, tuned error messaging for self-serve correction, and maintained three rollback triggers: corridor-level failure spikes, conversion drops beyond 3%, and support ticket volume rising above target.
 
 ---
 
@@ -120,6 +120,6 @@ SWIFT shifted from being a source of unpredictable failures to a controlled fall
 
 ## What I Took Away
 
-Infrastructure becomes a product problem the moment customers feel its failure. Enterprise customers do not adopt a payments platform for the corridors that already work well. They adopt it because they trust it will handle the corridors that are hard.
+Infrastructure becomes a product problem the moment customers feel its failure. Enterprise customers adopt a payments platform because they trust it to handle difficult corridors consistently.
 
 Every validation rule is a product decision that trades conversion against reliability. Treating validation as purely an engineering concern ignores the business consequences of both false blocks and false passes. The highest-impact work in payments makes complexity invisible: the best payment experience is the one where nothing goes wrong.

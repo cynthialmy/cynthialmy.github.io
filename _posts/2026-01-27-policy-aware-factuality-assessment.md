@@ -11,13 +11,13 @@ comments: true
 
 I built a proof-of-concept for policy-aware content moderation: a multi-agent pipeline where AI proposes, policy constrains, and humans decide. The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
 
-The system is intentionally scoped as a design exploration, not a production deployment. Its purpose is to validate a specific hypothesis: that separating factuality assessment from policy enforcement, and routing decisions by risk tier, produces fewer false positives than single-model classifiers or combined fact-check-and-enforce pipelines.
+The system is a design exploration, with one hypothesis to test: separating factuality assessment from policy enforcement, then routing by risk tier, can reduce false positives versus single-model classifiers and combined fact-check-enforce pipelines.
 
 ## The Core Design Principle
 
-Content moderation has a structural problem that better models alone cannot solve. A claim can be factually false yet policy-compliant ("the earth is flat" on most platforms). A claim can be factually true yet policy-violative (doxxing with accurate information). Any system that collapses factuality and policy into a single score will either over-enforce or under-enforce depending on which signal dominates.
+Content moderation has a structural constraint. A claim can be factually false yet policy-compliant (the earth is flat on most platforms). A claim can be factually true yet policy-violative (doxxing with accurate information). Systems that collapse factuality and policy into one score drift toward either over-enforcement or under-enforcement.
 
-This system keeps them separate. **AI agents propose analysis. Policy frameworks constrain what actions are available. Humans make final calls when stakes are high.** The pipeline allocates compute proportional to risk: low-risk content gets fast-tracked, high-risk content gets deep analysis and mandatory human review.
+This system keeps them separate. **AI agents propose analysis. Policy frameworks constrain actions. Humans make final calls in high-stakes cases.** The pipeline allocates compute proportional to risk: low-risk content gets fast routing, high-risk content gets deeper analysis and human review.
 
 ## System Flow
 
@@ -67,7 +67,7 @@ A fast, low-cost model extracts verifiable factual claims and tags each by domai
 
 A smaller model scores preliminary risk based on harm potential, likely exposure, and vulnerable populations. This is the routing gate: it determines how much compute the rest of the pipeline spends.
 
-> **Design Decision: Risk-gated compute allocation**
+> **Design Decision: Risk-Gated Compute Allocation**
 >
 > Early versions ran every claim through the full pipeline. The result was a system that spent frontier-model tokens on obvious low-risk content ("the weather in Paris is nice today") while adding latency to everything. Moving risk assessment upstream cut per-claim cost by roughly 60% in the demo, because most content is low-risk and skips evidence retrieval and factuality assessment entirely.
 
@@ -79,7 +79,7 @@ For medium and high-risk claims, the system retrieves evidence from an internal 
 
 A frontier model evaluates whether each claim is likely true, likely false, or uncertain. This is the most expensive step, reserved for claims that passed the risk gate.
 
-> **Design Decision: Separating factuality from policy enforcement**
+> **Design Decision: Separate Factuality from Policy**
 >
 > In early iterations, a single agent handled both factuality and policy interpretation. The failure mode was predictable: the model treated "false" as synonymous with "violative." Gray-area health claims (exaggerated but partially grounded) were flagged as policy violations even when the platform policy only prohibits demonstrably dangerous medical advice. This pushed the system toward over-enforcement.
 >
@@ -89,7 +89,7 @@ A frontier model evaluates whether each claim is likely true, likely false, or u
 
 The policy agent reads the platform's content policy as natural language input and determines whether the content violates it. Policy text is a runtime parameter, not hard-coded logic.
 
-> **Design Decision: Policy as input, not code**
+> **Design Decision: Policy as Runtime Input**
 >
 > I initially encoded policy rules as conditional logic (if health_claim and confidence > 0.8, then flag). This broke immediately when I tested against a second platform's policy with different thresholds and category definitions. Treating policy as natural language input means the same pipeline works across different policy frameworks. The tradeoff: the policy agent can misinterpret ambiguous policy language, which is why high-risk decisions still require human confirmation.
 
@@ -144,7 +144,7 @@ This audit trail enables retroactive re-evaluation. When a policy changes or new
 
 ## Limitations and Production Gap
 
-This is a demo. Several things would need to change for production deployment.
+This demo surfaces the production gap clearly. Several areas need hardening before deployment.
 
 **Latency.** The full pipeline takes 8-15 seconds end-to-end in the demo. A production system processing millions of items daily would need async processing, pre-computed risk scores, and cached evidence retrieval. The current synchronous architecture is designed for explainability, not throughput.
 
@@ -154,7 +154,7 @@ This is a demo. Several things would need to change for production deployment.
 
 **Adversarial robustness.** The demo has no defense against adversarial inputs designed to game the risk assessment or factuality stages. Production content moderation must account for deliberate evasion.
 
-These gaps are tractable engineering problems, not fundamental design flaws. The demo validates the design hypothesis; closing these gaps is the work of productionization.
+These are tractable engineering gaps. The demo validates the design hypothesis. Productionization is the next phase of work.
 
 ## Design Principles
 

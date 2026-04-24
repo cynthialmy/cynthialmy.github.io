@@ -79,7 +79,7 @@ The fix aligned with Anthropic's guidance on [context engineering](https://www.a
 
 ## When memory becomes a product requirement
 
-Once I split roles, a new problem surfaced: handing large artifacts between stages. Roles fix who sees what, but not how a large document moves from planner to worker. Chat turns are a tempting transport layer, but they push the model to paraphrase megabytes in natural language.
+Once I split roles, a new problem surfaced: handing large artifacts between stages. Roles define visibility. Artifact transport still needs an explicit mechanism. Chat turns are an intuitive transport layer, but they push the model to paraphrase megabytes in natural language.
 
 This triggers two issues. First, cost: I pay output tokens to duplicate text I already have. Second, correctness: models are poor lossless copiers. Even with "do not change a character," they may silently "fix" typos, rename symbols, or alter logic. That is fatal if the point was to reproduce a defect verbatim for root-cause analysis.
 

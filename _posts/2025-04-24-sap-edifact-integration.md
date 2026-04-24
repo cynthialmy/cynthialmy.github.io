@@ -29,7 +29,7 @@ This created a specific product problem: the system had to absorb breaking chang
 
 Integration failures in EDIFACT systems follow a pattern. The message format is correct syntactically (it parses), but incorrect semantically (the content violates business rules that the new format version introduces). A message might pass schema validation but fail because a newly required qualifier is missing, or because a segment that was optional became mandatory for a specific market process.
 
-When I joined, the failure pattern was predictable: engineering implemented the format spec, QA tested against the spec document, and production still failed. The gap was between specification and real-world interpretation. Counterparties (grid operators, metering companies) interpreted the same spec differently. One operator expected a conditional segment to always be present. Another rejected messages that included an optional segment their system did not support. The spec defined structure, but did not define how each participant actually validated incoming messages.
+When I joined, the failure pattern was predictable: engineering implemented the format spec, QA tested against the spec document, and production still failed. The gap was between specification and real-world interpretation. Counterparties (grid operators, metering companies) interpreted the same spec differently. One operator expected a conditional segment to always be present. Another rejected messages that included an optional segment their system did not support. The spec defined structure. Participant validation behavior varied by implementation.
 
 I started tracking rejection reasons from production incidents and mapping them to specific counterparties. Within two months, the picture was clear: roughly 40% of production failures came from counterparty-specific validation behavior that was not documented in the official format specification. The remaining 60% were genuine implementation gaps in our own system.
 
@@ -41,7 +41,7 @@ The default approach was reactive: a message failed, support investigated, engin
 
 I restructured the approach around three changes.
 
-**Counterparty-specific validation profiles.** Instead of validating only against the official spec, I built a registry of counterparty-specific behaviors: which grid operators enforced stricter rules, which metering companies rejected optional segments, and which market processes had the highest failure rates. Engineering used these profiles to test integrations before cutover.
+**Counterparty-specific validation profiles.** I built a registry of counterparty-specific behaviors: which grid operators enforced stricter rules, which metering companies rejected optional segments, and which market processes had the highest failure rates. Engineering used these profiles to test integrations before cutover.
 
 **Staged cutover rehearsals.** Before the regulatory deadline, I coordinated dry runs with the top 15 counterparties by message volume. Each rehearsal sent test messages in the new format and captured rejections. This surfaced issues weeks before the deadline instead of on cutover day. Engineering teams in Germany, China, and India worked the rejection backlog in parallel, with each team owning specific message types.
 

@@ -258,7 +258,7 @@ I started with GPT-3.5-turbo instead of GPT-4. Latency, cost, and stability conc
 
 I used off-the-shelf embeddings from OpenAI and Cohere rather than custom models. Custom models would have delayed launch by months for marginal accuracy gains.
 
-I did not cover edge cases initially. Multilingual contracts, scanned PDFs, and handwritten amendments represented under 5% of queries but would have consumed over 40% of engineering effort. Explicit "unsupported query" messages with manual escalation paths served as the interim solution.
+I scoped edge cases out of v1. Multilingual contracts, scanned PDFs, and handwritten amendments represented under 5% of queries but would have consumed over 40% of engineering effort. Explicit unsupported-query messages with manual escalation paths served as the interim solution.
 
 To keep scope tight and learning velocity high, I deferred SI+ deep integration until data quality issues are resolved, excluded automated approvals because they require legal workflow redesign, and deferred pricing optimization because it requires cleaner spend data and cross-functional buy-in from finance.
 

@@ -15,7 +15,7 @@ Over the past year building generative AI inside Volvo Cars' procurement organiz
 
 The answer is a layered architecture where each layer catches failures the others miss. Control and trustworthiness are the product outcomes here, not model capability in isolation.
 
-A recent article on [Builder.io](https://www.builder.io/blog/build-ai) made a related argument: the differentiator in AI products is not access to models but the specificity of your product insight. I agree, and I would add that in enterprise contexts, the specificity of your *risk design* matters equally.
+A recent article on [Builder.io](https://www.builder.io/blog/build-ai) made a related argument: AI product differentiation comes from specific product insight. In enterprise settings, risk design has the same weight.
 
 ---
 
