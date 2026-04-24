@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Portfolio
-subtitle: I enjoy the excitement of creation.
+subtitle: Technical Projects and Research Analysis
 ---
 
 For detailed work showcasing product thinking, strategy, and execution, visit [Product Work](/).

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Discovery Frameworks and ROI Modeling for Procurement AI
-subtitle: "Shadowing buyers to quantify cognitive load, then building RAG that reduces search time by 25%"
+subtitle: Buyer Shadowing, Cognitive Load Measurement, and a 25% Search Time Reduction
 tags: [User Shadowing, Cognitive Load Measurement, RAG Architecture, Search Time Reduction, Procurement Technology, Discovery Methods]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png

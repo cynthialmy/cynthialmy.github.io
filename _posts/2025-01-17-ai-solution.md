@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Four-Layer Harm Mitigation in Enterprise AI
-subtitle: How model selection, grounding, and UX constraints combine to build trustworthy procurement systems
+title: Four Layers of Harm Mitigation in Enterprise AI
+subtitle: Model Selection, Grounding, and UX Constraints for Trustworthy Procurement AI
 tags: [Multi-Layer Safety, Enterprise AI Safety, Grounding Design, UX Constraints, Procurement AI, Trustworthy AI Systems]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Building a Self-Improving AI Assistant from 10 Markdown Files"
-subtitle: What OpenClaw's architecture taught me about local-first AI design, and why I built something simpler
+title: Building a Self Improving AI Assistant from 10 Markdown Files
+subtitle: Local First Assistant Design with Auditable Evolution and Controlled Complexity
 tags: [Local-First AI, Self-Evolving Systems, AI Architecture, IDE Assistants, Product Thinking, Privacy-Preserving AI, Developer Tools]
 project_type: zero-to-one-builds
 thumbnail-img: assets/img/openclaw.jpg
@@ -143,7 +143,7 @@ flowchart TD
     Implement --> Log
 ```
 
-> **Design Decision: Pull-based evolution vs. continuous learning**
+> **Design Decision: Pull Based Evolution vs. Continuous Learning**
 >
 > OpenClaw agents can modify their own memory and behavior continuously. In early experiments with that approach, changes accumulated without clear rationale, and it became hard to trace why the assistant behaved differently from a week ago. Adding a formal evolution workflow (reflection, proposal, approval, changelog) turned "the AI learns" from a vague promise into a process I can audit. The tradeoff is that the assistant cannot proactively improve between sessions. I accepted that for the auditability gain.
 

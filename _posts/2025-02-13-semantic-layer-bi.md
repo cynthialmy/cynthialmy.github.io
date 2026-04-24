@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Semantic Layer in Modern Data Architecture"
-subtitle: Why data lakes, lakehouses, and meshes still fail without a governed semantic layer
+subtitle: Why Modern Data Stacks Need a Governed Semantic Layer
 tags: [Semantic Layer, Business Intelligence, Data Architecture, Metrics, Data Governance, dbt, BI Product, Volvo Cars, Data Lakehouse, Data Mesh, Data Platform]
 project_type: enterprise
 thumbnail-img: assets/img/semantic-layer.jpg

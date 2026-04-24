@@ -23,7 +23,7 @@ subtitle: Building reliable AI systems for high-stakes decisions
 
 I build AI decision systems for high-stakes environments where policy, accuracy, and scale all matter.
 
-Recent work includes [Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice: Where It Works, Where It Fails, and What to Use Instead]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
+Recent work includes [Escalation by Design: Multi Agent Fact Checking with Policy Constraints]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice: Where It Works, Where It Fails, and What to Use Instead]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
 
 I've shipped at **Volvo Cars, SAP, Airwallex, and Alibaba** across Europe, Asia, and the U.S. I focus on decision quality, risk boundaries, and adoption in production systems.
 

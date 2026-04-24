@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mapping Cognitive Load to AI Feature Bets from Parent Interviews
-subtitle: How 20 interviews and 150 surveys turned ambiguous parenting pain into a scoped AI product with measurable time savings
+subtitle: Interview and Survey Evidence Turned into a Scoped Parenting AI Product
 tags: [User Research, Cognitive Load Mapping, Product Discovery, Decision Frameworks, AI Product Strategy, Research-to-Product]
 project_type: zero-to-one-builds
 # cover-img: assets/img/data-book-summary-1.png

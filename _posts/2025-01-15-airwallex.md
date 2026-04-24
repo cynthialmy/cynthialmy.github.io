@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moving Failure Upstream for SWIFT Validation at Airwallex
-subtitle: Corridor-aware validation that balances precision vs conversion to reduce support load by 25%
+subtitle: Corridor Aware Validation and Precision vs. Conversion Control in SWIFT Payments
 tags: [Failure Upstream, Corridor-Aware Validation, Precision vs Conversion, Payment Infrastructure, Support Load Reduction, Reliability Engineering]
 project_type: enterprise
 # cover-img: assets/img/data-book-summary-1.png

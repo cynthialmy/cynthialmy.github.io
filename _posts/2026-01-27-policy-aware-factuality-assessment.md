@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Escalation by Design: Multi-Agent Fact-Checking with Policy Constraints"
-subtitle: How confidence thresholds and human routing reduce false positives in content moderation
+title: "Escalation by Design: Multi Agent Fact Checking with Policy Constraints"
+subtitle: Confidence Gating, Policy Separation, and Human Routing in Content Moderation
 tags: [Confidence Gating, Escalation Design, Multi-Agent Systems, Policy Constraints, Content Moderation, False Positive Reduction]
 project_type: enterprise
 thumbnail-img: assets/img/policy-aware-factuality-assessment.png
@@ -67,7 +67,7 @@ A fast, low-cost model extracts verifiable factual claims and tags each by domai
 
 A smaller model scores preliminary risk based on harm potential, likely exposure, and vulnerable populations. This is the routing gate: it determines how much compute the rest of the pipeline spends.
 
-> **Design Decision: Risk-Gated Compute Allocation**
+> **Design Decision: Risk Gated Compute Allocation**
 >
 > Early versions ran every claim through the full pipeline. The result was a system that spent frontier-model tokens on obvious low-risk content ("the weather in Paris is nice today") while adding latency to everything. Moving risk assessment upstream cut per-claim cost by roughly 60% in the demo, because most content is low-risk and skips evidence retrieval and factuality assessment entirely.
 
@@ -79,7 +79,7 @@ For medium and high-risk claims, the system retrieves evidence from an internal 
 
 A frontier model evaluates whether each claim is likely true, likely false, or uncertain. This is the most expensive step, reserved for claims that passed the risk gate.
 
-> **Design Decision: Separate Factuality from Policy**
+> **Design Decision: Factuality Policy Separation**
 >
 > In early iterations, a single agent handled both factuality and policy interpretation. The failure mode was predictable: the model treated "false" as synonymous with "violative." Gray-area health claims (exaggerated but partially grounded) were flagged as policy violations even when the platform policy only prohibits demonstrably dangerous medical advice. This pushed the system toward over-enforcement.
 >

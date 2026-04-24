@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Turning Federated Data Chaos into Controllable Decision Systems
-subtitle: How I framed risk, designed decision boundaries, and scaled governance without breaking autonomy
+subtitle: Risk Framing, Decision Boundaries, and Federated Governance at Scale
 tags: [Data Contracts, Federated Governance, Contract-Driven Design, Data Mesh, Governance UX, Data Product Management]
 project_type: enterprise
 comments: true

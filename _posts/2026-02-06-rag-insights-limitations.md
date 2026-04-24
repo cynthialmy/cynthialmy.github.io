@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RAG in Practice: Where It Works, Where It Fails, and What to Use Instead"
-subtitle: A practitioner's guide to RAG's real boundaries and the architectures that fill the gaps
+subtitle: System Boundaries, Failure Modes, and Architecture Choices for RAG
 tags: [RAG, Context Engineering, Agentic RAG, Information Retrieval, AI Architecture, Product Thinking, LLM Systems]
 project_type: enterprise
 thumbnail-img: assets/img/rag-insights-limitations.jpg
@@ -102,7 +102,7 @@ The process follows a Map-Reduce pipeline:
 
 Retrieval then operates at two layers. Layer 1 is category-level summaries that provide directional context and help the model orient itself. Layer 2 is the underlying evidence chunks, retrieved only when the system needs specific citations.
 
-> **Design Decision: Pre-distillation vs larger Top-K**
+> **Design Decision: Pre Distillation vs. Larger Top-K**
 >
 > In a trade compliance project, I tested two approaches. The baseline used Top-K=20 with raw chunks. The Category-First approach used pre-distilled summaries at Top-K=5 plus on-demand citation retrieval. The pre-distilled approach used fewer tokens per query (roughly 40% fewer) and produced more accurate answers on a test set of 50 compliance questions. The key factor: raw chunks contained repetitive boilerplate across documents, which diluted the signal. Pre-distillation eliminated the redundancy before it reached the context window.
 
