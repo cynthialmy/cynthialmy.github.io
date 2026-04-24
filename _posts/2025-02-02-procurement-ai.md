@@ -91,7 +91,7 @@ The primary use case was natural language queries over contracts. Buyers could a
 
 A secondary use case covered process assistance: using SharePoint documentation, PDF guides, Word documents, PPTX presentations, and internal instructional videos to answer procedural questions such as how to add amendments to existing contracts in VGS or how to handle discrepancies in price information between VPC and SI+.
 
-The use case was moderately complex due to four intersecting challenges. Technical integration required seamless communication between the AI system, Microsoft Teams, and three procurement systems. Data handling demanded processing across diverse document formats. Change management meant overcoming skepticism about AI in a traditionally manual domain. Compliance and security required adherence to legal standards and robust data security within the Teams environment.
+The use case was moderately complex due to four intersecting challenges. Technical integration required reliable communication between the AI system, Microsoft Teams, and three procurement systems. Data handling demanded processing across diverse document formats. Change management meant overcoming skepticism about AI in a traditionally manual domain. Compliance and security required adherence to legal standards and strong data security within the Teams environment.
 
 ![Procurement Bot](../assets/img/procurement_2.png)
 
@@ -264,8 +264,8 @@ To keep scope tight and learning velocity high, I deferred SI+ deep integration 
 
 ---
 
-## Closing
+## What Sticks
 
 AI adoption in enterprise procurement depends on change management as much as model selection. Trust is built through transparency, not perfection. Starting narrow with clear risk boundaries accelerates scaling more than launching broadly with loose constraints.
 
-The highest-leverage product work in this domain is designing decision boundaries, anticipating failure modes, and building systems that degrade safely under uncertainty. The AI is a component. The product is the decision system that surrounds it.
+The most impactful product work in this domain is designing decision boundaries, anticipating failure modes, and building systems that degrade safely under uncertainty. The AI is a component. The product is the decision system that surrounds it.

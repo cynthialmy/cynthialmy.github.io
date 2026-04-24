@@ -13,7 +13,7 @@ comments: true
 
 Over the past year building generative AI inside Volvo Cars' procurement organization, I confronted a design problem that most AI product literature skips: how do you make an inherently uncertain technology behave predictably in an environment where mistakes carry legal, financial, and compliance consequences?
 
-The answer is not a single technique. It is a layered architecture where each layer catches failures the others miss. This post documents the four-layer harm mitigation framework I developed, with implementation details from the procurement AI system. The focus is on control and trustworthiness as product outcomes, not model capability in isolation.
+The answer is a layered architecture where each layer catches failures the others miss. Control and trustworthiness are the product outcomes here, not model capability in isolation.
 
 A recent article on [Builder.io](https://www.builder.io/blog/build-ai) made a related argument: the differentiator in AI products is not access to models but the specificity of your product insight. I agree, and I would add that in enterprise contexts, the specificity of your *risk design* matters equally.
 
@@ -47,7 +47,7 @@ These boundaries were strategic choices about where uncertainty was acceptable a
 
 ## The Four Layers
 
-Safety in enterprise AI is a cross-functional product challenge, not a purely technical one. The procurement system uses four layers, each solving a different part of the risk landscape. No single layer is sufficient. The cumulative effect is what makes the system trustworthy.
+Safety in enterprise AI is a cross-functional product challenge, not a purely technical one. The procurement system uses four layers, each addressing a different failure mode. No single layer is sufficient. The cumulative effect is what makes the system trustworthy.
 
 ### Layer 1: Model Selection
 
@@ -159,14 +159,10 @@ The most valuable realization: trust must be maintained continuously. Every mont
 
 ---
 
-## Closing Reflection
+## What Actually Matters
 
 The hardest problems in enterprise AI are problems of control under uncertainty, not technical novelty. How do you deploy generative models where errors have legal consequences? How do you maintain trust when the technology is inherently probabilistic? How do you build systems that degrade gracefully instead of failing catastrophically?
 
 The durable answer is better decision architectures, not incrementally better models alone.
 
-Today, when I design AI systems, I start by mapping risk, defining boundaries, and designing for failure modes. I ask where automation stops, where humans must remain in control, and how the system should behave when confidence is low. I prioritize transparency over cleverness, constraints over flexibility, and evolution over perfection.
-
 The AI products I build feel predictable, transparent, and sometimes boring. They do not surprise users. They do not make decisions autonomously when uncertainty is high. They degrade safely. They earn trust through consistency.
-
-In high-stakes environments, the most valuable AI systems turn ambiguous, risky problems into controllable, auditable decisions for every user, without surprises.

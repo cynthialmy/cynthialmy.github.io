@@ -13,17 +13,25 @@ At Volvo Cars, "duty savings" had 23 conflicting definitions across 50+ teams. F
 
 Better pipelines, newer warehouses, and trendier architectures cannot solve this. Over the past fifteen years, the industry has produced data lakes, modern warehouses, lakehouses, data fabrics, and data meshes. Each addresses real problems. None of them solve the problem of *meaning*.
 
-This post traces the evolution of modern data architectures, explains where they fall short, and shows how to move from fragmented reporting to a governed, reusable abstraction that enables consistent decisions across the organization.
-
 > **Interactive demo:** [Metric Trust Explorer](https://semantic-layer-demo.streamlit.app/) shows how three source systems compute the same procurement metrics differently, and how a governed semantic layer resolves the inconsistency. Source on [GitHub](https://github.com/cynthialmy/semantic-layer-demo).
 
 ---
 
-## The Architecture Landscape and Its Common Gap
+## Architecture Patterns and Their Common Gap
 
-The infrastructure underlying enterprise data has transformed. Storage moved from expensive SAN appliances to commodity object storage. Compute moved from MPP appliances like Netezza to elastic frameworks like Spark and Snowflake. Networking went from 1G Ethernet to 100G cloud infrastructure. These shifts made petabyte-scale analytics routine. Data architecture was once a choice between Inmon and Kimball; today the landscape is far more complex.
+The infrastructure underlying enterprise data has transformed. Storage moved from expensive SAN appliances to commodity object storage. Compute moved from MPP appliances like Netezza to elastic frameworks like Spark and Snowflake. Networking went from 1G Ethernet to 100G cloud infrastructure. These shifts made petabyte-scale analytics routine. Data architecture was once a choice between Inmon and Kimball; today the options have proliferated.
 
-The architectural patterns that emerged each solve a genuine problem. Data lakes decouple storage from compute and introduced logical zoning (the "medallion" architecture), but store data without encoding business meaning. Every consumer must independently interpret what a number represents. Data virtualization federates access across systems in real time and centralizes security, but does not impose shared definitions; two consumers querying the same endpoint still interpret results differently. Cross-system joins are notoriously difficult to optimize for analytical workloads. Modern data warehouses (Snowflake, Databricks, Azure Synapse, BigQuery, Redshift) combine relational analytics with lake-scale flexibility and decouple storage from compute, but the hybrid nature complicates governance across duplicated components, and compliance certification becomes harder when the attack surface spans multiple systems. Data fabric uses continuous analytics over metadata, augmented catalogs, and knowledge graphs, but the technology remains immature, metadata quality across incompatible vendors is inherently challenging, and in regulated environments ML-based reasoning may not meet human oversight requirements. The data lakehouse converges lake scalability with warehouse transactional guarantees using open formats (Parquet, ORC) and technologies like Delta Lake or Apache Iceberg. It is arguably the most pragmatic pattern, but focuses on technology while underserving data silos, business alignment, and SLAs. Data mesh shifts ownership to domain teams with data-as-product principles and federated governance. The principles are sound, but implementation demands organizational transformation that outpaces most enterprises' capacity for change. Gartner has predicted Data Mesh may become obsolete before reaching the plateau of productivity.
+The architectural patterns that emerged each solve a genuine problem. Data lakes decouple storage from compute and introduced logical zoning (the "medallion" architecture), but store data without encoding business meaning. Every consumer must independently interpret what a number represents. 
+
+Data virtualization federates access across systems in real time and centralizes security, but does not impose shared definitions; two consumers querying the same endpoint still interpret results differently. 
+
+Cross-system joins are notoriously difficult to optimize for analytical workloads. Modern data warehouses (Snowflake, Databricks, Azure Synapse, BigQuery, Redshift) combine relational analytics with lake-scale flexibility and decouple storage from compute, but the hybrid nature complicates governance across duplicated components, and compliance certification becomes harder when the attack surface spans multiple systems. 
+
+Data fabric uses continuous analytics over metadata, augmented catalogs, and knowledge graphs, but the technology remains immature, metadata quality across incompatible vendors is inherently challenging, and in regulated environments ML-based reasoning may not meet human oversight requirements. 
+
+The data lakehouse converges lake scalability with warehouse transactional guarantees using open formats (Parquet, ORC) and technologies like Delta Lake or Apache Iceberg. It is arguably the most pragmatic pattern, but focuses on technology while underserving data silos, business alignment, and SLAs. 
+
+Data mesh shifts ownership to domain teams with data-as-product principles and federated governance. The principles are sound, but implementation demands organizational transformation that outpaces most enterprises' capacity for change. Gartner has predicted Data Mesh may become obsolete before reaching the plateau of productivity.
 
 Each pattern addresses challenges in storage, compute, integration, governance, or org structure. None of them, by design, solves the problem of shared business meaning. A data lake stores data without defining what it represents. A lakehouse adds ACID transactions without business definitions. A mesh distributes ownership but can fragment meaning across domains. A fabric attempts metadata-driven integration but often cannot reconcile semantic differences between systems.
 

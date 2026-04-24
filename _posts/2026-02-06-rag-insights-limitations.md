@@ -11,7 +11,7 @@ comments: true
 
 I have built RAG systems for enterprise knowledge retrieval in regulated domains: compliance documentation, trade policy, and product specifications across multiple markets. The pattern I keep seeing is teams treating RAG as a solved problem because the demo works, then discovering its failure modes in production when the cost of a wrong answer is highest.
 
-This post maps RAG's actual boundaries based on where I have seen it succeed and fail. The aim is to give product and engineering teams a decision framework for when RAG is the right architecture, when it is actively dangerous, and what alternatives fit the gaps.
+This post maps RAG's actual boundaries based on where I have seen it succeed and fail, and offers a decision framework: when RAG is the right architecture, when it breaks, and what fills the gaps.
 
 ---
 
@@ -106,7 +106,7 @@ Retrieval then operates at two layers. Layer 1 is category-level summaries that 
 >
 > In a trade compliance project, I tested two approaches. The baseline used Top-K=20 with raw chunks. The Category-First approach used pre-distilled summaries at Top-K=5 plus on-demand citation retrieval. The pre-distilled approach used fewer tokens per query (roughly 40% fewer) and produced more accurate answers on a test set of 50 compliance questions. The key factor: raw chunks contained repetitive boilerplate across documents, which diluted the signal. Pre-distillation eliminated the redundancy before it reached the context window.
 
-The tradeoff is clear: this architecture requires upfront investment in knowledge curation and pipeline maintenance. In data-heavy environments where the same knowledge base serves thousands of queries, the investment pays back quickly.
+This architecture requires upfront investment in knowledge curation and pipeline maintenance. In data-heavy environments where the same knowledge base serves thousands of queries, the investment pays back quickly.
 
 ![rag-insights-limitations](../assets/img/rag-insights-limitations.jpg)
 

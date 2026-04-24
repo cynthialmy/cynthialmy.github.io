@@ -11,7 +11,7 @@ comments: true
 
 I built a proof-of-concept for policy-aware content moderation: a multi-agent pipeline where AI proposes, policy constrains, and humans decide. The demo is live at [llm-misinformation.streamlit.app](https://llm-misinformation.streamlit.app/).
 
-The system is intentionally scoped as a design exploration, not a production deployment. Its purpose is to validate a specific hypothesis: that separating factuality assessment from policy enforcement, and routing decisions by risk tier, produces fewer false positives than single-model classifiers or combined fact-check-and-enforce pipelines. This post walks through the design, the tradeoffs I encountered while building it, and the measurement framework I would use in production.
+The system is intentionally scoped as a design exploration, not a production deployment. Its purpose is to validate a specific hypothesis: that separating factuality assessment from policy enforcement, and routing decisions by risk tier, produces fewer false positives than single-model classifiers or combined fact-check-and-enforce pipelines.
 
 ## The Core Design Principle
 

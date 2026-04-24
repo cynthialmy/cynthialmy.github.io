@@ -13,7 +13,7 @@ comments: true
 
 As a product manager who works primarily inside a code editor, I wanted three things: an AI assistant that remembers what I care about, gets better at helping me over time, and stores all state in files I can read and audit. I did not need WhatsApp integration, Docker sandboxing, or a skill marketplace.
 
-This post covers two tools I built. **Daily Assistant** is a lightweight, OpenClaw-inspired system that runs entirely as Markdown files and IDE rules. **[bip](https://github.com/cynthialmy/build-in-public-automate)** is a separate CLI that turns git commits into platform-tailored social posts. Both are local-first and file-based. They are architecturally independent but share a design philosophy: state you can read, audit, and version-control with git.
+I built two tools. **Daily Assistant** is a lightweight, OpenClaw-inspired system that runs entirely as Markdown files and IDE rules. **[bip](https://github.com/cynthialmy/build-in-public-automate)** is a separate CLI that turns git commits into platform-tailored social posts. Both are local-first and file-based. They are architecturally independent but share a design philosophy: state you can read, audit, and version-control with git.
 
 ---
 

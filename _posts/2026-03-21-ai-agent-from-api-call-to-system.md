@@ -11,7 +11,7 @@ comments: true
 
 I spent months building enterprise AI copilots in a large automotive setting (including Volvo): systems that draft customer-facing content, triage incoming documents, and assist compliance workflows across markets. Early on, I read Anthropic's [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) and [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), treated them as assembly instructions, and tried to build the end-state architecture on day one. I upgraded system prompts, isolated contexts, added memory layers, and wired up sub-agents. Token cost went up. Quality did not. Failures increased, and some were impossible to trace.
 
-The rollback taught me something I should have known: those articles describe where a mature stack lands after years of iteration. They do not describe where to start. This post walks through how a small problem grows into a real system, which product tradeoffs force each layer of complexity, and why "finished architecture" write-ups skip the messy path that makes the architecture earn its place.
+The rollback taught me something I should have known: those articles describe where a mature stack lands after years of iteration. They do not describe where to start. What follows is how a small problem grows into a real system, which product tradeoffs force each layer of complexity, and why "finished architecture" write-ups skip the messy path that makes the architecture earn its place.
 
 ---
 
@@ -83,7 +83,7 @@ Once I split roles, a new problem surfaced: handing large artifacts between stag
 
 This triggers two issues. First, cost: I pay output tokens to duplicate text I already have. Second, correctness: models are poor lossless copiers. Even with "do not change a character," they may silently "fix" typos, rename symbols, or alter logic. That is fatal if the point was to reproduce a defect verbatim for root-cause analysis.
 
-The fix is straightforward: write the payload to durable storage (a workspace file or object store), pass a pointer (path or ID) between steps, and let the executor read the canonical bytes. Planners stop echoing megabytes; workers pull truth from the source.
+Fix: write the payload to durable storage (a workspace file or object store), pass a pointer (path or ID) between steps, and let the executor read the canonical bytes. Planners stop echoing megabytes; workers pull truth from the source.
 
 This is when memory (session vs durable) becomes a product requirement tied to real handoffs. Session-only state is for things that should die with the turn. Durable state is for cross-turn progress: checklists, branch strategy, user approvals. The distinction matters because session state that accidentally persists becomes noise tomorrow, and durable state that accidentally dies causes rework.
 

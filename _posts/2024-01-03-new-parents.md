@@ -13,7 +13,7 @@ comments: true
 
 The starting point was a sentiment, not a product: new parents are overwhelmed, and AI could help. That framing is useless for product work. "Overwhelmed" spans hundreds of micro-problems across feeding, sleep, purchases, social isolation, and daily logistics. AI is a capability, not a solution. The real question was which specific problem is frequent enough, painful enough, and structured enough that an AI-assisted tool would be obviously better than whatever parents are cobbling together today.
 
-This case study covers the research that answered that question: 20 interviews, 4 focus groups, 6 in-home observations, and a 150-person survey that narrowed a sprawling problem space into a single product bet. The product itself, [akaTask](https://cynthialmy.github.io/2024-01-05-akatask/), is documented separately. This piece focuses on how the research shaped what to build and, more importantly, what to refuse to build.
+The research that answered it: 20 interviews, 4 focus groups, 6 in-home observations, and a 150-person survey that narrowed a sprawling problem space into a single product bet. The product itself, [akaTask](https://cynthialmy.github.io/2024-01-05-akatask/), is documented separately. What follows is how the research shaped what to build and what to refuse to build.
 
 ---
 
@@ -133,4 +133,4 @@ This translated into three design constraints and three explicit exclusions:
 
 **Explicit exclusions:** (1) No safety-critical AI recommendations, ever. (2) No community features until core utility is validated. (3) No product marketplace or recommendation engine.
 
-The full product design, feature specs, and go-to-market strategy are documented in the [akaTask case study](https://cynthialmy.github.io/2024-01-05-akatask/). This research provided the evidence base. The product case study documents what I built with it.
+The full product design, feature specs, and go-to-market strategy are in the [akaTask case study](https://cynthialmy.github.io/2024-01-05-akatask/).
