@@ -73,7 +73,7 @@ The fix aligned with Anthropic's guidance on [context engineering](https://www.a
 
 > **Design Decision: Analyst Implementation Context Separation**
 >
-> Early versions kept everything in one conversation. A typical transition moved from strategy discussion (prioritize Germany or US fleet) to execution (update the recall endpoint API contract). The model carried strategic paragraphs into implementation turns and lost focus on technical detail. After context splitting, implementation task completion rates improved noticeably. Straightforward edits became more direct, and business rationale appeared only when requested.
+> Early versions kept strategy and execution in one conversation. A typical transition moved from strategy discussion (prioritize Germany or US fleet) to execution (update the recall endpoint API contract). The model carried strategic paragraphs into implementation turns and lost focus on technical detail. After context splitting, implementation task completion rates improved noticeably. Straightforward edits became more direct, and business rationale appeared only when requested.
 
 ---
 

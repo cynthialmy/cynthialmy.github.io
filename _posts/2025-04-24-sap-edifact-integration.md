@@ -15,7 +15,7 @@ I worked on [SAP Market Communication for Utilities](https://www.sap.com/product
 
 ---
 
-## The Constraint That Shaped Everything
+## The Core Operating Constraint
 
 EDIFACT format updates are mandatory regulatory migrations with hard deadlines and fixed effective dates. A utility that misses the cutover loses message exchange with grid operators. Supplier switches stall, meter readings bounce, and billing processes stop. For an energy provider serving hundreds of thousands of households, one day of message rejection can cascade into operational chaos.
 

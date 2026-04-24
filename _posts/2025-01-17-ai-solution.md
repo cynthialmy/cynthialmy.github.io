@@ -55,9 +55,9 @@ The model layer is about using the right tool for each task, not defaulting to t
 
 In practice, the system used a hybrid architecture. The LLM handled reasoning and summarization tasks where natural language understanding was essential. RAG handled truth and grounding by retrieving from actual contract documents. Backend logic handled supplier IDs, metadata lookups, and compliance rules that are deterministic by nature. Traditional search handled exact-match queries.
 
-This mix reduced API costs by 60% and improved response latency for low-complexity queries. The principle: many problems are better solved without an LLM at the center. AI products fail when they assume a model should sit at the center of everything.
+This mix reduced API costs by 60% and improved response latency for low-complexity queries. The principle: many problems are better solved without an LLM at the center. AI products become expensive and brittle when every task routes through one model.
 
-As [Builder.io](https://www.builder.io/blog/build-ai) argued, beginning with non-AI solutions for solvable problems and layering specialized models only where they fill distinct gaps yields faster, more reliable, and more cost-effective products than wrapping everything in a single large model. GitHub Copilot was [reported operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), illustrating the mismatch between user willingness to pay and the cost of running every interaction through a frontier model.
+As [Builder.io](https://www.builder.io/blog/build-ai) argued, beginning with non-AI solutions for solvable problems and layering specialized models only where they fill distinct gaps yields faster, more reliable, and more cost-effective products than routing all workloads through one large model. GitHub Copilot was [reported operating at a loss per user](https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f), illustrating the mismatch between user willingness to pay and the cost of running every interaction through a frontier model.
 
 ![architecture](../assets/img/architecture.png)
 
@@ -141,7 +141,7 @@ Access to models is no longer a competitive advantage on its own. Anyone can use
 
 What made the procurement AI defensible was the specificity of the product insight: how buyers search, what they fear missing, how contracts evolve, the differences between VGS and VPC content types, the edge cases around amendments, the real-world variation in document formats. Those nuances came from watching, listening, and learning. They made the system genuinely differentiated compared with dropping a model into a generic template.
 
-AI demos are compelling: everything works, everything looks smart. The moment you bring real workflows and real documents, the cracks appear. Users need training as much as the model does. Citations and transparency matter more than conversational polish. Some tasks need hybrid logic rather than pure AI. AI products live or die in the hands of real users, not in engineering demos.
+AI demos are compelling because failure cases are filtered out. Real workflows and real documents expose the missing cases. Users need training as much as the model does. Citations and transparency matter more than conversational polish. Some tasks need hybrid logic rather than pure AI. AI products are evaluated in production usage, not in engineering demos.
 
 ---
 

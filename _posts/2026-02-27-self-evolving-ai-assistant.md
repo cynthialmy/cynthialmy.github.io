@@ -367,7 +367,7 @@ flowchart TB
     Cron -->|"scheduled tasks"| OC
 ```
 
-Daily Assistant handles the IDE-centric workflow (coding, research, documentation, reflection). bip handles social sharing from git activity. OpenClaw, if added later, handles everything that needs to happen away from the computer. Each tool keeps its own data layer; all three share plain local files as a design philosophy, which keeps future integration tractable.
+Daily Assistant handles the IDE-centric workflow (coding, research, documentation, reflection). bip handles social sharing from git activity. OpenClaw, if added later, handles background tasks that run away from the computer. Each tool keeps its own data layer; all three share plain local files as a design philosophy, which keeps future integration tractable.
 
 ---
 

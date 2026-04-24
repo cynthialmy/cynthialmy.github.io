@@ -61,7 +61,7 @@ The pipeline has six stages. Each uses a different model, chosen by the cost and
 
 ### 1. Claim Extraction → Groq
 
-A fast, low-cost model extracts verifiable factual claims and tags each by domain (health, finance, politics). Speed matters here; precision on claim boundaries is less critical because downstream stages re-evaluate everything. In the demo, this step runs in under 500ms per input.
+A fast, low-cost model extracts verifiable factual claims and tags each by domain (health, finance, politics). Speed matters here; boundary precision can be refined downstream because later stages re-check extracted claims. In the demo, this step runs in under 500ms per input.
 
 ### 2. Risk Assessment → Zentropi
 
@@ -69,7 +69,7 @@ A smaller model scores preliminary risk based on harm potential, likely exposure
 
 > **Design Decision: Risk Gated Compute Allocation**
 >
-> Early versions ran every claim through the full pipeline. The result was a system that spent frontier-model tokens on obvious low-risk content ("the weather in Paris is nice today") while adding latency to everything. Moving risk assessment upstream cut per-claim cost by roughly 60% in the demo, because most content is low-risk and skips evidence retrieval and factuality assessment entirely.
+> Early versions ran every claim through the full pipeline. The result was a system that spent frontier-model tokens on obvious low-risk content ("the weather in Paris is nice today") and increased end-to-end latency. Moving risk assessment upstream cut per-claim cost by roughly 60% in the demo, because most content is low-risk and skips evidence retrieval and factuality assessment entirely.
 
 ### 3. Evidence Retrieval → RAG + Web Search
 
