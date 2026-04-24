@@ -17,7 +17,7 @@ The system is a design exploration, with one hypothesis to test: separating fact
 
 Content moderation has a structural constraint. A claim can be factually false yet policy-compliant (the earth is flat on most platforms). A claim can be factually true yet policy-violative (doxxing with accurate information). Systems that collapse factuality and policy into one score drift toward either over-enforcement or under-enforcement.
 
-This system keeps them separate. **AI agents propose analysis. Policy frameworks constrain actions. Humans make final calls in high-stakes cases.** The pipeline allocates compute proportional to risk: low-risk content gets fast routing, high-risk content gets deeper analysis and human review.
+The system keeps them separate. **AI agents propose analysis. Policy frameworks constrain actions. Humans make final calls in high-stakes cases.** The pipeline allocates compute proportional to risk: low-risk content gets fast routing, high-risk content gets deeper analysis and human review.
 
 ## System Flow
 
@@ -140,11 +140,11 @@ Every decision is logged with full context:
 - Whether the decision was automated or human-reviewed
 - If human-reviewed, the reviewer's override rationale
 
-This audit trail enables retroactive re-evaluation. When a policy changes or new evidence emerges, operators can identify which past decisions were made under the old policy and assess whether they would change under the new one.
+The audit trail enables retroactive re-evaluation. When policy changes or new evidence emerges, operators can identify which past decisions were made under the old policy and assess whether they would change under the new one.
 
 ## Limitations and Production Gap
 
-This demo surfaces the production gap clearly. Several areas need hardening before deployment.
+The demo surfaces the production gap clearly. Several areas need hardening before deployment.
 
 **Latency.** The full pipeline takes 8-15 seconds end-to-end in the demo. A production system processing millions of items daily would need async processing, pre-computed risk scores, and cached evidence retrieval. The current synchronous architecture is designed for explainability, not throughput.
 

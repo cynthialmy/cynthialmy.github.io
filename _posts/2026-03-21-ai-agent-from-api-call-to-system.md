@@ -15,7 +15,7 @@ The rollback taught me something I should have known: those articles describe wh
 
 ---
 
-## The core trap: orchestration on top of variability
+## The Core Trap: Orchestration on Top of Variability
 
 In traditional backend work, front-loading structure (containers, modules, deployment boundaries) pays off because the components are deterministic once wired. **LLM outputs vary run to run.** Layering orchestration on top of that variability before you have evidence that each layer earns its place compounds uncertainty instead of reducing it.
 
@@ -23,7 +23,7 @@ I hit this on a trivial task. I needed to turn a short service bulletin into a o
 
 ---
 
-## Not everything is an agent
+## Agents Need a Specific Job
 
 Three patterns look similar but have fundamentally different product shapes.
 
@@ -35,7 +35,7 @@ Three patterns look similar but have fundamentally different product shapes.
 
 ---
 
-## Workflow length is not dialogue length
+## Workflow Length Is Not Dialogue Length
 
 After committing to an agent, I made a category error: treating dialogue depth like batch job length. The user-facing work felt big, so I assumed I needed a heavy orchestration framework with many autonomous steps.
 
@@ -45,7 +45,7 @@ I chose a boring integration path (an AI SDK with solid tool-calling and fast it
 
 ---
 
-## Prompts hit a ceiling; tools break through it
+## Prompts Hit a Ceiling, Tools Break Through
 
 I tried to solve problems with system prompts alone: curated mega-prompts, leaked system prompts treated as sacred texts. Token use spiked. Quality did not reliably improve.
 
@@ -61,11 +61,11 @@ The product framing I use now: **prompts tune how the model uses what it has. To
 
 ---
 
-## Context rot: the failure mode nobody warns you about
+## Context Rot: The Failure Mode Few Teams Plan For
 
 Adding tools felt productive. Each one unlocked new work. Then performance crept downward: more failures, uneven quality, outputs that showed understanding but acted confused. The mechanism was straightforward: every tool adds descriptions and invocation patterns; conversation logs and history grow; the model's attention spreads across a wider, noisier context. **The useful signal diluted even though each individual piece was reasonable in isolation.**
 
-This is context rot in practice: too much heterogeneous information competing for the same narrow window.
+Context rot in practice looks like this: too much heterogeneous information competing for the same narrow window.
 
 In one copilot we shipped, two modes of work collided. **Analyst** tasks wanted open context: market framing, stakeholder intent, ambiguous requirements. **Implementation** tasks wanted tight context: API contracts, field names, ticket IDs, error strings. When both lived in one flat transcript, small jobs survived but hard jobs failed. Narrative context polluted structured edits; schema detail slowed judgment-heavy reasoning.
 
@@ -77,15 +77,15 @@ The fix aligned with Anthropic's guidance on [context engineering](https://www.a
 
 ---
 
-## When memory becomes a product requirement
+## Memory Becomes a Product Requirement
 
 Once I split roles, a new problem surfaced: handing large artifacts between stages. Roles define visibility. Artifact transport still needs an explicit mechanism. Chat turns are an intuitive transport layer, but they push the model to paraphrase megabytes in natural language.
 
-This triggers two issues. First, cost: I pay output tokens to duplicate text I already have. Second, correctness: models are poor lossless copiers. Even with "do not change a character," they may silently "fix" typos, rename symbols, or alter logic. That is fatal if the point was to reproduce a defect verbatim for root-cause analysis.
+Two issues follow. First, cost: I pay output tokens to duplicate text I already have. Second, correctness: models are poor lossless copiers. Even with "do not change a character," they may silently "fix" typos, rename symbols, or alter logic. That is fatal when the goal is to reproduce a defect verbatim for root-cause analysis.
 
 Fix: write the payload to durable storage (a workspace file or object store), pass a pointer (path or ID) between steps, and let the executor read the canonical bytes. Planners stop echoing megabytes; workers pull truth from the source.
 
-This is when memory (session vs durable) becomes a product requirement tied to real handoffs. Session-only state is for things that should die with the turn. Durable state is for cross-turn progress: checklists, branch strategy, user approvals. The distinction matters because session state that accidentally persists becomes noise tomorrow, and durable state that accidentally dies causes rework.
+At this point, memory (session vs durable) becomes a product requirement tied to real handoffs. Session-only state is for things that should die with the turn. Durable state is for cross-turn progress: checklists, branch strategy, user approvals. The distinction matters because session state that accidentally persists becomes noise tomorrow, and durable state that accidentally dies causes rework.
 
 > **Design Decision: Pointer passing vs content echoing**
 >
@@ -93,7 +93,7 @@ This is when memory (session vs durable) becomes a product requirement tied to r
 
 ---
 
-## Observability: the prerequisite you add last and need first
+## Observability: Add It Early
 
 With sub-agents, context isolation, and memory, the system got harder to debug. Failure could hide in a handoff, a tool choice, or a context block, not only in the final answer. Without traces, "iterate the prompt" was guesswork.
 
@@ -109,7 +109,7 @@ Anthropic's guidance on [long-running agent harnesses](https://www.anthropic.com
 
 ---
 
-## What this cost to learn
+## What This Cost to Learn
 
 The failed "big bang" upgrade cost roughly three weeks of iteration time and a significant increase in API spend before the rollback. The staged approach that replaced it shipped its first usable version in four days. The difference was not capability. The same models, the same tools, the same domain. The difference was sequencing: proving each layer earned its place before adding the next.
 

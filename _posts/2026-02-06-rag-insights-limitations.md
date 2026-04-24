@@ -15,11 +15,11 @@ The practical question is architecture fit: when retrieval solves the problem, w
 
 ---
 
-## RAG is context engineering
+## RAG as Context Engineering
 
-The framing that changed how I think about RAG: it is fundamentally an exercise in deciding what information belongs in the LLM's context window and what should be left out.
+RAG is fundamentally a context selection problem: deciding what belongs in the LLM context window and what stays out.
 
-This matters because the context window is a scarce resource. Token limits impose hard constraints, and attention dispersion means adding more context often weakens reasoning as noise accumulates. RAG therefore operates as a two-loop optimization problem. At runtime, the system must assemble the minimal sufficient context for a given query. Over time, the organization must continuously structure and distill its knowledge assets so that retrieval produces high-density, high-relevance inputs.
+The context window is a scarce resource. Token limits impose hard constraints, and attention dispersion means adding more context often weakens reasoning as noise accumulates. RAG therefore operates as a two-loop optimization problem. At runtime, the system assembles minimal sufficient context for each query. Over time, the organization structures and distills its knowledge assets so retrieval yields high-density, high-relevance inputs.
 
 The teams that succeed with RAG treat context curation with the same rigor as schema design. Teams that struggle usually default to broad ingestion and rely on the model to resolve noise at inference time.
 
@@ -33,9 +33,9 @@ This distinction sets the system boundary. When the answer lives explicitly in a
 
 ---
 
-## Three ways RAG fails in practice
+## Three Failure Modes in Practice
 
-### Context noise
+### Context Noise
 
 When information density is low, the signal gets drowned by irrelevant text. The model retrieves passages that are topically adjacent but not actually useful for answering the question. In a compliance setting, I saw this manifest as the system surfacing general policy language when the user needed a specific exception clause buried three sections later.
 
@@ -43,13 +43,13 @@ When information density is low, the signal gets drowned by irrelevant text. The
 
 A single concept scattered across multiple chunks. No individual chunk contains enough information to answer the question, and the model cannot reliably reassemble the pieces. This was the most common failure mode in product specification retrieval: a single product's requirements might span ten documents across different departments, with no individual document providing a complete picture.
 
-### Cost explosion
+### Cost Explosion
 
 Increasing Top-K to compensate for noise burns compute budget without meaningfully improving answer quality. The root cause in each case is the same: context is treated as an evidence pile instead of a curated reasoning input.
 
 ---
 
-## Where Silent Failures Start
+## Where Silent Failures Begin
 
 Embeddings optimize for semantic similarity to the query. Logical support for an answer needs a separate reasoning step.
 
@@ -89,7 +89,7 @@ The opportunity is tighter integration where retrieval and reasoning are co-desi
 
 ## Category-First RAG for Context Quality
 
-This is the approach that performed best in my production-style tests. It inverts the standard retrieval pattern.
+In my production-style tests, this approach performed best. It inverts the standard retrieval pattern.
 
 Instead of retrieving raw chunks and relying on in-context synthesis, Category-First RAG retrieves pre-distilled summaries built for information density.
 
@@ -106,7 +106,7 @@ Retrieval then operates at two layers. Layer 1 is category-level summaries that 
 >
 > In a trade compliance project, I tested two approaches. The baseline used Top-K=20 with raw chunks. The Category-First approach used pre-distilled summaries at Top-K=5 plus on-demand citation retrieval. The pre-distilled approach used fewer tokens per query (roughly 40% fewer) and produced more accurate answers on a test set of 50 compliance questions. The key factor: raw chunks contained repetitive boilerplate across documents, which diluted the signal. Pre-distillation eliminated the redundancy before it reached the context window.
 
-This architecture requires upfront investment in knowledge curation and pipeline maintenance. In data-heavy environments where the same knowledge base serves thousands of queries, the investment pays back quickly.
+The architecture requires upfront investment in knowledge curation and pipeline maintenance. In data-heavy environments where the same knowledge base serves thousands of queries, the investment pays back quickly.
 
 ![rag-insights-limitations](../assets/img/rag-insights-limitations.jpg)
 
@@ -128,7 +128,7 @@ A valid product decision is system abstention for specific queries. That decisio
 
 ---
 
-## When RAG is the right choice
+## When RAG Is the Right Choice
 
 RAG works well when three conditions hold:
 
@@ -142,13 +142,13 @@ RAG works well when three conditions hold:
 
 Agentic RAG introduces planning, multi-round retrieval, and reflection. The agent decomposes complex queries, adjusts retrieval strategy based on intermediate results, and switches approaches when initial attempts fail.
 
-This improves performance when answers exist in text but discovery paths are complex. Example task: find all EMEA sustainability contracts from Q3 2024 and summarize obligations.
+Agentic retrieval improves performance when answers exist in text but discovery paths are complex. Example task: find all EMEA sustainability contracts from Q3 2024 and summarize obligations.
 
 Agentic RAG still assumes answers exist in retrievable text. For knowledge gaps or unfolding events, extra retrieval rounds mainly process additional noise. The Event-to-Concept gap remains. False certainty can increase because multi-step traces look rigorous even when ground truth is missing.
 
 ---
 
-## Matching metrics to system type
+## Matching Metrics to System Type
 
 Each architecture serves a different goal. The evaluation framework must reflect that.
 
