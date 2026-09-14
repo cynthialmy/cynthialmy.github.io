@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Builds
-subtitle: Live artifacts. The writing lives on Work.
+subtitle: Small tools, demos, and data visualizations you can open.
 full-width: true
 ---
 

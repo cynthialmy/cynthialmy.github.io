@@ -16,12 +16,29 @@
   --site-body: var(--ink);
   --font-serif: var(--display);
   --font-sans: var(--body);
-  --path: rgba(154, 132, 80, 0.45);
+  --page-top: 68px;
+  --vw: 100vw;
+  --col: 1080px;
+  --margin: 0px;
+  --gold: rgba(112, 78, 28, 0.75);
 }
 
 html {
   background: var(--paper);
   color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+main h2 {
+  scroll-margin-top: 96px;
+}
+
+body {
+  position: relative;
 }
 
 body {
@@ -30,26 +47,151 @@ body {
   isolation: isolate;
 }
 
-.path-canvas {
+/* From 1000px up, the page reserves real margins so the rails always have
+   somewhere to live. The prose measure is 40rem regardless, so the column
+   narrowing costs the reader nothing. */
+@media (min-width: 1000px) {
+  :root {
+    --col: min(1080px, calc(var(--vw) - 340px));
+    --margin: calc((var(--vw) - var(--col)) / 2);
+    --page: var(--col);
+  }
+}
+
+/* Desert rails — margin only. Sized from the space beside the column, so
+   they cannot overlap the type; too narrow and they are not drawn at all. */
+/* The left rail: navigation, reading position and the climate in one element.
+   The right margin is deliberately empty. */
+.instrument { display: none; }
+
+.rail {
   position: fixed;
+  left: 0;
+  top: 8vh;
+  height: 84vh;
+  width: calc(var(--margin) - 18px);
+  z-index: 3;
+  display: none;
+}
+
+.rail.is-on { display: block; }
+
+.rail__art {
+  position: absolute;
   inset: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  mix-blend-mode: multiply;
 }
 
-.path-read {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100%;
+.rail__guide {
+  fill: none;
+  stroke: rgba(26, 26, 24, 0.09);
+  stroke-width: 1;
+}
+
+.rail__curve {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.rail__end {
+  stroke: rgba(26, 26, 24, 0.28);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.rail__mark {
+  fill: var(--gold);
+}
+
+.rail__node {
+  opacity: 0;
+  transition: opacity 620ms ease-out;
+}
+
+.rail__node.is-shown,
+.rail__node.is-head { opacity: 1; }
+
+/* The links are the point of the rail, so they read as links. */
+.rail__link {
+  position: absolute;
+  right: var(--label-right, 68px);
+  transform: translateY(-50%);
+  max-width: calc(100% - var(--label-right, 68px) - 10px);
+  font-family: var(--body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: right;
+  color: var(--muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 160ms ease-out;
+  /* the theme breaks words globally; a section name must never split */
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+.rail__text {
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease-out;
+}
+
+.rail__link::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: 50%;
+  width: 16px;
   height: 1px;
-  background: var(--path);
-  transform: scaleX(0);
-  transform-origin: left center;
+  background: var(--line);
+  transition: width 160ms ease-out, background-color 160ms ease-out;
+}
+
+.rail__link:hover,
+.rail__link:focus-visible {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.rail__link:hover .rail__text,
+.rail__link:focus-visible .rail__text {
+  border-bottom-color: var(--ink);
+}
+
+.rail__link.is-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.rail__link:hover::after,
+.rail__link:focus-visible::after,
+.rail__link.is-active::after {
+  width: 24px;
+  background: var(--ink);
+}
+
+.instrument__turn,
+.instrument__arm {
+  transform-box: view-box;
+  transform-origin: 100px 110px;
+}
+
+.instrument__turn { transform: rotate(calc(var(--turn, 0) * 1deg)); }
+.instrument__arm { transform: rotate(calc(var(--turn, 0) * -0.6deg)); }
+
+/* Sand rides above everything, small and short-lived enough to read as dust. */
+.sand {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
@@ -181,7 +323,8 @@ footer .container-md {
 }
 
 .intro-header {
-  padding: 72px 0 8px !important;
+  margin: 0 !important;
+  padding: var(--page-top) 0 8px !important;
 }
 
 .intro-header .page-heading,
@@ -270,7 +413,7 @@ main {
 }
 
 .poster {
-  padding: 40px 0 12px;
+  padding: calc(var(--page-top) - 28px) 0 12px;
   max-width: 40rem;
 }
 
@@ -404,6 +547,35 @@ main {
   font-size: 1.15rem;
   border-bottom: 1px solid transparent;
   transition: border-color 180ms ease-out, transform 220ms ease-out;
+}
+
+/* ── Horizon ──────────────────────────────── */
+
+.horizon {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2.6rem 0 0.4rem;
+  overflow: visible;
+}
+
+.horizon--slim {
+  margin: 0 0 1.6rem;
+}
+
+/* the solar terms come round slowly enough that you only notice on a second look */
+.horizon__terms {
+  transform-box: view-box;
+  transform-origin: 838px 72px;
+  animation: horizon-turn 240s linear infinite;
+}
+
+@keyframes horizon-turn {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizon__terms { animation: none; }
 }
 
 /* ── Prose / posts ───────────────────────────────────── */
@@ -904,8 +1076,18 @@ html[data-climate="origin"] .more-writing__row {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .path-canvas {
+  .sand {
     display: none;
+  }
+
+  .instrument__turn,
+  .instrument__arm {
+    transform: none;
+  }
+
+  .rail__node {
+    opacity: 1;
+    transition: none;
   }
 
   .poster,
@@ -920,7 +1102,6 @@ html[data-climate="origin"] .more-writing__row {
     clip-path: none;
   }
 
-  .path-read,
   .work-row::before,
   .more-writing__row::before,
   .work-row__title,

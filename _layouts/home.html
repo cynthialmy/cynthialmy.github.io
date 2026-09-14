@@ -5,8 +5,10 @@ layout: base
 <main class="studio-main">
   {{ content }}
 
+  {% include horizon.html %}
+
   <section class="work-index" id="selected">
-    <h2>Selected work</h2>
+    <h2>Selected writing</h2>
     <div class="work-index__list">
       {% for item in site.home_featured %}
         {% assign match = nil %}
@@ -26,7 +28,7 @@ layout: base
   </section>
 
   <section class="more-writing" id="more">
-    <h2>More writing</h2>
+    <h2>Archive</h2>
     <div>
       {% for post in site.posts %}
         {% assign listed = false %}

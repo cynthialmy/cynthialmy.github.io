@@ -1,24 +1,24 @@
 ---
 layout: about
 title: About
-subtitle: Product work at Volvo Cars, SAP, Airwallex, and Alibaba.
+subtitle: Background, references, and how to reach me.
 ---
 
 ## Who I am
 
-I work on AI products and write about them. That has meant payments infrastructure, procurement search, and policy-constrained fact checking at Volvo Cars, SAP, Airwallex, and Alibaba, across Europe, Asia, and the U.S.
+I work on AI products in payments infrastructure, procurement search, and policy-constrained fact checking — at Volvo Cars, SAP, Airwallex, and Alibaba, across Europe, Asia, and the U.S.
 
 Recent writing includes [Escalation by Design]({{ '/2026-01-27-policy-aware-factuality-assessment' | relative_url }}), [From One API Call to a Production Agent]({{ '/2026-03-21-ai-agent-from-api-call-to-system' | relative_url }}), and [RAG in Practice]({{ '/2026-02-06-rag-insights-limitations' | relative_url }}).
 
 <ul class="about-focus-list">
   <li><span>Platforms</span> AI decision platforms and internal systems at scale</li>
   <li><span>Trust &amp; safety</span> Governance and safeguards for production AI</li>
-  <li><span>Adoption</span> Transparent systems people can rely on</li>
+  <li><span>Adoption</span> Systems whose answers can be checked</li>
 </ul>
 
 Outside of work I build small apps and internal tools, and I write about technology and how people learn it.
 
-## What others say
+## In their words
 
 <blockquote class="pullquote">
   The UX Designer enjoyed working with Cynthia and referred to her as a “real gem.” Personally, I found that Cynthia thinks critically and is not afraid to raise differing perspectives while remaining respectful.
