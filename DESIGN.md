@@ -8,10 +8,11 @@
 
 ## Aesthetic Direction
 - **Direction:** Editorial / refined (stone studio)
-- **Decoration level:** Minimal — type, hairlines, paper. No grain, no seal, no illustration layer. The golden path is motion, not a drawn motif.
+- **Decoration level:** Minimal — type, hairlines, paper. No grain, no seal, no illustration layer. The golden path is motion, not a drawn motif. The wash is live desert light on paper, not a texture file.
 - **Mood:** A quiet published object. Rigorous work, chosen materials
 - **Memorable thing:** This person has taste, not just a resume
 - **Reference:** hillmanhan.com for craft only (paper, air, index). Do not clone palette, type, IA, or motion gate
+- **Climate:** Ashes of Time and Dune, feeling only. Sun-spent gold, heat that lags, a path the wind takes back. Do not clone stills, titles, spice-orange, or Fremen blue
 
 ## Typography
 - **Display/Hero:** Newsreader — book serif, not Playfair, not DM Serif Display
@@ -46,8 +47,8 @@
 
 ## Motion
 - **Approach:** Intentional and short
-- **Allowed:** (1) golden-path cursor trail — a hairline you can see, then it dries, (2) paper-unroll entrance, fade + short rise, ~550ms ease-out, small stagger, (3) index row yields on hover (title shift, ink mark), 200–250ms ease-out, (4) a 1px ink reading line on long pages, (5) builds thumbnail settles slightly larger on hover, ~400ms
-- **Forbidden:** splash gate, typed intro that blocks, scroll theater, bounce, decorative blobs, stars, custom cursor, gold in the UI
+- **Allowed:** (1) paper-unroll entrance, clip-path reveal, ~640ms ease-out (~780ms on home), small stagger, (2) desert wash that follows reading, not the pointer, (3) index row yields on hover (title shift, ink mark), 200–250ms ease-out, (4) a 1px path-gold reading line on long pages, (5) builds thumbnail settles slightly larger on hover, ~400ms, with an ink hairline not gold
+- **Forbidden:** splash gate, typed intro that blocks, scroll theater, bounce, decorative blobs, stars, custom cursor, cursor trail, gold in the UI
 
 ## Information architecture
 - **Nav:** Work / Builds / About. Wordmark goes home.
@@ -68,3 +69,6 @@
 | 2026-09-14 | Home lede stays wide | Do not narrow the line to a shortlist of industries. Specifics belong in the writing and on About. |
 | 2026-09-14 | Golden path is the visitor’s cursor, not a painted motif | The Dune / Confucian “way” is a hairline the mouse leaves, then it dries. Gold is path-only. No stars, splash, or scroll theater. |
 | 2026-09-14 | Path must be felt, still not a cosmos | Whisper was too faint to notice. Stronger ink trail, rows that yield, a reading line. Still no stars, night overlay, or splash. Burger only below 600px (half of the 1200px theme breakpoint). |
+| 2026-09-14 | Ashes of Time and Dune are the climate | Travel of time is desert weather and a path the wind takes back. Home is the hottest hour, essays the inn, Builds cooler dust on the same paper. Still not a cosmos, still not a film site. |
+| 2026-09-14 | The stain has to read on paper | Tea-gold at 0.45 with multiply disappeared into #F6F5F1. The trail ink is darker (112, 78, 28) so the path is a mark you can see, then it dries. |
+| 2026-09-14 | No cursor trail | A line stuck to the pointer is distracting on a reading site. Climate stays as page light that shifts with the essay, not with the mouse. |

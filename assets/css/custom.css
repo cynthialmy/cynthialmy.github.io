@@ -33,10 +33,11 @@ body {
 .path-canvas {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .path-read {
@@ -46,7 +47,7 @@ body {
   z-index: 1040;
   width: 100%;
   height: 1px;
-  background: var(--ink);
+  background: var(--path);
   transform: scaleX(0);
   transform-origin: left center;
   pointer-events: none;
@@ -662,13 +663,14 @@ main .blog-tags a:hover {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  border-left: 0;
-  transition: none;
+  border-top: 1px solid transparent;
+  transition: border-color 200ms ease-out;
 }
 
 .project-card:hover {
   transform: none !important;
   box-shadow: none;
+  border-top-color: var(--ink);
 }
 
 .project-card-link {
@@ -842,11 +844,11 @@ img {
 @keyframes path-unroll {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    clip-path: inset(0 0 100% 0);
   }
   to {
     opacity: 1;
-    transform: none;
+    clip-path: inset(0);
   }
 }
 
@@ -856,7 +858,13 @@ img {
 .intro-header .page-heading,
 .intro-header .post-heading,
 .project-card {
-  animation: path-unroll 560ms ease-out both;
+  animation: path-unroll 640ms ease-out both;
+}
+
+html[data-climate="origin"] .poster,
+html[data-climate="origin"] .work-row,
+html[data-climate="origin"] .more-writing__row {
+  animation-duration: 780ms;
 }
 
 .work-row:nth-child(1),
@@ -909,6 +917,7 @@ img {
     animation: none;
     opacity: 1;
     transform: none;
+    clip-path: none;
   }
 
   .path-read,
