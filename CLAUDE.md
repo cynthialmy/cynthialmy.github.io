@@ -57,3 +57,9 @@ Posts support these custom fields beyond standard Jekyll:
 - `assets/data/` — data files served statically
 - `resources/` — PDFs and templates (e.g. product-thinking-template)
 - `_site/` — generated output, excluded from git
+
+## Design System
+Always read DESIGN.md before making any visual or UI decisions.
+All font choices, colors, spacing, and aesthetic direction are defined there.
+Do not deviate without explicit user approval.
+In QA mode, flag any code that doesn't match DESIGN.md.

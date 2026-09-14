@@ -1,17 +1,14 @@
 ---
 layout: page
-title: Portfolio
-subtitle: Technical Projects and Research Analysis
+title: Builds
+subtitle: Live artifacts. The writing lives on Work.
+full-width: true
 ---
 
-For detailed work showcasing product thinking, strategy, and execution, visit [Product Work](/).
+<div class="builds-page">
 
-<div class="portfolio-tabs">
-  <button class="portfolio-tab active" data-tab="technical-projects">Technical Projects</button>
-  <button class="portfolio-tab" data-tab="research-analysis">Research & Analysis</button>
-</div>
-
-<div class="portfolio-tab-content active" data-tab-content="technical-projects">
+<section class="builds-group" id="technical-projects">
+  <h2>Technical projects</h2>
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
@@ -126,9 +123,10 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
     </a>
   </article>
   </div>
-</div>
+</section>
 
-<div class="portfolio-tab-content" data-tab-content="research-analysis">
+<section class="builds-group" id="research-analysis">
+  <h2>Research &amp; analysis</h2>
   <div class="project-card-grid">
   <article class="project-card" data-project-type="research-analysis">
     <a class="project-card-link" href="{{ '/resources/2017-POSTER-FYP.pdf' | relative_url }}" target="_blank" rel="noopener">
@@ -186,38 +184,8 @@ For detailed work showcasing product thinking, strategy, and execution, visit [P
     </a>
   </article>
   </div>
+</section>
+
+<p>More on <a href="https://github.com/cynthialmy" target="_blank" rel="noopener">GitHub</a>, or back to <a href="{{ '/' | relative_url }}">Work</a>.</p>
+
 </div>
-
-<script>
-(function() {
-  const tabs = document.querySelectorAll('.portfolio-tab');
-  const tabContents = document.querySelectorAll('.portfolio-tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetTab = tab.getAttribute('data-tab');
-
-      // Remove active class from all tabs and contents
-      tabs.forEach(t => t.classList.remove('active'));
-      tabContents.forEach(content => content.classList.remove('active'));
-
-      // Add active class to clicked tab and corresponding content
-      tab.classList.add('active');
-      const targetContent = document.querySelector(`[data-tab-content="${targetTab}"]`);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
-
----
-
-## Explore More
-
-Interested in seeing more of my work? Visit my [GitHub](https://github.com/cynthialmy) for a full list of my projects and contributions, or check out [Product Work](/) for details.
-
-<!-- ## Let's Connect!
-
-I'm always open to discussing new ideas, collaborative ventures, or opportunities. Feel free to [reach out](mailto:cynthialmy@gmail.com) for a chat or brainstorming session. Together, we can drive innovation and create a data-driven future! -->

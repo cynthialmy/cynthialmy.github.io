@@ -26,7 +26,14 @@
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
+            {% assign nav_path = link[1] %}
+            {% assign is_current = false %}
+            {% if nav_path == "/" and page.url == "/" %}
+              {% assign is_current = true %}
+            {% elsif nav_path != "/" and page.url contains nav_path %}
+              {% assign is_current = true %}
+            {% endif %}
+            <a class="nav-link{% if is_current %} is-current{% endif %}" href="{{ nav_path | relative_url }}">{{ link[0] }}</a>
           </li>
         {%- endif -%}
       {%- endfor -%}

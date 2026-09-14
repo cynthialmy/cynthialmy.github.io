@@ -21,7 +21,7 @@
   {% if page.cover-img or page.title %}
   <div class="container-md">
     <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="{% if page.full-width %}col-12{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
         <div class="{{ include.type }}-heading">
           <h1>{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
           {% if page.subtitle %}
@@ -32,30 +32,27 @@
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
             {% endif %}
           {% endif %}
-          {% if page.project_type %}
-            {% assign proj_key = page.project_type %}
-            {% assign proj_meta = site.project_types[proj_key] | default: site.project_types.other %}
-            {% assign proj_label = proj_meta.label | default: proj_key %}
-            {% assign proj_color = proj_meta.color | default: site.project_types.other.color | default: '#6b7280' %}
-            <span class="project-type-badge" style="--badge-color: {{ proj_color }};">
-              {{ proj_label }}
-            </span>
-          {% endif %}
-
-          {% if include.type == "post" %}
-            {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
-            {% endif%}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
-              </span>
+          {% if page.project_type or include.type == "post" %}
+          <p class="post-meta-line">
+            {% if page.project_type %}
+              {% assign proj_key = page.project_type %}
+              {% assign proj_meta = site.project_types[proj_key] | default: site.project_types.other %}
+              {% assign proj_label = proj_meta.label | default: proj_key %}
+              <span class="project-type-badge">{{ proj_label }}</span>
             {% endif %}
-            {% if page.readtime %}
-              {% include readtime.html %}
+            {% if include.type == "post" %}
+              {% if page.author %}
+                <span class="post-meta">{{ page.author | strip_html }}</span>
+              {% endif %}
+              <span class="post-meta">{{ page.date | date: date_format }}</span>
+              {% if page.last-updated %}
+                <span class="post-meta">Updated {{ page.last-updated | date: date_format }}</span>
+              {% endif %}
+              {% if page.readtime %}
+                {% include readtime.html %}
+              {% endif %}
             {% endif %}
+          </p>
           {% endif %}
         </div>
       </div>
