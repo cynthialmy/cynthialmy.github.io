@@ -138,6 +138,10 @@ body {
 }
 
 .rail__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   border-bottom: 1px solid transparent;
   transition: border-color 160ms ease-out;
 }

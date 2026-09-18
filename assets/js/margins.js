@@ -65,7 +65,9 @@
     a.className = "rail__link";
     a.href = "#" + h.id;
     a.innerHTML = '<span class="rail__text"></span>';
-    a.firstChild.textContent = h.textContent.trim();
+    var label = h.textContent.trim();
+    a.firstChild.textContent = label;
+    a.title = label;
     a.addEventListener("click", function (e) {
       e.preventDefault();
       h.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
@@ -225,12 +227,20 @@
     var top = Y0 + 26;
     var bottom = cutY || H;
     var span = Math.max(60, bottom - top - 16);
+    /* labels wrap up to two lines (see .rail__text's line-clamp), so the
+       gap between them has to be measured, not assumed — a flat minimum
+       gap overlaps as soon as neighboring labels both wrap. */
+    var GAP = 10;
     var last = -1e9;
+    var prevHalf = 0;
     links.forEach(function (l) {
       var at = l.head.getBoundingClientRect().top + window.scrollY;
       var y = top + Math.min(1, Math.max(0, at / docH)) * span;
-      if (y - last < 42) y = last + 42;
+      var half = (l.el.offsetHeight || 20) / 2;
+      var minY = last + prevHalf + half + GAP;
+      if (y < minY) y = minY;
       last = y;
+      prevHalf = half;
       l.y = Math.min(y, bottom - 10);
       l.el.style.top = l.y + "px";
     });
