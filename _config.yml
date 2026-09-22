@@ -36,8 +36,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-# Avatar is shown on About, not as a navbar brand mark.
-# avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/img/avatar-icon.png"
 round-avatar: false
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
@@ -330,10 +329,12 @@ defaults:
           layout: "post"
           comments: true # add comments to all blog posts
           social-share: true # add social media sharing buttons to all blog posts
+          show-avatar: false # avatar is used as default thumbnail image, not a navbar mark
     - scope:
           path: "" # any file that's not a post will be a "page" layout by default
       values:
           layout: "page"
+          show-avatar: false # avatar is used as default thumbnail image, not a navbar mark
 
 # Exclude these files from production site
 exclude:
