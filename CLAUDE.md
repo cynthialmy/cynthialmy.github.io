@@ -14,6 +14,7 @@ bundle exec jekyll build                            # Build static site to _site
 
 **CI build (matches GitHub Actions):**
 ```bash
+bundle exec appraisal install                       # One-time: generates gemfiles/ for Jekyll 3 and 4
 bundle exec appraisal jekyll build --future --config _config_ci.yml,_config.yml
 ```
 
