@@ -144,15 +144,15 @@ home_featured:
     - slug: 2026-01-27-policy-aware-factuality-assessment
       kicker: "Trust & safety"
       line: "Confidence thresholds plus human routing reduce false positives at scale."
+    - slug: 2026-09-29-bip-build-in-public-cli
+      kicker: "Developer tools"
+      line: "Ten releases in four days, each one a response to real usage."
     - slug: 2026-03-21-ai-agent-from-api-call-to-system
       kicker: "Enterprise AI"
       line: "Sequencing architecture layers in enterprise AI copilot systems."
     - slug: 2026-02-06-rag-insights-limitations
       kicker: "Architecture"
       line: "Where RAG fits, where it fails, and what to use instead."
-    - slug: 2025-01-17-ai-solution
-      kicker: "Enterprise AI"
-      line: "Model choice, grounding, and UX constraints for safer enterprise AI."
     - slug: 2025-02-02-procurement-ai
       kicker: "AI / ML"
       line: "Buyer shadowing and RAG design that reduced search time by 25%."
@@ -232,7 +232,7 @@ site-js:
 #  uri: "demo.wiki.pro"
 #  opt-out: true
 
-# Google Universal Analytics ID -- deprecated
+# Google Universal Analytics ID (deprecated)
 # As of July 2023 this is no longer supported by Google! If you are still using `google_analytics`,
 # you should switch to using the `gtag` field above instead.
 #google_analytics: "UA-XXXXXXXX-X"
@@ -339,6 +339,8 @@ defaults:
 # Exclude these files from production site
 exclude:
     - CHANGELOG.md
+    - CLAUDE.md
+    - DESIGN.md
     - CNAME
     - Gemfile
     - Gemfile.lock

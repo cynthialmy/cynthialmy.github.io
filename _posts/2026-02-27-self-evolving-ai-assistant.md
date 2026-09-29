@@ -244,6 +244,8 @@ sequenceDiagram
 
 **[bip](https://github.com/cynthialmy/build-in-public-automate)** solves a different problem: the friction of sharing what you ship. It reads git history, generates platform-tailored posts with Claude, and publishes to X, LinkedIn, Reddit, and HackerNews in a single command.
 
+> This section describes bip as of early 2026. For what changed after launch, when it passed 1,000 downloads, read [Git Commits to Social Posts](../2026-09-29-bip-build-in-public-cli/).
+
 ```mermaid
 flowchart TB
     subgraph Input ["Input"]

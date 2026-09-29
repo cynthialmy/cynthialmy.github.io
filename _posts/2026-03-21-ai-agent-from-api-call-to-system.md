@@ -63,7 +63,7 @@ My working framing became: **prompts tune behavior with available context. Tools
 
 ## Context Rot: The Failure Mode Few Teams Plan For
 
-Adding tools initially felt productive. Each one unlocked new work. Then performance drifted: more failures, uneven quality, and outputs with partial understanding plus confused actions. The mechanism was straightforward. Every tool adds descriptions and invocation patterns. Conversation logs and history keep growing. Model attention spreads across a wider and noisier context. **Useful signal density drops even when each context block is locally reasonable.**
+Adding tools initially felt productive. Each one let the agent take on new work. Then performance drifted: more failures, uneven quality, and outputs with partial understanding plus confused actions. The mechanism was straightforward. Every tool adds descriptions and invocation patterns. Conversation logs and history keep growing. Model attention spreads across a wider and noisier context. **Useful signal density drops even when each context block is locally reasonable.**
 
 Context rot in practice looks like this: too much heterogeneous information competing for the same narrow window.
 

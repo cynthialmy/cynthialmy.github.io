@@ -35,7 +35,7 @@ Six findings shaped every downstream decision. I present them with the reasoning
 
 **60% reported frustration with confusing product terminologies.** The obvious interpretation is "build a glossary or recommendation engine." The correct interpretation is that the problem is information structure, not information scarcity. Parents are drowning in content. Adding more AI-generated content would make it worse. This signal told me what *not* to build.
 
-**70% rely on friend or coworker recommendations for formula choices.** Trust flows through personal networks. Any AI product in this space must earn trust through transparent, verifiable outputs. Marketing claims and brand authority are insufficient. This became a design constraint: every AI output must show its reasoning, not just its recommendation.
+**70% rely on friend or coworker recommendations for formula choices.** Trust flows through personal networks. Any AI product in this space must earn trust through transparent, verifiable outputs. Marketing claims and brand authority are insufficient. This became a design constraint: every AI output must show its reasoning alongside its recommendation.
 
 **65% valued used toys; 50% were concerned about baby food cost.** Financial pressure is constant, but parents have hard quality floors. They will buy used toys but will not compromise on car seat safety. This asymmetry meant the product needed to operate in the low-stakes zone (meal suggestions, activity ideas) and stay out of the high-stakes zone (safety equipment, medical choices).
 

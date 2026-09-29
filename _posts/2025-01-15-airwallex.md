@@ -93,7 +93,7 @@ First, we targeted high-frequency failure modes. The top 10 failure patterns acc
 
 Second, we only hard-blocked payments for errors that customers could realistically fix through self-serve (missing fields, incorrect bank codes). For ambiguous cases where we were unsure whether the validation was correct, we surfaced warnings rather than hard blocks.
 
-Third, we prioritized by operational leverage: the rules that eliminated the most support tickets per implementation effort came first.
+Third, we prioritized by support impact: the rules that eliminated the most support tickets per implementation effort came first.
 
 We tracked both failure rate and conversion weekly, with a 3% conversion drop as the hard ceiling for any individual validation rule. Any rule that exceeded that threshold was relaxed or converted from a block to a warning.
 

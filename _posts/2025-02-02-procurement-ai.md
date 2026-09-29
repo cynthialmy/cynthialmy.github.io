@@ -268,4 +268,4 @@ To keep scope tight and learning velocity high, I deferred SI+ deep integration 
 
 AI adoption in enterprise procurement depends on change management as much as model selection. Trust grows through transparency and predictable behavior. Starting narrow with clear risk boundaries scales better than broad launch with loose constraints.
 
-The highest-leverage product work in this domain is designing decision boundaries, anticipating failure modes, and building systems that degrade safely under uncertainty. The AI is one component. The product is the decision system around it.
+The product work that matters most in this domain is designing decision boundaries, anticipating failure modes, and building systems that degrade safely under uncertainty. The AI is one component. The product is the decision system around it.

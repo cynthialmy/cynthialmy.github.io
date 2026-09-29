@@ -126,7 +126,7 @@ Platform engineers began marking false positives with structured annotations. Ac
 
 By month six: human review rate dropped to 18% (55% reduction in reviewer workload). False-positive rate fell from 12% to 3%. Zero undetected breaking changes reached production.
 
-Each review decision trained the system to better distinguish routine changes from genuinely risky ones. The system does not just validate contracts. It learns where the real organizational boundaries are.
+Each review decision trained the system to better distinguish routine changes from genuinely risky ones. Beyond validating contracts, the system learns where the real organizational boundaries are.
 
 ---
 

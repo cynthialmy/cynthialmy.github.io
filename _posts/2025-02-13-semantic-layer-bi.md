@@ -88,7 +88,7 @@ The semantic layer is the infrastructure that makes organizational scaling possi
 
 ---
 
-## What the Semantic Layer Unlocks
+## What the Semantic Layer Makes Possible
 
 ### Trustworthy AI Over Enterprise Data
 

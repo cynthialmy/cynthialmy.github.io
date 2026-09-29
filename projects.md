@@ -12,6 +12,20 @@ full-width: true
   <div class="project-card-grid">
   <!-- Technical Projects -->
   <article class="project-card" data-project-type="technical-projects">
+    <a class="project-card-link" href="https://github.com/cynthialmy/build-in-public-automate" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/bip-cli.png' | relative_url }}" alt="bip command list in a terminal" class="project-card-thumbnail" loading="lazy">
+      <div class="project-card-header">
+        <h3>bip: Build in Public CLI</h3>
+        <p class="project-card-subtitle">npm i -g build-in-public</p>
+      </div>
+      <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
+      <p class="project-card-excerpt">
+        A CLI that turns your git commits into posts for X, LinkedIn, Reddit, and HackerNews. It drafts with the coding agent you already use and learns from your edits. It passed 1,000 npm downloads in the three days after launch, with ten releases that week driven by user feedback.
+      </p>
+    </a>
+  </article>
+
+  <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://semantic-layer-demo.streamlit.app/" target="_blank" rel="noopener">
       <img src="{{ '/assets/img/metric-trust-explorer.png' | relative_url }}" alt="Metric Trust Explorer" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
@@ -34,7 +48,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        A web app for generating unique iOS and Android app icons. Create original, deterministic designs from app names with algorithmic generation, preview variants, and export production-ready PNG assets.
+        Generates iOS and Android app icons from an app name. The same name always produces the same design. Preview variants, then export production-ready PNGs.
       </p>
     </a>
   </article>
@@ -48,7 +62,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        Enhance user experience and interactivity with this restyling project for CS 7450 at Georgia Tech.
+        A restyle of the CS 7450 course website at Georgia Tech, used as a sandbox for trying ideas in D3.js.
       </p>
     </a>
   </article>
@@ -62,7 +76,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        Highlights the power of 'scrollytelling' in conveying complex information in an engaging way.
+        A scroll-driven data story built with D3 and Scrollama. The charts change as you read down the page.
       </p>
     </a>
   </article>
@@ -76,7 +90,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        BridgeDash provides a deep dive into various aspects of bridges, showcasing how data can inform and inspire.
+        An interactive dashboard of bridge locations, traffic, and condition ratings, with filters by type and age and a map of where poor-condition bridges cluster.
       </p>
     </a>
   </article>
@@ -97,14 +111,14 @@ full-width: true
 
   <article class="project-card" data-project-type="technical-projects">
     <a class="project-card-link" href="https://cynthialmy.github.io/d3-Interaction/" target="_blank" rel="noopener">
-      <img src="{{ '/assets/img/Engaging-Data-Charts.png' | relative_url }}" alt="Engaging Data Charts" class="project-card-thumbnail" loading="lazy">
+      <img src="{{ '/assets/img/Engaging-Data-Charts.png' | relative_url }}" alt="Interactive Data Charts" class="project-card-thumbnail" loading="lazy">
       <div class="project-card-header">
-        <h3>Engaging Data Charts</h3>
+        <h3>Interactive Data Charts</h3>
         <p class="project-card-subtitle">d3-Interaction</p>
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        Enhances user interaction with data charts, transforming static visuals into interactive experiences.
+        D3 charts with tooltips, linked highlighting, brushing and linking across charts, and a dropdown that changes what an axis shows.
       </p>
     </a>
   </article>
@@ -118,7 +132,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.technical-projects.color | default: '#008a5c' }};">{{ site.portfolio_types.technical-projects.label | default: 'Technical Projects' }}</span>
       <p class="project-card-excerpt">
-        This foundational project demystifies the principles of crafting intuitive and straightforward D3.js charts.
+        Four basic D3.js charts built from scratch, as a reference for the fundamentals.
       </p>
     </a>
   </article>
@@ -137,7 +151,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.research-analysis.color | default: '#6b7280' }};">{{ site.portfolio_types.research-analysis.label | default: 'Research & Analysis' }}</span>
       <p class="project-card-excerpt">
-        Applies dynamic analysis for predictive maintenance, contributing to sustainable urban living. 2017 HKUST President's Cup Final List.
+        Predictive maintenance analysis for city infrastructure. Final list, 2017 HKUST President's Cup.
       </p>
     </a>
   </article>
@@ -151,7 +165,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.research-analysis.color | default: '#6b7280' }};">{{ site.portfolio_types.research-analysis.label | default: 'Research & Analysis' }}</span>
       <p class="project-card-excerpt">
-        Empowers participants with tools to decipher customer sentiments, utilizing advanced machine learning techniques.
+        A hands-on workshop on classifying sentiment in text with scikit-learn and NLTK, made for the Data Visualization Lab at Georgia Tech.
       </p>
     </a>
   </article>
@@ -165,7 +179,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.research-analysis.color | default: '#6b7280' }};">{{ site.portfolio_types.research-analysis.label | default: 'Research & Analysis' }}</span>
       <p class="project-card-excerpt">
-        Reveals trends across geospatial locations, offering valuable insights into customer preferences and habits.
+        Maps Yelp user behavior across locations to show where customer preferences and habits differ.
       </p>
     </a>
   </article>
@@ -179,7 +193,7 @@ full-width: true
       </div>
       <span class="project-type-badge" style="--badge-color: {{ site.portfolio_types.research-analysis.color | default: '#6b7280' }};">{{ site.portfolio_types.research-analysis.label | default: 'Research & Analysis' }}</span>
       <p class="project-card-excerpt">
-        Addresses efficient use of public facilities through IoT concepts. 2015 HKUST President's Cup Golden Awardee.
+        An IoT display showing which shared machines are free in real time, so public facilities get used more efficiently. Gold Award, 2015 HKUST President's Cup.
       </p>
     </a>
   </article>
