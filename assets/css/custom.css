@@ -1120,3 +1120,79 @@ html[data-climate="origin"] .more-writing__row {
     transform: none;
   }
 }
+
+/* ── Post figures and matrices (inline SVG, ink only) ── */
+
+.pm-fig {
+  margin: 2.2rem 0;
+  max-width: var(--measure);
+}
+
+.pm-fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.pm-fig text { fill: var(--ink); font-family: var(--body); }
+.pm-fig .disp { font-family: var(--display); }
+.pm-fig .mu { fill: var(--muted); }
+.pm-fig .mono { font-family: var(--mono); letter-spacing: 0.08em; fill: var(--muted); }
+.pm-fig .hair { fill: none; stroke: var(--line); stroke-width: 1; }
+.pm-fig .ln { fill: none; stroke: var(--ink); stroke-width: 1; }
+.pm-fig .ln-d { stroke-dasharray: 4 4; }
+.pm-fig .dot { fill: var(--ink); stroke: none; }
+.pm-fig .hollow { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+.pm-fig .f1 { fill: rgba(26, 26, 24, 0.04); }
+.pm-fig .f2 { fill: rgba(26, 26, 24, 0.09); }
+.pm-fig .f3 { fill: rgba(26, 26, 24, 0.16); }
+
+.pm-fig figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.blog-post table.pm-matrix {
+  max-width: var(--measure);
+  margin: 0.6rem 0 1.8rem;
+  border-collapse: collapse;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+.blog-post table.pm-matrix tr,
+.blog-post table.pm-matrix tr:nth-child(2n) {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-post table.pm-matrix th,
+.blog-post table.pm-matrix td {
+  border: 0;
+  padding: 0.6rem 0.9rem 0.6rem 0;
+  vertical-align: top;
+  color: var(--ink);
+}
+
+.blog-post table.pm-matrix th {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--ink);
+}
+
+.blog-post table.pm-matrix td:first-child {
+  font-weight: 600;
+  min-width: 8.5rem;
+}

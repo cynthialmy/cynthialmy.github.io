@@ -141,6 +141,9 @@ portfolio_types:
 # Selected work on the home index. Order is editorial, not chronological.
 # Slugs match post filenames without the .md extension.
 home_featured:
+    - slug: 2026-11-08-pm-skills-mastery-map
+      kicker: "PM coaching"
+      line: "Breadth, depth, and scope: a map for deciding what to get better at next."
     - slug: 2026-01-27-policy-aware-factuality-assessment
       kicker: "Trust & safety"
       line: "Confidence thresholds plus human routing reduce false positives at scale."
