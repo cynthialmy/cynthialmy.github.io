@@ -312,6 +312,8 @@ On this map, that shows up as a shift to the right. When the OK column is easier
 
 If you are coaching PMs, or working on your own growth, start with step one. Draw your shape honestly, with an example behind every dot. The gap worth working on is often not the one you expected.
 
+If you would like to work through your own map with me, you can book a coaching session on [ADPList](https://adplist.org/mentors/cynthia-li).
+
 ---
 
 ## References

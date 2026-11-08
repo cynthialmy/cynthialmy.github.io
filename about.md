@@ -18,6 +18,8 @@ Recent writing includes [Escalation by Design]({{ '/2026-01-27-policy-aware-fact
 
 Outside of work I build small apps and internal tools, and I write about technology and how people learn it.
 
+I also coach product managers one on one. The framework I use is written up in [A Mastery Map for Product Managers]({{ '/2026-11-08-pm-skills-mastery-map' | relative_url }}). You can book a session with me on [ADPList](https://adplist.org/mentors/cynthia-li).
+
 ## In their words
 
 <blockquote class="pullquote">
@@ -130,5 +132,5 @@ Outside of work I build small apps and internal tools, and I write about technol
   <a href="mailto:cynthiamengyuanli@gmail.com">cynthiamengyuanli@gmail.com</a>
   <a href="https://www.linkedin.com/in/mengyuan-li-cynthia/" target="_blank" rel="noopener">LinkedIn</a>
   <a href="https://github.com/cynthialmy" target="_blank" rel="noopener">GitHub</a>
-  <a href="https://adplist.org/mentors/cynthia-li" target="_blank" rel="noopener">ADPList</a>
+  <a href="https://adplist.org/mentors/cynthia-li" target="_blank" rel="noopener">Coaching on ADPList</a>
 </div>
