@@ -48,7 +48,7 @@ This is a Jekyll static site using the **Beautiful Jekyll** theme (v6.0.1), depl
 
 ### Post front matter
 Posts support these custom fields beyond standard Jekyll:
-- `project_type:` — used for portfolio filtering (values: `enterprise`, `zero-to-one-builds`, `other`)
+- `project_type:` — used for portfolio filtering (values: `enterprise`, `zero-to-one-builds`, `coaching`, `other`)
 - `portfolio_type:` — secondary taxonomy (`technical-projects`, `research-analysis`)
 - `thumbnail-img:` — card image for the homepage grid
 - `tags:` — displayed on cards and used for the tags index page (`tags.html`)

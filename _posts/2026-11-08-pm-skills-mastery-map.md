@@ -3,7 +3,7 @@ layout: post
 title: "A Mastery Map for Product Managers"
 subtitle: Breadth, Depth, and Scope, and Why a Skills List Is Not Enough
 tags: [Product Management, PM Coaching, Career Growth, Product Leadership, Frameworks]
-project_type: other
+project_type: coaching
 comments: true
 ---
 

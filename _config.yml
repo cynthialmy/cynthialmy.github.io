@@ -125,6 +125,9 @@ project_types:
     zero-to-one-builds:
         label: "0 to 1"
         color: "#5C574E"
+    coaching:
+        label: "Coaching"
+        color: "#5C574E"
     other:
         label: "Other"
         color: "#5C574E"
