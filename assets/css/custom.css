@@ -630,6 +630,24 @@ main {
   color: var(--ink);
 }
 
+/* Inline links in running text: a faint hairline that darkens on hover.
+   Classed links (cards, index rows, footer) keep their own treatment. */
+.site-prose a:not([class]),
+.about-page a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 26, 24, 0.3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 160ms ease-out;
+}
+
+.site-prose a:not([class]):hover,
+.site-prose a:not([class]):focus-visible,
+.about-page a:not([class]):hover,
+.about-page a:not([class]):focus-visible {
+  text-decoration-color: var(--ink);
+}
+
 .site-prose blockquote,
 .blog-post blockquote,
 .pullquote {
