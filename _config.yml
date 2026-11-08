@@ -144,7 +144,10 @@ portfolio_types:
 # Selected work on the home index. Order is editorial, not chronological.
 # Slugs match post filenames without the .md extension.
 home_featured:
-    - slug: 2026-11-08-pm-skills-mastery-map
+    - slug: 2026-11-08-good-pms-still-struggle-to-get-hired
+      kicker: "PM coaching"
+      line: "Skill, visibility, and access: why being a good PM is not enough to get hired."
+    - slug: 2026-10-18-pm-skills-mastery-map
       kicker: "PM coaching"
       line: "Breadth, depth, and scope: a map for deciding what to get better at next."
     - slug: 2026-01-27-policy-aware-factuality-assessment

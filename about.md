@@ -18,7 +18,7 @@ Recent writing includes [Escalation by Design]({{ '/2026-01-27-policy-aware-fact
 
 Outside of work I build small apps and internal tools, and I write about technology and how people learn it.
 
-I also coach product managers one on one. The framework I use is written up in [A Mastery Map for Product Managers]({{ '/2026-11-08-pm-skills-mastery-map' | relative_url }}). You can book a session with me on [ADPList](https://adplist.org/mentors/cynthia-li).
+I also coach product managers one on one. The framework I use is written up in [A Mastery Map for Product Managers]({{ '/2026-10-18-pm-skills-mastery-map' | relative_url }}). You can book a session with me on [ADPList](https://adplist.org/mentors/cynthia-li).
 
 ## In their words
 

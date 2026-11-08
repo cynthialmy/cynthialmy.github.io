@@ -7,17 +7,17 @@ project_type: coaching
 comments: true
 ---
 
-"What should I get better at next?" is the question that opens most of my coaching conversations with product managers. The usual answer is a competency list: product sense, execution, strategy, stakeholder management, and a dozen more. Lists are good at naming the job. They are poor at telling you what to work on next.
+When I coach product managers, the conversation usually starts with the same question: what should I get better at next? The common answer is a list of skills such as product sense, execution, strategy, and stakeholder management. Lists like that are useful for describing the job, but they don't help much when you are trying to decide what to work on this quarter.
 
-A list puts design sense next to organizational design as if they were the same kind of thing. They are not. One is a craft you practice on a single product. The other only becomes available once you run a team of teams. A list also says nothing about quality. Two PMs can both "have" execution skills and still be years apart.
+One problem with a list is that it treats very different skills as if they were the same kind of thing. Design sense and organizational design sit side by side, even though you practice the first on a single product and only get to practice the second once you lead several teams. A list also says nothing about how good you are. Two PMs can both "have" execution skills and still be years apart in what they can actually do.
 
-This post combines three well known frameworks into one map I use for coaching. The parts that come from Shreyas Doshi, Ravi Mehta, and Melissa Perri are credited to them. The level descriptions beyond execution are my own extension, and I mark where that starts.
+In this post I combine three well known frameworks into one map that I use in coaching. The ideas from Shreyas Doshi, Ravi Mehta, and Melissa Perri belong to them, and I point out clearly where my own additions begin.
 
 ---
 
-## Three questions, three sources
+## Three questions behind any skill model
 
-A useful skill model has to answer three separate questions.
+When I look at PM skill frameworks, I find that they are really trying to answer three different questions.
 
 <figure class="pm-fig">
 <svg viewBox="0 0 640 240" role="img" aria-label="Three questions. Breadth: what skills make up the job, from Ravi Mehta. Depth: what separates OK from great, from Shreyas Doshi. Scope: where can you apply it, from Shreyas Doshi and Melissa Perri.">
@@ -50,17 +50,19 @@ A useful skill model has to answer three separate questions.
 <figcaption>Fig. 1 · Three questions a skill model has to answer, and the source that answers each one best.</figcaption>
 </figure>
 
-- **Breadth: what skills make up the job?** Ravi Mehta's [Product Competency Toolkit](https://www.ravi-mehta.com/product-manager-skills/) is the clearest taxonomy I know: twelve competencies in four areas (product execution, customer insight, product strategy, influencing people). Marty Cagan's [Value and Viability](https://www.svpg.com/value-and-viability/) adds a useful check: the PM is accountable for whether the product is valuable and viable, which is why commercial sense belongs on the list at all.
-- **Depth: what separates OK from great?** Shreyas Doshi's [masterclass on execution](https://www.youtube.com/watch?v=fMyATLE4bnU) describes three levels of the same skill in terms you can observe.
-- **Scope: where can you apply it?** Shreyas's [PM career skills map](https://x.com/shreyas/status/1264621650663727104) shows how the required skills change from PM to CPO. Melissa Perri's [Building a Great Product Management Organization](https://melissaperri.com/blog/2024/7/16/building-a-great-product-management-organization) describes the top of that ladder: org design, strategy, product operations, and culture.
+The first question is about **breadth**: which skills make up the job? Ravi Mehta's [Product Competency Toolkit](https://www.ravi-mehta.com/product-manager-skills/) is the clearest answer I know. It lists twelve competencies grouped into four areas: product execution, customer insight, product strategy, and influencing people. Marty Cagan's essay [Value and Viability](https://www.svpg.com/value-and-viability/) adds something useful here, because it explains that the PM is responsible for whether a product is both valuable to customers and viable for the business. That is the reason commercial sense belongs on the list at all.
 
-Each framework answers one of these well. Career conversations get confusing when the three are mixed up. "You need to be more strategic" can mean a missing skill (breadth), a shallow skill (depth), or a skill used at too small a scale (scope). Each one needs a different fix.
+The second question is about **depth**: what separates OK from great? Shreyas Doshi's [masterclass on execution](https://www.youtube.com/watch?v=fMyATLE4bnU) answers this better than anything else I have seen, because he describes three levels of the same skill in terms of things you can actually observe.
+
+The third question is about **scope**: where can you apply the skill? Shreyas's [PM career skills map](https://x.com/shreyas/status/1264621650663727104) shows how the skills that matter change as you move from PM to CPO. Melissa Perri's [Building a Great Product Management Organization](https://melissaperri.com/blog/2024/7/16/building-a-great-product-management-organization) describes what the top of that ladder involves, including org design, strategy, product operations, and culture.
+
+Most frameworks answer one of these questions well, and career conversations get confusing when people mix them up. If someone tells you to "be more strategic," they could mean that a skill is missing, that it isn't deep enough yet, or that you are using it at too small a scale. Each of those needs a different fix, so it helps to know which one you are dealing with.
 
 ---
 
-## Scope: three rings of impact
+## Scope: three levels of impact
 
-Shreyas groups PM skills by the scale at which they matter.
+Shreyas groups PM skills by the scale at which they matter most.
 
 <figure class="pm-fig">
 <svg viewBox="0 0 640 280" role="img" aria-label="Three levels of scope. Organizational mastery, VP Product to CPO. Product portfolio mastery, Group PM to Director. Individual product mastery, PM to Senior PM. Critical thinking and influential communication run across all levels as multipliers.">
@@ -93,19 +95,21 @@ Shreyas groups PM skills by the scale at which they matter.
 <figcaption>Fig. 2 · Scope grows from one product to the whole organization. Two multipliers apply at every level.</figcaption>
 </figure>
 
-1. **Individual product mastery** (PM to Senior PM). Can you make one product succeed? Product sense, execution, analytical sense, technical sense, design sense.
-2. **Product portfolio mastery** (Group PM to Director). Can you make several products succeed through other people? Vision, strategy, commercial sense, managing PMs, mentorship.
-3. **Organizational mastery** (VP to CPO). Can you build the system that keeps producing good products? Company strategy, company scale execution, org design, org development.
+At the first level, **individual product mastery**, the question is whether you can make one product succeed. This roughly covers the range from PM to Senior PM, and the skills involved are product sense, execution, analytical sense, technical sense, and design sense.
 
-Two skills sit outside the rings: critical thinking and influential communication. I call them multipliers because they scale the value of everything else. A sound strategy that is explained badly does not get funded. A clear message built on a weak argument does not survive the first hard question.
+At the second level, **product portfolio mastery**, the question becomes whether you can make several products succeed through other people. This covers Group PM to Director, and the skills shift toward vision, strategy, commercial sense, managing PMs, and mentoring.
 
-The rings add to each other. A Director still needs product sense. What changes is where most of their value comes from.
+At the third level, **organizational mastery**, the question is whether you can build an organization that keeps producing good products over time. This is the range from VP to CPO, and it involves company strategy, execution at company scale, organizational design, and developing the organization's capabilities.
+
+Two skills don't belong to any single level: critical thinking and influential communication. I think of them as multipliers, because they make every other skill more effective. A sound strategy that is explained badly rarely gets funded, and a clear message built on a weak argument usually falls apart at the first hard question.
+
+It is also worth saying that the levels build on each other rather than replacing each other. A Director still needs good product sense. What changes as you move up is where most of your value comes from.
 
 ---
 
-## Depth: OK, very good, great
+## Depth: OK, very good, and great
 
-Shreyas's execution masterclass is the most useful description of mastery I have seen, because it names behaviors instead of adjectives.
+Shreyas's execution masterclass is the most useful description of skill levels I have found, because it describes what people actually do at each level instead of relying on vague adjectives.
 
 <figure class="pm-fig">
 <svg viewBox="0 0 640 320" role="img" aria-label="Three levels of execution. OK: project management, process, communication. Very good: problem solving, contextual expertise, goal setting. Great: creativity, foresight, persuasion.">
@@ -129,25 +133,23 @@ Shreyas's execution masterclass is the most useful description of mastery I have
 <figcaption>Fig. 3 · Execution at three levels, as Shreyas Doshi defines it. Each step stands on the one below.</figcaption>
 </figure>
 
-- **OK:** project management, process, communication. The work gets done and people know where it stands.
-- **Very good:** problem solving, contextual expertise, goal setting. When something breaks, you fix the real cause. The goals you set point the team at the right outcome.
-- **Great:** creativity, foresight, persuasion. You see the problem before it arrives, find a route others missed, and bring people with you.
+At the **OK** level, execution means project management, process, and communication. The work gets done, and people know where it stands.
 
-Read across the three levels and a pattern appears that works for any skill:
+At the **very good** level, it means problem solving, contextual expertise, and goal setting. When something breaks, you find and fix the real cause, and the goals you set point the team toward the right outcome.
 
-- **OK** is doing the work correctly.
-- **Very good** is choosing the right work.
-- **Great** is seeing what others don't, and getting them to act on it.
+At the **great** level, it means creativity, foresight, and persuasion. You see problems before they arrive, you find routes that other people missed, and you bring people along with you.
 
-Each level keeps the one below it. A PM who has great ideas but lets the basics slip (status updates that never go out, a roadmap nobody trusts) soon stops being given room for the creative part.
+When I read across the three levels, I see a pattern that applies to almost any skill. At the OK level, you do the work correctly. At the very good level, you choose the right work to do. At the great level, you notice what others don't and you get them to act on it.
 
-I used this pattern to write three levels for every other skill on the map.
+Each level also depends on the one below it. A PM with great ideas who lets the basics slip, for example by skipping status updates or keeping a roadmap that nobody trusts, soon finds that people stop giving them room to be creative.
+
+I used this same pattern to write three levels for each of the other skills on the map.
 
 ---
 
 ## The full map
 
-The execution row comes from Shreyas. Every other row is my extension, written in the same spirit. Treat the wording as a starting point for a conversation, not as a test.
+The execution row below comes directly from Shreyas. The other rows are my own extension, written in the same spirit, so please treat the wording as a starting point for a conversation rather than as a test.
 
 ### Individual product mastery · PM to Senior PM
 
@@ -191,9 +193,9 @@ The execution row comes from Shreyas. Every other row is my extension, written i
 
 ---
 
-## Depth and scope are different axes
+## Depth and scope are two different things
 
-This is the idea I find most useful in coaching: **mastery has two dimensions. How deep you can go, and how wide an area you can do it across.**
+The idea I find most useful in coaching is that mastery has two separate dimensions: how deep your skill goes, and how large an area you can apply it to.
 
 <figure class="pm-fig">
 <svg viewBox="0 0 640 290" role="img" aria-label="Grid of scope by depth for one PM's execution skill. Great at individual product scope, very good at portfolio scope, OK at organization scope. A dashed circle marks the next step: great at portfolio scope.">
@@ -224,22 +226,22 @@ This is the idea I find most useful in coaching: **mastery has two dimensions. H
   <circle class="hollow ln-d" cx="563" cy="160" r="9"/>
   <text class="mono" x="486" y="146" font-size="11" text-anchor="middle">NEXT STEP</text>
 </svg>
-<figcaption>Fig. 4 · One PM's execution, plotted. Great within their own product, very good across a portfolio, OK at company scale. Growth means moving a dot to the right, then doing the same one ring up.</figcaption>
+<figcaption>Fig. 4 · One PM's execution, plotted. Great within their own product, very good across a portfolio, OK at company scale. Growth means moving a dot to the right, then doing the same one level up.</figcaption>
 </figure>
 
-Take execution. Many senior PMs are great at it inside one product. They spot risks early, find creative routes around blockers, and persuade their own team. Put the same person in charge of a cross company initiative and they may be at OK: coordinating, tracking, reporting, but not yet able to see around corners at that scale.
+Execution is a good example. Many senior PMs are great at execution within their own product. They spot risks early, find creative ways around blockers, and get their own team on board. If you put the same person in charge of a project that spans the whole company, though, they may only be at the OK level for a while. They can coordinate and track the work, but they can't yet see around corners at that scale.
 
-That is not a failure. It is the normal shape of a career. The reverse happens too: a Director with strong org skills whose own product sense has drifted to average, because nobody has asked them to use it in years.
+This is completely normal, and it happens in the other direction too. A Director with strong organizational skills can find that their own product sense has slipped to average, simply because nobody has asked them to use it in years.
 
-So career progression is not a single climb from OK to great. It is **expanding the scope at which you can repeatedly do great work.** The word repeatedly matters. One great launch shows you can. Three show that you do.
+So I don't think of career growth as a single climb from OK to great. I think of it as gradually increasing the scope at which you can do great work, and doing it more than once, so that it is clearly a pattern and not luck.
 
-This changes promotion conversations. "Are you ready for Director?" turns into two clearer questions: at which scope are you great today, and what evidence shows you are getting there one ring further out?
+Seeing it this way also makes career conversations clearer. Instead of asking "am I ready for the next level?", you can ask two more useful questions: at which scope am I great today, and what evidence do I have that I am getting there at the next scope up?
 
 ---
 
 ## Nobody is great at everything
 
-Ravi Mehta's [What's Your Shape?](https://www.ravi-mehta.com/product-manager-roles/) makes a point that skill matrices tend to hide: strong PMs have uneven profiles. Some lead with product sense and design. Others lead with execution and analytics. Both can be excellent.
+Ravi Mehta's essay [What's Your Shape?](https://www.ravi-mehta.com/product-manager-roles/) makes a point that skill matrices tend to hide: strong PMs have uneven profiles. Some lead with product sense and design, while others lead with execution and analytics, and both kinds of PM can be excellent.
 
 <figure class="pm-fig">
 <svg viewBox="0 0 640 300" role="img" aria-label="Two PM shapes across five skills. PM A, a builder: great at product sense and design, very good at analytics, OK at execution and technical. PM B, an operator: great at execution and analytics, very good at product sense and technical, OK at design.">
@@ -276,41 +278,62 @@ Ravi Mehta's [What's Your Shape?](https://www.ravi-mehta.com/product-manager-rol
 <figcaption>Fig. 5 · Two different shapes. Both could pass a Senior PM bar, and each would struggle in a different role.</figcaption>
 </figure>
 
-PM A will get frustrated in a role that is heavy on process and metrics. PM B will struggle on an early stage product where nobody knows yet what to build. Neither is the better PM. They fit different problems.
+The two PMs in the chart above would both meet a Senior PM bar, but they would struggle in different places. PM A would probably get frustrated in a role that is heavy on process and metrics, while PM B would find it hard to work on an early stage product where nobody knows yet what to build. Neither of them is the better PM. They are simply suited to different problems.
 
-For coaching this means two things:
+For coaching, this has two practical consequences. The first is that you shouldn't try to be great at everything. That person rarely exists, and trying to become them spreads your effort too thin. The second is that the gaps worth working on are the ones that hold you back at the next scope. If you want to lead a portfolio of products, being only OK at commercial sense will hurt you much more than being only OK at design.
 
-- **Don't aim for a straight line of great.** That person rarely exists, and chasing it spreads effort thin.
-- **The gaps that matter are the ones blocking the next ring.** If you want to lead a portfolio, OK in commercial sense is a bigger problem than OK in design sense, because the portfolio role depends on it.
-
-Teams are where shapes add up. Ravi makes the same point in his essay on [product skills in the AI era](https://www.ravi-mehta.com/writing/ai-era-product-skills/): individuals go deep in a few competencies, and the team covers the full set.
+Teams are where these different shapes come together. Ravi makes the same point in his essay on [product skills in the AI era](https://www.ravi-mehta.com/writing/ai-era-product-skills/): individuals go deep in a few areas, and the team as a whole covers the rest.
 
 ---
 
 ## How I use the map in a coaching session
 
-The map works best as a conversation tool, not a scorecard. A session usually follows four steps.
+I use the map as a conversation tool rather than a scorecard, and a session usually follows the same four steps.
 
-1. **Draw the current shape.** For each skill at your current scope, pick OK, very good, or great. Then give one concrete example for every "great". No example, no great.
-2. **Name the next ring.** Which scope do you want to work at in 12 to 18 months? Read that ring's table and mark the skills you have never had a chance to practice.
-3. **Pick one skill and one step.** One skill, one level up, at one scope. "Get better at strategy" is too wide to act on. "Move commercial sense from OK to very good by owning the pricing review this quarter" is something you can start on Monday.
-4. **Agree on the evidence.** Decide up front what you would see if it worked: a decision you made, a tradeoff you named before anyone else did, a team that hit a goal you set. Check back against that, not against a feeling.
+<figure class="pm-fig">
+<svg viewBox="0 0 640 140" role="img" aria-label="Four steps of a coaching session. Step 1: draw your shape. Step 2: name the next scope. Step 3: pick one skill and one step. Step 4: agree on the evidence.">
+  <rect class="f1 ln" x="0.5" y="10" width="146" height="120"/>
+  <rect class="f1 ln" x="164.5" y="10" width="146" height="120"/>
+  <rect class="f1 ln" x="328.5" y="10" width="146" height="120"/>
+  <rect class="f1 ln" x="492.5" y="10" width="146" height="120"/>
+  <line class="ln" x1="148" y1="70" x2="163" y2="70"/>
+  <line class="ln" x1="312" y1="70" x2="327" y2="70"/>
+  <line class="ln" x1="476" y1="70" x2="491" y2="70"/>
+  <text class="mono" x="16" y="38" font-size="11">STEP 1</text>
+  <text class="disp" x="16" y="78" font-size="18">Draw your</text>
+  <text class="disp" x="16" y="100" font-size="18">shape</text>
+  <text class="mono" x="180" y="38" font-size="11">STEP 2</text>
+  <text class="disp" x="180" y="78" font-size="18">Name the</text>
+  <text class="disp" x="180" y="100" font-size="18">next scope</text>
+  <text class="mono" x="344" y="38" font-size="11">STEP 3</text>
+  <text class="disp" x="344" y="78" font-size="18">Pick one skill,</text>
+  <text class="disp" x="344" y="100" font-size="18">one step</text>
+  <text class="mono" x="508" y="38" font-size="11">STEP 4</text>
+  <text class="disp" x="508" y="78" font-size="18">Agree on</text>
+  <text class="disp" x="508" y="100" font-size="18">the evidence</text>
+</svg>
+<figcaption>Fig. 6 · The four steps of a coaching session built on the map.</figcaption>
+</figure>
 
-Three questions help place someone on the depth axis:
+In the first step, we draw your current shape. For each skill at your current scope, you pick OK, very good, or great, and for every "great" you give one concrete example. If there is no example, it isn't great yet.
 
-- **OK:** Does the work you own get done without people chasing you?
-- **Very good:** When something went wrong last quarter, did you fix the cause or the symptom?
-- **Great:** What did you see coming before anyone else, and what did you get people to do about it?
+In the second step, we name the next scope. Where do you want to be working in 12 to 18 months? We read the table for that level together and mark the skills you have never had a chance to practice.
+
+In the third step, we pick one skill and one step: one skill, moved up one level, at one scope. "Get better at strategy" is too broad to act on, but "move commercial sense from OK to very good by owning the pricing review this quarter" is something you can start on Monday.
+
+In the fourth step, we agree on what evidence would show progress. That might be a decision you made, a tradeoff you spotted before anyone else did, or a goal you set that the team reached. When we check in later, we compare against that evidence rather than against a general feeling.
+
+To help someone place themselves on the depth scale, I often ask three questions. For the OK level: does the work you own get done without people having to chase you? For the very good level: when something went wrong last quarter, did you fix the cause or only the symptom? For the great level: what did you see coming before anyone else did, and what did you get people to do about it?
 
 ---
 
 ## What AI changes
 
-AI tools are making the OK column cheaper. Specs, research summaries, status updates, and prototypes take a fraction of the time they used to. In his [AI era essay](https://www.ravi-mehta.com/writing/ai-era-product-skills/), Ravi Mehta argues that judgment, craft, and customer understanding matter just as much as before, and that the PM's job is moving from deciding what to build toward deciding what deserves to ship.
+AI tools are making the OK level much easier to reach. Writing specs, summarizing research, drafting updates, and building quick prototypes now take a fraction of the time they used to. In his [essay on product skills in the AI era](https://www.ravi-mehta.com/writing/ai-era-product-skills/), Ravi Mehta argues that judgment, craft, and customer understanding matter just as much as before, and that the PM's job is shifting from deciding what to build toward deciding what deserves to ship.
 
-On this map, that shows up as a shift to the right. When the OK column is easier to reach, more of what separates PMs sits in the great column: foresight, taste, and the ability to change minds. The map itself holds. The bar for standing out moves.
+On this map, I think that shows up as a shift toward the right. As the OK column gets easier for everyone, more of what makes a PM stand out sits in the great column: foresight, taste, and the ability to change people's minds. The map itself still works, but the bar for standing out is higher than it was.
 
-If you are coaching PMs, or working on your own growth, start with step one. Draw your shape honestly, with an example behind every dot. The gap worth working on is often not the one you expected.
+If you coach PMs, or you are working on your own growth, I would suggest starting with the first step: draw your shape honestly, with a real example behind every dot. The gap that matters most is often not the one you expect.
 
 If you would like to work through your own map with me, you can book a coaching session on [ADPList](https://adplist.org/mentors/cynthia-li).
 
